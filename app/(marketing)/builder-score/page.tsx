@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, Shield } from 'lucide-react'
+import { ArrowRight, CheckCircle, Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Builder Score™ — The UK\'s First Contractor Trust Rating',
@@ -31,7 +31,7 @@ export default function BuilderScorePage() {
         <div className="absolute inset-0 bg-hero-gradient pointer-events-none" />
         <div className="container mx-auto relative z-10">
           <div className="flex items-center gap-3 mb-6"><Shield className="w-8 h-8 text-amber" /><p className="section-tag">Builder Score™ — Trademarked</p></div>
-          <h1 className="font-display text-h1 text-white max-w-3xl mb-6">The UK&apos;s first real <span className="text-amber">contractor trust rating</span></h1>
+          <h1 className="font-display text-h1 text-white max-w-3xl mb-6">The UK&apos;s first real{' '}<span className="text-amber">contractor trust rating</span></h1>
           <p className="text-text-secondary text-lg max-w-2xl mb-8 leading-relaxed">Not just stars that anyone can fake. Builder Score™ is a 0–1000 proprietary algorithm calculated from verified reviews, compliance records, dispute history, payment behaviour, and insurance status. Every contractor on Dwellinger has a score.</p>
           <div className="flex flex-wrap gap-4">
             <Link href="/search" className="btn-primary-lg">Find contractors by score <ArrowRight className="w-4 h-4" /></Link>
@@ -42,9 +42,20 @@ export default function BuilderScorePage() {
       <section className="py-20 bg-bg-surface border-y border-border">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div><p className="section-tag mb-3">How it&apos;s calculated</p><h2 className="section-title mb-4">Six components. One number. Full transparency.</h2><p className="text-text-secondary mb-6 leading-relaxed">Every contractor sees their score breakdown. They know exactly which category is pulling their score down and what to do to improve it. The algorithm weighting is not disclosed publicly — but the categories are.</p><p className="text-text-secondary leading-relaxed">Scores are recalculated continuously as new reviews are verified, compliance documents are updated, and project data is processed.</p></div>
+            <div>
+              <p className="section-tag mb-3">How it&apos;s calculated</p>
+              <h2 className="section-title mb-4">Six components. One number. Full transparency.</h2>
+              <p className="text-text-secondary mb-6 leading-relaxed">Every contractor sees their score breakdown. They know exactly which category is pulling their score down and what to do to improve it. The algorithm weighting is not disclosed publicly — but the categories are.</p>
+              <p className="text-text-secondary leading-relaxed">Scores are recalculated continuously as new reviews are verified, compliance documents are updated, and project data is processed.</p>
+            </div>
             <div className="space-y-3">
-              {components.map((c) => (<div key={c.label} className="card-raised p-4"><div className="flex justify-between items-center mb-1.5"><div><span className="text-white text-sm font-semibold">{c.label}</span><span className="text-text-muted text-xs ml-2">({c.weight})</span></div><span className="text-amber text-sm font-bold">{c.example}/{c.max}</span></div><div className="w-full bg-bg-overlay rounded-full h-1.5"><div className="bg-amber h-1.5 rounded-full" style={{ width: `${(c.example / c.max) * 100}%` }} /></div><p className="text-text-muted text-xs mt-1.5 leading-relaxed">{c.desc}</p></div>))}
+              {components.map((c) => (
+                <div key={c.label} className="card-raised p-4">
+                  <div className="flex justify-between items-center mb-1.5"><div><span className="text-white text-sm font-semibold">{c.label}</span><span className="text-text-muted text-xs ml-2">({c.weight})</span></div><span className="text-amber text-sm font-bold">{c.example}/{c.max}</span></div>
+                  <div className="w-full bg-bg-overlay rounded-full h-1.5"><div className="bg-amber h-1.5 rounded-full" style={{ width: `${(c.example / c.max) * 100}%` }} /></div>
+                  <p className="text-text-muted text-xs mt-1.5 leading-relaxed">{c.desc}</p>
+                </div>
+              ))}
               <div className="bg-amber-subtle border border-amber-border rounded p-4 flex justify-between items-center"><span className="text-amber font-bold">Total Builder Score™</span><span className="text-amber font-display font-bold text-2xl">{totalExample}/1000</span></div>
             </div>
           </div>
@@ -60,7 +71,8 @@ export default function BuilderScorePage() {
       </section>
       <section className="py-20 bg-bg-surface border-y border-border">
         <div className="container mx-auto max-w-3xl text-center">
-          <p className="section-tag mb-3">Why it matters</p><h2 className="section-title mb-6">No competitor can replicate this quickly</h2>
+          <p className="section-tag mb-3">Why it matters</p>
+          <h2 className="section-title mb-6">No competitor can replicate this quickly</h2>
           <p className="text-text-secondary text-lg leading-relaxed mb-8">Checkatrade shows reviews. Companies House shows registration. But neither tells you whether a contractor pays their subcontractors on time, has their CDM documents in order, or how they performed when a dispute arose. Builder Score™ combines all of this into one number — verified, audited, and continuously updated.</p>
           <div className="grid grid-cols-3 gap-6 mb-10">
             {[{v:'Trademarked™',l:'Legally protected'},{v:'Proprietary',l:'Algorithm not disclosed'},{v:'Continuous',l:'Updated in real time'}].map((s) => (<div key={s.l} className="card-raised p-4"><div className="text-amber font-bold text-sm">{s.v}</div><div className="text-text-muted text-xs mt-1">{s.l}</div></div>))}

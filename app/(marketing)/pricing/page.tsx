@@ -46,7 +46,14 @@ export default function PricingPage() {
       <section className="pb-16 bg-bg">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {plans.map((plan) => (<div key={plan.name} className={`card p-6 flex flex-col relative ${plan.popular ? 'border-amber bg-bg-raised shadow-glow' : ''}`}>{plan.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2"><span className="badge-amber px-4 py-1 text-xs">Most popular</span></div>}<div className="mb-6"><div className="text-white font-bold text-lg">{plan.name}</div><div className="flex items-end gap-1 mt-1 mb-1"><span className="text-amber font-display font-bold text-4xl">£{plan.price}</span><span className="text-text-muted text-sm mb-1.5">/month</span></div><p className="text-text-muted text-xs">{plan.desc}</p></div><Link href="/register?type=contractor" className={`mb-6 ${plan.popular ? 'btn-primary text-center text-sm py-2.5' : 'btn-secondary text-center text-sm py-2.5'}`}>Start free trial</Link><ul className="space-y-2.5 flex-1">{Object.entries(plan.features).map(([feat, val]) => (<li key={feat} className="flex items-start gap-2 text-xs"><span className="flex-shrink-0 mt-0.5">{val === true ? <CheckCircle className="w-3.5 h-3.5 text-amber" /> : val === false ? <X className="w-3.5 h-3.5 text-text-muted opacity-40" /> : <CheckCircle className="w-3.5 h-3.5 text-amber" />}</span><span className={val === false ? 'text-text-muted opacity-50' : 'text-text-secondary'}>{feat}{typeof val === 'string' ? ': ' + val : ''}</span></li>))}</ul></div>))}
+            {plans.map((plan) => (
+              <div key={plan.name} className={`card p-6 flex flex-col relative ${plan.popular ? 'border-amber bg-bg-raised shadow-glow' : ''}`}>
+                {plan.popular && (<div className="absolute -top-3 left-1/2 -translate-x-1/2"><span className="badge-amber px-4 py-1 text-xs">Most popular</span></div>)}
+                <div className="mb-6"><div className="text-white font-bold text-lg">{plan.name}</div><div className="flex items-end gap-1 mt-1 mb-1"><span className="text-amber font-display font-bold text-4xl">£{plan.price}</span><span className="text-text-muted text-sm mb-1.5">/month</span></div><p className="text-text-muted text-xs">{plan.desc}</p></div>
+                <Link href="/register?type=contractor" className={`mb-6 ${plan.popular ? 'btn-primary text-center text-sm py-2.5' : 'btn-secondary text-center text-sm py-2.5'}`}>Start free trial</Link>
+                <ul className="space-y-2.5 flex-1">{Object.entries(plan.features).map(([feat, val]) => (<li key={feat} className="flex items-start gap-2 text-xs"><span className="flex-shrink-0 mt-0.5">{val === true ? <CheckCircle className="w-3.5 h-3.5 text-amber" /> : val === false ? <X className="w-3.5 h-3.5 text-text-muted opacity-40" /> : <CheckCircle className="w-3.5 h-3.5 text-amber" />}</span><span className={val === false ? 'text-text-muted opacity-50' : 'text-text-secondary'}>{feat}: {typeof val === 'string' ? val : ''}</span></li>))}</ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -54,10 +61,7 @@ export default function PricingPage() {
         <div className="container mx-auto">
           <h2 className="section-title text-center mb-10">Full feature comparison</h2>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead><tr className="border-b border-border"><th className="text-left text-text-muted font-medium pb-4 pr-6 w-1/3">Feature</th>{plans.map((p) => (<th key={p.name} className="text-center pb-4 font-bold text-white">{p.name}<div className="text-amber font-normal text-xs mt-0.5">£{p.price}/mo</div></th>))}</tr></thead>
-              <tbody>{featureKeys.map((key) => (<tr key={key} className="border-b border-border/50"><td className="py-3 text-text-secondary pr-6">{key}</td>{plans.map((p) => (<td key={p.name} className="py-3 text-center"><FeatureCell value={p.features[key as keyof typeof p.features] as boolean | string} /></td>))}</tr>))}</tbody>
-            </table>
+            <table className="w-full text-sm"><thead><tr className="border-b border-border"><th className="text-left text-text-muted font-medium pb-4 pr-6 w-1/3">Feature</th>{plans.map((p) => (<th key={p.name} className="text-center pb-4 font-bold text-white">{p.name}<div className="text-amber font-normal text-xs mt-0.5">£{p.price}/mo</div></th>))}</tr></thead><tbody>{featureKeys.map((key) => (<tr key={key} className="border-b border-border/50"><td className="py-3 text-text-secondary pr-6">{key}</td>{plans.map((p) => (<td key={p.name} className="py-3 text-center"><FeatureCell value={p.features[key as keyof typeof p.features] as boolean | string} /></td>))}</tr>))}</tbody></table>
           </div>
         </div>
       </section>
@@ -73,13 +77,7 @@ export default function PricingPage() {
         <div className="container mx-auto max-w-2xl">
           <h2 className="section-title text-center mb-10">Common questions</h2>
           <div className="space-y-5">
-            {[
-              { q: 'What is a credit?', a: '10 credits = £1. Credits are used for AI features above your monthly allowance — generating documents, running deep analysis, or using premium estimating tiers. Your monthly plan includes a set credit allowance; top up when needed.' },
-              { q: 'Can I cancel anytime?', a: 'Yes — cancel any time from your account settings. Your subscription continues until the end of the billing period. No cancellation fees.' },
-              { q: 'Is the 14-day trial free?', a: 'Yes, no credit card required to start. You get full access to the Professional plan features for 14 days. After that, choose your plan or downgrade to free.' },
-              { q: 'What is the phone add-on?', a: 'A dedicated UK landline or mobile number for your Dwellinger profile. Calls are recorded, transcribed automatically, and fed into Dwell Coord for follow-up. Powered by SignalWire — 90% cheaper than Twilio.' },
-              { q: 'Do you offer annual billing?', a: 'Yes — pay annually and get 2 months free (equivalent to ~17% discount). Contact us or select annual billing at checkout.' },
-            ].map((faq) => (<div key={faq.q} className="card p-5"><h3 className="text-white font-semibold text-sm mb-2">{faq.q}</h3><p className="text-text-secondary text-sm leading-relaxed">{faq.a}</p></div>))}
+            {[{q:'What is a credit?',a:'10 credits = £1. Credits are used for AI features above your monthly allowance — generating documents, running deep analysis, or using premium estimating tiers. Your monthly plan includes a set credit allowance; top up when needed.'},{q:'Can I cancel anytime?',a:'Yes — cancel any time from your account settings. Your subscription continues until the end of the billing period. No cancellation fees.'},{q:'Is the 14-day trial free?',a:'Yes, no credit card required to start. You get full access to the Professional plan features for 14 days. After that, choose your plan or downgrade to free.'},{q:'What is the phone add-on?',a:'A dedicated UK landline or mobile number for your Dwellinger profile. Calls are recorded, transcribed automatically, and fed into Dwell Coord for follow-up. Powered by SignalWire — 90% cheaper than Twilio.'},{q:'Do you offer annual billing?',a:'Yes — pay annually and get 2 months free (equivalent to ~17% discount). Contact us or select annual billing at checkout.'}].map((faq) => (<div key={faq.q} className="card p-5"><h3 className="text-white font-semibold text-sm mb-2">{faq.q}</h3><p className="text-text-secondary text-sm leading-relaxed">{faq.a}</p></div>))}
           </div>
         </div>
       </section>
