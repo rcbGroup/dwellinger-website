@@ -209,7 +209,7 @@ export default function SearchPage() {
                             <div className="flex items-center gap-2 mb-0.5">
                               <h3 className="text-white font-bold text-base">{c.name}</h3>
                               {c.verified && (
-                                <Shield className="w-4 h-4 text-amber flex-shrink-0" title="Verified" />
+                                <Shield className="w-4 h-4 text-amber flex-shrink-0" aria-label="Verified" />
                               )}
                             </div>
                             <div className="flex items-center gap-3 text-text-muted text-xs mb-2">
