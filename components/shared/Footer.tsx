@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+type NavItem = { label: string; href: string; external?: boolean }
+
 export default function Footer() {
   return (
     <footer className="bg-bg border-t border-border text-text-secondary text-sm mt-auto">
@@ -27,13 +29,13 @@ export default function Footer() {
           <div>
             <h3 className="text-white text-xs font-bold tracking-widest uppercase mb-4">Platform</h3>
             <ul className="space-y-2.5">
-              {[
+              {([
                 { label: 'For Homeowners', href: '/homeowners' },
                 { label: 'For Contractors', href: '/contractors' },
                 { label: 'For Investors', href: '/investors' },
                 { label: 'Builder Score™', href: '/builder-score' },
                 { label: 'Pricing', href: '/pricing' },
-              ].map((l) => (
+              ] as NavItem[]).map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-text-muted hover:text-white transition-colors text-sm">
                     {l.label}
@@ -47,13 +49,13 @@ export default function Footer() {
           <div>
             <h3 className="text-white text-xs font-bold tracking-widest uppercase mb-4">Tools</h3>
             <ul className="space-y-2.5">
-              {[
+              {([
                 { label: 'Cost Estimator', href: '/estimate' },
                 { label: 'Find Contractors', href: '/search' },
                 { label: 'Planning Intelligence', href: '/planning' },
                 { label: 'Dwell Agents', href: '/agents' },
                 { label: 'Academy', href: '/academy' },
-              ].map((l) => (
+              ] as NavItem[]).map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-text-muted hover:text-white transition-colors text-sm">
                     {l.label}
@@ -67,13 +69,13 @@ export default function Footer() {
           <div>
             <h3 className="text-white text-xs font-bold tracking-widest uppercase mb-4">Company</h3>
             <ul className="space-y-2.5">
-              {[
+              {([
                 { label: 'About', href: '/about' },
                 { label: 'Blog', href: '/blog' },
                 { label: 'Contact', href: '/contact' },
                 { label: 'Careers', href: '/careers' },
                 { label: 'Builder Score™', href: '/builder-score' },
-              ].map((l) => (
+              ] as NavItem[]).map((l) => (
                 <li key={l.href}>
                   {l.external ? (
                     <a href={l.href} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-white transition-colors text-sm">
@@ -93,12 +95,12 @@ export default function Footer() {
           <div>
             <h3 className="text-white text-xs font-bold tracking-widest uppercase mb-4">Legal</h3>
             <ul className="space-y-2.5">
-              {[
+              {([
                 { label: 'Privacy Policy', href: '/privacy' },
                 { label: 'Terms of Service', href: '/terms' },
                 { label: 'Cookie Policy', href: '/cookies' },
                 { label: 'Contractor Terms', href: '/contractor-terms' },
-              ].map((l) => (
+              ] as NavItem[]).map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-text-muted hover:text-white transition-colors text-sm">
                     {l.label}
