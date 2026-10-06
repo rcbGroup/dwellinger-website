@@ -17,11 +17,31 @@ const projectTypes: { id: ProjectType; label: string; icon: string }[] = [
 ]
 
 const sizeOptions: Record<string, { label: string; sqm: string }[]> = {
-  'rear-extension': [{ label: 'Small (up to 20m²)', sqm: '20' },{ label: 'Medium (20–35m²)', sqm: '28' },{ label: 'Large (35m²+)', sqm: '40' }],
-  loft: [{ label: 'Basic dormer', sqm: '25' },{ label: 'Standard (1 bed)', sqm: '35' },{ label: 'Large (2 bed)', sqm: '50' }],
-  'full-refurb': [{ label: '1–2 bed flat', sqm: '70' },{ label: '3 bed house', sqm: '120' },{ label: '4+ bed house', sqm: '180' }],
-  kitchen: [{ label: 'Small kitchen', sqm: '10' },{ label: 'Medium kitchen', sqm: '15' },{ label: 'Large open-plan', sqm: '25' }],
-  bathroom: [{ label: 'Bathroom only', sqm: '5' },{ label: 'Bathroom + en-suite', sqm: '10' },{ label: 'Full floor of bathrooms', sqm: '18' }],
+  'rear-extension': [
+    { label: 'Small (up to 20m²)', sqm: '20' },
+    { label: 'Medium (20–35m²)', sqm: '28' },
+    { label: 'Large (35m²+)', sqm: '40' },
+  ],
+  loft: [
+    { label: 'Basic dormer', sqm: '25' },
+    { label: 'Standard (1 bed)', sqm: '35' },
+    { label: 'Large (2 bed)', sqm: '50' },
+  ],
+  'full-refurb': [
+    { label: '1–2 bed flat', sqm: '70' },
+    { label: '3 bed house', sqm: '120' },
+    { label: '4+ bed house', sqm: '180' },
+  ],
+  kitchen: [
+    { label: 'Small kitchen', sqm: '10' },
+    { label: 'Medium kitchen', sqm: '15' },
+    { label: 'Large open-plan', sqm: '25' },
+  ],
+  bathroom: [
+    { label: 'Bathroom only', sqm: '5' },
+    { label: 'Bathroom + en-suite', sqm: '10' },
+    { label: 'Full floor of bathrooms', sqm: '18' },
+  ],
 }
 
 const finishLevels = [
@@ -69,20 +89,39 @@ export default function EstimatePage() {
         <section className="py-16">
           <div className="container mx-auto max-w-2xl">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-amber-subtle border border-amber-border mb-4"><Calculator className="w-7 h-7 text-amber" /></div>
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-amber-subtle border border-amber-border mb-4">
+                <Calculator className="w-7 h-7 text-amber" />
+              </div>
               <p className="section-tag mb-2">Estimating Studio</p>
               <h1 className="font-display text-h2 text-white mb-3">Budget estimator</h1>
-              <p className="text-text-secondary max-w-sm mx-auto text-sm leading-relaxed">Get a rough budget range for your project in under 2 minutes. This is a ballpark only — a proper estimate follows a site visit.</p>
+              <p className="text-text-secondary max-w-sm mx-auto text-sm leading-relaxed">
+                Get a rough budget range for your project in under 2 minutes. This is a ballpark only — a proper estimate follows a site visit.
+              </p>
             </div>
             <div className="flex items-center justify-center gap-2 mb-8">
-              {[1,2,3,4].map((s) => (<div key={s} className="flex items-center gap-2"><div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${step >= s ? 'bg-amber text-text-inverse' : 'bg-bg-raised border border-border text-text-muted'}`}>{s}</div>{s < 4 && <div className={`w-8 h-px ${step > s ? 'bg-amber' : 'bg-border'}`} />}</div>))}
+              {[1, 2, 3, 4].map((s) => (
+                <div key={s} className="flex items-center gap-2">
+                  <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
+                    step >= s ? 'bg-amber text-text-inverse' : 'bg-bg-raised border border-border text-text-muted'
+                  }`}>{s}</div>
+                  {s < 4 && <div className={`w-8 h-px ${step > s ? 'bg-amber' : 'bg-border'}`} />}
+                </div>
+              ))}
             </div>
             <div className="card p-8">
               {step === 1 && (
                 <div>
                   <h2 className="text-white font-bold text-lg mb-5">What type of project?</h2>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    {projectTypes.map((pt) => (<button key={pt.id} onClick={() => { setProjectType(pt.id); setStep(2) }} className={`p-4 rounded-lg border transition-all flex flex-col items-center gap-2 hover:border-amber ${projectType === pt.id ? 'border-amber bg-amber-subtle' : 'border-border bg-bg-raised'}`}><span className="text-2xl">{pt.icon}</span><span className="text-xs font-semibold text-text-secondary text-center">{pt.label}</span></button>))}
+                    {projectTypes.map((pt) => (
+                      <button key={pt.id} onClick={() => { setProjectType(pt.id); setStep(2) }}
+                        className={`p-4 rounded-lg border transition-all flex flex-col items-center gap-2 hover:border-amber ${
+                          projectType === pt.id ? 'border-amber bg-amber-subtle' : 'border-border bg-bg-raised'
+                        }`}>
+                        <span className="text-2xl">{pt.icon}</span>
+                        <span className="text-xs font-semibold text-text-secondary text-center">{pt.label}</span>
+                      </button>
+                    ))}
                   </div>
                 </div>
               )}
@@ -90,7 +129,15 @@ export default function EstimatePage() {
                 <div>
                   <h2 className="text-white font-bold text-lg mb-5">What size approximately?</h2>
                   <div className="space-y-3">
-                    {sizeOptions[projectType]?.map((opt) => (<button key={opt.sqm} onClick={() => { setSize(opt.sqm); setStep(3) }} className={`w-full p-4 rounded-lg border transition-all flex items-center justify-between hover:border-amber ${size === opt.sqm ? 'border-amber bg-amber-subtle' : 'border-border bg-bg-raised'}`}><span className="text-text-secondary text-sm font-semibold">{opt.label}</span><span className="text-text-muted text-xs">~{opt.sqm}m²</span></button>))}
+                    {sizeOptions[projectType]?.map((opt) => (
+                      <button key={opt.sqm} onClick={() => { setSize(opt.sqm); setStep(3) }}
+                        className={`w-full p-4 rounded-lg border transition-all flex items-center justify-between hover:border-amber ${
+                          size === opt.sqm ? 'border-amber bg-amber-subtle' : 'border-border bg-bg-raised'
+                        }`}>
+                        <span className="text-text-secondary text-sm font-semibold">{opt.label}</span>
+                        <span className="text-text-muted text-xs">~{opt.sqm}m²</span>
+                      </button>
+                    ))}
                   </div>
                   <button onClick={() => setStep(1)} className="text-text-muted text-xs mt-4 hover:text-amber transition-colors">← Change project type</button>
                 </div>
@@ -99,11 +146,26 @@ export default function EstimatePage() {
                 <div>
                   <h2 className="text-white font-bold text-lg mb-5">What finish level?</h2>
                   <div className="space-y-3 mb-6">
-                    {finishLevels.map((fl) => (<button key={fl.id} onClick={() => setFinish(fl.id)} className={`w-full p-4 rounded-lg border transition-all flex items-start justify-between hover:border-amber ${finish === fl.id ? 'border-amber bg-amber-subtle' : 'border-border bg-bg-raised'}`}><div><div className="text-text-secondary text-sm font-semibold">{fl.label}</div><div className="text-text-muted text-xs">{fl.desc}</div></div><div className={`w-4 h-4 rounded-full border-2 flex-shrink-0 mt-0.5 ${finish === fl.id ? 'border-amber bg-amber' : 'border-border'}`} /></button>))}
+                    {finishLevels.map((fl) => (
+                      <button key={fl.id} onClick={() => setFinish(fl.id)}
+                        className={`w-full p-4 rounded-lg border transition-all flex items-start justify-between hover:border-amber ${
+                          finish === fl.id ? 'border-amber bg-amber-subtle' : 'border-border bg-bg-raised'
+                        }`}>
+                        <div>
+                          <div className="text-text-secondary text-sm font-semibold">{fl.label}</div>
+                          <div className="text-text-muted text-xs">{fl.desc}</div>
+                        </div>
+                        <div className={`w-4 h-4 rounded-full border-2 flex-shrink-0 mt-0.5 ${finish === fl.id ? 'border-amber bg-amber' : 'border-border'}`} />
+                      </button>
+                    ))}
                   </div>
                   <div>
                     <h3 className="text-white font-bold text-sm mb-3">Location</h3>
-                    <select value={location} onChange={(e) => setLocation(e.target.value)} className="input"><option value="london">Greater London</option><option value="southeast">South East (outside London)</option><option value="other">Rest of UK</option></select>
+                    <select value={location} onChange={(e) => setLocation(e.target.value)} className="input">
+                      <option value="london">Greater London</option>
+                      <option value="southeast">South East (outside London)</option>
+                      <option value="other">Rest of UK</option>
+                    </select>
                   </div>
                   <div className="flex gap-3 mt-6">
                     <button onClick={() => setStep(2)} className="btn-secondary flex-1 py-3">Back</button>
@@ -116,7 +178,11 @@ export default function EstimatePage() {
                   <h2 className="text-white font-bold text-lg mb-6">Your budget range</h2>
                   <div className="bg-amber-subtle border-2 border-amber rounded-xl p-6 mb-6 text-center">
                     <p className="text-amber text-xs font-bold uppercase tracking-widest mb-3">Indicative ballpark</p>
-                    <div className="flex items-center justify-center gap-3 mb-2"><span className="font-display font-bold text-3xl text-white">{formatGBP(low)}</span><span className="text-text-muted">to</span><span className="font-display font-bold text-3xl text-amber">{formatGBP(high)}</span></div>
+                    <div className="flex items-center justify-center gap-3 mb-2">
+                      <span className="font-display font-bold text-3xl text-white">{formatGBP(low)}</span>
+                      <span className="text-text-muted">to</span>
+                      <span className="font-display font-bold text-3xl text-amber">{formatGBP(high)}</span>
+                    </div>
                     <p className="text-text-muted text-xs">Based on ~{size}m² · {finish} finish · {location === 'london' ? 'Greater London' : location === 'southeast' ? 'South East' : 'Rest of UK'}</p>
                   </div>
                   <div className="bg-bg-raised border border-border rounded-lg p-4 mb-6 text-xs text-text-muted leading-relaxed">
