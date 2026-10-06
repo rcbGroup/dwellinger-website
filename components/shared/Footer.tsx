@@ -114,7 +114,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Dwellinger. All rights reserved.
           </p>
           <p className="text-text-muted text-xs">
-            Builder Score™ is a trademark of Dwellinger Ltd. All rights reserved.
+            Builder Score™ is a trademark of Dwellinger. All rights reserved.
           </p>
         </div>
       </div>

@@ -242,7 +242,7 @@ export default function EstimatePage() {
                   {/* Disclaimer */}
                   <div className="bg-bg-raised border border-border rounded-lg p-4 mb-6 text-xs text-text-muted leading-relaxed">
                     <p className="font-bold text-text-secondary mb-1">⚠️ Ballpark only — please read</p>
-                    <p>This figure is for early budget planning only. It is not a quotation. Actual costs depend on design development, site conditions, structural requirements, compliance, procurement route, and specification. A detailed estimate requires a site visit and full drawings. Second-fix materials are client-supplied. RCB does not install carpet.</p>
+                    <p>This figure is for early budget planning only. It is not a quotation. Actual costs depend on design development, site conditions, structural requirements, compliance, procurement route, and specification. A detailed estimate requires a site visit and full drawings.</p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 mb-6">
