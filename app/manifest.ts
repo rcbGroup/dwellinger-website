@@ -24,8 +24,20 @@ export default function manifest(): MetadataRoute.Manifest {
       { src: '/icons/icon-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable any' },
     ],
     shortcuts: [
-      { name: 'Get a Quote', short_name: 'Quote', description: 'AI-powered project estimate', url: '/estimate', icons: [{ src: '/icons/icon-96x96.png', sizes: '96x96' }] },
-      { name: 'Find Contractors', short_name: 'Search', description: 'Search verified contractors', url: '/search', icons: [{ src: '/icons/icon-96x96.png', sizes: '96x96' }] },
+      {
+        name: 'Get a Quote',
+        short_name: 'Quote',
+        description: 'AI-powered project estimate',
+        url: '/estimate',
+        icons: [{ src: '/icons/icon-96x96.png', sizes: '96x96' }],
+      },
+      {
+        name: 'Find Contractors',
+        short_name: 'Search',
+        description: 'Search verified contractors',
+        url: '/search',
+        icons: [{ src: '/icons/icon-96x96.png', sizes: '96x96' }],
+      },
     ],
     prefer_related_applications: false,
   }

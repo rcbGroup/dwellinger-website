@@ -8,11 +8,23 @@ export default function OfflinePage() {
           </svg>
         </div>
         <h1 className="font-display text-h2 text-white mb-3">You&apos;re offline</h1>
-        <p className="text-text-secondary max-w-sm mx-auto leading-relaxed mb-2">It looks like you&apos;ve lost your internet connection. Dwellinger requires a connection to load live contractor data.</p>
-        <p className="text-text-muted text-sm max-w-sm mx-auto">Check your Wi-Fi or mobile data, then try reloading.</p>
+        <p className="text-text-secondary max-w-sm mx-auto leading-relaxed mb-2">
+          It looks like you&apos;ve lost your internet connection. Dwellinger requires a connection
+          to load live contractor data and scores.
+        </p>
+        <p className="text-text-muted text-sm max-w-sm mx-auto">
+          Check your Wi-Fi or mobile data, then try reloading.
+        </p>
       </div>
-      <button onClick={() => window.location.reload()} className="btn-primary mb-4">Try again</button>
-      <a href="/" className="text-amber text-sm hover:underline">Back to homepage</a>
+      <button
+        onClick={() => window.location.reload()}
+        className="btn-primary mb-4"
+      >
+        Try again
+      </button>
+      <a href="/" className="text-amber text-sm hover:underline">
+        Back to homepage
+      </a>
     </div>
   )
 }
