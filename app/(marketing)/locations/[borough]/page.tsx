@@ -177,7 +177,7 @@ export async function generateMetadata({
   const borough = boroughs[params.borough]
   if (!borough) return {}
   return {
-    title: `Extension & Loft Conversion Builders in ${borough.name}, London | Dwellinger`,
+    title: `Extension & Loft Conversion Builders in ${borough.name}, London`,
     description: borough.description,
   }
 }

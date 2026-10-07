@@ -3,7 +3,7 @@ import Link from 'next/link'
 import LoftCalc from './LoftCalc'
 
 export const metadata: Metadata = {
-  title: 'Loft Conversion Cost Calculator London | Dwellinger',
+  title: 'Loft Conversion Cost Calculator London',
   description: 'Calculate the cost of a loft conversion in London or the South East. Velux, dormer, L-shaped, mansard and hip-to-gable — with or without en-suite.',
 }
 

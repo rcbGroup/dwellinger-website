@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How Much Does a Rear Extension Cost in London? [2026 Guide] | Dwellinger',
+  title: 'How Much Does a Rear Extension Cost in London? [2026 Guide]',
   description:
     'Complete guide to rear extension costs in London 2026. Average costs, planning rules, party wall, and how to find a verified contractor. Updated Q4 2026.',
 }

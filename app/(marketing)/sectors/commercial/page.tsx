@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Commercial Construction & Fit-Out London | Dwellinger',
+  title: 'Commercial Construction & Fit-Out London',
   description: 'Office fit-out, retail transformation, mixed-use development and HMO conversions in London. Principal contractor with full design and build capability.',
 };
 

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import QuoteForm from './QuoteForm';
 
 export const metadata: Metadata = {
-  title: 'Get a Free Project Quote | Dwellinger',
+  title: 'Get a Free Project Quote',
   description: 'Request a quote for your extension, loft conversion or refurbishment. Honest advice, response within 2 hours, no obligation.',
 };
 

@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy | Dwellinger',
+  title: 'Cookie Policy',
   description: 'Cookie policy for Dwellinger. Details on how we use essential, analytics and marketing cookies.',
 }
 

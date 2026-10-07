@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Property Investor Hub London | Construction & Development Intelligence | Dwellinger',
+  title: 'Property Investor Hub London | Construction & Development Intelligence',
   description:
     'Everything London property investors need: build cost data, planning intelligence, contractor vetting, project management and QS services for BTL, HMO and development projects.',
 }

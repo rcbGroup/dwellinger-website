@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Planning Intelligence London | Track Applications & Opportunities | Dwellinger',
+  title: 'Planning Intelligence London | Track Applications & Opportunities',
   description:
     'Track planning applications across all 32 London boroughs. Spot development opportunities, monitor neighbours, check permitted development rights and appeal outcomes.',
 }

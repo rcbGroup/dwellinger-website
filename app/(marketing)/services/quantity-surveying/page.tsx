@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Quantity Surveying & Cost Management London | Dwellinger',
+  title: 'Quantity Surveying & Cost Management London',
   description:
     'Independent quantity surveying for London homeowners, developers and commercial clients. QS-reviewed estimates, tender analysis, variation control and cost reporting.',
 }

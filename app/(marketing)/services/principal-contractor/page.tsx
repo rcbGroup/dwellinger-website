@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Principal Contractor Service London | CDM & Multi-Trade | Dwellinger',
+  title: 'Principal Contractor Service London | CDM & Multi-Trade',
   description: 'Dwellinger acts as Principal Contractor under CDM 2015 for complex residential and commercial projects across London. One point of contact for all trades.',
 }
 

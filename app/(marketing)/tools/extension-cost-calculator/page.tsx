@@ -3,7 +3,7 @@ import Link from 'next/link'
 import ExtensionCalc from './ExtensionCalc'
 
 export const metadata: Metadata = {
-  title: 'Extension Cost Calculator London | Instant Estimate | Dwellinger',
+  title: 'Extension Cost Calculator London | Instant Estimate',
   description: 'Calculate the cost of your house extension in London or the South East. Instant indicative range based on 143+ real London projects. Single and double storey.',
 }
 

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Loft Conversion Cost in London — The Honest 2026 Guide | Dwellinger',
+  title: 'Loft Conversion Cost in London — The Honest 2026 Guide',
   description:
     'How much does a loft conversion cost in London in 2026? Velux, dormer, mansard, L-shaped prices, planning rules and how to choose a verified contractor.',
 }

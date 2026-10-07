@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Bespoke Construction & High-Spec Builds London | Dwellinger',
+  title: 'Bespoke Construction & High-Spec Builds London',
   description:
     'Bespoke design-and-build for London clients who demand exceptional quality, unique design, and a single point of accountability from concept to completion.',
 }

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Professional Construction Estimates from £95 | Dwellinger',
+  title: 'Professional Construction Estimates from £95',
   description: 'QS-reviewed construction estimates for London homeowners and developers. Not a chatbot guess — based on 143+ real London project costs. From £95, delivered in 5 working days.',
 }
 

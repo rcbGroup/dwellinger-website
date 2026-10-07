@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Construction Intelligence for Property Developers | Dwellinger',
+  title: 'Construction Intelligence for Property Developers',
   description: 'Development appraisals, cost intelligence, BTR delivery and mixed-use construction for property developers in London and the Home Counties.',
 };
 

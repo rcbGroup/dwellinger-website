@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Platform for UK Contractors | Rankitt by Dwellinger',
+  title: 'Platform for UK Contractors | AI Tools, Builder Score & Estimating',
   description: '62 AI Agents. 200+ tools. Built for the modern contractor. The operating system for UK contractors.',
 }
 
@@ -46,7 +46,7 @@ export default function PlatformPage() {
       <section style={{ backgroundColor: '#1A2340', color: '#FFFFFF', padding: '96px 24px' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-block', backgroundColor: 'rgba(196,119,59,0.15)', color: '#C4773B', padding: '6px 16px', borderRadius: 100, fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 24 }}>
-            Rankitt by Dwellinger
+            Dwellinger Platform
           </div>
           <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, marginBottom: 24, lineHeight: 1.15 }}>
             The Operating System for UK Contractors
@@ -88,7 +88,7 @@ export default function PlatformPage() {
             Everything You Need to Run Your Business
           </h2>
           <p style={{ color: '#4A5568', textAlign: 'center', marginBottom: 56, maxWidth: 600, margin: '0 auto 56px' }}>
-            From the first lead to the final invoice, Rankitt handles the business side so you can focus on building.
+            From the first lead to the final invoice, Dwellinger handles the business side so you can focus on building.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 28 }}>
             {features.map((f) => (

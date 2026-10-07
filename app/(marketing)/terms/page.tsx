@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Dwellinger',
-  description: 'Terms of Service for Dwellinger and the Rankitt platform. Governing law: England and Wales.',
+  title: 'Terms of Service',
+  description: 'Terms of Service for the Dwellinger platform. Governing law: England and Wales.',
 }
 
 const headingStyle = { color: '#1A2340', fontSize: '1.3rem', fontWeight: 700, marginTop: 40, marginBottom: 12 } as const
@@ -19,7 +19,7 @@ export default function TermsPage() {
       <article style={{ maxWidth: 800, margin: '0 auto', padding: '60px 24px 80px' }}>
         <h2 style={headingStyle}>1. Agreement to Terms</h2>
         <p style={paraStyle}>
-          By accessing or using the Dwellinger website and Rankitt platform (collectively, "the Services"), you agree to be bound by these Terms of Service. If you do not agree, you may not use the Services. These terms apply to all visitors, users and contractors on the platform.
+          By accessing or using the Dwellinger website and platform (collectively, "the Services"), you agree to be bound by these Terms of Service. If you do not agree, you may not use the Services. These terms apply to all visitors, users and contractors on the platform.
         </p>
 
         <h2 style={headingStyle}>2. Platform Use</h2>

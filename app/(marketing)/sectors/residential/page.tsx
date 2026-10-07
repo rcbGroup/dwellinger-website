@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Extensions, Lofts & Refurbishments for London Homeowners | Dwellinger',
+  title: 'Extensions, Lofts & Refurbishments for London Homeowners',
   description: 'Extensions, loft conversions and full refurbishments for London homeowners. One principal contractor. No blame-shifting. Checkatrade verified.',
 };
 

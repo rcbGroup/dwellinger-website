@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'RCB Design & Build — Verified Principal Contractor | Dwellinger',
+  title: 'RCB Design & Build — Verified Principal Contractor',
   description:
     'RCB Design & Build: Platinum-rated principal contractor covering London & Greater London. Builder Score™ 924/1000. View reviews, portfolio and get a quote.',
 }

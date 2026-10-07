@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Platform for Contractors | Builder Score, Leads & Estimating | Dwellinger',
+  title: 'Platform for Contractors | Builder Score, Leads & Estimating',
   description:
     'The Dwellinger platform gives UK contractors a verified Builder Score, qualified homeowner leads, AI estimating tools, CRM, and planning intelligence — all in one place.',
 }

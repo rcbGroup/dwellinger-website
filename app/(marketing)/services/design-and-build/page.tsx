@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Design and Build Service | One Contract, One Team | Dwellinger',
+  title: 'Design and Build Service | One Contract, One Team',
   description: 'Single-contract design and build service in London. One team, one fee, one outcome — no blame gaps between architect and builder.',
 }
 
