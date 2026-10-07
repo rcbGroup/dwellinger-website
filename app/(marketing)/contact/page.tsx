@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Phone, Mail, Calendar, MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contact Dwellinger',
+  title: 'Contact Us',
   description: 'Get in touch with the Dwellinger team. Call +44 7359 872594, email info@dwellinger.co.uk, or book a discovery call.',
 }
 

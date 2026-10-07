@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle, Shield, Zap, Users, BarChart3 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'About Dwellinger — The UK Construction Intelligence Platform',
+  title: 'About — The UK Construction Intelligence Platform',
   description: 'Dwellinger is the UK\'s national design, build, and property intelligence platform — connecting homeowners, contractors, and property investors with the tools, trust, and intelligence to plan, price, and deliver any construction project.',
 }
 

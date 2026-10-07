@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle, X } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Pricing — Dwellinger Plans & Features',
+  title: 'Pricing — Plans & Features',
   description: 'From £19/month. Starter, Professional, Business, and Agents+ plans. Builder Score™, AI agents, estimating tools, and more. Start free for 14 days.',
 }
 

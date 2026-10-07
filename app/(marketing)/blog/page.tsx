@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ArrowRight, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Blog — Dwellinger Construction & Property Intelligence',
+  title: 'Blog — Construction & Property Intelligence',
   description: 'Expert guides on home extensions, loft conversions, builder costs, planning applications, and property investment — written by the Dwellinger editorial team.',
 }
 
