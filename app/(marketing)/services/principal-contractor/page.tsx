@@ -117,7 +117,7 @@ export default function PrincipalContractorPage() {
               },
               {
                 title: 'Cost control',
-                desc: 'We manage the supply chain and control variations. You agree every change before it's instructed — no surprise invoices.',
+                desc: 'We manage the supply chain and control variations. You agree every change before it\'s instructed — no surprise invoices.',
               },
             ].map((item) => (
               <div

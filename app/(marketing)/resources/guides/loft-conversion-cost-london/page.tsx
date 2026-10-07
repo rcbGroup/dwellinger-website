@@ -198,7 +198,7 @@ export default function LoftConversionCostLondon() {
             },
             {
               title: 'Structural changes',
-              body: 'Most loft conversions require RSJ beams to support the new floor, strengthening of existing floor joists, and a new staircase opening below. These structural elements typically add £6,000–£14,000 and always require a structural engineer's calculations and building control sign-off.',
+              body: 'Most loft conversions require RSJ beams to support the new floor, strengthening of existing floor joists, and a new staircase opening below. These structural elements typically add £6,000–£14,000 and always require a structural engineer\'s calculations and building control sign-off.',
             },
             {
               title: 'Planning and design fees',

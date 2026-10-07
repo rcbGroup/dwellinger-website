@@ -115,7 +115,7 @@ export default function RearExtensionCostLondon() {
             },
             {
               title: '4. Structural complexity',
-              body: 'Removing a load-bearing wall to open up the space requires RSJ or flitch beams, temporary propping and a structural engineer's sign-off. Budget an additional £3,000–£8,000 for this element if required.',
+              body: 'Removing a load-bearing wall to open up the space requires RSJ or flitch beams, temporary propping and a structural engineer\'s sign-off. Budget an additional £3,000–£8,000 for this element if required.',
             },
             {
               title: '5. Planning and design fees',
