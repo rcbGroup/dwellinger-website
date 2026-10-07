@@ -1,7 +1,15 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/shared/Nav'
 import Footer from '@/components/shared/Footer'
 import { ArrowRight, Star, CheckCircle, Zap, Shield, TrendingUp, Users } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Dwellinger — UK's Property Intelligence Platform",
+  },
+  description: "The UK's smartest platform for homeowners, contractors and property investors. Builder Score™ contractor trust ratings, AI-powered estimates, planning intelligence, and property investment tools.",
+}
 
 // Real Google reviews
 const reviews = [
