@@ -9,6 +9,7 @@ const footerColumns: { heading: string; links: NavItem[] }[] = [
       { label: 'Residential', href: '/sectors/residential' },
       { label: 'Commercial', href: '/sectors/commercial' },
       { label: 'Developers', href: '/sectors/developers' },
+      { label: 'Bespoke Projects', href: '/sectors/bespoke' },
     ],
   },
   {
@@ -17,6 +18,8 @@ const footerColumns: { heading: string; links: NavItem[] }[] = [
       { label: 'Design & Build', href: '/services/design-and-build' },
       { label: 'Principal Contractor', href: '/services/principal-contractor' },
       { label: 'Estimating', href: '/services/estimating' },
+      { label: 'Quantity Surveying', href: '/services/quantity-surveying' },
+      { label: 'Project Management', href: '/services/project-management' },
     ],
   },
   {
@@ -31,6 +34,10 @@ const footerColumns: { heading: string; links: NavItem[] }[] = [
     links: [
       { label: 'Platform Overview', href: '/platform' },
       { label: 'Platform Pricing', href: '/platform/pricing' },
+      { label: 'For Contractors', href: '/platform/for-contractors' },
+      { label: 'Estimating Services', href: '/platform/estimating-services' },
+      { label: 'Investor Hub', href: '/investor-hub' },
+      { label: 'Book a Call', href: '/book-a-call' },
       { label: 'Blog', href: '/blog' },
       { label: 'About', href: '/about' },
       { label: 'Contact', href: '/contact' },

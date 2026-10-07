@@ -16,6 +16,7 @@ const navItems: NavItem[] = [
       { label: 'Residential', href: '/sectors/residential' },
       { label: 'Commercial', href: '/sectors/commercial' },
       { label: 'Developers', href: '/sectors/developers' },
+      { label: 'Bespoke Projects', href: '/sectors/bespoke' },
     ],
   },
   {
@@ -24,6 +25,8 @@ const navItems: NavItem[] = [
       { label: 'Design & Build', href: '/services/design-and-build' },
       { label: 'Principal Contractor', href: '/services/principal-contractor' },
       { label: 'Estimating', href: '/services/estimating' },
+      { label: 'Quantity Surveying', href: '/services/quantity-surveying' },
+      { label: 'Project Management', href: '/services/project-management' },
     ],
   },
   {
@@ -31,9 +34,22 @@ const navItems: NavItem[] = [
     dropdown: [
       { label: 'Extension Calculator', href: '/tools/extension-cost-calculator' },
       { label: 'Loft Calculator', href: '/tools/loft-conversion-calculator' },
+      { label: 'HMO Calculator', href: '/tools/hmo-calculator' },
+      { label: 'ROI Calculator', href: '/tools/roi-calculator' },
+      { label: 'Development Appraisal', href: '/tools/development-appraisal' },
+      { label: 'Planning Intelligence', href: '/tools/planning' },
     ],
   },
-  { label: 'Platform', href: '/platform' },
+  {
+    label: 'Platform',
+    dropdown: [
+      { label: 'Platform Overview', href: '/platform' },
+      { label: 'For Contractors', href: '/platform/for-contractors' },
+      { label: 'Estimating Services', href: '/platform/estimating-services' },
+      { label: 'Pricing', href: '/platform/pricing' },
+    ],
+  },
+  { label: 'Investor Hub', href: '/investor-hub' },
   { label: 'Blog', href: '/blog' },
 ]
 

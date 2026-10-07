@@ -106,13 +106,13 @@ const features = [
     icon: <Users className="w-6 h-6 text-amber" />,
     title: '4 Dwell Agents',
     desc: 'AI agents trained on UK construction. Dwell Coord, Dwell Create, Dwell Clarity, Dwell Coach — handling admin, documents, analysis, and training.',
-    href: '/agents',
+    href: '/platform/for-contractors',
   },
   {
     icon: <TrendingUp className="w-6 h-6 text-amber" />,
     title: 'Planning Intelligence',
     desc: 'Live planning application data across the UK. See what gets approved, what gets refused, and when your neighbours just got planning permission.',
-    href: '/planning',
+    href: '/tools/planning',
   },
 ]
 
