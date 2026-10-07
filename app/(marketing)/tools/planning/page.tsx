@@ -45,7 +45,7 @@ const boroughStats = [
 
 export default function PlanningIntelligencePage() {
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section
         style={{
@@ -293,6 +293,6 @@ export default function PlanningIntelligencePage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

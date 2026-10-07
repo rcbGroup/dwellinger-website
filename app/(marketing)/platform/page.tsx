@@ -42,7 +42,7 @@ const stats = [
 
 export default function PlatformPage() {
   return (
-    <main>
+    <div>
       <section style={{ backgroundColor: '#1A2340', color: '#FFFFFF', padding: '96px 24px' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-block', backgroundColor: 'rgba(196,119,59,0.15)', color: '#C4773B', padding: '6px 16px', borderRadius: 100, fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 24 }}>
@@ -137,6 +137,6 @@ export default function PlatformPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

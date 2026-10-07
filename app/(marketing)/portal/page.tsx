@@ -23,14 +23,14 @@ const SCORES = [
 
 const LEADS = [
   {
-    name: 'Dan Okonkwo',
+    name: 'M. Thompson',
     location: 'Enfield, N21',
     project: 'Loft Conversion + Extension',
     budget: '£120k–£150k',
     price: '£45',
   },
   {
-    name: 'Priya Sharma',
+    name: 'S. Patel',
     location: 'Greenwich, SE10',
     project: 'Full Refurbishment',
     budget: '£65k–£85k',

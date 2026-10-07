@@ -78,7 +78,7 @@ const faqs = [
 
 export default function EstimatingPage() {
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section style={{ backgroundColor: '#1A2340', color: '#FFFFFF', padding: '96px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: '780px', margin: '0 auto' }}>
@@ -234,6 +234,6 @@ export default function EstimatingPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

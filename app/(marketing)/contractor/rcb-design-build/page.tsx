@@ -15,14 +15,24 @@ const SCORES = [
 
 const REVIEWS = [
   {
-    name: 'Dan O.',
+    name: 'Adrian P',
     stars: 5,
-    text: 'Excellent work on our loft conversion. The team was professional and finished on time and within budget. Would not hesitate to recommend RCB to anyone looking for a reliable contractor in London.',
+    text: 'Exceptional Service and Outstanding Design! Working with the team has been an absolute pleasure. They took our vision for a residential project in London and brought it to life in ways that exceeded our expectations. Their professionalism, creativity, and attention to detail were evident throughout.',
   },
   {
-    name: 'Priya S.',
+    name: 'Sandy Parmar',
     stars: 5,
-    text: "Fantastic job on our full house refurbishment. We've had multiple compliments from neighbours. RCB managed the whole project from design through to handover — a genuinely stress-free experience.",
+    text: 'Vasi was very professional from the moment. Very engaging — you could tell him what you need and he gives his ideas as well. Things were done on time. He completed the plans and submitted for council approval. Very pleasant and very professional.',
+  },
+  {
+    name: 'Sean Savage',
+    stars: 5,
+    text: 'Great company and great people. Really friendly and knowledgeable! Would recommend.',
+  },
+  {
+    name: 'Rachelle See',
+    stars: 5,
+    text: 'Fantastic finish & amazing design.',
   },
 ]
 

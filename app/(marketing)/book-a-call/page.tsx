@@ -44,7 +44,7 @@ const whyCall = [
 
 export default function BookACallPage() {
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section
         style={{
@@ -353,6 +353,6 @@ export default function BookACallPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

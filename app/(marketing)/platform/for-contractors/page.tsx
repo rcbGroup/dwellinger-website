@@ -67,7 +67,7 @@ const plans = [
 
 export default function ForContractorsPage() {
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section
         style={{
@@ -416,6 +416,6 @@ export default function ForContractorsPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

@@ -68,7 +68,7 @@ export default function PlatformPricingPage() {
   const [annual, setAnnual] = useState(false)
 
   return (
-    <main style={{ backgroundColor: '#f0ede6', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#f0ede6', minHeight: '100vh' }}>
       <section style={{ backgroundColor: '#1A2340', padding: '80px 24px', textAlign: 'center' }}>
         <h1 style={{ color: '#fff', fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, marginBottom: 16 }}>
           Platform Pricing
@@ -214,6 +214,6 @@ export default function PlatformPricingPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

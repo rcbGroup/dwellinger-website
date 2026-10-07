@@ -41,7 +41,7 @@ export default function HMOCalculatorPage() {
   ]
 
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section
         style={{
@@ -367,6 +367,6 @@ export default function HMOCalculatorPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

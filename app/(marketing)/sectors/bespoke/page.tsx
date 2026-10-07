@@ -64,7 +64,7 @@ const process = [
 
 export default function BespokePage() {
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section
         style={{
@@ -344,6 +344,6 @@ export default function BespokePage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

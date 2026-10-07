@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ProjectManagementPage() {
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section
         style={{
@@ -342,6 +342,6 @@ export default function ProjectManagementPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function LoftCalculatorPage() {
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section style={{ backgroundColor: '#1A2340', color: '#FFFFFF', padding: '80px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto' }}>
@@ -109,6 +109,6 @@ export default function LoftCalculatorPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

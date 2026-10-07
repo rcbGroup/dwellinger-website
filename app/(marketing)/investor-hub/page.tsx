@@ -78,7 +78,7 @@ const stats = [
 
 export default function InvestorHubPage() {
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section
         style={{
@@ -395,6 +395,6 @@ export default function InvestorHubPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

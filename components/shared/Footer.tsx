@@ -64,7 +64,7 @@ export default function Footer() {
               Dwell<span style={{ color: '#C4773B' }}>inger</span>
             </Link>
             <p className="text-text-muted text-xs leading-relaxed max-w-[200px]">
-              Where Property Gets Serious. | RCB Design &amp; Build | A2Z Principal Contractors
+              The UK&apos;s smartest platform for homeowners, contractors and property investors.
             </p>
             <div className="mt-4 space-y-1.5">
               <a href="tel:+447359872594" className="flex items-center gap-2 text-xs text-text-secondary hover:text-white transition-colors">

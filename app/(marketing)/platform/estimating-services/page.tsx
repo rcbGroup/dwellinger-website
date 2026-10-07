@@ -53,7 +53,7 @@ const projectTypes = [
 
 export default function EstimatingServicesPage() {
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section
         style={{
@@ -332,6 +332,6 @@ export default function EstimatingServicesPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

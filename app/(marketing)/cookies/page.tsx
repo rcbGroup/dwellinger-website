@@ -51,7 +51,7 @@ const tdStyle = {
 
 export default function CookiesPage() {
   return (
-    <main style={{ backgroundColor: '#FFFFFF' }}>
+    <div style={{ backgroundColor: '#FFFFFF' }}>
       <section style={{ backgroundColor: '#1A2340', padding: '60px 24px', textAlign: 'center' }}>
         <h1 style={{ color: '#fff', fontSize: '2rem', fontWeight: 800 }}>Cookie Policy</h1>
         <p style={{ color: '#c8c0b0', marginTop: 12 }}>Last updated: October 2026</p>
@@ -129,6 +129,6 @@ export default function CookiesPage() {
           Email: info@dwellinger.co.uk
         </p>
       </article>
-    </main>
+    </div>
   )
 }

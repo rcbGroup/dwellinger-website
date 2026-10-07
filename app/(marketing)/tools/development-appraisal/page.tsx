@@ -43,7 +43,7 @@ export default function DevelopmentAppraisalPage() {
   }
 
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section
         style={{
@@ -320,6 +320,6 @@ export default function DevelopmentAppraisalPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

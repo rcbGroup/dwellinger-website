@@ -42,7 +42,7 @@ export default function ROICalculatorPage() {
   }
 
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section
         style={{
@@ -284,6 +284,6 @@ export default function ROICalculatorPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

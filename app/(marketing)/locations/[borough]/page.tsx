@@ -231,10 +231,56 @@ export default function BoroughPage({ params }: { params: { borough: string } })
       q: 'What areas do you cover?',
       a: `We cover all of Greater London including ${name} and surrounding boroughs. Our base is in East London but our teams operate across the whole of the capital.`,
     },
+    {
+      q: `How do I find a verified builder in ${name}?`,
+      a: `Dwellinger's Builder Score™ ranks every contractor on a 0–1000 scale based on verified reviews, compliance records, and payment history. You can browse Builder Score-verified contractors in ${name} on our platform and request quotes directly. All contractors are independently verified.`,
+    },
+    {
+      q: `What is the best type of extension for a home in ${name}?`,
+      a: `The best extension type depends on your property, garden size, and budget. Single-storey rear extensions are the most common in ${name} and offer excellent value. Loft conversions are ideal when ground-floor space is limited. We offer a free consultation to advise on the best option for your specific property and planning context.`,
+    },
   ]
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
+  }
+
+  const localBizSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: `Dwellinger — Extension & Loft Conversion Builders in ${name}`,
+    url: `https://dwellinger.co.uk/locations/${params.borough}`,
+    telephone: '+447359872594',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '347 Barking Road',
+      addressLocality: 'London',
+      postalCode: 'E13 8EE',
+      addressCountry: 'GB',
+    },
+    areaServed: { '@type': 'City', name },
+    serviceType: ['Rear Extensions', 'Loft Conversions', 'Full Refurbishments', 'Structural Works'],
+  }
+
   return (
-    <main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBizSchema) }}
+      />
       <section style={{ backgroundColor: '#1A2340', color: '#FFFFFF', padding: '80px 24px' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, marginBottom: 24, lineHeight: 1.2 }}>
@@ -324,6 +370,6 @@ export default function BoroughPage({ params }: { params: { borough: string } })
           </Link>
         </div>
       </section>
-    </main>
+    </>
   )
 }

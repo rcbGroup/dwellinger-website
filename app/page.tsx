@@ -123,9 +123,71 @@ const stats = [
   { number: '£0', label: 'Free to get started' },
 ]
 
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Dwellinger',
+  description: "The UK's national design, build, and property intelligence platform. Find verified contractors with Builder Score™, get AI-powered estimates, and manage your project from first idea to completion.",
+  url: 'https://dwellinger.co.uk',
+  logo: 'https://dwellinger.co.uk/icons/icon-192x192.png',
+  image: 'https://dwellinger.co.uk/icons/icon-512x512.png',
+  telephone: '+447359872594',
+  email: 'info@dwellinger.co.uk',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '347 Barking Road',
+    addressLocality: 'London',
+    postalCode: 'E13 8EE',
+    addressCountry: 'GB',
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'United Kingdom',
+  },
+  serviceType: ['Design and Build', 'Construction Estimating', 'Principal Contractor', 'Project Management', 'Quantity Surveying'],
+  sameAs: ['https://www.checkatrade.com'],
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '18:00' },
+  ],
+  priceRange: '£',
+  currenciesAccepted: 'GBP',
+  paymentAccepted: 'Cash, Bank Transfer, Card',
+}
+
+const webAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Dwellinger Platform',
+  url: 'https://dwellinger.co.uk',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  description: "AI-powered construction platform. Builder Score™ contractor trust ratings, project estimating, planning intelligence, and property investment tools.",
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'GBP',
+    description: 'Free to get started. Premium plans available.',
+  },
+  featureList: [
+    'Builder Score™ contractor verification',
+    'AI-powered construction estimates',
+    'Planning application intelligence',
+    'Project management tools',
+    'Property investment calculators',
+  ],
+}
+
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+      />
       <Nav />
       <main>
         {/* ─── HERO ─── */}
@@ -164,7 +226,7 @@ export default function HomePage() {
               <div className="relative w-16 h-16 flex-shrink-0">
                 <svg viewBox="0 0 64 64" className="-rotate-90 w-full h-full">
                   <circle cx="32" cy="32" r="28" fill="none" stroke="#2A2A2A" strokeWidth="4" />
-                  <circle cx="32" cy="32" r="28" fill="none" stroke="#F59E0B" strokeWidth="4"
+                  <circle cx="32" cy="32" r="28" fill="none" stroke="#C4773B" strokeWidth="4"
                     strokeLinecap="round" strokeDasharray="175.9" strokeDashoffset="15.8"
                     style={{ transition: 'stroke-dashoffset 1.2s ease' }} />
                 </svg>
@@ -414,8 +476,9 @@ export default function HomePage() {
               Ready to take control of your project?
             </h2>
             <p className="text-text-inverse/70 text-lg mb-8 max-w-xl mx-auto">
-              Join thousands of homeowners, contractors, and investors who use Dwellinger to plan,
-              price, and deliver better construction projects.
+              Be among the first on the UK&apos;s most advanced construction intelligence platform.
+              Plan, price, and deliver better projects — with verified contractors, AI estimates,
+              and real data behind every decision.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/register" className="bg-text-inverse text-amber font-bold px-8 py-4 rounded-sm hover:bg-text-inverse/90 transition-colors inline-flex items-center gap-2">

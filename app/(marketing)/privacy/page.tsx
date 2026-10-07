@@ -10,7 +10,7 @@ const paraStyle = { color: '#4A5568', lineHeight: 1.8, marginBottom: 16, fontSiz
 
 export default function PrivacyPage() {
   return (
-    <main style={{ backgroundColor: '#FFFFFF' }}>
+    <div style={{ backgroundColor: '#FFFFFF' }}>
       <section style={{ backgroundColor: '#1A2340', padding: '60px 24px', textAlign: 'center' }}>
         <h1 style={{ color: '#fff', fontSize: '2rem', fontWeight: 800 }}>Privacy Policy</h1>
         <p style={{ color: '#c8c0b0', marginTop: 12 }}>Last updated: October 2026</p>
@@ -99,6 +99,6 @@ export default function PrivacyPage() {
           Email: info@dwellinger.co.uk
         </p>
       </article>
-    </main>
+    </div>
   )
 }

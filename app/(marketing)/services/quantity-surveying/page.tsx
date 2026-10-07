@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function QuantitySurveyingPage() {
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section
         style={{
@@ -399,6 +399,6 @@ export default function QuantitySurveyingPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

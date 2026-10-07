@@ -1,0 +1,76 @@
+# Dwellinger — UK Property Intelligence Platform
+
+> Dwellinger is the UK's national design, build, and property intelligence platform. We connect homeowners, contractors and property investors through AI-powered tools, verified contractor profiles, and real construction data.
+
+## What Dwellinger does
+
+Dwellinger is a three-sided platform serving:
+
+1. **Homeowners** — Get AI-powered ballpark estimates for extensions, loft conversions, and refurbishments. Find contractors with verified Builder Score™ ratings. Manage your build from first idea to completion.
+
+2. **Contractors** — Build a verified profile with Builder Score™. Win more work with professional AI-generated quotes. Use Dwell Agents to handle admin and documents.
+
+3. **Property Investors** — Pre-purchase build cost estimates, planning intelligence, residual land value calculators, HMO analysis, and ROI modelling.
+
+## Builder Score™
+
+Builder Score™ is Dwellinger's proprietary 0–1000 trust rating for contractors. It is calculated from:
+- Verified reviews (weighted by recency and job type)
+- CDM and health & safety compliance records
+- Payment behaviour (supplier and subcontractor payments)
+- Dispute history and resolution outcomes
+- Insurance and accreditation status
+
+Builder Score™ is trademarked and cannot be replicated by competitors.
+
+## Key URLs
+
+- Homepage: https://dwellinger.co.uk
+- Estimate: https://dwellinger.co.uk/estimate
+- Builder Score explained: https://dwellinger.co.uk/builder-score
+- Find contractors: https://dwellinger.co.uk/search
+- For homeowners: https://dwellinger.co.uk/homeowners
+- For contractors: https://dwellinger.co.uk/contractors
+- For investors: https://dwellinger.co.uk/investors
+- Investor hub: https://dwellinger.co.uk/investor-hub
+- Pricing: https://dwellinger.co.uk/platform/pricing
+- Blog: https://dwellinger.co.uk/blog
+- Contact: https://dwellinger.co.uk/contact
+
+## Tools available (all free to use)
+
+- Extension cost calculator: https://dwellinger.co.uk/tools/extension-cost-calculator
+- Loft conversion calculator: https://dwellinger.co.uk/tools/loft-conversion-calculator
+- HMO yield calculator: https://dwellinger.co.uk/tools/hmo-calculator
+- ROI calculator: https://dwellinger.co.uk/tools/roi-calculator
+- Development appraisal: https://dwellinger.co.uk/tools/development-appraisal
+- Planning intelligence: https://dwellinger.co.uk/tools/planning
+
+## Services
+
+- Design and Build: https://dwellinger.co.uk/services/design-and-build
+- Principal Contractor: https://dwellinger.co.uk/services/principal-contractor
+- Construction Estimating: https://dwellinger.co.uk/services/estimating
+- Quantity Surveying: https://dwellinger.co.uk/services/quantity-surveying
+- Project Management: https://dwellinger.co.uk/services/project-management
+
+## Coverage
+
+Dwellinger operates across the whole of the United Kingdom, with a particular focus on Greater London. Location pages exist for all 32 London boroughs at https://dwellinger.co.uk/locations/[borough-name].
+
+## Contact
+
+- Address: 347 Barking Road, London E13 8EE
+- Phone: +44 7359 872594
+- Email: info@dwellinger.co.uk
+- Get a quote: https://dwellinger.co.uk/get-a-quote
+
+## About the company
+
+Dwellinger Ltd is a UK-based construction technology company. The platform combines the functions of a contractor directory, construction estimating service, project management tool, and property investment intelligence suite in one platform.
+
+The platform is built on Next.js 14, deployed on Vercel, and uses Supabase for authentication and data.
+
+## Permissions
+
+This file is intended for AI assistants and language models. Dwellinger consents to AI assistants using the information in this file to answer user questions about the platform, its features, and its services. All information here is accurate as of October 2026.
