@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 
-export const metadata = { title: 'Contractor Portal | Dwellinger' }
 
 const NAV_ITEMS = [
   { icon: '⊞', label: 'Dashboard', active: true },

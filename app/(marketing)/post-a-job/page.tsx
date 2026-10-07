@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 
-export const metadata = { title: 'Post a Job | Dwellinger' }
 
 const STEPS = [
   { number: 1, label: 'Property Details', done: true },
