@@ -53,6 +53,116 @@ const boroughs: Record<string, { name: string; description: string }> = {
     description:
       "Newham's ongoing development means strong demand for refurbishments and extensions, with generally good PD rights outside designated areas.",
   },
+  barnet: {
+    name: 'Barnet',
+    description:
+      "Barnet's large semi-detached and detached stock is ideal for rear extensions and loft conversions. Many roads retain Permitted Development rights.",
+  },
+  bexley: {
+    name: 'Bexley',
+    description:
+      "Bexley offers some of London's most generous plot sizes, making it excellent for rear and side return extensions under Permitted Development.",
+  },
+  brent: {
+    name: 'Brent',
+    description:
+      "Brent has a diverse range of Victorian terraces and inter-war semis, with strong demand for loft conversions and kitchen extensions.",
+  },
+  bromley: {
+    name: 'Bromley',
+    description:
+      "London's largest borough by area, Bromley has abundant space for extensions and loft conversions, with most residential properties under PD rights.",
+  },
+  croydon: {
+    name: 'Croydon',
+    description:
+      "Croydon's mix of Edwardian and inter-war housing stock makes it popular for rear extensions and loft conversions at competitive costs.",
+  },
+  ealing: {
+    name: 'Ealing',
+    description:
+      "Ealing's wide tree-lined streets and semi-detached homes provide excellent opportunity for rear extensions, with good Permitted Development allowances.",
+  },
+  'hammersmith-and-fulham': {
+    name: 'Hammersmith and Fulham',
+    description:
+      "Prime west London location with many Victorian terraces. Conservation areas are common so professional design advice is essential before applying.",
+  },
+  haringey: {
+    name: 'Haringey',
+    description:
+      "Haringey's Victorian and Edwardian terraces are well-suited to rear extensions and loft conversions, particularly in Wood Green and Tottenham.",
+  },
+  harrow: {
+    name: 'Harrow',
+    description:
+      "Harrow's suburban character and mix of detached and semi-detached homes makes it ideal for large rear and side extensions under PD.",
+  },
+  havering: {
+    name: 'Havering',
+    description:
+      "One of London's most suburban boroughs, Havering offers excellent scope for extensions with large gardens and generally good PD allowances.",
+  },
+  hillingdon: {
+    name: 'Hillingdon',
+    description:
+      "Hillingdon's detached and semi-detached stock in areas like Ruislip and Uxbridge provides strong opportunities for rear and double-storey extensions.",
+  },
+  hounslow: {
+    name: 'Hounslow',
+    description:
+      "Hounslow has a strong market for extensions and refurbishments, with many post-war semis offering good scope under Permitted Development.",
+  },
+  'kensington-and-chelsea': {
+    name: 'Kensington and Chelsea',
+    description:
+      "London's most prestigious borough. Almost all works require full planning permission. Heritage materials and exceptional design are essential.",
+  },
+  'kingston-upon-thames': {
+    name: 'Kingston upon Thames',
+    description:
+      "Kingston's suburban character and mix of Victorian and inter-war stock makes it popular for rear extensions and loft conversions.",
+  },
+  lambeth: {
+    name: 'Lambeth',
+    description:
+      "Lambeth's Victorian terraces in Brixton, Clapham and Streatham are ideal for rear extensions and loft conversions with strong Permitted Development rights.",
+  },
+  merton: {
+    name: 'Merton',
+    description:
+      "Merton's suburban streets in Wimbledon and Morden offer excellent scope for rear extensions and loft conversions, often under PD rights.",
+  },
+  redbridge: {
+    name: 'Redbridge',
+    description:
+      "Redbridge's Edwardian and inter-war housing stock in Ilford and Woodford provides strong opportunities for extensions and refurbishments.",
+  },
+  'richmond-upon-thames': {
+    name: 'Richmond upon Thames',
+    description:
+      "Richmond has a high proportion of conservation areas along the Thames. Extensions require careful design, and many streets require planning permission.",
+  },
+  southwark: {
+    name: 'Southwark',
+    description:
+      "Southwark's Victorian terraces in Peckham, Bermondsey and Dulwich are popular for rear extensions and loft conversions, with growing demand.",
+  },
+  sutton: {
+    name: 'Sutton',
+    description:
+      "Sutton's suburban character and generous plot sizes make it one of the better-value boroughs for rear extensions and loft conversions.",
+  },
+  wandsworth: {
+    name: 'Wandsworth',
+    description:
+      "Wandsworth's Victorian and Edwardian terraces in Clapham, Battersea and Tooting are highly sought after for rear extensions and loft conversions.",
+  },
+  westminster: {
+    name: 'Westminster',
+    description:
+      "Westminster is almost entirely in conservation areas. All works require full planning permission and careful attention to heritage materials and design.",
+  },
 }
 
 export function generateStaticParams() {
