@@ -34,6 +34,10 @@ const navItems: NavItem[] = [
     dropdown: [
       { label: 'Extension Calculator', href: '/tools/extension-cost-calculator' },
       { label: 'Loft Calculator', href: '/tools/loft-conversion-calculator' },
+      { label: 'HMO Calculator', href: '/tools/hmo-calculator' },
+      { label: 'ROI Calculator', href: '/tools/roi-calculator' },
+      { label: 'Development Appraisal', href: '/tools/development-appraisal' },
+      { label: 'Planning Intelligence', href: '/tools/planning' },
     ],
   },
   {
