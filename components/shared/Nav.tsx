@@ -63,10 +63,11 @@ const navItems: NavItem[] = [
   { label: 'Blog', href: '/blog' },
 ]
 
-const THEMES: { value: Theme; label: string; Icon: React.FC<{ size?: number }> }[] = [
-  { value: 'dark',  label: 'Dark',     Icon: Moon      },
-  { value: 'mid',   label: 'Twilight', Icon: SunMedium },
-  { value: 'light', label: 'Light',    Icon: Sun       },
+// Let TypeScript infer the Icon type from lucide-react (ForwardRefExoticComponent)
+const THEMES = [
+  { value: 'dark' as Theme,  label: 'Dark',     Icon: Moon      },
+  { value: 'mid' as Theme,   label: 'Twilight', Icon: SunMedium },
+  { value: 'light' as Theme, label: 'Light',    Icon: Sun       },
 ]
 
 function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () => void }) {
@@ -117,7 +118,7 @@ function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () =
 }
 
 /**
- * ThemePill — 3-button inline segment, always visible on every device.
+ * ThemePill — 3-button inline segment always visible on every device.
  * Moon = Dark / SunMedium = Twilight / Sun = Light
  */
 function ThemePill() {
@@ -299,7 +300,7 @@ export default function Nav() {
           <Logo size="sm" />
         </div>
 
-        {/* Desktop nav links — no inline display property; Tailwind hidden/md:flex controls visibility */}
+        {/* Desktop nav links — no inline display prop; Tailwind hidden/md:flex controls visibility */}
         <div
           className="hidden md:flex"
           style={{ alignItems: 'center', gap: 4, flex: 1, justifyContent: 'center' }}
