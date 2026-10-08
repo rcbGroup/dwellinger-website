@@ -63,12 +63,13 @@ const navItems: NavItem[] = [
   { label: 'Blog', href: '/blog' },
 ]
 
-// Let TypeScript infer the Icon type from lucide-react (ForwardRefExoticComponent)
 const THEMES = [
   { value: 'dark' as Theme,  label: 'Dark',     Icon: Moon      },
   { value: 'mid' as Theme,   label: 'Twilight', Icon: SunMedium },
   { value: 'light' as Theme, label: 'Light',    Icon: Sun       },
 ]
+
+// ── Helpers ─────────────────────────────────────────────────────────────────────────────
 
 function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () => void }) {
   return (
@@ -117,9 +118,11 @@ function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () =
   )
 }
 
+// ── Theme controls ────────────────────────────────────────────────────────────────────────
+
 /**
- * ThemePill — 3-button inline segment always visible on every device.
- * Moon = Dark / SunMedium = Twilight / Sun = Light
+ * ThemePill — compact 3-button segment, always visible in the nav bar.
+ * Used on ALL screen sizes. Replaces the dropdown ThemeToggle on mobile.
  */
 function ThemePill() {
   const { theme, setTheme } = useTheme()
@@ -164,6 +167,44 @@ function ThemePill() {
   )
 }
 
+// ── Language control ─────────────────────────────────────────────────────────────────────
+
+// Map our lang codes to Google Translate language codes
+const GT_LANG_MAP: Record<string, string> = {
+  en: 'en', ro: 'ro', pl: 'pl', pt: 'pt', it: 'it',
+  es: 'es', de: 'de', fr: 'fr', ru: 'ru', bg: 'bg',
+  hu: 'hu', ar: 'ar', zh: 'zh-CN',
+}
+
+function triggerGoogleTranslate(gtCode: string) {
+  const attempt = () => {
+    const combo = document.querySelector<HTMLSelectElement>('.goog-te-combo')
+    if (combo) {
+      combo.value = gtCode
+      combo.dispatchEvent(new Event('change', { bubbles: true }))
+      return true
+    }
+    return false
+  }
+  if (!attempt()) {
+    // Widget not ready yet — poll until it is (max 3s)
+    let tries = 0
+    const interval = setInterval(() => {
+      if (attempt() || ++tries > 30) clearInterval(interval)
+    }, 100)
+  }
+}
+
+function restoreEnglish() {
+  // Clear googtrans cookies
+  const host = window.location.hostname
+  const exp = 'Thu, 01 Jan 1970 00:00:00 UTC'
+  document.cookie = `googtrans=; expires=${exp}; path=/`
+  document.cookie = `googtrans=; expires=${exp}; path=/; domain=${host}`
+  document.cookie = `googtrans=; expires=${exp}; path=/; domain=.${host}`
+  window.location.reload()
+}
+
 function LangToggle() {
   const { lang, setLang } = useLang()
   const [open, setOpen] = useState(false)
@@ -176,6 +217,16 @@ function LangToggle() {
     document.addEventListener('mousedown', handler)
     return () => document.removeEventListener('mousedown', handler)
   }, [])
+
+  const handleSelect = (code: Lang) => {
+    setLang(code)
+    setOpen(false)
+    if (code === 'en') {
+      restoreEnglish()
+    } else {
+      triggerGoogleTranslate(GT_LANG_MAP[code] ?? code)
+    }
+  }
 
   const langList = Object.entries(LANGUAGES) as [Lang, { label: string; native: string }][]
 
@@ -223,7 +274,7 @@ function LangToggle() {
           {langList.map(([code, info]) => (
             <button
               key={code}
-              onClick={() => { setLang(code); setOpen(false) }}
+              onClick={() => handleSelect(code)}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -249,6 +300,8 @@ function LangToggle() {
   )
 }
 
+// ── Nav ───────────────────────────────────────────────────────────────────────────────────
+
 export default function Nav() {
   const [open, setOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
@@ -265,6 +318,7 @@ export default function Nav() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
+  // Close mobile menu on resize to desktop
   useEffect(() => {
     const handler = () => { if (window.innerWidth >= 768) setOpen(false) }
     window.addEventListener('resize', handler)
@@ -283,6 +337,7 @@ export default function Nav() {
         backdropFilter: 'blur(12px)',
       }}
     >
+      {/* ── Top bar ─────────────────────────────────────────────────────────────────── */}
       <nav
         style={{
           maxWidth: 1200,
@@ -300,7 +355,7 @@ export default function Nav() {
           <Logo size="sm" />
         </div>
 
-        {/* Desktop nav links — no inline display prop; Tailwind hidden/md:flex controls visibility */}
+        {/* Desktop nav links — NOTE: NO inline display:flex here; Tailwind hidden/md:flex controls it */}
         <div
           className="hidden md:flex"
           style={{ alignItems: 'center', gap: 4, flex: 1, justifyContent: 'center' }}
@@ -419,7 +474,7 @@ export default function Nav() {
         </div>
       </nav>
 
-      {/* Mobile drawer */}
+      {/* ── Mobile drawer ────────────────────────────────────────────────────────────────────── */}
       {open && (
         <div
           className="md:hidden"
@@ -429,6 +484,8 @@ export default function Nav() {
           }}
         >
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: '8px 16px 16px' }}>
+
+            {/* Nav items */}
             {navItems.map((item) => {
               if (item.dropdown) {
                 const expanded = mobileExpanded === item.label
@@ -499,6 +556,7 @@ export default function Nav() {
               )
             })}
 
+            {/* CTA buttons */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, paddingTop: 14 }}>
               <Link
                 href="/login"
