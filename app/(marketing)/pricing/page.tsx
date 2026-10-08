@@ -143,7 +143,7 @@ export default function PricingPage() {
       <section className="pt-16 pb-12 bg-bg text-center">
         <div className="container mx-auto">
           <p className="section-tag mb-3">Pricing</p>
-          <h1 className="font-display text-h1 text-white mb-4">Simple, transparent pricing</h1>
+          <h1 className="font-display text-h1 text-text mb-4">Simple, transparent pricing</h1>
           <p className="text-text-secondary text-lg max-w-xl mx-auto mb-4">
             Start free for 14 days. No credit card required. Cancel anytime.
           </p>
@@ -168,7 +168,7 @@ export default function PricingPage() {
                   </div>
                 )}
                 <div className="mb-6">
-                  <div className="text-white font-bold text-lg">{plan.name}</div>
+                  <div className="text-text font-bold text-lg">{plan.name}</div>
                   <div className="flex items-end gap-1 mt-1 mb-1">
                     <span className="text-amber font-display font-bold text-4xl">£{plan.price}</span>
                     <span className="text-text-muted text-sm mb-1.5">/month</span>
@@ -215,7 +215,7 @@ export default function PricingPage() {
                 <tr className="border-b border-border">
                   <th className="text-left text-text-muted font-medium pb-4 pr-6 w-1/3">Feature</th>
                   {plans.map((p) => (
-                    <th key={p.name} className="text-center pb-4 font-bold text-white">
+                    <th key={p.name} className="text-center pb-4 font-bold text-text">
                       {p.name}
                       <div className="text-amber font-normal text-xs mt-0.5">£{p.price}/mo</div>
                     </th>
@@ -250,7 +250,7 @@ export default function PricingPage() {
             {addons.map((a) => (
               <div key={a.name} className="card p-5">
                 <div className="flex justify-between items-start mb-2">
-                  <span className="text-white font-semibold text-sm">{a.name}</span>
+                  <span className="text-text font-semibold text-sm">{a.name}</span>
                   <span className="text-amber font-bold text-sm flex-shrink-0 ml-2">{a.price}</span>
                 </div>
                 <p className="text-text-muted text-xs leading-relaxed">{a.desc}</p>
@@ -288,7 +288,7 @@ export default function PricingPage() {
               },
             ].map((faq) => (
               <div key={faq.q} className="card p-5">
-                <h3 className="text-white font-semibold text-sm mb-2">{faq.q}</h3>
+                <h3 className="text-text font-semibold text-sm mb-2">{faq.q}</h3>
                 <p className="text-text-secondary text-sm leading-relaxed">{faq.a}</p>
               </div>
             ))}

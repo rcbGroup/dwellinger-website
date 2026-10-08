@@ -20,12 +20,6 @@ const reviews = [
     text: 'Exceptional Service and Outstanding Design! Working with the team at Dwellinger has been an absolute pleasure. They took our vision for a residential project in London and brought it to life in ways that exceeded our expectations. Their professionalism, creativity, and attention to detail were evident throughout the entire process. Communication was clear and timely, and they provided innovative solutions that added real value to the final design. If you\'re looking for architects who combine functionality with beautiful design, I highly recommend Dwellinger. A truly top-tier experience!',
   },
   {
-    name: 'Sandy Parmar',
-    date: '23 Sep 2024',
-    rating: 5,
-    text: 'Vasi was very professional from the moment. I saw him very replied quite engageable. You could tell him what you need and he will give you his ideas as well so I\'ll find that was a very professional of him to do that and things was done on time. He done my plan and sent for council to give permission for my work to go ahead. Overall, Vasi was very pleasant and very professional.',
-  },
-  {
     name: 'Sean Savage',
     date: '22 Sep 2024',
     rating: 5,
@@ -126,7 +120,7 @@ const features = [
 
 const stats = [
   { number: '1,972', label: 'Knowledge articles' },
-  { number: '435+', label: 'Platform features built' },
+  { number: '14-day', label: 'Free trial — no card' },
   { number: '0–1000', label: 'Builder Score™ range' },
   { number: '£0', label: 'Free to get started' },
 ]
@@ -361,32 +355,33 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ─── WHAT WE DO ─── */}
+        {/* ─── HOW DWELLINGER WORKS ─── */}
         <section className="py-20 bg-bg-surface border-y border-border">
           <div className="container mx-auto">
             <div className="text-center mb-12">
-              <p className="section-tag mb-3">A to Z delivery</p>
-              <h2 className="section-title">What We Do</h2>
+              <p className="section-tag mb-3">The platform journey</p>
+              <h2 className="section-title">From first idea to project complete</h2>
               <p className="text-text-secondary mt-4 max-w-xl mx-auto">
-                Principal contractor delivery from first conversation to final sign-off.
-                One point of accountability — design, estimating, build, and maintenance.
+                Dwellinger guides you through every stage — with verified contractors, AI-powered
+                estimates, and real data behind every decision.
               </p>
             </div>
             <div className="space-y-3 max-w-2xl mx-auto">
               {[
-                { icon: '📐', title: 'Design & Build', desc: 'Concept through completion — one point of accountability for design, specification, and delivery.' },
-                { icon: '🏛️', title: 'Principal Contractor', desc: 'CDM-aware coordination, multi-trade management, and full delivery control from mobilisation to handover.' },
-                { icon: '📊', title: 'Estimating & QS', desc: 'QS-reviewed cost plans from £95 — Outline, Standard, Full, and Premium packages to suit your stage.' },
-                { icon: '🔧', title: 'Maintenance', desc: 'Planned and reactive maintenance for residential landlords and rental portfolio owners.' },
-              ].map((service) => (
+                { icon: '📐', title: 'Plan', desc: 'Describe your project and get an AI-powered ballpark estimate in seconds — grounded in real UK project data, not guesswork.' },
+                { icon: '💷', title: 'Price', desc: 'Commission a QS-reviewed cost plan from £95. Five tiers — Outline through to Premium — for every project stage.' },
+                { icon: '🔍', title: 'Compare', desc: 'Search verified contractors ranked by Builder Score™. Filter by trade, location, score tier, and project type.' },
+                { icon: '📋', title: 'Appoint', desc: 'Issue a contract, set milestones, and agree payment terms — all on-platform. No paperwork outside the system.' },
+                { icon: '📊', title: 'Manage', desc: 'Documents, communication, payments, and sign-off — one dashboard from mobilisation to final handover.' },
+              ].map((step) => (
                 <div
-                  key={service.title}
+                  key={step.title}
                   className="flex items-center gap-4 p-4 bg-bg-raised rounded-lg border-l-4 border-amber"
                 >
-                  <div className="text-2xl flex-shrink-0">{service.icon}</div>
+                  <div className="text-2xl flex-shrink-0">{step.icon}</div>
                   <div>
-                    <div className="font-bold text-text text-base">{service.title}</div>
-                    <div className="text-text-secondary text-sm mt-1">{service.desc}</div>
+                    <div className="font-bold text-text text-base">{step.title}</div>
+                    <div className="text-text-secondary text-sm mt-1">{step.desc}</div>
                   </div>
                 </div>
               ))}
@@ -435,14 +430,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ─── REAL PROJECTS ─── */}
+        {/* ─── PROJECT EXAMPLES ─── */}
         <section className="py-20 bg-bg-surface border-y border-border">
           <div className="container mx-auto">
             <div className="text-center mb-12">
-              <p className="section-tag mb-3">Real projects, real results</p>
-              <h2 className="section-title">What gets built on Dwellinger</h2>
+              <p className="section-tag mb-3">Project examples</p>
+              <h2 className="section-title">The kinds of projects Dwellinger handles</h2>
               <p className="text-text-secondary mt-4 max-w-xl mx-auto">
-                From loft conversions in East London to commercial fit-outs in the City — verified contractors, Builder Score™ tracked throughout.
+                From loft conversions in East London to full refurbishments in Islington — illustrative examples of projects managed through the platform.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-5">
@@ -484,6 +479,9 @@ export default function HomePage() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={project.img} alt={`${project.type} ${project.location}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
                     <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to top, ${project.color}CC 0%, rgba(0,0,0,0.2) 100%)` }} />
+                    <div style={{ position: 'absolute', top: 10, left: 12, background: 'rgba(0,0,0,0.65)', borderRadius: 4, padding: '2px 8px', backdropFilter: 'blur(4px)' }}>
+                      <div style={{ color: '#C4773B', fontWeight: 700, fontSize: '0.55rem', textTransform: 'uppercase', letterSpacing: '0.12em' }}>Demo project</div>
+                    </div>
                     <div style={{ position: 'absolute', bottom: 12, left: 16, right: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                       <div>
                         <div style={{ color: '#fff', fontWeight: 700, fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.85 }}>{project.type}</div>

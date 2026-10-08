@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle, Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Builder Score™ — The UK\'s First Contractor Trust Rating',
+  title: 'Builder Score™ — The UK Contractor Trust Rating',
   description: 'Builder Score™ is a 0–1000 proprietary trust rating for contractors. Calculated from verified reviews, compliance records, dispute history, and payment behaviour.',
 }
 
@@ -56,7 +56,8 @@ const tiers = [
   { name: 'Platinum', range: '900–1000', colour: 'bg-amber text-text-inverse', desc: 'Elite tier. Exceptional record across all categories.' },
   { name: 'Gold', range: '700–899', colour: 'bg-yellow-400 text-yellow-900', desc: 'Strong performer with a verified track record.' },
   { name: 'Silver', range: '500–699', colour: 'bg-zinc-300 text-zinc-800', desc: 'Solid contractor — room to improve in one or two areas.' },
-  { name: 'Bronze', range: '0–499', colour: 'bg-amber-800 text-white', desc: 'New to the platform or flagged issues to resolve.' },
+  { name: 'Bronze', range: '0–499', colour: 'bg-amber-800 text-white', desc: 'Active profile — building track record or resolving flagged issues.' },
+  { name: 'Unrated', range: 'New', colour: 'bg-bg-raised text-text-secondary border border-border', desc: 'New contractor — score generated after first verified review and compliance check are complete.' },
 ]
 
 export default function BuilderScorePage() {
@@ -72,9 +73,9 @@ export default function BuilderScorePage() {
             <Shield className="w-8 h-8 text-amber" />
             <p className="section-tag">Builder Score™ — Trademarked</p>
           </div>
-          <h1 className="font-display text-h1 text-white max-w-3xl mb-6">
-            The UK&apos;s first real{' '}
-            <span className="text-amber">contractor trust rating</span>
+          <h1 className="font-display text-h1 text-text max-w-3xl mb-6">
+            The UK contractor trust rating{' '}
+            <span className="text-amber">built for construction</span>
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mb-8 leading-relaxed">
             Not just stars that anyone can fake. Builder Score™ is a 0–1000 proprietary algorithm
@@ -101,8 +102,8 @@ export default function BuilderScorePage() {
               <h2 className="section-title mb-4">Six components. One number. Full transparency.</h2>
               <p className="text-text-secondary mb-6 leading-relaxed">
                 Every contractor sees their score breakdown. They know exactly which category is
-                pulling their score down and what to do to improve it. The algorithm weighting is
-                not disclosed publicly — but the categories are.
+                pulling their score down and what to do to improve it. The published weightings
+                are shown below — each component independently assessed and verified.
               </p>
               <p className="text-text-secondary leading-relaxed">
                 Scores are recalculated continuously as new reviews are verified, compliance
@@ -114,7 +115,7 @@ export default function BuilderScorePage() {
                 <div key={c.label} className="card-raised p-4">
                   <div className="flex justify-between items-center mb-1.5">
                     <div>
-                      <span className="text-white text-sm font-semibold">{c.label}</span>
+                      <span className="text-text text-sm font-semibold">{c.label}</span>
                       <span className="text-text-muted text-xs ml-2">({c.weight})</span>
                     </div>
                     <span className="text-amber text-sm font-bold">{c.example}/{c.max}</span>
@@ -142,15 +143,15 @@ export default function BuilderScorePage() {
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <p className="section-tag mb-3">Score tiers</p>
-            <h2 className="section-title">Four tiers, clear standards</h2>
+            <h2 className="section-title">Five tiers, clear standards</h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-5">
+          <div className="grid md:grid-cols-5 gap-4">
             {tiers.map((t) => (
               <div key={t.name} className="card p-6">
                 <div className={`badge text-sm font-bold px-4 py-1.5 mb-4 ${t.colour}`}>
                   {t.name}
                 </div>
-                <div className="text-white font-display font-bold text-xl mb-2">{t.range}</div>
+                <div className="text-text font-display font-bold text-xl mb-2">{t.range}</div>
                 <p className="text-text-muted text-sm">{t.desc}</p>
               </div>
             ))}
@@ -162,7 +163,7 @@ export default function BuilderScorePage() {
       <section className="py-20 bg-bg-surface border-y border-border">
         <div className="container mx-auto max-w-3xl text-center">
           <p className="section-tag mb-3">Why it matters</p>
-          <h2 className="section-title mb-6">No competitor can replicate this quickly</h2>
+          <h2 className="section-title mb-6">Construction-specific trust verification</h2>
           <p className="text-text-secondary text-lg leading-relaxed mb-8">
             Checkatrade shows reviews. Companies House shows registration. But neither tells you
             whether a contractor pays their subcontractors on time, has their CDM documents in
@@ -172,7 +173,7 @@ export default function BuilderScorePage() {
           <div className="grid grid-cols-3 gap-6 mb-10">
             {[
               { v: 'Trademarked™', l: 'Legally protected' },
-              { v: 'Proprietary', l: 'Algorithm not disclosed' },
+              { v: 'Transparent', l: 'Published weightings' },
               { v: 'Continuous', l: 'Updated in real time' },
             ].map((s) => (
               <div key={s.l} className="card-raised p-4">
@@ -193,7 +194,7 @@ export default function BuilderScorePage() {
           <h2 className="section-title mb-4">Are you a contractor?</h2>
           <p className="text-text-secondary mb-8 max-w-lg mx-auto">
             Your Builder Score™ is calculated automatically when you join Dwellinger. Connect your
-            existing reviews, verify your compliance documents, and your score is live within 24 hours.
+            existing reviews, verify your compliance documents, and your score is live within one working day.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/register?type=contractor" className="btn-primary-lg">
