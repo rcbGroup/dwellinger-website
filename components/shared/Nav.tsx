@@ -63,21 +63,11 @@ const navItems: NavItem[] = [
   { label: 'Blog', href: '/blog' },
 ]
 
-const THEMES: { value: Theme; label: string; Icon: React.FC<{ className?: string }> }[] = [
-  { value: 'dark', label: 'Dark', Icon: Moon },
-  { value: 'mid', label: 'Twilight', Icon: SunMedium },
-  { value: 'light', label: 'Light', Icon: Sun },
+const THEMES: { value: Theme; label: string; Icon: React.FC<{ size?: number }> }[] = [
+  { value: 'dark',  label: 'Dark',     Icon: Moon      },
+  { value: 'mid',   label: 'Twilight', Icon: SunMedium },
+  { value: 'light', label: 'Light',    Icon: Sun       },
 ]
-
-function dropdownBg() {
-  return 'var(--color-bg-surface)'
-}
-function dropdownBorder() {
-  return '1px solid var(--color-border)'
-}
-function dropdownText() {
-  return 'var(--color-text-secondary)'
-}
 
 function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () => void }) {
   return (
@@ -86,8 +76,8 @@ function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () =
         position: 'absolute',
         top: '100%',
         left: 0,
-        backgroundColor: dropdownBg(),
-        border: dropdownBorder(),
+        backgroundColor: 'var(--color-bg-surface)',
+        border: '1px solid var(--color-border)',
         borderRadius: 8,
         padding: '8px 0',
         minWidth: 210,
@@ -104,21 +94,19 @@ function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () =
           style={{
             display: 'block',
             padding: '10px 16px',
-            color: dropdownText(),
+            color: 'var(--color-text-secondary)',
             textDecoration: 'none',
             fontSize: '0.875rem',
             fontWeight: 500,
             transition: 'color 0.15s, background 0.15s',
           }}
           onMouseEnter={(e) => {
-            const el = e.currentTarget
-            el.style.color = 'var(--color-text)'
-            el.style.backgroundColor = 'var(--color-bg-raised)'
+            e.currentTarget.style.color = 'var(--color-text)'
+            e.currentTarget.style.backgroundColor = 'var(--color-bg-raised)'
           }}
           onMouseLeave={(e) => {
-            const el = e.currentTarget
-            el.style.color = dropdownText()
-            el.style.backgroundColor = 'transparent'
+            e.currentTarget.style.color = 'var(--color-text-secondary)'
+            e.currentTarget.style.backgroundColor = 'transparent'
           }}
         >
           {item.label}
@@ -128,85 +116,49 @@ function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () =
   )
 }
 
-function ThemeToggle() {
+/**
+ * ThemePill — 3-button inline segment, always visible on every device.
+ * Moon = Dark / SunMedium = Twilight / Sun = Light
+ */
+function ThemePill() {
   const { theme, setTheme } = useTheme()
-  const [open, setOpen] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
-    }
-    document.addEventListener('mousedown', handler)
-    return () => document.removeEventListener('mousedown', handler)
-  }, [])
-
-  const current = THEMES.find((t) => t.value === theme) ?? THEMES[0]
-  const Icon = current.Icon
-
   return (
-    <div ref={ref} style={{ position: 'relative' }}>
-      <button
-        onClick={() => setOpen(!open)}
-        title={`Theme: ${current.label}`}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 4,
-          padding: '6px 8px',
-          background: 'var(--color-bg-raised)',
-          border: '1px solid var(--color-border)',
-          borderRadius: 6,
-          cursor: 'pointer',
-          color: 'var(--color-text-secondary)',
-          fontSize: '0.75rem',
-          fontWeight: 600,
-        }}
-      >
-        <Icon className="w-3.5 h-3.5" />
-      </button>
-      {open && (
-        <div
+    <div
+      style={{
+        display: 'flex',
+        gap: 2,
+        background: 'var(--color-bg-raised)',
+        border: '1px solid var(--color-border)',
+        borderRadius: 8,
+        padding: 2,
+        flexShrink: 0,
+      }}
+      title="Change brightness"
+    >
+      {THEMES.map(({ value, label, Icon }) => (
+        <button
+          key={value}
+          onClick={() => setTheme(value)}
+          aria-label={label}
+          title={label}
           style={{
-            position: 'absolute',
-            top: '100%',
-            right: 0,
-            marginTop: 4,
-            backgroundColor: 'var(--color-bg-surface)',
-            border: '1px solid var(--color-border)',
-            borderRadius: 8,
-            padding: '6px 0',
-            minWidth: 130,
-            zIndex: 200,
-            boxShadow: 'var(--card-shadow-hover)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 28,
+            height: 28,
+            borderRadius: 6,
+            background: theme === value ? 'var(--amber)' : 'transparent',
+            border: 'none',
+            cursor: 'pointer',
+            color: theme === value ? '#fff' : 'var(--color-text-secondary)',
+            transition: 'background 0.15s, color 0.15s',
+            flexShrink: 0,
           }}
         >
-          {THEMES.map(({ value, label, Icon: TIcon }) => (
-            <button
-              key={value}
-              onClick={() => { setTheme(value); setOpen(false) }}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 8,
-                width: '100%',
-                padding: '8px 14px',
-                background: theme === value ? 'var(--color-bg-raised)' : 'none',
-                border: 'none',
-                cursor: 'pointer',
-                color: theme === value ? 'var(--color-text)' : 'var(--color-text-secondary)',
-                fontSize: '0.8rem',
-                fontWeight: theme === value ? 700 : 500,
-                textAlign: 'left',
-              }}
-            >
-              <TIcon className="w-3.5 h-3.5" />
-              {label}
-              {theme === value && <span style={{ marginLeft: 'auto', color: 'var(--amber)', fontSize: '0.6rem' }}>✓</span>}
-            </button>
-          ))}
-        </div>
-      )}
+          <Icon size={14} />
+        </button>
+      ))}
     </div>
   )
 }
@@ -227,7 +179,7 @@ function LangToggle() {
   const langList = Object.entries(LANGUAGES) as [Lang, { label: string; native: string }][]
 
   return (
-    <div ref={ref} style={{ position: 'relative' }}>
+    <div ref={ref} style={{ position: 'relative', flexShrink: 0 }}>
       <button
         onClick={() => setOpen(!open)}
         title={`Language: ${LANGUAGES[lang].label}`}
@@ -241,11 +193,13 @@ function LangToggle() {
           borderRadius: 6,
           cursor: 'pointer',
           color: 'var(--color-text-secondary)',
-          fontSize: '0.75rem',
-          fontWeight: 600,
+          fontSize: '0.7rem',
+          fontWeight: 700,
+          flexShrink: 0,
+          whiteSpace: 'nowrap',
         }}
       >
-        🌐 <span style={{ fontSize: '0.7rem' }}>{lang.toUpperCase()}</span>
+        🌐 <span>{lang.toUpperCase()}</span>
       </button>
       {open && (
         <div
@@ -261,7 +215,7 @@ function LangToggle() {
             minWidth: 160,
             zIndex: 200,
             boxShadow: 'var(--card-shadow-hover)',
-            maxHeight: 340,
+            maxHeight: 320,
             overflowY: 'auto',
           }}
         >
@@ -310,6 +264,12 @@ export default function Nav() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
+  useEffect(() => {
+    const handler = () => { if (window.innerWidth >= 768) setOpen(false) }
+    window.addEventListener('resize', handler)
+    return () => window.removeEventListener('resize', handler)
+  }, [])
+
   return (
     <header
       ref={navRef}
@@ -322,12 +282,28 @@ export default function Nav() {
         backdropFilter: 'blur(12px)',
       }}
     >
-      <nav style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', height: 56, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
+      <nav
+        style={{
+          maxWidth: 1200,
+          margin: '0 auto',
+          padding: '0 16px',
+          height: 56,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 8,
+        }}
+      >
         {/* Logo */}
-        <Logo size="sm" />
+        <div style={{ flexShrink: 0 }}>
+          <Logo size="sm" />
+        </div>
 
-        {/* Desktop nav */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 4 }} className="hidden md:flex">
+        {/* Desktop nav links — no inline display property; Tailwind hidden/md:flex controls visibility */}
+        <div
+          className="hidden md:flex"
+          style={{ alignItems: 'center', gap: 4, flex: 1, justifyContent: 'center' }}
+        >
           {navItems.map((item) => {
             if (item.dropdown) {
               const isOpen = activeDropdown === item.label
@@ -342,11 +318,12 @@ export default function Nav() {
                       background: 'none', border: 'none', cursor: 'pointer',
                       color: isOpen ? 'var(--color-text)' : 'var(--color-text-secondary)',
                       fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.15s',
+                      whiteSpace: 'nowrap',
                     }}
                   >
                     {item.label}
                     <ChevronDown
-                      className="w-3.5 h-3.5"
+                      size={14}
                       style={{ transform: isOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}
                     />
                   </button>
@@ -362,7 +339,14 @@ export default function Nav() {
               <Link
                 key={item.label}
                 href={item.href!}
-                style={{ padding: '8px 10px', color: 'var(--color-text-secondary)', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500 }}
+                style={{
+                  padding: '8px 10px',
+                  color: 'var(--color-text-secondary)',
+                  textDecoration: 'none',
+                  fontSize: '0.875rem',
+                  fontWeight: 500,
+                  whiteSpace: 'nowrap',
+                }}
               >
                 {item.label}
               </Link>
@@ -370,58 +354,80 @@ export default function Nav() {
           })}
         </div>
 
-        {/* Right side controls */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          {/* Theme + Lang toggles */}
-          <div className="hidden md:flex items-center gap-2">
-            <ThemeToggle />
-            <LangToggle />
-          </div>
+        {/* Right-side controls */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
 
-          <div className="hidden md:flex items-center gap-3">
+          {/* ThemePill — ALWAYS visible on every device */}
+          <ThemePill />
+
+          {/* LangToggle — ALWAYS visible on every device */}
+          <LangToggle />
+
+          {/* Sign in + Get started — desktop only */}
+          <div
+            className="hidden md:flex"
+            style={{ alignItems: 'center', gap: 10, marginLeft: 4 }}
+          >
             <Link
               href="/login"
-              style={{ color: 'var(--color-text-secondary)', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500 }}
+              style={{
+                color: 'var(--color-text-secondary)',
+                textDecoration: 'none',
+                fontSize: '0.875rem',
+                fontWeight: 500,
+                whiteSpace: 'nowrap',
+              }}
             >
               Sign in
             </Link>
             <Link
               href="/register"
               style={{
-                backgroundColor: 'var(--amber)', color: '#fff',
-                padding: '7px 16px', borderRadius: 6, fontWeight: 700,
-                textDecoration: 'none', fontSize: '0.875rem',
+                backgroundColor: 'var(--amber)',
+                color: '#fff',
+                padding: '7px 14px',
+                borderRadius: 6,
+                fontWeight: 700,
+                textDecoration: 'none',
+                fontSize: '0.875rem',
+                whiteSpace: 'nowrap',
               }}
             >
               Get started free
             </Link>
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Hamburger — mobile only */}
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden"
-            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text)', padding: 4 }}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: 'var(--color-text)',
+              padding: 4,
+              display: 'flex',
+              alignItems: 'center',
+              flexShrink: 0,
+            }}
             aria-label="Toggle menu"
           >
-            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile drawer */}
       {open && (
         <div
           className="md:hidden"
-          style={{ backgroundColor: 'var(--color-bg-surface)', borderTop: '1px solid var(--color-border)' }}
+          style={{
+            backgroundColor: 'var(--color-bg-surface)',
+            borderTop: '1px solid var(--color-border)',
+          }}
         >
-          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '12px 24px' }}>
-            {/* Theme & Lang on mobile */}
-            <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
-              <ThemeToggle />
-              <LangToggle />
-            </div>
-
+          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '8px 16px 16px' }}>
             {navItems.map((item) => {
               if (item.dropdown) {
                 const expanded = mobileExpanded === item.label
@@ -430,22 +436,39 @@ export default function Nav() {
                     <button
                       onClick={() => setMobileExpanded(expanded ? null : item.label)}
                       style={{
-                        width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                        padding: '10px 0', background: 'none', border: 'none', cursor: 'pointer',
-                        color: 'var(--color-text-secondary)', fontSize: '0.875rem', fontWeight: 500,
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '12px 0',
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        color: 'var(--color-text-secondary)',
+                        fontSize: '0.9rem',
+                        fontWeight: 600,
                       }}
                     >
                       {item.label}
-                      <ChevronDown className="w-4 h-4" style={{ transform: expanded ? 'rotate(180deg)' : 'none' }} />
+                      <ChevronDown
+                        size={16}
+                        style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}
+                      />
                     </button>
                     {expanded && (
-                      <div style={{ paddingLeft: 12, paddingBottom: 8 }}>
+                      <div style={{ paddingLeft: 12, paddingBottom: 10 }}>
                         {item.dropdown.map((sub) => (
                           <Link
                             key={sub.href}
                             href={sub.href}
-                            onClick={() => setOpen(false)}
-                            style={{ display: 'block', padding: '7px 0', color: 'var(--color-text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}
+                            onClick={() => { setOpen(false); setMobileExpanded(null) }}
+                            style={{
+                              display: 'block',
+                              padding: '8px 0',
+                              color: 'var(--color-text-muted)',
+                              textDecoration: 'none',
+                              fontSize: '0.875rem',
+                            }}
                           >
                             {sub.label}
                           </Link>
@@ -461,8 +484,12 @@ export default function Nav() {
                   href={item.href!}
                   onClick={() => setOpen(false)}
                   style={{
-                    display: 'block', padding: '10px 0', color: 'var(--color-text-secondary)',
-                    textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500,
+                    display: 'block',
+                    padding: '12px 0',
+                    color: 'var(--color-text-secondary)',
+                    textDecoration: 'none',
+                    fontSize: '0.9rem',
+                    fontWeight: 600,
                     borderBottom: '1px solid var(--color-border)',
                   }}
                 >
@@ -471,14 +498,21 @@ export default function Nav() {
               )
             })}
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, paddingTop: 12, paddingBottom: 8 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, paddingTop: 14 }}>
               <Link
                 href="/login"
                 onClick={() => setOpen(false)}
                 style={{
-                  display: 'block', textAlign: 'center', padding: '10px',
-                  backgroundColor: 'var(--color-bg-raised)', border: '1px solid var(--color-border)',
-                  borderRadius: 6, color: 'var(--color-text)', textDecoration: 'none', fontWeight: 600, fontSize: '0.875rem',
+                  display: 'block',
+                  textAlign: 'center',
+                  padding: '11px',
+                  backgroundColor: 'var(--color-bg-raised)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: 8,
+                  color: 'var(--color-text)',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                  fontSize: '0.9rem',
                 }}
               >
                 Sign in
@@ -487,9 +521,15 @@ export default function Nav() {
                 href="/register"
                 onClick={() => setOpen(false)}
                 style={{
-                  display: 'block', textAlign: 'center', padding: '10px',
-                  backgroundColor: 'var(--amber)', borderRadius: 6,
-                  color: '#fff', textDecoration: 'none', fontWeight: 700, fontSize: '0.875rem',
+                  display: 'block',
+                  textAlign: 'center',
+                  padding: '11px',
+                  backgroundColor: 'var(--amber)',
+                  borderRadius: 8,
+                  color: '#fff',
+                  textDecoration: 'none',
+                  fontWeight: 700,
+                  fontSize: '0.9rem',
                 }}
               >
                 Get started free
