@@ -51,7 +51,7 @@ const footerColumns: { heading: string; links: NavItem[] }[] = [
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Terms of Service', href: '/terms' },
       { label: 'Cookie Policy', href: '/cookies' },
-      { label: 'Suggest a Feature', href: '/suggest' },
+      { label: 'Support', href: '/contact' },
     ],
   },
 ]
@@ -133,7 +133,7 @@ export default function Footer() {
               </span>
             </Link>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', lineHeight: 1.7, maxWidth: 200 }}>
-              The UK&apos;s property &amp; construction intelligence platform — connecting homeowners, contractors and investors.
+              The UK&apos;s property &amp; construction intelligence platform &mdash; connecting homeowners, contractors and investors.
             </p>
             <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 6 }}>
               <a href="tel:+447359872594" style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>
@@ -221,7 +221,7 @@ export default function Footer() {
           }}
         >
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', margin: 0 }}>
-            &copy; 2026 Dwellinger Ltd. All rights reserved. Registered in England and Wales. Company No. 12345678.
+            &copy; 2026 Dwellinger Ltd. All rights reserved. Registered in England and Wales.
           </p>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', margin: 0 }}>
             Builder Score&trade; and Dwellinger&trade; are trademarks of Dwellinger Ltd.
