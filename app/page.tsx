@@ -202,7 +202,7 @@ export default function HomePage() {
               Now live — UK&apos;s construction intelligence platform
             </div>
 
-            <h1 className="font-display text-hero text-white max-w-4xl mx-auto mb-6">
+            <h1 className="font-display text-hero text-text max-w-4xl mx-auto mb-6">
               The UK construction intelligence platform for{' '}
               <span className="text-amber">homeowners, contractors</span>{' '}
               and property investors
@@ -232,11 +232,11 @@ export default function HomePage() {
                     style={{ transition: 'stroke-dashoffset 1.2s ease' }} />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">912</span>
+                  <span className="text-text font-bold text-sm">912</span>
                 </div>
               </div>
               <div>
-                <div className="text-white font-bold text-sm">Builder Score™ 912/1000</div>
+                <div className="text-text font-bold text-sm">Builder Score™ 912/1000</div>
                 <div className="text-text-muted text-xs mt-0.5">Platinum tier · 34 verified reviews</div>
                 <div className="flex items-center gap-1 mt-1">
                   {[...Array(5)].map((_, i) => (
@@ -340,7 +340,7 @@ export default function HomePage() {
                   <div className="text-xs font-bold text-amber uppercase tracking-widest mb-2">
                     {track.audience}
                   </div>
-                  <h3 className="font-display text-h3 text-white mb-4">{track.headline}</h3>
+                  <h3 className="font-display text-h3 text-text mb-4">{track.headline}</h3>
                   <ul className="space-y-2.5 mb-7 flex-1">
                     {track.points.map((p) => (
                       <li key={p} className="flex items-start gap-2.5 text-text-secondary text-sm">
@@ -385,7 +385,7 @@ export default function HomePage() {
                 >
                   <div className="text-2xl flex-shrink-0">{service.icon}</div>
                   <div>
-                    <div className="font-bold text-white text-base">{service.title}</div>
+                    <div className="font-bold text-text text-base">{service.title}</div>
                     <div className="text-text-secondary text-sm mt-1">{service.desc}</div>
                   </div>
                 </div>
@@ -421,7 +421,7 @@ export default function HomePage() {
                       <span className="badge-amber px-3 py-1 text-xs whitespace-nowrap">Most Popular</span>
                     </div>
                   )}
-                  <div className="font-bold text-white text-sm mb-2">{tier.name}</div>
+                  <div className="font-bold text-text text-sm mb-2">{tier.name}</div>
                   <div className="font-display text-amber font-bold text-2xl">{tier.price}</div>
                   <div className="text-text-muted text-xs mt-1">{tier.days}</div>
                 </div>
@@ -500,11 +500,11 @@ export default function HomePage() {
                     <p className="text-text-secondary text-sm leading-relaxed mb-4">{project.spec}</p>
                     <div className="grid grid-cols-2 gap-3">
                       <div className="bg-bg-raised rounded-lg p-3 text-center">
-                        <div className="text-white font-bold text-base">{project.value}</div>
+                        <div className="text-text font-bold text-base">{project.value}</div>
                         <div className="text-text-muted text-xs mt-0.5">Contract value</div>
                       </div>
                       <div className="bg-bg-raised rounded-lg p-3 text-center">
-                        <div className="text-white font-bold text-base">{project.duration}</div>
+                        <div className="text-text font-bold text-base">{project.duration}</div>
                         <div className="text-text-muted text-xs mt-0.5">Programme</div>
                       </div>
                     </div>
@@ -531,7 +531,7 @@ export default function HomePage() {
               {features.map((f) => (
                 <Link key={f.title} href={f.href} className="card-raised p-6 block hover:border-amber-border transition-colors group">
                   <div className="mb-4">{f.icon}</div>
-                  <h3 className="font-bold text-white text-base mb-2 group-hover:text-amber transition-colors">
+                  <h3 className="font-bold text-text text-base mb-2 group-hover:text-amber transition-colors">
                     {f.title}
                   </h3>
                   <p className="text-text-muted text-sm leading-relaxed">{f.desc}</p>
@@ -562,7 +562,7 @@ export default function HomePage() {
                     {i < 2 && <div className="w-px h-8 bg-border mx-auto mt-2" />}
                   </div>
                   <div className="pb-8 last:pb-0">
-                    <h3 className="font-bold text-white text-base mb-2">{step.t}</h3>
+                    <h3 className="font-bold text-text text-base mb-2">{step.t}</h3>
                     <p className="text-text-secondary text-sm leading-relaxed">{step.d}</p>
                   </div>
                 </div>
@@ -601,7 +601,7 @@ export default function HomePage() {
                 ].map((item) => (
                   <div key={item.label} className="card-raised p-4">
                     <div className="flex justify-between items-center mb-1.5">
-                      <span className="text-sm font-medium text-white">{item.label}</span>
+                      <span className="text-sm font-medium text-text">{item.label}</span>
                       <span className="text-xs text-amber font-bold">{item.value}/100</span>
                     </div>
                     <div className="w-full bg-bg-overlay rounded-full h-1.5">
@@ -630,9 +630,9 @@ export default function HomePage() {
                     <Star key={i} className="w-4 h-4 text-amber fill-amber" />
                   ))}
                 </div>
-                <span className="text-white font-bold">EXCELLENT</span>
+                <span className="text-text font-bold">EXCELLENT</span>
                 <span className="text-text-muted text-sm">7 reviews on</span>
-                <span className="text-white text-sm font-medium">Google</span>
+                <span className="text-text text-sm font-medium">Google</span>
               </div>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -644,7 +644,7 @@ export default function HomePage() {
                         <span className="text-amber font-bold text-sm">{r.name.charAt(0)}</span>
                       </div>
                       <div>
-                        <div className="text-white font-semibold text-sm">{r.name}</div>
+                        <div className="text-text font-semibold text-sm">{r.name}</div>
                         <div className="text-text-muted text-xs">{r.date}</div>
                       </div>
                     </div>
