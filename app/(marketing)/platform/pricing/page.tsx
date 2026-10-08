@@ -9,55 +9,70 @@ import Link from 'next/link'
 
 const tiers = [
   {
-    name: 'Foundation',
+    name: 'Member',
+    monthly: 49,
+    annual: 39,
+    desc: 'Get listed. Build your score.',
+    features: [
+      'Builder Score™ profile listing',
+      'Up to 10 leads/month',
+      'Basic Builder Score badge',
+      'AI Estimator (3 estimates/mo)',
+      'Email support',
+    ],
+    cta: 'Start Free Trial',
+    href: '/register',
+    popular: false,
+  },
+  {
+    name: 'Professional',
     monthly: 99,
     annual: 79,
-    features: ['1 user', '10 leads/mo', 'Basic Builder Score', 'Email support'],
-    cta: 'Get Started',
-    href: '/register',
-    popular: false,
-  },
-  {
-    name: 'Starter',
-    monthly: 149,
-    annual: 119,
-    features: ['1 user', '25 leads/mo', 'Builder Score', 'AI Estimator (5/mo)', 'Chat support'],
-    cta: 'Get Started',
-    href: '/register',
-    popular: false,
-  },
-  {
-    name: 'Pro',
-    monthly: 249,
-    annual: 199,
-    features: ['3 users', '50 leads/mo', 'Full Builder Score', 'AI Estimator (unlimited)', 'Planning alerts', 'Priority support'],
-    cta: 'Get Started',
+    desc: 'For growing contractors.',
+    features: [
+      'Everything in Member',
+      'Up to 30 leads/month',
+      'Full Builder Score™ (all 5 dimensions)',
+      'AI Estimator (unlimited)',
+      'Planning alerts — your catchment area',
+      'Chat + priority support',
+    ],
+    cta: 'Start Free Trial',
     href: '/register',
     popular: true,
   },
   {
-    name: 'Business',
-    monthly: 349,
-    annual: 279,
-    features: ['5 users', '100 leads/mo', 'All Pro features', 'WhatsApp automation', 'CRM'],
-    cta: 'Get Started',
+    name: 'Premium',
+    monthly: 199,
+    annual: 159,
+    desc: 'Full platform for serious businesses.',
+    features: [
+      'Everything in Professional',
+      'Unlimited leads',
+      '3 team users',
+      'WhatsApp automation',
+      'Full CRM pipeline',
+      'Dwell Agents (all 4)',
+      'Dedicated onboarding call',
+    ],
+    cta: 'Start Free Trial',
     href: '/register',
     popular: false,
   },
   {
-    name: 'Enterprise',
+    name: 'Franchise',
     monthly: 499,
     annual: 399,
-    features: ['Unlimited users', 'Unlimited leads', 'All features', 'Account manager', 'Custom integrations'],
-    cta: 'Get Started',
-    href: '/register',
-    popular: false,
-  },
-  {
-    name: 'White-Label',
-    monthly: null,
-    annual: null,
-    features: ['Full platform rebrand', 'API access', 'Custom domain', 'Dedicated support'],
+    desc: 'For networks, franchises & agencies.',
+    features: [
+      'Everything in Premium',
+      'Unlimited team users',
+      'White-label Builder Score™ reports',
+      'API access',
+      'Custom domain',
+      'Account manager',
+      'Custom integrations',
+    ],
     cta: 'Contact Sales',
     href: '/contact',
     popular: false,
@@ -148,7 +163,8 @@ export default function PlatformPricingPage() {
                 </div>
               )}
 
-              <h3 style={{ color: '#1A2340', fontSize: '1.2rem', fontWeight: 800, marginBottom: 8 }}>{tier.name}</h3>
+              <h3 style={{ color: '#1A2340', fontSize: '1.2rem', fontWeight: 800, marginBottom: 4 }}>{tier.name}</h3>
+              <p style={{ color: '#4A5568', fontSize: '0.85rem', marginBottom: 8 }}>{tier.desc}</p>
 
               <div style={{ marginBottom: 24 }}>
                 {tier.monthly !== null ? (

@@ -202,10 +202,10 @@ const services = [
 ]
 
 const trustPoints = [
-  { title: 'Builder Score verified', desc: 'Our contractors carry a quantified trust score based on real project data.' },
-  { title: 'Checkatrade listed', desc: 'Independently verified reviews from real homeowners across London.' },
-  { title: 'London-based', desc: 'We operate exclusively across Greater London - no travelling teams.' },
-  { title: 'Full principal contractor service', desc: 'We manage the entire build, so you have one point of contact.' },
+  { title: 'Builder Score verified', desc: 'Every contractor carries a quantified trust score based on verified reviews, compliance and project history.' },
+  { title: 'Independently reviewed', desc: 'Verified reviews from real homeowners across London — not self-reported ratings.' },
+  { title: 'London-based', desc: 'Contractors operating across Greater London — matched to your area and project type.' },
+  { title: 'Principal contractor ready', desc: 'Every contractor on the platform is CDM 2015 aware — giving you one accountable point of contact.' },
 ]
 
 export default function BoroughPage({ params }: { params: { borough: string } }) {

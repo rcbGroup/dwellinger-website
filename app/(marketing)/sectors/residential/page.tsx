@@ -3,13 +3,13 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Extensions, Lofts & Refurbishments for London Homeowners',
-  description: 'Extensions, loft conversions and full refurbishments for London homeowners. One principal contractor. No blame-shifting. Checkatrade verified.',
+  description: 'Extensions, loft conversions and full refurbishments for London homeowners. Find verified contractors with Builder Score™. No blame-shifting. From first estimate to final handover.',
 };
 
 const services = [
   {
     title: 'Rear Extensions',
-    desc: 'Open up your ground floor and add genuine living space. From single-storey kitchen extensions to large wrap-arounds — designed, planned and built by us.',
+    desc: 'Open up your ground floor and add genuine living space. From single-storey kitchen extensions to large wrap-arounds — designed, planned and built by verified Dwellinger contractors.',
   },
   {
     title: 'Loft Conversions',
@@ -17,7 +17,7 @@ const services = [
   },
   {
     title: 'Full Refurbishments',
-    desc: 'End-to-end renovation of your entire home. We strip back, replan, and rebuild to a high spec — managing every trade from demolition to decoration.',
+    desc: 'End-to-end renovation of your entire home. Your contractor strips back, replans, and rebuilds to a high spec — managing every trade from demolition to decoration.',
   },
   {
     title: 'Structural Alterations',
@@ -44,7 +44,7 @@ const whyPoints = [
   },
   {
     title: 'One accountable party',
-    desc: 'No blame-shifting between architect, builder and trades. We are your principal contractor and the buck stops with us.',
+    desc: 'No blame-shifting between architect, builder and trades. Your verified principal contractor is solely accountable — the buck stops with them.',
   },
 ];
 
@@ -77,7 +77,7 @@ const faqs = [
   },
   {
     q: 'How is Dwellinger different from Checkatrade?',
-    a: 'Checkatrade lists individual tradespeople. We are your principal contractor — we manage everything and are solely accountable for the outcome of your project.',
+    a: 'Checkatrade lists individual tradespeople. A Dwellinger principal contractor manages the entire project and is solely accountable for the outcome — backed by a Builder Score™ that tracks their actual performance.',
   },
 ];
 
@@ -94,7 +94,7 @@ export default function ResidentialPage() {
             Extensions, Lofts &amp; Refurbishments — Done Properly
           </h1>
           <p style={{ color: '#c8d0e0', fontSize: '1.15rem', margin: '0 0 40px', lineHeight: 1.7, maxWidth: 620, marginLeft: 'auto', marginRight: 'auto' }}>
-            For London homeowners who&apos;ve been let down before. One principal contractor. No blame-shifting.
+            For London homeowners who&apos;ve been let down before. Verified principal contractors. No blame-shifting.
           </p>
           <Link
             href="/get-a-quote"

@@ -11,6 +11,26 @@ type NavItem =
 
 const navItems: NavItem[] = [
   {
+    label: 'Find',
+    dropdown: [
+      { label: 'Find Contractors', href: '/search' },
+      { label: 'Post a Project', href: '/register?type=homeowner' },
+      { label: 'Design & Build Contractors', href: '/services/design-and-build' },
+      { label: 'Principal Contractors', href: '/services/principal-contractor' },
+      { label: 'Project Management', href: '/services/project-management' },
+    ],
+  },
+  {
+    label: 'Estimate',
+    dropdown: [
+      { label: 'Get an Estimate', href: '/services/estimating' },
+      { label: 'Quantity Surveying', href: '/services/quantity-surveying' },
+      { label: 'Extension Calculator', href: '/tools/extension-cost-calculator' },
+      { label: 'Loft Calculator', href: '/tools/loft-conversion-calculator' },
+      { label: 'Development Appraisal', href: '/tools/development-appraisal' },
+    ],
+  },
+  {
     label: 'Sectors',
     dropdown: [
       { label: 'Residential', href: '/sectors/residential' },
@@ -20,24 +40,12 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: 'Services',
+    label: 'Intelligence',
     dropdown: [
-      { label: 'Design & Build', href: '/services/design-and-build' },
-      { label: 'Principal Contractor', href: '/services/principal-contractor' },
-      { label: 'Estimating', href: '/services/estimating' },
-      { label: 'Quantity Surveying', href: '/services/quantity-surveying' },
-      { label: 'Project Management', href: '/services/project-management' },
-    ],
-  },
-  {
-    label: 'Tools',
-    dropdown: [
-      { label: 'Extension Calculator', href: '/tools/extension-cost-calculator' },
-      { label: 'Loft Calculator', href: '/tools/loft-conversion-calculator' },
+      { label: 'Planning Intelligence', href: '/tools/planning' },
       { label: 'HMO Calculator', href: '/tools/hmo-calculator' },
       { label: 'ROI Calculator', href: '/tools/roi-calculator' },
-      { label: 'Development Appraisal', href: '/tools/development-appraisal' },
-      { label: 'Planning Intelligence', href: '/tools/planning' },
+      { label: 'Investor Hub', href: '/investor-hub' },
     ],
   },
   {
@@ -45,11 +53,10 @@ const navItems: NavItem[] = [
     dropdown: [
       { label: 'Platform Overview', href: '/platform' },
       { label: 'For Contractors', href: '/platform/for-contractors' },
-      { label: 'Estimating Services', href: '/platform/estimating-services' },
       { label: 'Pricing', href: '/platform/pricing' },
+      { label: 'About Dwellinger', href: '/about' },
     ],
   },
-  { label: 'Investor Hub', href: '/investor-hub' },
   { label: 'Blog', href: '/blog' },
 ]
 

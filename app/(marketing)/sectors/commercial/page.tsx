@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Commercial Construction & Fit-Out London',
-  description: 'Office fit-out, retail transformation, mixed-use development and HMO conversions in London. Principal contractor with full design and build capability.',
+  description: 'Find verified contractors for office fit-out, retail transformation, mixed-use development and HMO conversions in London. CDM 2015 ready. Builder Score™ rated.',
 };
 
 const services = [
@@ -17,18 +17,18 @@ const services = [
   },
   {
     title: 'Mixed-Use Development',
-    desc: 'Ground-floor commercial with residential above. We manage the full build as principal contractor, coordinating design, structural and M&E.',
+    desc: 'Ground-floor commercial with residential above. Full build managed under a principal contractor, coordinating design, structural and M&E.',
   },
   {
     title: 'HMO Conversion',
-    desc: 'Convert residential stock to licensed HMO. Fire compartmentalisation, en-suite fit-outs, kitchen upgrades, compliance sign-off — all managed by us.',
+    desc: 'Convert residential stock to licensed HMO. Fire compartmentalisation, en-suite fit-outs, kitchen upgrades, compliance sign-off — all managed under one contract.',
   },
 ];
 
 const trustPoints = [
   {
     title: 'CDM Principal Contractor',
-    desc: 'We take full CDM 2015 Principal Contractor duties — health and safety plan, site management and regulatory compliance all handled in-house.',
+    desc: 'Every contractor on the Dwellinger platform holds full CDM 2015 Principal Contractor readiness — health and safety plan, site management and regulatory compliance.',
   },
   {
     title: 'Full design and build',
@@ -40,13 +40,13 @@ const trustPoints = [
   },
   {
     title: 'London-based team',
-    desc: 'We operate across Greater London and the Home Counties. Our site managers are permanently employed, not sub-contracted agency staff.',
+    desc: 'Verified contractors on the platform operate across Greater London and the Home Counties — with track records and Builder Score™ ratings you can check before appointing.',
   },
 ];
 
 const steps = [
   { num: '01', title: 'Briefing & Appraisal', desc: 'We understand your requirements, constraints and programme — then produce a feasibility appraisal with indicative costs.' },
-  { num: '02', title: 'Design & Approvals', desc: 'Architectural design, planning applications, building control submissions and pre-construction surveys — all managed by our team.' },
+  { num: '02', title: 'Design & Approvals', desc: 'Architectural design, planning applications, building control submissions and pre-construction surveys — all managed by your appointed contractor.' },
   { num: '03', title: 'Build & Handover', desc: 'Full site delivery under CDM, with weekly progress reporting, QS cost control and a structured handover pack at completion.' },
 ];
 
@@ -63,7 +63,7 @@ export default function CommercialPage() {
             Commercial Fit-Out &amp; Build — London
           </h1>
           <p style={{ color: '#c8d0e0', fontSize: '1.15rem', margin: '0 0 40px', lineHeight: 1.7, maxWidth: 640, marginLeft: 'auto', marginRight: 'auto' }}>
-            Office fit-out, retail, mixed-use and HMO conversions managed by a principal contractor with a proven track record.
+            Find verified principal contractors for office fit-out, retail, mixed-use and HMO conversions — all Builder Score™ rated.
           </p>
           <Link
             href="/contact"
@@ -90,7 +90,7 @@ export default function CommercialPage() {
             Commercial Services
           </h2>
           <p style={{ color: '#4A5568', textAlign: 'center', margin: '0 0 48px' }}>
-            Full principal contractor delivery across commercial and mixed-use sectors.
+            Verified principal contractors across commercial and mixed-use sectors — all on the Dwellinger platform.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
             {services.map((s) => (

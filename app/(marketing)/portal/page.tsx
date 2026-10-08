@@ -291,7 +291,7 @@ export default function PortalPage() {
                       fill="none"
                       stroke="#C4773B"
                       strokeWidth="8"
-                      strokeDasharray={`${(924 / 1000) * 213.6} 213.6`}
+                      strokeDasharray={`${(912 / 1000) * 213.6} 213.6`}
                       strokeLinecap="round"
                       transform="rotate(-90 40 40)"
                     />
@@ -307,7 +307,7 @@ export default function PortalPage() {
                     }}
                   >
                     <span style={{ fontSize: '17px', fontWeight: 800, color: '#1A2340', lineHeight: 1 }}>
-                      924
+                      912
                     </span>
                     <span style={{ fontSize: '10px', color: '#4A5568' }}>/1000</span>
                   </div>

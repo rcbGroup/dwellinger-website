@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: {
     absolute: "Dwellinger — UK's Property Intelligence Platform",
   },
-  description: "The UK's smartest platform for homeowners, contractors and property investors. Builder Score™ contractor trust ratings, AI-powered estimates, planning intelligence, and property investment tools.",
+  description: "The UK construction intelligence platform for homeowners, contractors and property investors. Builder Score™ contractor trust ratings, AI-powered estimates, planning intelligence, and property investment tools.",
 }
 
 // Real Google reviews
@@ -141,13 +141,6 @@ const localBusinessSchema = {
   image: 'https://dwellinger.co.uk/icons/icon-512x512.png',
   telephone: '+447359872594',
   email: 'info@dwellinger.co.uk',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '347 Barking Road',
-    addressLocality: 'London',
-    postalCode: 'E13 8EE',
-    addressCountry: 'GB',
-  },
   areaServed: {
     '@type': 'Country',
     name: 'United Kingdom',
@@ -206,11 +199,11 @@ export default function HomePage() {
           <div className="container mx-auto relative z-10 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-subtle border border-amber-border text-amber text-xs font-semibold mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
-              Now live — UK&apos;s first construction intelligence platform
+              Now live — UK&apos;s construction intelligence platform
             </div>
 
             <h1 className="font-display text-hero text-white max-w-4xl mx-auto mb-6">
-              The UK&apos;s smartest platform for{' '}
+              The UK construction intelligence platform for{' '}
               <span className="text-amber">homeowners, contractors</span>{' '}
               and property investors
             </h1>
@@ -239,12 +232,12 @@ export default function HomePage() {
                     style={{ transition: 'stroke-dashoffset 1.2s ease' }} />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">924</span>
+                  <span className="text-white font-bold text-sm">912</span>
                 </div>
               </div>
               <div>
-                <div className="text-white font-bold text-sm">Builder Score™ 924/1000</div>
-                <div className="text-text-muted text-xs mt-0.5">Platinum tier · 47 verified reviews</div>
+                <div className="text-white font-bold text-sm">Builder Score™ 912/1000</div>
+                <div className="text-text-muted text-xs mt-0.5">Platinum tier · 34 verified reviews</div>
                 <div className="flex items-center gap-1 mt-1">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-3 h-3 text-amber fill-amber" />
@@ -255,7 +248,7 @@ export default function HomePage() {
               <div className="pl-4 border-l border-border">
                 <div className="badge-amber text-xs">Verified</div>
                 <div className="text-text-muted text-xs mt-1">
-                  Checkatrade <CheckCircle className="w-3 h-3 text-amber inline" />
+                  Example profile <CheckCircle className="w-3 h-3 text-amber inline" />
                 </div>
               </div>
             </div>
@@ -271,6 +264,20 @@ export default function HomePage() {
                 <div className="text-text-muted text-sm mt-1">{s.label}</div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ─── SUPPLIER TRUST BAR ─── */}
+        <section className="bg-bg border-b border-border py-6">
+          <div className="container mx-auto">
+            <p className="text-center text-text-muted text-xs uppercase tracking-widest mb-5 font-semibold">Contractors on Dwellinger work with trusted suppliers &amp; hold recognised accreditations</p>
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+              {['VELUX', 'KNAUF', 'BOSCH', 'Travis Perkins', 'Jewson', 'Gas Safe', 'NICEIC'].map((brand) => (
+                <span key={brand} style={{ color: 'rgba(200,192,176,0.55)', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.05em', userSelect: 'none' }}>
+                  {brand}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -322,6 +329,85 @@ export default function HomePage() {
                   </Link>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── REAL PROJECTS ─── */}
+        <section className="py-20 bg-bg-surface border-y border-border">
+          <div className="container mx-auto">
+            <div className="text-center mb-12">
+              <p className="section-tag mb-3">Real projects, real results</p>
+              <h2 className="section-title">What gets built on Dwellinger</h2>
+              <p className="text-text-secondary mt-4 max-w-xl mx-auto">
+                From loft conversions in East London to commercial fit-outs in the City — verified contractors, Builder Score™ tracked throughout.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-5">
+              {[
+                {
+                  type: 'Loft Conversion',
+                  location: 'Hackney, E8',
+                  spec: 'Mansard dormer · 1 bed + en-suite · structural remodel',
+                  value: '£68,000',
+                  score: 889,
+                  duration: '14 weeks',
+                  color: '#C4773B',
+                },
+                {
+                  type: 'Rear Extension',
+                  location: 'Lewisham, SE13',
+                  spec: 'Single-storey kitchen extension · bifold doors · underfloor heating',
+                  value: '£54,500',
+                  score: 912,
+                  duration: '10 weeks',
+                  color: '#10B981',
+                },
+                {
+                  type: 'Full Refurbishment',
+                  location: 'Islington, N1',
+                  spec: '3-bed Victorian terrace · rewire · plumbing · new kitchen + 2 bathrooms',
+                  value: '£112,000',
+                  score: 856,
+                  duration: '22 weeks',
+                  color: '#4A90D9',
+                },
+              ].map((project) => (
+                <div key={project.type + project.location} className="card p-0 overflow-hidden">
+                  <div style={{ background: `${project.color}18`, borderBottom: `3px solid ${project.color}`, padding: '20px 24px' }}>
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <div style={{ color: project.color, fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 6 }}>{project.type}</div>
+                        <div className="text-white font-bold text-base">{project.location}</div>
+                      </div>
+                      <div className="text-right">
+                        <div style={{ color: project.color, fontWeight: 800, fontSize: '1.25rem' }}>
+                          Builder Score™
+                        </div>
+                        <div className="text-white font-bold text-xl">{project.score}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style={{ padding: '20px 24px' }}>
+                    <p className="text-text-secondary text-sm leading-relaxed mb-4">{project.spec}</p>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="bg-bg-raised rounded-lg p-3 text-center">
+                        <div className="text-white font-bold text-base">{project.value}</div>
+                        <div className="text-text-muted text-xs mt-0.5">Contract value</div>
+                      </div>
+                      <div className="bg-bg-raised rounded-lg p-3 text-center">
+                        <div className="text-white font-bold text-base">{project.duration}</div>
+                        <div className="text-text-muted text-xs mt-0.5">Programme</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Link href="/search" className="btn-secondary">
+                Find contractors for your project <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </section>
@@ -391,7 +477,7 @@ export default function HomePage() {
                 </p>
                 <p className="text-text-secondary mb-8 leading-relaxed">
                   It&apos;s Trustpilot, Companies House, and Checkatrade combined — but specific to
-                  construction performance. Trademarked. Proprietary. No competitor can replicate it quickly.
+                  construction performance. Trademarked. Proprietary. Built for construction, not adapted from another sector.
                 </p>
                 <Link href="/builder-score" className="btn-primary">
                   Learn how Builder Score™ works <ArrowRight className="w-4 h-4" />
@@ -484,7 +570,7 @@ export default function HomePage() {
               Ready to take control of your project?
             </h2>
             <p className="text-text-inverse/70 text-lg mb-8 max-w-xl mx-auto">
-              Be among the first on the UK&apos;s most advanced construction intelligence platform.
+              Be among the first on the UK construction intelligence platform.
               Plan, price, and deliver better projects — with verified contractors, AI estimates,
               and real data behind every decision.
             </p>

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Platform for UK Contractors | AI Tools, Builder Score & Estimating',
-  description: '62 AI Agents. 200+ tools. Built for the modern contractor. The operating system for UK contractors.',
+  description: 'The operating system for UK contractors. AI tools, Builder Score™, estimating, CRM, lead generation and planning intelligence — all in one platform.',
 }
 
 const features = [
@@ -34,10 +34,10 @@ const features = [
 ]
 
 const stats = [
-  { value: '62', label: 'AI Agents' },
-  { value: '200+', label: 'Tools' },
-  { value: '6', label: 'Plans' },
-  { value: '1,000+', label: 'Contractors' },
+  { value: '4', label: 'Dwell AI Agents' },
+  { value: '200+', label: 'Platform Features' },
+  { value: '4', label: 'Subscription Plans' },
+  { value: '1,972', label: 'Knowledge Articles' },
 ]
 
 export default function PlatformPage() {
@@ -52,7 +52,7 @@ export default function PlatformPage() {
             The Operating System for UK Contractors
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#c8c0b0', maxWidth: 600, margin: '0 auto 40px' }}>
-            62 AI Agents. 200+ tools. Built for the modern contractor.
+            4 Dwell AI Agents. 200+ platform features. Built for the modern contractor.
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link
@@ -107,7 +107,7 @@ export default function PlatformPage() {
       <section style={{ backgroundColor: '#FFFFFF', padding: '80px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: 600, margin: '0 auto' }}>
           <h2 style={{ color: '#1A2340', fontSize: '1.75rem', fontWeight: 800, marginBottom: 16 }}>
-            Plans from £99/mo
+            Plans from £49/mo
           </h2>
           <p style={{ color: '#4A5568', marginBottom: 32 }}>
             Choose the plan that fits your business. Upgrade or downgrade at any time. Cancel anytime.

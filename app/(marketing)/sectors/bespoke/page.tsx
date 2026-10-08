@@ -2,9 +2,9 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Bespoke Construction & High-Spec Builds London',
+  title: 'Bespoke Construction Contractors London | High-Spec Builds',
   description:
-    'Bespoke design-and-build for London clients who demand exceptional quality, unique design, and a single point of accountability from concept to completion.',
+    'Find verified bespoke contractors for high-spec builds in London. Builder Score™ rated. Single point of accountability from concept to completion.',
 }
 
 const capabilities = [
@@ -30,7 +30,7 @@ const capabilities = [
   },
   {
     title: 'Interior Design Coordination',
-    desc: 'We coordinate with interior designers or manage the full interiors brief internally — FF&E procurement, bespoke cabinetry, specialist finishes and material selection.',
+    desc: 'Verified contractors coordinate with your interior designer or manage the full interiors brief — FF&E procurement, bespoke cabinetry, specialist finishes and material selection.',
   },
 ]
 
@@ -38,17 +38,17 @@ const process = [
   {
     step: '01',
     title: 'Brief Development',
-    desc: 'We spend time understanding your vision before any design work starts. Architecture, lifestyle, budget ceiling and programme expectations are all captured in a detailed brief.',
+    desc: 'Your contractor spends time understanding your vision before any design work starts. Architecture, lifestyle, budget ceiling and programme expectations are all captured in a detailed brief.',
   },
   {
     step: '02',
     title: 'Design & Pre-Construction',
-    desc: 'Working with your architect or our design partners, we develop the scheme through planning, technical design and pre-construction — advising on buildability, value engineering and procurement at every stage.',
+    desc: 'Working with your architect or the contractor\'s design partners, the scheme is developed through planning, technical design and pre-construction — advising on buildability, value engineering and procurement at every stage.',
   },
   {
     step: '03',
     title: 'Procurement & Tendering',
-    desc: 'For bespoke projects, specialist procurement matters. We run a controlled tender process for all major packages and use our supply chain relationships to achieve the best outcome.',
+    desc: 'For bespoke projects, specialist procurement matters. Your contractor runs a controlled tender process for all major packages and uses their supply chain relationships to achieve the best outcome.',
   },
   {
     step: '04',
@@ -158,7 +158,7 @@ export default function BespokePage() {
             Who This Is For
           </h2>
           <p style={{ color: '#4A5568', lineHeight: 1.75, fontSize: '1.02rem', marginBottom: '20px' }}>
-            Our bespoke construction service is for homeowners and developers who have a clear
+            Dwellinger&apos;s verified bespoke contractors serve homeowners and developers who have a clear
             vision of what they want to achieve and need a delivery partner capable of executing
             it to the highest standard — not just a builder who will do what they are told.
           </p>
@@ -169,7 +169,7 @@ export default function BespokePage() {
           </p>
           <p style={{ color: '#4A5568', lineHeight: 1.75, fontSize: '1.02rem' }}>
             If you have been let down before by contractors who promised quality and delivered
-            mediocrity, this is the service you should have started with.
+            mediocrity, a verified Dwellinger bespoke contractor is the upgrade you need.
           </p>
         </div>
       </section>
@@ -186,7 +186,7 @@ export default function BespokePage() {
               marginBottom: '48px',
             }}
           >
-            What We Build
+            What Bespoke Contractors Deliver
           </h2>
           <div
             style={{
@@ -243,7 +243,7 @@ export default function BespokePage() {
               marginBottom: '48px',
             }}
           >
-            Our Bespoke Process
+            The Bespoke Build Process
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             {process.map((item, i) => (
@@ -324,8 +324,7 @@ export default function BespokePage() {
               lineHeight: 1.6,
             }}
           >
-            Tell us what you are trying to achieve. We will be honest about whether we are
-            the right team, and if we are, we will tell you exactly how we would approach it.
+            Tell us about your project. We&apos;ll match you with a verified bespoke contractor who has the expertise, supply chain and track record your project demands.
           </p>
           <Link
             href="/get-a-quote"

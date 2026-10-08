@@ -36,7 +36,7 @@ const benefits = [
   {
     icon: <ArrowRight className="w-6 h-6 text-amber" />,
     title: 'One accountable party, end to end',
-    desc: 'Through our verified principal contractor network, you deal with ONE responsible party — not seven trades, not a builder who disappears mid-project.',
+    desc: 'Through Dwellinger\'s verified contractor network, you deal with ONE responsible party — not seven trades, not a builder who disappears mid-project.',
   },
 ]
 

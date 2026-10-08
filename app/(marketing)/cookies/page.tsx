@@ -124,8 +124,7 @@ export default function CookiesPage() {
         <h2 style={headingStyle}>Contact Us</h2>
         <p style={paraStyle}>
           If you have questions about our use of cookies, contact us at:<br />
-          <strong>Dwellinger / RCB Design &amp; Build</strong><br />
-          347 Barking Road, London E13 8EE<br />
+          <strong>Dwellinger</strong><br />
           Email: info@dwellinger.co.uk
         </p>
       </article>

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'RCB Design & Build — Verified Principal Contractor',
   description:
-    'RCB Design & Build: Platinum-rated principal contractor covering London & Greater London. Builder Score™ 924/1000. View reviews, portfolio and get a quote.',
+    'RCB Design & Build: Verified principal contractor covering London & Greater London. Builder Score™ rated. View reviews, project portfolio and request a quote.',
 }
 
 const SCORES = [
@@ -174,7 +174,7 @@ export default function RCBDesignBuildPage() {
                     textAlign: 'center',
                   }}
                 >
-                  <div style={{ fontSize: '26px', fontWeight: 800, lineHeight: 1 }}>924</div>
+                  <div style={{ fontSize: '26px', fontWeight: 800, lineHeight: 1 }}>871</div>
                   <div style={{ fontSize: '11px', opacity: 0.65, marginTop: '2px' }}>/ 1000</div>
                 </div>
               </div>
@@ -458,7 +458,7 @@ export default function RCBDesignBuildPage() {
               >
                 {[
                   '✓ Platinum verified contractor',
-                  '✓ Builder Score™ 924/1000',
+                  '✓ Builder Score™ 871/1000',
                   '✓ 143 verified reviews',
                   '✓ CDM compliant',
                 ].map((item) => (

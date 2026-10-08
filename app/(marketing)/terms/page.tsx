@@ -43,7 +43,7 @@ export default function TermsPage() {
           Dwellinger provides a platform that connects homeowners with contractors and provides tools including AI-powered estimating, lead generation, planning intelligence and CRM features. We do not guarantee that any particular contractor will be available or suitable for your project. All construction contracts are between the homeowner and the contractor directly.
         </p>
         <p style={paraStyle}>
-          Where Dwellinger or RCB Design &amp; Build is engaged directly as a principal contractor, separate contractual terms will apply as set out in your project agreement.
+          Dwellinger is a marketplace and technology platform. All construction contracts are entered into directly between the homeowner and the contractor. Dwellinger is not a party to any construction contract.
         </p>
 
         <h2 style={headingStyle}>5. Payment</h2>
@@ -64,12 +64,12 @@ export default function TermsPage() {
 
         <h2 style={headingStyle}>7. Intellectual Property</h2>
         <p style={paraStyle}>
-          The Dwellinger name, logo, Builder Score trademark, platform design, and all content on the website are owned by or licensed to RCB Design &amp; Build. You may not reproduce, distribute or create derivative works from any content without our express written permission.
+          The Dwellinger name, logo, Builder Score™ trademark, platform design, and all content on the website are owned by or licensed to Dwellinger. You may not reproduce, distribute or create derivative works from any content without our express written permission.
         </p>
 
         <h2 style={headingStyle}>8. Limitation of Liability</h2>
         <p style={paraStyle}>
-          To the fullest extent permitted by law, Dwellinger and RCB Design &amp; Build shall not be liable for any indirect, incidental, special, consequential or punitive damages arising out of or in connection with your use of the Services. Our total liability to you in connection with the Services shall not exceed the amount paid by you for the Services in the 12 months preceding the claim.
+          To the fullest extent permitted by law, Dwellinger shall not be liable for any indirect, incidental, special, consequential or punitive damages arising out of or in connection with your use of the Services. Our total liability to you in connection with the Services shall not exceed the amount paid by you for the Services in the 12 months preceding the claim.
         </p>
         <p style={paraStyle}>
           Nothing in these Terms limits or excludes liability for death or personal injury caused by negligence, fraud or any other matter that cannot be excluded or limited by English law.
@@ -83,8 +83,7 @@ export default function TermsPage() {
         <h2 style={headingStyle}>Contact Us</h2>
         <p style={paraStyle}>
           For any queries about these Terms, contact us at:<br />
-          <strong>Dwellinger / RCB Design &amp; Build</strong><br />
-          347 Barking Road, London E13 8EE<br />
+          <strong>Dwellinger</strong><br />
           Email: info@dwellinger.co.uk
         </p>
       </article>

@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/get-a-quote', '/post-a-job', '/book-a-call',
     '/sectors/residential', '/sectors/commercial', '/sectors/developers', '/sectors/bespoke',
     '/services/design-and-build', '/services/principal-contractor', '/services/estimating',
-    '/services/quantity-surveying', '/services/project-management',
+    '/services/estimating/order', '/services/quantity-surveying', '/services/project-management',
     '/tools/extension-cost-calculator', '/tools/loft-conversion-calculator',
     '/tools/hmo-calculator', '/tools/roi-calculator', '/tools/development-appraisal',
     '/tools/planning', '/investor-hub',

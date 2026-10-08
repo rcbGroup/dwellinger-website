@@ -95,7 +95,7 @@ export default function AboutPage() {
         <div className="container mx-auto max-w-3xl">
           <div className="text-center mb-12">
             <p className="section-tag mb-3">What makes us different</p>
-            <h2 className="section-title">Three things no competitor can match</h2>
+            <h2 className="section-title">Three things that set Dwellinger apart</h2>
           </div>
           <div className="space-y-6">
             {[
@@ -183,8 +183,8 @@ export default function AboutPage() {
           <p className="text-text-secondary text-sm leading-relaxed max-w-lg mx-auto">
             Dwellinger operates as a marketplace and technology platform. Contractor liability
             remains with the contractor — Dwellinger provides the marketplace, the tools, and the
-            intelligence layer. All transactions are protected by Stripe payments and our verified
-            contractor programme.
+            intelligence layer. All platform subscriptions and transactions are processed securely
+            through our payments provider and our verified contractor programme.
           </p>
         </div>
       </section>

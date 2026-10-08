@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Design and Build Service | One Contract, One Team',
-  description: 'Single-contract design and build service in London. One team, one fee, one outcome — no blame gaps between architect and builder.',
+  title: 'Find Design and Build Contractors in London | Verified',
+  description: 'Find verified design and build contractors in London through Dwellinger. Builder Score™ rated. One contract, one team, one outcome — no blame gaps between architect and builder.',
 }
 
 export default function DesignAndBuildPage() {
@@ -16,13 +16,13 @@ export default function DesignAndBuildPage() {
             Our Services
           </p>
           <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)', fontWeight: 700, lineHeight: 1.15, marginBottom: '24px' }}>
-            Design and Build — One Contract, One Team, One Outcome
+            Find a Design and Build Contractor — One Contract, One Outcome
           </h1>
           <p style={{ fontSize: '1.2rem', color: '#c8d0de', maxWidth: '680px', margin: '0 auto 36px' }}>
-            No fragmented architect-plus-builder approach. No gap in accountability. We design it. We build it. We own it.
+            No fragmented architect-plus-builder approach. No gap in accountability. Verified design and build contractors on Dwellinger take full responsibility from drawing to handover.
           </p>
           <Link
-            href="/get-a-quote"
+            href="/register"
             style={{
               display: 'inline-block',
               backgroundColor: '#C4773B',
@@ -34,7 +34,7 @@ export default function DesignAndBuildPage() {
               textDecoration: 'none',
             }}
           >
-            Get a Quote for Your Project
+            Find a Design &amp; Build Contractor
           </Link>
         </div>
       </section>
@@ -83,8 +83,8 @@ export default function DesignAndBuildPage() {
                   'Single contract, single point of contact',
                   'Fixed design and build fee from day one',
                   'Design is informed by buildability from the start',
-                  'Guaranteed outcome — we own the result',
-                  'All design, planning and build coordination handled by us',
+                  'Guaranteed outcome — one contractor owns the result',
+                  'All design, planning and build coordination handled under one contract',
                   'Cost certainty before you commit',
                 ].map((item) => (
                   <li key={item} style={{ display: 'flex', gap: '10px', color: '#4A5568', fontSize: '0.97rem', lineHeight: 1.5 }}>
@@ -114,7 +114,7 @@ export default function DesignAndBuildPage() {
               {
                 step: '02',
                 title: 'Design & Planning',
-                desc: "Our in-house design team produces drawings, 3D visuals and planning submissions. Because we're also the builder, every design decision is made with construction cost in mind.",
+                desc: "Your contractor's design team produces drawings, 3D visuals and planning submissions. Because they're also the builder, every design decision is made with construction cost in mind — no disconnect between drawing and delivery.",
               },
               {
                 step: '03',
@@ -124,7 +124,7 @@ export default function DesignAndBuildPage() {
               {
                 step: '04',
                 title: 'Build',
-                desc: "Our directly employed trades and vetted supply chain execute the works to programme. You have a single point of contact throughout — no chasing multiple contractors.",
+                desc: "The contractor's trades and vetted supply chain execute the works to programme. You have a single point of contact throughout — no chasing multiple parties.",
               },
               {
                 step: '05',

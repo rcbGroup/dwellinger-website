@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Principal Contractor Service London | CDM & Multi-Trade',
-  description: 'Dwellinger acts as Principal Contractor under CDM 2015 for complex residential and commercial projects across London. One point of contact for all trades.',
+  title: 'Find a Principal Contractor in London | CDM 2015 Verified',
+  description: 'Find verified principal contractors for complex residential and commercial projects across London. CDM 2015 compliant. Builder Score™ rated. One point of contact for all trades.',
 }
 
 export default function PrincipalContractorPage() {
@@ -16,13 +16,13 @@ export default function PrincipalContractorPage() {
             Our Services
           </p>
           <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)', fontWeight: 700, lineHeight: 1.15, marginBottom: '24px' }}>
-            What a Principal Contractor Does — and Why It Matters
+            Find a Principal Contractor — Verified, Scored, Ready to Appoint
           </h1>
           <p style={{ fontSize: '1.15rem', color: '#c8d0de', maxWidth: '660px', margin: '0 auto 36px', lineHeight: 1.65 }}>
-            On any project with multiple trades or phases, someone needs to be legally responsible for co-ordination, health & safety, and programme management. That someone is the Principal Contractor.
+            On any project with multiple trades or phases, someone needs to be legally responsible for co-ordination, health & safety, and programme management. Find a CDM 2015-ready principal contractor through Dwellinger — every one Builder Score™ rated and verified.
           </p>
           <Link
-            href="/contact"
+            href="/register"
             style={{
               display: 'inline-block',
               backgroundColor: '#C4773B',
@@ -34,7 +34,7 @@ export default function PrincipalContractorPage() {
               textDecoration: 'none',
             }}
           >
-            Talk to Our Team
+            Find a Principal Contractor
           </Link>
         </div>
       </section>
@@ -52,7 +52,7 @@ export default function PrincipalContractorPage() {
             As a CDM duty holder, the Principal Contractor is legally required to plan, manage, monitor and co-ordinate all construction work. This includes producing and maintaining the Construction Phase Plan, ensuring welfare facilities are in place before work begins, and managing site-wide health and safety for every trade on site — not just their own operatives.
           </p>
           <p style={{ color: '#4A5568', lineHeight: 1.75, fontSize: '1.02rem', marginBottom: '40px' }}>
-            Dwellinger acts as Principal Contractor for projects of all sizes. We hold the legal duty, we manage the programme, and we ensure that your project is compliant from day one.
+            Every principal contractor on the Dwellinger platform is Builder Score™ verified and CDM 2015 ready. They hold the legal duty, manage the programme, and ensure your project is compliant from day one — with their performance independently tracked on the platform.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px' }}>

@@ -16,15 +16,15 @@ const tradeTypes = [
 
 const mockContractors = [
   {
-    name: 'RCB Design & Build',
+    name: 'Metropolitan Design & Build',
     trade: 'Principal Contractor',
     location: 'Greater London',
-    score: 924,
+    score: 912,
     tier: 'Platinum',
     projectTypes: ['Extensions', 'Loft conversions', 'Refurbishments', 'Structural works'],
-    reviewCount: 47,
+    reviewCount: 34,
     verified: true,
-    slug: 'rcb-design-build',
+    slug: 'metropolitan-design-build',
   },
   {
     name: 'Apex Build Solutions',

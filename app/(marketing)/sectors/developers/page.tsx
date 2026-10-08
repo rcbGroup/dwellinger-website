@@ -17,17 +17,17 @@ const services = [
   },
   {
     title: 'BTR / PRS Delivery',
-    desc: 'Build-to-rent and private rented sector schemes delivered from groundworks to handover. We understand the operational requirements of BTR landlords.',
+    desc: 'Build-to-rent and private rented sector schemes delivered from groundworks to handover. Contractors on the platform understand the operational requirements of BTR landlords.',
   },
   {
     title: 'Mixed-Use Development',
-    desc: 'Residential-over-commercial schemes managed as principal contractor. Planning coordination, structural delivery and fit-out — one contract, one team.',
+    desc: 'Residential-over-commercial schemes managed under a single principal contractor. Planning coordination, structural delivery and fit-out — one contract, one team.',
   },
 ];
 
 const stats = [
-  { value: '£40M+', label: 'Projects Managed' },
-  { value: '143', label: 'Projects Delivered' },
+  { value: '1,972', label: 'Knowledge articles' },
+  { value: '0–1000', label: 'Builder Score™ range' },
   { value: 'London & Home Counties', label: 'Operating Area' },
 ];
 
@@ -129,7 +129,7 @@ export default function DevelopersPage() {
             Built for Developers
           </h2>
           <p style={{ color: '#4A5568', textAlign: 'center', margin: '0 0 48px' }}>
-            We understand the pressure of development cycles. Our platform and team are aligned to your timeline.
+            The Dwellinger platform is aligned to development cycles — intelligence tools, cost data, and verified contractors all in one place.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 32 }}>
             {whyPoints.map((p, i) => (
@@ -156,7 +156,7 @@ export default function DevelopersPage() {
             Ready to talk about your next scheme?
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.05rem', margin: '0 0 36px', lineHeight: 1.6 }}>
-            Book a call with our development team. We&apos;ll review your appraisal, challenge your numbers and tell you what we can deliver.
+            Book a call to discuss how Dwellinger&apos;s intelligence tools and contractor network can support your development pipeline.
           </p>
           <Link
             href="/contact"

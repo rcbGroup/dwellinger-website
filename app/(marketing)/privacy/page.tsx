@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy policy for Dwellinger and RCB Design & Build. UK GDPR compliant.',
+  description: 'Privacy policy for Dwellinger. How we collect, use and protect your personal data. UK GDPR compliant.',
 }
 
 const headingStyle = { color: '#1A2340', fontSize: '1.3rem', fontWeight: 700, marginTop: 40, marginBottom: 12 } as const
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
       <article style={{ maxWidth: 800, margin: '0 auto', padding: '60px 24px 80px' }}>
         <h2 style={headingStyle}>Who We Are</h2>
         <p style={paraStyle}>
-          This privacy policy explains how Dwellinger, operated by RCB Design &amp; Build, collects, uses and protects your personal data. Our registered address is 347 Barking Road, London E13 8EE. You can contact us at info@dwellinger.co.uk.
+          This privacy policy explains how Dwellinger collects, uses and protects your personal data. Dwellinger is a construction intelligence platform and marketplace. You can contact us at info@dwellinger.co.uk.
         </p>
 
         <h2 style={headingStyle}>What Data We Collect</h2>
@@ -94,8 +94,7 @@ export default function PrivacyPage() {
         <h2 style={headingStyle}>Contact Us</h2>
         <p style={paraStyle}>
           For any privacy-related queries, please contact us at:<br />
-          <strong>Dwellinger / RCB Design &amp; Build</strong><br />
-          347 Barking Road, London E13 8EE<br />
+          <strong>Dwellinger</strong><br />
           Email: info@dwellinger.co.uk
         </p>
       </article>
