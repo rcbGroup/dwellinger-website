@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, ChevronDown, Sun, Moon, Sunset } from 'lucide-react'
+import { Menu, X, ChevronDown, Sun, Moon, SunMedium } from 'lucide-react'
 import { useTheme, type Theme } from '@/components/providers/ThemeProvider'
 import { useLang, LANGUAGES, type Lang } from '@/components/providers/LanguageProvider'
 import { Logo } from '@/components/shared/Logo'
@@ -65,7 +65,7 @@ const navItems: NavItem[] = [
 
 const THEMES: { value: Theme; label: string; Icon: React.FC<{ className?: string }> }[] = [
   { value: 'dark', label: 'Dark', Icon: Moon },
-  { value: 'mid', label: 'Twilight', Icon: Sunset },
+  { value: 'mid', label: 'Twilight', Icon: SunMedium },
   { value: 'light', label: 'Light', Icon: Sun },
 ]
 
