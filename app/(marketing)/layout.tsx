@@ -1,6 +1,7 @@
 import Nav from '@/components/shared/Nav'
 import Footer from '@/components/shared/Footer'
 import SuggestionWidget from '@/components/shared/SuggestionWidget'
+import { CookieConsent } from '@/components/shared/CookieConsent'
 
 export default function MarketingLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,6 +10,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
       <main style={{ flex: 1 }}>{children}</main>
       <Footer />
       <SuggestionWidget />
+      <CookieConsent />
     </div>
   )
 }

@@ -24,6 +24,46 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Google Maps — Service Area */}
+      <section className="py-12 bg-bg-surface border-y border-border">
+        <div className="container mx-auto">
+          <div className="mb-6">
+            <p className="section-tag mb-2">Service Area</p>
+            <h2 className="font-display text-h2 text-text mb-2">Where we operate</h2>
+            <p className="text-text-secondary text-base max-w-2xl">
+              Dwellinger is active across Greater London and the Home Counties — from Barnet to Bromley,
+              Ealing to Greenwich. Most contractor profiles are concentrated in inner and outer London.
+            </p>
+          </div>
+          <div
+            style={{
+              borderRadius: 12,
+              overflow: 'hidden',
+              border: '1px solid var(--color-border)',
+              boxShadow: 'var(--card-shadow)',
+              position: 'relative',
+            }}
+          >
+            <iframe
+              title="Dwellinger service area — Greater London"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317716.52146539134!2d-0.38177813432218305!3d51.528308436816484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2suk!4v1728384000000!5m2!1sen!2suk"
+              width="100%"
+              height="400"
+              style={{ border: 0, display: 'block' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+          <div className="mt-4 flex flex-wrap gap-3 text-xs text-text-muted">
+            <span>✓ All 33 London boroughs</span>
+            <span>✓ Surrey &amp; Kent commuter belt</span>
+            <span>✓ Essex &amp; Hertfordshire</span>
+            <span>✓ Berkshire &amp; Buckinghamshire</span>
+          </div>
+        </div>
+      </section>
+
       <section className="pb-20 bg-bg">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12">

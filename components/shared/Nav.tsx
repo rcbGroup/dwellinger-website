@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Menu, X, ChevronDown, Sun, Moon, Sunset } from 'lucide-react'
 import { useTheme, type Theme } from '@/components/providers/ThemeProvider'
 import { useLang, LANGUAGES, type Lang } from '@/components/providers/LanguageProvider'
+import { Logo } from '@/components/shared/Logo'
 
 type DropdownItem = { label: string; href: string }
 type NavItem =
@@ -323,11 +324,7 @@ export default function Nav() {
     >
       <nav style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', height: 56, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
         {/* Logo */}
-        <Link href="/" style={{ flexShrink: 0, textDecoration: 'none' }}>
-          <span style={{ fontFamily: 'Playfair Display, Georgia, serif', fontWeight: 800, fontSize: '1.2rem', color: 'var(--color-text)' }}>
-            Dwell<span style={{ color: '#C4773B' }}>inger</span>
-          </span>
-        </Link>
+        <Logo size="sm" />
 
         {/* Desktop nav */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 4 }} className="hidden md:flex">
