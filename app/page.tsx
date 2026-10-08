@@ -333,6 +333,80 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ─── WHAT WE DO ─── */}
+        <section className="py-20 bg-bg-surface border-y border-border">
+          <div className="container mx-auto">
+            <div className="text-center mb-12">
+              <p className="section-tag mb-3">A to Z delivery</p>
+              <h2 className="section-title">What We Do</h2>
+              <p className="text-text-secondary mt-4 max-w-xl mx-auto">
+                Principal contractor delivery from first conversation to final sign-off.
+                One point of accountability — design, estimating, build, and maintenance.
+              </p>
+            </div>
+            <div className="space-y-3 max-w-2xl mx-auto">
+              {[
+                { icon: '📐', title: 'Design & Build', desc: 'Concept through completion — one point of accountability for design, specification, and delivery.' },
+                { icon: '🏛️', title: 'Principal Contractor', desc: 'CDM-aware coordination, multi-trade management, and full delivery control from mobilisation to handover.' },
+                { icon: '📊', title: 'Estimating & QS', desc: 'QS-reviewed cost plans from £95 — Outline, Standard, Full, and Premium packages to suit your stage.' },
+                { icon: '🔧', title: 'Maintenance', desc: 'Planned and reactive maintenance for residential landlords and rental portfolio owners.' },
+              ].map((service) => (
+                <div
+                  key={service.title}
+                  className="flex items-center gap-4 p-4 bg-bg-raised rounded-lg border-l-4 border-amber"
+                >
+                  <div className="text-2xl flex-shrink-0">{service.icon}</div>
+                  <div>
+                    <div className="font-bold text-white text-base">{service.title}</div>
+                    <div className="text-text-secondary text-sm mt-1">{service.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── ESTIMATING PRICING ─── */}
+        <section className="py-20 bg-bg">
+          <div className="container mx-auto">
+            <div className="text-center mb-10">
+              <p className="section-tag mb-3">Professional estimating</p>
+              <h2 className="section-title">Get a Proper Estimate</h2>
+              <p className="text-text-secondary mt-4 max-w-xl mx-auto">
+                Not a rough guess — a QS-reviewed cost plan based on real London project data.
+                From £95 and back within 5 working days.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8">
+              {[
+                { name: 'Outline', price: '£95', days: '5 working days' },
+                { name: 'Standard', price: '£150', days: '5 working days', popular: true },
+                { name: 'Full', price: '£250', days: '7 working days' },
+                { name: 'Premium', price: '£350', days: '7–10 days' },
+              ].map((tier) => (
+                <div
+                  key={tier.name}
+                  className={`relative card p-5 text-center ${'popular' in tier && tier.popular ? 'border-amber bg-bg-raised shadow-glow' : ''}`}
+                >
+                  {'popular' in tier && tier.popular && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                      <span className="badge-amber px-3 py-1 text-xs whitespace-nowrap">Most Popular</span>
+                    </div>
+                  )}
+                  <div className="font-bold text-white text-sm mb-2">{tier.name}</div>
+                  <div className="font-display text-amber font-bold text-2xl">{tier.price}</div>
+                  <div className="text-text-muted text-xs mt-1">{tier.days}</div>
+                </div>
+              ))}
+            </div>
+            <div className="text-center">
+              <Link href="/services/estimating" className="btn-primary">
+                View Estimating Packages <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ─── REAL PROJECTS ─── */}
         <section className="py-20 bg-bg-surface border-y border-border">
           <div className="container mx-auto">
