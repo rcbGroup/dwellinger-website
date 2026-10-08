@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 type NavItem = { label: string; href: string; external?: boolean }
@@ -133,7 +135,7 @@ export default function Footer() {
               </span>
             </Link>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', lineHeight: 1.7, maxWidth: 200 }}>
-              The UK&apos;s property &amp; construction intelligence platform &mdash; connecting homeowners, contractors and investors.
+              The UK&apos;s property &amp; construction intelligence platform — connecting homeowners, contractors and investors.
             </p>
             <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 6 }}>
               <a href="tel:+447359872594" style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>
