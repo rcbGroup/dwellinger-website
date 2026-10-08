@@ -255,6 +255,34 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ─── PHOTO GALLERY STRIP ─── */}
+        <section className="bg-bg py-4">
+          <div className="container mx-auto">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, borderRadius: 12, overflow: 'hidden', maxHeight: 200 }}>
+              {[
+                { url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&auto=format&fit=crop', alt: 'Modern home extension UK' },
+                { url: 'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=600&q=80&auto=format&fit=crop', alt: 'Loft conversion London' },
+                { url: 'https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=600&q=80&auto=format&fit=crop', alt: 'Kitchen renovation' },
+                { url: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80&auto=format&fit=crop', alt: 'Construction site UK' },
+              ].map((img, i) => (
+                <div key={i} style={{ position: 'relative', overflow: 'hidden', height: 200 }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={img.url}
+                    alt={img.alt}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    loading="lazy"
+                  />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)' }} />
+                </div>
+              ))}
+            </div>
+            <p style={{ textAlign: 'center', fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: 6 }}>
+              Projects delivered across Greater London and the Home Counties
+            </p>
+          </div>
+        </section>
+
         {/* ─── STATS BAR ─── */}
         <section className="bg-bg-surface border-y border-border py-8">
           <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -427,6 +455,7 @@ export default function HomePage() {
                   score: 889,
                   duration: '14 weeks',
                   color: '#C4773B',
+                  img: 'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=600&q=80&auto=format&fit=crop',
                 },
                 {
                   type: 'Rear Extension',
@@ -436,6 +465,7 @@ export default function HomePage() {
                   score: 912,
                   duration: '10 weeks',
                   color: '#10B981',
+                  img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&auto=format&fit=crop',
                 },
                 {
                   type: 'Full Refurbishment',
@@ -445,23 +475,27 @@ export default function HomePage() {
                   score: 856,
                   duration: '22 weeks',
                   color: '#4A90D9',
+                  img: 'https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=600&q=80&auto=format&fit=crop',
                 },
               ].map((project) => (
                 <div key={project.type + project.location} className="card p-0 overflow-hidden">
-                  <div style={{ background: `${project.color}18`, borderBottom: `3px solid ${project.color}`, padding: '20px 24px' }}>
-                    <div className="flex items-start justify-between">
+                  {/* Photo header */}
+                  <div style={{ position: 'relative', height: 140, overflow: 'hidden' }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={project.img} alt={`${project.type} ${project.location}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+                    <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to top, ${project.color}CC 0%, rgba(0,0,0,0.2) 100%)` }} />
+                    <div style={{ position: 'absolute', bottom: 12, left: 16, right: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                       <div>
-                        <div style={{ color: project.color, fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 6 }}>{project.type}</div>
-                        <div className="text-white font-bold text-base">{project.location}</div>
+                        <div style={{ color: '#fff', fontWeight: 700, fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.85 }}>{project.type}</div>
+                        <div style={{ color: '#fff', fontWeight: 800, fontSize: '1rem' }}>{project.location}</div>
                       </div>
-                      <div className="text-right">
-                        <div style={{ color: project.color, fontWeight: 800, fontSize: '1.25rem' }}>
-                          Builder Score™
-                        </div>
-                        <div className="text-white font-bold text-xl">{project.score}</div>
+                      <div style={{ textAlign: 'right', background: 'rgba(0,0,0,0.5)', borderRadius: 6, padding: '4px 8px', backdropFilter: 'blur(4px)' }}>
+                        <div style={{ color: project.color, fontWeight: 700, fontSize: '0.6rem', textTransform: 'uppercase' }}>Score</div>
+                        <div style={{ color: '#fff', fontWeight: 800, fontSize: '1rem' }}>{project.score}</div>
                       </div>
                     </div>
                   </div>
+                  <div style={{ borderBottom: `3px solid ${project.color}`, padding: '0' }} />
                   <div style={{ padding: '20px 24px' }}>
                     <p className="text-text-secondary text-sm leading-relaxed mb-4">{project.spec}</p>
                     <div className="grid grid-cols-2 gap-3">

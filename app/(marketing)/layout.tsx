@@ -1,12 +1,14 @@
 import Nav from '@/components/shared/Nav'
 import Footer from '@/components/shared/Footer'
+import SuggestionWidget from '@/components/shared/SuggestionWidget'
 
 export default function MarketingLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: 'var(--color-bg)' }}>
       <Nav />
-      <main className="flex-1">{children}</main>
+      <main style={{ flex: 1 }}>{children}</main>
       <Footer />
+      <SuggestionWidget />
     </div>
   )
 }
