@@ -89,6 +89,18 @@ const audienceTracks = [
     cta: 'I\'m an investor',
     href: '/investors',
   },
+  {
+    icon: '📐',
+    audience: 'Professionals',
+    headline: 'Tools for architects, PMs and consultants',
+    points: [
+      'Contractor procurement and vetting',
+      'Planning data and approval analytics',
+      'Client-ready project dashboards',
+    ],
+    cta: 'I\'m a professional',
+    href: '/professionals',
+  },
 ]
 
 const features = [
@@ -206,9 +218,6 @@ export default function HomePage() {
               <Link href="/register" className="btn-primary-lg">
                 Get started free <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link href="/estimate" className="btn-secondary text-base px-8 py-4">
-                Get a free estimate
-              </Link>
             </div>
 
             {/* Score preview */}
@@ -303,14 +312,14 @@ export default function HomePage() {
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <p className="section-tag mb-3">Who Dwellinger is for</p>
-              <h2 className="section-title">One platform, three audiences</h2>
+              <h2 className="section-title">One platform, four audiences</h2>
               <p className="text-text-secondary mt-4 max-w-xl mx-auto">
-                Whether you&apos;re planning a build, running a contracting business, or evaluating
-                a property deal — Dwellinger has a purpose-built toolset for you.
+                Whether you&apos;re planning a build, running a contracting business, evaluating
+                a property deal, or managing projects as a professional — Dwellinger has a purpose-built toolset for you.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-5">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
               {audienceTracks.map((track) => (
                 <div
                   key={track.audience}
@@ -400,10 +409,10 @@ export default function HomePage() {
                 { name: 'Outline', price: '£95', days: '5 working days' },
                 { name: 'Standard', price: '£150', days: '5 working days', popular: true },
                 { name: 'Full', price: '£250', days: '7 working days' },
-                { name: 'Full', price: '£350', days: '7–10 days' },
+                { name: 'Premium', price: '£350', days: '7–10 days' },
               ].map((tier) => (
                 <div
-                  key={tier.name + tier.price}
+                  key={tier.name}
                   className={`relative card p-5 text-center ${'popular' in tier && tier.popular ? 'border-amber bg-bg-raised shadow-glow' : ''}`}
                 >
                   {'popular' in tier && tier.popular && (
