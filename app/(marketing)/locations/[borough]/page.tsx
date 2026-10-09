@@ -1,375 +1,109 @@
-import { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
 
-const boroughs: Record<string, { name: string; description: string }> = {
-  hackney: {
-    name: 'Hackney',
-    description:
-      'A vibrant inner-London borough with a mix of Victorian terraces and modern apartments. Permitted Development rules apply to most rear extensions up to 3m.',
-  },
-  enfield: {
-    name: 'Enfield',
-    description:
-      "Enfield's mix of semi-detached and detached homes makes it ideal for rear extensions and loft conversions, often under Permitted Development.",
-  },
-  barking: {
-    name: 'Barking and Dagenham',
-    description:
-      "One of London's most affordable boroughs for extension projects, with good Permitted Development allowances for residential properties.",
-  },
-  'waltham-forest': {
-    name: 'Waltham Forest',
-    description:
-      'Home to tree-lined streets and 1930s semis, Waltham Forest is excellent for loft conversions and rear extensions.',
-  },
-  greenwich: {
-    name: 'Greenwich',
-    description:
-      'Greenwich has a mix of Victorian terraces, conservation areas and modern estates. Planning rules vary by street.',
-  },
-  lewisham: {
-    name: 'Lewisham',
-    description:
-      'With strong permitted development rights and a mix of property types, Lewisham is popular for home extension projects.',
-  },
-  islington: {
-    name: 'Islington',
-    description:
-      'Many Islington streets are in conservation areas - permitted development rights may be restricted, so professional advice is essential.',
-  },
-  camden: {
-    name: 'Camden',
-    description:
-      'Camden has a high proportion of conservation areas. Extensions often require full planning permission with a focus on materials and design.',
-  },
-  'tower-hamlets': {
-    name: 'Tower Hamlets',
-    description:
-      'Rapid regeneration and a mix of new-builds and Victorian terraces make Tower Hamlets an active market for refurbishments and extensions.',
-  },
-  newham: {
-    name: 'Newham',
-    description:
-      "Newham's ongoing development means strong demand for refurbishments and extensions, with generally good PD rights outside designated areas.",
-  },
-  barnet: {
-    name: 'Barnet',
-    description:
-      "Barnet's large semi-detached and detached stock is ideal for rear extensions and loft conversions. Many roads retain Permitted Development rights.",
-  },
-  bexley: {
-    name: 'Bexley',
-    description:
-      "Bexley offers some of London's most generous plot sizes, making it excellent for rear and side return extensions under Permitted Development.",
-  },
-  brent: {
-    name: 'Brent',
-    description:
-      "Brent has a diverse range of Victorian terraces and inter-war semis, with strong demand for loft conversions and kitchen extensions.",
-  },
-  bromley: {
-    name: 'Bromley',
-    description:
-      "London's largest borough by area, Bromley has abundant space for extensions and loft conversions, with most residential properties under PD rights.",
-  },
-  croydon: {
-    name: 'Croydon',
-    description:
-      "Croydon's mix of Edwardian and inter-war housing stock makes it popular for rear extensions and loft conversions at competitive costs.",
-  },
-  ealing: {
-    name: 'Ealing',
-    description:
-      "Ealing's wide tree-lined streets and semi-detached homes provide excellent opportunity for rear extensions, with good Permitted Development allowances.",
-  },
-  'hammersmith-and-fulham': {
-    name: 'Hammersmith and Fulham',
-    description:
-      "Prime west London location with many Victorian terraces. Conservation areas are common so professional design advice is essential before applying.",
-  },
-  haringey: {
-    name: 'Haringey',
-    description:
-      "Haringey's Victorian and Edwardian terraces are well-suited to rear extensions and loft conversions, particularly in Wood Green and Tottenham.",
-  },
-  harrow: {
-    name: 'Harrow',
-    description:
-      "Harrow's suburban character and mix of detached and semi-detached homes makes it ideal for large rear and side extensions under PD.",
-  },
-  havering: {
-    name: 'Havering',
-    description:
-      "One of London's most suburban boroughs, Havering offers excellent scope for extensions with large gardens and generally good PD allowances.",
-  },
-  hillingdon: {
-    name: 'Hillingdon',
-    description:
-      "Hillingdon's detached and semi-detached stock in areas like Ruislip and Uxbridge provides strong opportunities for rear and double-storey extensions.",
-  },
-  hounslow: {
-    name: 'Hounslow',
-    description:
-      "Hounslow has a strong market for extensions and refurbishments, with many post-war semis offering good scope under Permitted Development.",
-  },
-  'kensington-and-chelsea': {
-    name: 'Kensington and Chelsea',
-    description:
-      "London's most prestigious borough. Almost all works require full planning permission. Heritage materials and exceptional design are essential.",
-  },
-  'kingston-upon-thames': {
-    name: 'Kingston upon Thames',
-    description:
-      "Kingston's suburban character and mix of Victorian and inter-war stock makes it popular for rear extensions and loft conversions.",
-  },
-  lambeth: {
-    name: 'Lambeth',
-    description:
-      "Lambeth's Victorian terraces in Brixton, Clapham and Streatham are ideal for rear extensions and loft conversions with strong Permitted Development rights.",
-  },
-  merton: {
-    name: 'Merton',
-    description:
-      "Merton's suburban streets in Wimbledon and Morden offer excellent scope for rear extensions and loft conversions, often under PD rights.",
-  },
-  redbridge: {
-    name: 'Redbridge',
-    description:
-      "Redbridge's Edwardian and inter-war housing stock in Ilford and Woodford provides strong opportunities for extensions and refurbishments.",
-  },
-  'richmond-upon-thames': {
-    name: 'Richmond upon Thames',
-    description:
-      "Richmond has a high proportion of conservation areas along the Thames. Extensions require careful design, and many streets require planning permission.",
-  },
-  southwark: {
-    name: 'Southwark',
-    description:
-      "Southwark's Victorian terraces in Peckham, Bermondsey and Dulwich are popular for rear extensions and loft conversions, with growing demand.",
-  },
-  sutton: {
-    name: 'Sutton',
-    description:
-      "Sutton's suburban character and generous plot sizes make it one of the better-value boroughs for rear extensions and loft conversions.",
-  },
-  wandsworth: {
-    name: 'Wandsworth',
-    description:
-      "Wandsworth's Victorian and Edwardian terraces in Clapham, Battersea and Tooting are highly sought after for rear extensions and loft conversions.",
-  },
-  westminster: {
-    name: 'Westminster',
-    description:
-      "Westminster is almost entirely in conservation areas. All works require full planning permission and careful attention to heritage materials and design.",
-  },
+const BOROUGHS: Record<string, { name: string; description: string; trades: string[]; fact: string }> = {
+  'barking-and-dagenham': { name: 'Barking and Dagenham', description: 'a predominantly residential east London borough', trades: ['extensions', 'loft conversions', 'kitchen refurbishments', 'bathroom fitting'], fact: "Barking and Dagenham has one of London's fastest-growing housing renovation markets, driven by strong demand for space from young families." },
+  'barnet': { name: 'Barnet', description: "one of London's largest outer boroughs", trades: ['loft conversions', 'extensions', 'full refurbishments', 'structural alterations'], fact: "Barnet's mix of Edwardian and 1930s housing stock means many projects involve structural work and heritage-aware design." },
+  'bexley': { name: 'Bexley', description: 'a quiet south-east London borough', trades: ['extensions', 'driveways', 'bathroom refurbishments', 'roofing'], fact: "Bexley's semi-detached suburban housing creates strong demand for rear and side extensions." },
+  'brent': { name: 'Brent', description: 'a diverse north-west London borough', trades: ['kitchen refurbishments', 'bathroom fitting', 'extensions', 'painting and decorating'], fact: 'Brent has a large private rental sector, creating consistent demand for maintenance and upgrade works.' },
+  'bromley': { name: 'Bromley', description: 'the largest London borough by area', trades: ['loft conversions', 'extensions', 'full house refurbishments', 'garden landscaping'], fact: "Bromley's large detached and semi-detached properties make it one of London's strongest markets for loft conversions and extensions." },
+  'camden': { name: 'Camden', description: 'a central north London borough', trades: ['Victorian refurbishments', 'basement conversions', 'structural alterations', 'heritage restoration'], fact: "Camden's Victorian and Georgian terraced housing drives demand for specialist heritage refurbishment and basement extension work." },
+  'city-of-london': { name: 'City of London', description: "London's historic financial district", trades: ['commercial fit-outs', 'office refurbishments', 'heritage restoration', 'property maintenance'], fact: 'The City of London is primarily commercial, with strong demand for high-specification office fit-outs and heritage building maintenance.' },
+  'croydon': { name: 'Croydon', description: 'a major south London borough', trades: ['extensions', 'loft conversions', 'kitchen refurbishments', 'full refurbishments'], fact: "Croydon's ongoing regeneration and affordability relative to inner London make it a hotspot for renovation investment." },
+  'ealing': { name: 'Ealing', description: 'a large west London borough', trades: ['extensions', 'loft conversions', 'kitchen and bathroom refurbishments', 'structural alterations'], fact: "Ealing's Edwardian terraces and semi-detached houses are ideally suited for rear extensions and loft conversions." },
+  'enfield': { name: 'Enfield', description: 'the northernmost London borough', trades: ['extensions', 'roofing', 'driveways', 'full refurbishments'], fact: "Enfield's mix of large suburban homes and period properties creates varied demand across trade types." },
+  'greenwich': { name: 'Greenwich', description: 'a south-east London borough with UNESCO World Heritage status', trades: ['Victorian refurbishments', 'extensions', 'conservation area works', 'kitchen refurbishments'], fact: "Greenwich's conservation areas and Victorian housing require contractors familiar with planning constraints and heritage materials." },
+  'hackney': { name: 'Hackney', description: 'a vibrant east London borough', trades: ['Victorian refurbishments', 'kitchen and bathroom refurbishments', 'structural alterations', 'basement conversions'], fact: "Hackney's Victorian terraces and rapid gentrification drive strong demand for high-specification refurbishment." },
+  'hammersmith-and-fulham': { name: 'Hammersmith and Fulham', description: 'a west London borough on the Thames', trades: ['Victorian terraced refurbishments', 'extensions', 'basement conversions', 'luxury refurbishments'], fact: 'Property values in Hammersmith and Fulham mean many homeowners invest in high-specification refurbishments and basement extensions.' },
+  'haringey': { name: 'Haringey', description: 'a north London borough', trades: ['Victorian refurbishments', 'extensions', 'loft conversions', 'kitchen refurbishments'], fact: "Haringey's mix of Victorian terraces and 1930s housing makes it a consistent market for loft conversions and rear extensions." },
+  'harrow': { name: 'Harrow', description: 'a north-west London borough', trades: ['extensions', 'loft conversions', 'driveways', 'bathroom refurbishments'], fact: "Harrow's large family homes and planning policies generally permit well-designed extensions and conversions." },
+  'havering': { name: 'Havering', description: 'a large east London borough', trades: ['extensions', 'roofing', 'driveways', 'general maintenance'], fact: 'Havering has a strong homeowner community with consistent demand for extensions and maintenance across its suburban housing stock.' },
+  'hillingdon': { name: 'Hillingdon', description: "west London's largest borough", trades: ['extensions', 'loft conversions', 'driveways', 'full refurbishments'], fact: "Hillingdon's 1930s and post-war housing provides ample opportunity for rear and side extensions." },
+  'hounslow': { name: 'Hounslow', description: 'a west London borough', trades: ['extensions', 'kitchen refurbishments', 'bathroom fitting', 'loft conversions'], fact: "Hounslow's diverse population and strong rental market create consistent demand for kitchen, bathroom, and extension works." },
+  'islington': { name: 'Islington', description: 'a central north London borough', trades: ['Georgian and Victorian refurbishments', 'basement conversions', 'structural alterations', 'luxury refurbishments'], fact: "Islington's Georgian and Victorian stock, combined with high property values, drives demand for premium refurbishments and basement extensions." },
+  'kensington-and-chelsea': { name: 'Kensington and Chelsea', description: "one of London's most prestigious boroughs", trades: ['luxury refurbishments', 'basement conversions', 'heritage restoration', 'high-specification fit-outs'], fact: "Kensington and Chelsea is the UK's most densely populated local authority and has one of the highest concentrations of listed buildings, requiring specialist contractors." },
+  'kingston-upon-thames': { name: 'Kingston upon Thames', description: 'a south-west London borough', trades: ['extensions', 'loft conversions', 'full refurbishments', 'kitchen and bathroom works'], fact: "Kingston's popularity with families drives demand for space-creating extensions and loft conversions." },
+  'lambeth': { name: 'Lambeth', description: 'a south London borough on the Thames', trades: ['Victorian refurbishments', 'kitchen refurbishments', 'extensions', 'roofing'], fact: "Lambeth's Victorian terraces and growing popularity make it a consistent market for refurbishment and conversion works." },
+  'lewisham': { name: 'Lewisham', description: 'a south-east London borough', trades: ['extensions', 'loft conversions', 'kitchen refurbishments', 'full refurbishments'], fact: "Lewisham's affordability relative to neighbouring boroughs has attracted significant renovation investment from buyers seeking value." },
+  'merton': { name: 'Merton', description: 'a south-west London borough', trades: ['extensions', 'loft conversions', 'kitchen and bathroom refurbishments', 'driveways'], fact: "Merton's mix of Edwardian and inter-war housing provides strong scope for extensions and loft conversions." },
+  'newham': { name: 'Newham', description: 'an east London borough', trades: ['extensions', 'refurbishments', 'kitchen fitting', 'roofing'], fact: "Newham's post-Olympic regeneration has driven significant residential investment and renovation activity." },
+  'redbridge': { name: 'Redbridge', description: 'a north-east London borough', trades: ['extensions', 'loft conversions', 'kitchen refurbishments', 'general maintenance'], fact: "Redbridge's suburban housing stock and family demographics create consistent demand for extension and refurbishment work." },
+  'richmond-upon-thames': { name: 'Richmond upon Thames', description: 'a south-west London borough on the Thames', trades: ['extensions', 'luxury refurbishments', 'loft conversions', 'garden landscaping'], fact: "Richmond's high property values and affluent demographic drive demand for premium refurbishments and well-designed extensions." },
+  'southwark': { name: 'Southwark', description: 'a south London borough', trades: ['Victorian refurbishments', 'conversions', 'structural alterations', 'kitchen and bathroom works'], fact: "Southwark's rapid gentrification and mix of period and new-build housing creates a diverse renovation market." },
+  'sutton': { name: 'Sutton', description: 'a south London borough', trades: ['extensions', 'loft conversions', 'bathroom refurbishments', 'roofing'], fact: "Sutton's semi-detached suburban housing creates particularly strong demand for rear and side extensions." },
+  'tower-hamlets': { name: 'Tower Hamlets', description: 'an east London borough', trades: ['Victorian refurbishments', 'kitchen refurbishments', 'structural alterations', 'roofing'], fact: 'Tower Hamlets mixes Victorian terraces with modern developments, creating varied demand for renovation contractors.' },
+  'waltham-forest': { name: 'Waltham Forest', description: 'a north-east London borough', trades: ['Victorian refurbishments', 'extensions', 'loft conversions', 'kitchen refurbishments'], fact: "Waltham Forest's growing popularity and Victorian housing stock have made it one of London's most active renovation markets." },
+  'wandsworth': { name: 'Wandsworth', description: 'a south London borough', trades: ['Victorian refurbishments', 'extensions', 'basement conversions', 'luxury refurbishments'], fact: "Wandsworth's high property values and family demographic drive demand for premium extensions and whole-house refurbishments." },
+  'westminster': { name: 'Westminster', description: 'the City of Westminster', trades: ['luxury refurbishments', 'heritage restoration', 'listed building works', 'high-specification fit-outs'], fact: 'Westminster has the highest concentration of listed buildings in the UK, requiring specialist contractors with conservation experience.' },
 }
 
-export function generateStaticParams() {
-  return Object.keys(boroughs).map((borough) => ({ borough }))
-}
-
-export async function generateMetadata({
-  params,
-}: {
+interface Props {
   params: { borough: string }
-}): Promise<Metadata> {
-  const borough = boroughs[params.borough]
-  if (!borough) return {}
-  return {
-    title: `Extension & Loft Conversion Builders in ${borough.name}, London`,
-    description: borough.description,
-  }
 }
 
-const services = [
-  {
-    title: 'Rear Extensions',
-    description: 'Single and double-storey rear extensions designed and built to a high specification.',
-  },
-  {
-    title: 'Loft Conversions',
-    description: 'Dormer, hip-to-gable and Velux loft conversions that add significant value.',
-  },
-  {
-    title: 'Full Refurbishments',
-    description: 'Complete interior and exterior refurbishments managed under one roof.',
-  },
-  {
-    title: 'Structural Works',
-    description: 'Steel beam installation, load-bearing wall removal and structural alterations.',
-  },
-]
+export async function generateStaticParams() {
+  return Object.keys(BOROUGHS).map(slug => ({ borough: slug }))
+}
 
-const trustPoints = [
-  { title: 'Builder Score verified', desc: 'Every contractor carries a quantified trust score based on verified reviews, compliance and project history.' },
-  { title: 'Independently reviewed', desc: 'Verified reviews from real homeowners across London — not self-reported ratings.' },
-  { title: 'London-based', desc: 'Contractors operating across Greater London — matched to your area and project type.' },
-  { title: 'Principal contractor ready', desc: 'Every contractor on the platform is CDM 2015 aware — giving you one accountable point of contact.' },
-]
+export async function generateMetadata({ params }: Props) {
+  const borough = BOROUGHS[params.borough]
+  if (!borough) return {}
+  return pageMetadata({
+    path: `/locations/${params.borough}`,
+    title: `Verified Contractors in ${borough.name} | Dwellinger`,
+    description: `Find verified builders and contractors in ${borough.name}. Every contractor has a Builder Score™ trust rating. Search ${borough.trades.slice(0, 2).join(', ')} and more.`,
+  })
+}
 
-export default function BoroughPage({ params }: { params: { borough: string } }) {
-  const data = boroughs[params.borough]
-  if (!data) notFound()
-
-  const { name, description } = data
-
-  const faqs = [
-    {
-      q: `How much does a rear extension cost in ${name}?`,
-      a: `Rear extension costs in ${name} typically range from £40,000 for a small single-storey project to £120,000+ for a large double-storey extension with high-spec finishes. The price depends on size, specification and site conditions. Request a free quote for an accurate figure.`,
-    },
-    {
-      q: `Do I need planning permission in ${name}?`,
-      a: `Many extensions in ${name} qualify under Permitted Development rights, meaning no full planning application is required. However, conservation areas, listed buildings and certain property types may restrict PD rights. We advise on your specific situation as part of our free consultation.`,
-    },
-    {
-      q: 'How long does a rear extension take in London?',
-      a: 'A typical single-storey rear extension takes 10-14 weeks on site once planning (if required) is resolved. Double-storey extensions and larger projects can take 16-24 weeks. We provide a detailed programme before work starts.',
-    },
-    {
-      q: 'What areas do you cover?',
-      a: `We cover all of Greater London including ${name} and surrounding boroughs. Our base is in East London but our teams operate across the whole of the capital.`,
-    },
-    {
-      q: `How do I find a verified builder in ${name}?`,
-      a: `Dwellinger's Builder Score™ ranks every contractor on a 0–1000 scale based on verified reviews, compliance records, and payment history. You can browse Builder Score-verified contractors in ${name} on our platform and request quotes directly. All contractors are independently verified.`,
-    },
-    {
-      q: `What is the best type of extension for a home in ${name}?`,
-      a: `The best extension type depends on your property, garden size, and budget. Single-storey rear extensions are the most common in ${name} and offer excellent value. Loft conversions are ideal when ground-floor space is limited. We offer a free consultation to advise on the best option for your specific property and planning context.`,
-    },
-  ]
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.a,
-      },
-    })),
-  }
-
-  const localBizSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: `Dwellinger — Extension & Loft Conversion Builders in ${name}`,
-    url: `https://dwellinger.co.uk/locations/${params.borough}`,
-    telephone: '+447359872594',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '347 Barking Road',
-      addressLocality: 'London',
-      postalCode: 'E13 8EE',
-      addressCountry: 'GB',
-    },
-    areaServed: { '@type': 'City', name },
-    serviceType: ['Rear Extensions', 'Loft Conversions', 'Full Refurbishments', 'Structural Works'],
-  }
+export default function BoroughPage({ params }: Props) {
+  const borough = BOROUGHS[params.borough]
+  if (!borough) notFound()
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBizSchema) }}
-      />
-      <section style={{ backgroundColor: '#1A2340', color: '#FFFFFF', padding: '80px 24px' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
-          <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 800, marginBottom: 24, lineHeight: 1.2 }}>
-            Extension &amp; Loft Conversion Builders in {name}, London
-          </h1>
-          <p style={{ fontSize: '1.125rem', color: '#c8c0b0', maxWidth: 660, margin: '0 auto' }}>
-            {description}
-          </p>
-          <div style={{ marginTop: 40, display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link
-              href="/get-a-quote"
-              style={{ backgroundColor: '#C4773B', color: '#fff', padding: '14px 32px', borderRadius: 6, fontWeight: 700, textDecoration: 'none', fontSize: '1rem' }}
-            >
-              Get a Free Quote
-            </Link>
-            <Link
-              href="/tools/extension-cost-calculator"
-              style={{ backgroundColor: 'transparent', color: '#fff', padding: '14px 32px', borderRadius: 6, fontWeight: 600, textDecoration: 'none', fontSize: '1rem', border: '1px solid rgba(255,255,255,0.3)' }}
-            >
-              Use Cost Calculator
-            </Link>
-          </div>
+    <main className="min-h-screen bg-white">
+      <section className="bg-gray-50 py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <nav className="text-sm text-gray-500 mb-4">
+            <a href="/" className="hover:text-blue-600">Home</a>
+            <span className="mx-2">›</span>
+            <a href="/locations" className="hover:text-blue-600">Locations</a>
+            <span className="mx-2">›</span>
+            <span className="text-gray-900">{borough.name}</span>
+          </nav>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Verified Contractors in {borough.name}</h1>
+          <p className="text-xl text-gray-600 max-w-2xl">Find verified builders and contractors in {borough.name}, {borough.description}. Every contractor on Dwellinger carries a Builder Score™ — a trust rating built from verified reviews, CDM compliance records and payment history.</p>
         </div>
       </section>
 
-      <section style={{ backgroundColor: '#F5F0E8', padding: '72px 24px' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <h2 style={{ color: '#1A2340', fontSize: '1.75rem', fontWeight: 800, textAlign: 'center', marginBottom: 48 }}>
-            Our Services in {name}
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 24 }}>
-            {services.map((s) => (
-              <div key={s.title} style={{ backgroundColor: '#fff', border: '1px solid #EDE8DC', borderRadius: 8, padding: '28px 24px' }}>
-                <h3 style={{ color: '#1A2340', fontSize: '1.1rem', fontWeight: 700, marginBottom: 10 }}>{s.title}</h3>
-                <p style={{ color: '#4A5568', fontSize: '0.9rem', lineHeight: 1.6 }}>{s.description}</p>
-              </div>
+      <section className="py-12 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Popular trades in {borough.name}</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+            {borough.trades.map(trade => (
+              <div key={trade} className="bg-blue-50 rounded-lg p-3 text-center text-sm font-medium text-blue-800 capitalize">{trade}</div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section style={{ backgroundColor: '#FFFFFF', padding: '72px 24px' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <h2 style={{ color: '#1A2340', fontSize: '1.75rem', fontWeight: 800, textAlign: 'center', marginBottom: 48 }}>
-            Why Choose Dwellinger in {name}?
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 24 }}>
-            {trustPoints.map((t) => (
-              <div key={t.title} style={{ padding: '24px', borderLeft: '4px solid #C4773B' }}>
-                <h3 style={{ color: '#1A2340', fontSize: '1rem', fontWeight: 700, marginBottom: 8 }}>{t.title}</h3>
-                <p style={{ color: '#4A5568', fontSize: '0.875rem', lineHeight: 1.6 }}>{t.desc}</p>
-              </div>
-            ))}
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-8">
+            <p className="text-amber-900 text-sm"><strong>Local insight:</strong> {borough.fact}</p>
           </div>
+          <a href={`/search?location=${encodeURIComponent(borough.name)}`} className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">Search Verified Contractors in {borough.name} →</a>
         </div>
       </section>
 
-      <section style={{ backgroundColor: '#F5F0E8', padding: '72px 24px' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <h2 style={{ color: '#1A2340', fontSize: '1.75rem', fontWeight: 800, textAlign: 'center', marginBottom: 48 }}>
-            Frequently Asked Questions - {name}
-          </h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-            {faqs.map((faq) => (
-              <div key={faq.q} style={{ backgroundColor: '#fff', border: '1px solid #EDE8DC', borderRadius: 8, padding: '28px 24px' }}>
-                <h3 style={{ color: '#1A2340', fontSize: '1rem', fontWeight: 700, marginBottom: 10 }}>{faq.q}</h3>
-                <p style={{ color: '#4A5568', fontSize: '0.9rem', lineHeight: 1.7 }}>{faq.a}</p>
-              </div>
-            ))}
-          </div>
+      <section className="bg-gray-50 py-12 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">What is Builder Score™?</h2>
+          <p className="text-gray-600 mb-4">Builder Score™ is a 0–1000 trust rating published by Dwellinger for every contractor on the platform. Unlike star ratings, Builder Score is calculated from verified data — CDM compliance records, payment behaviour, insurance status and dispute outcomes.</p>
+          <a href="/builder-score" className="text-blue-600 hover:underline font-medium">Learn how Builder Score™ is calculated →</a>
         </div>
       </section>
 
-      <section style={{ backgroundColor: '#1A2340', padding: '72px 24px', textAlign: 'center' }}>
-        <div style={{ maxWidth: 700, margin: '0 auto' }}>
-          <h2 style={{ color: '#fff', fontSize: '2rem', fontWeight: 800, marginBottom: 20 }}>
-            Get a Free Quote in {name}
-          </h2>
-          <p style={{ color: '#c8c0b0', marginBottom: 36, fontSize: '1.05rem' }}>
-            Tell us about your project and we will get back to you within 24 hours with a no-obligation estimate.
-          </p>
-          <Link
-            href="/get-a-quote"
-            style={{ backgroundColor: '#C4773B', color: '#fff', padding: '16px 40px', borderRadius: 6, fontWeight: 700, textDecoration: 'none', fontSize: '1.05rem', display: 'inline-block' }}
-          >
-            Start Your Free Quote
-          </Link>
+      <section className="py-12 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-xl font-bold text-gray-900 mb-6">Other London boroughs</h2>
+          <a href="/locations" className="text-blue-600 hover:underline font-medium">View all 32 London boroughs and the City of London →</a>
         </div>
       </section>
-    </>
+    </main>
   )
 }
