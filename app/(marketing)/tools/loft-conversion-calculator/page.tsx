@@ -1,11 +1,12 @@
-import { Metadata } from 'next'
 import Link from 'next/link'
 import LoftCalc from './LoftCalc'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Loft Conversion Cost Calculator London',
+export const metadata = pageMetadata({
+  path: '/tools/loft-conversion-calculator',
+  title: 'Loft Conversion Cost Calculator London | Dwellinger',
   description: 'Calculate the cost of a loft conversion in London or the South East. Velux, dormer, L-shaped, mansard and hip-to-gable — with or without en-suite.',
-}
+})
 
 export default function LoftCalculatorPage() {
   return (

@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, BarChart3, Shield, Users, FileText, Search } from 'lucide-react'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'For Architects, PMs & Construction Professionals | Dwellinger',
-  description:
-    'Dwellinger gives architects, project managers, and construction consultants the contractor procurement tools, planning intelligence, and client dashboards they need to manage any UK build.',
-}
+export const metadata = pageMetadata({
+  path: '/professionals',
+  title: 'Dwellinger for Professionals — Architects, PMs & QS',
+  description: 'Find verified contractors for your client projects. Dwellinger gives architects, project managers and quantity surveyors access to vetted builders with full compliance records.',
+})
 
 const features = [
   {
@@ -27,7 +27,7 @@ const features = [
   {
     icon: Shield,
     title: 'Compliance & CDM awareness',
-    desc: "Builder Score™ includes CDM compliance records. Understand each contractor's health and safety history before you appoint them.",
+    desc: 'Builder Score™ includes CDM compliance records. Understand each contractor\'s health and safety history before you appoint them.',
   },
   {
     icon: Users,

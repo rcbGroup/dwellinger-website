@@ -1,10 +1,11 @@
-import type { Metadata } from 'next';
 import QuoteForm from './QuoteForm';
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Get a Free Project Quote',
+export const metadata = pageMetadata({
+  path: '/get-a-quote',
+  title: 'Get a Free Project Quote | Dwellinger',
   description: 'Request a quote for your extension, loft conversion or refurbishment. Honest advice, response within 2 hours, no obligation.',
-};
+});
 
 export default function GetAQuotePage() {
   return (

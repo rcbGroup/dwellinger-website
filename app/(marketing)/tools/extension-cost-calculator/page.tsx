@@ -1,11 +1,12 @@
-import { Metadata } from 'next'
 import Link from 'next/link'
 import ExtensionCalc from './ExtensionCalc'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Extension Cost Calculator London | Instant Estimate',
+export const metadata = pageMetadata({
+  path: '/tools/extension-cost-calculator',
+  title: 'Extension Cost Calculator London | Instant Estimate | Dwellinger',
   description: 'Calculate the cost of your house extension in London or the South East. Instant indicative range based on 143+ real London projects. Single and double storey.',
-}
+})
 
 export default function ExtensionCalculatorPage() {
   return (

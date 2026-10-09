@@ -1,10 +1,11 @@
-import { Metadata } from 'next'
 import Link from 'next/link'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Professional Construction Estimates from £95',
+export const metadata = pageMetadata({
+  path: '/services/estimating',
+  title: 'Professional Construction Estimates from £95 | Dwellinger',
   description: 'Professional construction estimates for London homeowners and developers. AI-powered and grounded in real UK project cost data. From £95, delivered as a PDF report.',
-}
+})
 
 const tiers = [
   {

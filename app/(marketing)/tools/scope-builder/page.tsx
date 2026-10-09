@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, FileText, Zap, ClipboardList, ChevronRight } from 'lucide-react'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Scope Builder — Define Your Project Before Getting Quotes | Dwellinger',
-  description:
-    'Build a clear project scope before approaching contractors. Define what you want, what decisions are still open, and what information you need — so every quote you receive is comparing like for like.',
-}
+export const metadata = pageMetadata({
+  path: '/tools/scope-builder',
+  title: 'Free Scope of Works Builder | Dwellinger Tools',
+  description: 'Build a clear scope of works for your project in minutes. Free tool for homeowners planning extensions, loft conversions, refurbishments and more.',
+})
 
 const projectTypes = [
   { id: 'rear-extension', label: 'Rear extension', icon: '🏠' },
@@ -14,7 +14,7 @@ const projectTypes = [
   { id: 'side-extension', label: 'Side extension', icon: '📐' },
   { id: 'full-refurb', label: 'Full refurbishment', icon: '🔨' },
   { id: 'kitchen', label: 'Kitchen project', icon: '🍳' },
-  { id: 'bathroom', label: 'Bathroom project', icon: '🛁' },
+  { id: 'bathroom', label: 'Bathroom project', icon: '🚿' },
   { id: 'structural', label: 'Structural works', icon: '🏛️' },
   { id: 'other', label: 'Other / mixed', icon: '📋' },
 ]
@@ -133,7 +133,7 @@ export default function ScopeBuilderPage() {
               {
                 icon: <CheckCircle style={{ width: 24, height: 24, color: '#C4773B' }} />,
                 title: 'Prevent scope creep',
-                desc: "A written scope is the reference point if a contractor says work wasn't included. It protects both sides.",
+                desc: 'A written scope is the reference point if a contractor says work wasn\'t included. It protects both sides.',
               },
               {
                 icon: <Zap style={{ width: 24, height: 24, color: '#C4773B' }} />,
@@ -165,7 +165,7 @@ export default function ScopeBuilderPage() {
             {projectTypes.map((pt) => (
               <div
                 key={pt.id}
-                style={{ backgroundColor: '#111827', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: '20px 16px', textAlign: 'center', cursor: 'pointer' }}
+                style={{ backgroundColor: '#111827', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: '20px 16px', textAlign: 'center', cursor: 'pointer', transition: 'border-color 0.2s' }}
               >
                 <div style={{ fontSize: '1.75rem', marginBottom: 10 }}>{pt.icon}</div>
                 <div style={{ color: '#F5F0E8', fontWeight: 600, fontSize: '0.875rem' }}>{pt.label}</div>

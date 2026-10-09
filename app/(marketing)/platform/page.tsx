@@ -1,10 +1,11 @@
-import { Metadata } from 'next'
 import Link from 'next/link'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/platform',
   title: 'Platform for UK Contractors | AI Tools, Builder Score & Estimating',
   description: 'The operating system for UK contractors. AI tools, Builder Score™, estimating, CRM, lead generation and planning intelligence — all in one platform.',
-}
+})
 
 const features = [
   {

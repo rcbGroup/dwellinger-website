@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Home, FileText, MessageCircle, BarChart3 } from 'lucide-react'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'For Homeowners — Plan, Budget & Manage Your Build',
+export const metadata = pageMetadata({
+  path: '/homeowners',
+  title: 'For Homeowners — Plan, Budget & Manage Your Build | Dwellinger',
   description: 'Get a free AI-powered estimate, find verified contractors with Builder Score™, and manage your extension, loft conversion or refurbishment from start to finish.',
-}
+})
 
 const benefits = [
   {
