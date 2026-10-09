@@ -125,28 +125,23 @@ const stats = [
   { number: '£0', label: 'Free to get started' },
 ]
 
-const localBusinessSchema = {
+const orgSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': 'Organization',
   name: 'Dwellinger',
-  description: "The UK's national design, build, and property intelligence platform. Find verified contractors with Builder Score™, get AI-powered estimates, and manage your project from first idea to completion.",
+  description: "The UK's national property and construction intelligence platform. Find verified contractors with Builder Score™, get AI-powered estimates, analyse planning data, and manage your project from first idea to completion.",
   url: 'https://dwellinger.co.uk',
   logo: 'https://dwellinger.co.uk/icons/icon-192x192.png',
   image: 'https://dwellinger.co.uk/icons/icon-512x512.png',
-  telephone: '+447359872594',
   email: 'info@dwellinger.co.uk',
   areaServed: {
     '@type': 'Country',
     name: 'United Kingdom',
   },
-  serviceType: ['Design and Build', 'Construction Estimating', 'Principal Contractor', 'Project Management', 'Quantity Surveying'],
-  sameAs: ['https://www.checkatrade.com'],
-  openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '18:00' },
+  sameAs: [
+    'https://www.linkedin.com/company/dwellinger',
+    'https://www.instagram.com/dwellinger',
   ],
-  priceRange: '£',
-  currenciesAccepted: 'GBP',
-  paymentAccepted: 'Cash, Bank Transfer, Card',
 }
 
 const webAppSchema = {
@@ -177,7 +172,7 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen bg-bg">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
       />
       <script
         type="application/ld+json"
@@ -272,7 +267,7 @@ export default function HomePage() {
               ))}
             </div>
             <p style={{ textAlign: 'center', fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: 6 }}>
-              Projects delivered across Greater London and the Home Counties
+              Illustrative imagery · Dwellinger is a platform, not a contractor
             </p>
           </div>
         </section>
@@ -405,10 +400,10 @@ export default function HomePage() {
                 { name: 'Outline', price: '£95', days: '5 working days' },
                 { name: 'Standard', price: '£150', days: '5 working days', popular: true },
                 { name: 'Full', price: '£250', days: '7 working days' },
-                { name: 'Premium', price: '£350', days: '7–10 days' },
+                { name: 'Full', price: '£350', days: '7–10 days' },
               ].map((tier) => (
                 <div
-                  key={tier.name}
+                  key={tier.name + tier.price}
                   className={`relative card p-5 text-center ${'popular' in tier && tier.popular ? 'border-amber bg-bg-raised shadow-glow' : ''}`}
                 >
                   {'popular' in tier && tier.popular && (
@@ -430,7 +425,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ─── PROJECT EXAMPLES ─── */}
+        {/* ─── REAL PROJECTS ─── */}
         <section className="py-20 bg-bg-surface border-y border-border">
           <div className="container mx-auto">
             <div className="text-center mb-12">

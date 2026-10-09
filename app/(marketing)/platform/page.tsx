@@ -35,7 +35,7 @@ const features = [
 
 const stats = [
   { value: '4', label: 'Dwell AI Agents' },
-  { value: '200+', label: 'Platform Features' },
+  { value: '14-day', label: 'Free Trial' },
   { value: '4', label: 'Subscription Plans' },
   { value: '1,972', label: 'Knowledge Articles' },
 ]
@@ -52,7 +52,7 @@ export default function PlatformPage() {
             The Operating System for UK Contractors
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#c8c0b0', maxWidth: 600, margin: '0 auto 40px' }}>
-            4 Dwell AI Agents. 200+ platform features. Built for the modern contractor.
+            4 Dwell AI Agents. Purpose-built tools. Built for the modern contractor.
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link
@@ -107,7 +107,7 @@ export default function PlatformPage() {
       <section style={{ backgroundColor: '#FFFFFF', padding: '80px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: 600, margin: '0 auto' }}>
           <h2 style={{ color: '#1A2340', fontSize: '1.75rem', fontWeight: 800, marginBottom: 16 }}>
-            Plans from £49/mo
+            Plans from £19/mo
           </h2>
           <p style={{ color: '#4A5568', marginBottom: 32 }}>
             Choose the plan that fits your business. Upgrade or downgrade at any time. Cancel anytime.
