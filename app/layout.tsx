@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { LanguageProvider } from '@/components/providers/LanguageProvider'
+import { GoogleTranslate } from '@/components/GoogleTranslate'
 
 export const metadata: Metadata = {
   title: {
@@ -173,6 +174,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js');})}`,
           }}
         />
+        {/* Google Translate — loads after page is interactive, does not block render */}
+        <GoogleTranslate />
       </body>
     </html>
   )
