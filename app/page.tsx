@@ -1,15 +1,14 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/shared/Nav'
 import Footer from '@/components/shared/Footer'
 import { ArrowRight, Star, CheckCircle, Zap, Shield, TrendingUp, Users } from 'lucide-react'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Dwellinger — UK's Property Intelligence Platform",
-  },
-  description: "The UK construction intelligence platform for homeowners, contractors and property investors. Builder Score™ contractor trust ratings, AI-powered estimates, planning intelligence, and property investment tools.",
-}
+export const metadata = pageMetadata({
+  path: '/',
+  title: 'Dwellinger — Find Verified UK Builders & Contractors',
+  description: 'Search verified UK builders, contractors and tradespeople. Every contractor has a Builder Score™ — a trust rating built from verified reviews, CDM compliance and payment history.',
+})
 
 // Real Google reviews
 const reviews = [

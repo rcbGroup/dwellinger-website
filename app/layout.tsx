@@ -19,9 +19,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Dwellinger Ltd', url: 'https://dwellinger.co.uk' }],
   metadataBase: new URL('https://dwellinger.co.uk'),
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
@@ -161,15 +158,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </LanguageProvider>
         </ThemeProvider>
-        {/* Google Translate widget — hidden, controlled by LangToggle */}
-        <div id="google_translate_element" style={{ display: 'none' }} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'ro,pl,pt,it,es,de,fr,ru,bg,hu,ar,zh-CN',autoDisplay:false},'google_translate_element');}`,
-          }}
-        />
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" />
         <script
           dangerouslySetInnerHTML={{
             __html: `if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js');})}`,
