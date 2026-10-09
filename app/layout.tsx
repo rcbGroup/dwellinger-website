@@ -67,10 +67,17 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Organization',
+      '@type': ['Organization', 'SoftwareApplication'],
       '@id': 'https://dwellinger.co.uk/#organization',
       name: 'Dwellinger',
-      url: 'https://dwellinger.co.uk',
+      legalName: 'Dwellinger Ltd',
+      url: 'https://dwellinger.co.uk/',
+      foundingDate: '2025-11-24',
+      identifier: {
+        '@type': 'PropertyValue',
+        propertyID: 'Companies House company number',
+        value: '16871183',
+      },
       logo: {
         '@type': 'ImageObject',
         url: 'https://dwellinger.co.uk/icons/icon-192x192.png',
@@ -79,8 +86,13 @@ const jsonLd = {
         "The UK's national property and construction intelligence platform — find verified contractors, AI estimates, planning data.",
       address: {
         '@type': 'PostalAddress',
+        streetAddress: '280-282 Church Road, Sheldon',
+        addressLocality: 'Birmingham',
+        addressRegion: 'West Midlands',
+        postalCode: 'B26 3YH',
         addressCountry: 'GB',
       },
+      email: 'info@dwellinger.co.uk',
       contactPoint: [
         {
           '@type': 'ContactPoint',
@@ -91,11 +103,20 @@ const jsonLd = {
         },
       ],
       sameAs: [
+        'https://find-and-update.company-information.service.gov.uk/company/16871183',
         'https://www.linkedin.com/company/dwellinger',
         'https://www.instagram.com/dwellinger',
         'https://www.youtube.com/@dwellinger',
         'https://www.tiktok.com/@dwellinger',
       ],
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      offers: {
+        '@type': 'Offer',
+        price: '49',
+        priceCurrency: 'GBP',
+        description: 'Contractor plans from £49/month. 14-day free trial, no card required.',
+      },
     },
     {
       '@type': 'WebSite',
@@ -107,17 +128,6 @@ const jsonLd = {
         '@type': 'SearchAction',
         target: { '@type': 'EntryPoint', urlTemplate: 'https://dwellinger.co.uk/search?q={search_term_string}' },
         'query-input': 'required name=search_term_string',
-      },
-    },
-    {
-      '@type': 'SoftwareApplication',
-      name: 'Dwellinger',
-      applicationCategory: 'BusinessApplication',
-      operatingSystem: 'Web, iOS, Android',
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'GBP',
       },
     },
   ],

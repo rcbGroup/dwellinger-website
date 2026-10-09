@@ -2,6 +2,37 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle, Shield } from 'lucide-react'
 import { pageMetadata } from '@/lib/seo'
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a good Builder Score?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A Gold score (700–899) or Platinum score (900–1000) indicates a highly trusted, verified contractor. Silver (500–699) is solid for newer contractors building their history. Bronze (0–499) means less verified history is available.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is Builder Score different from Checkatrade or Trustpilot?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Unlike star rating platforms, Builder Score is calculated from verified compliance data — CDM records, payment behaviour, insurance status and dispute outcomes — not just self-reported reviews. Every component is independently verified by Dwellinger.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does it take to get a Builder Score?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'New contractors receive an Unrated status on day one. A verified Builder Score is issued within one working day of completing the identity and insurance verification checks.',
+      },
+    },
+  ],
+}
+
 export const metadata = pageMetadata({
   path: '/builder-score',
   title: 'Builder Score™ — The UK Contractor Trust Rating | Dwellinger',
@@ -66,6 +97,11 @@ export default function BuilderScorePage() {
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Hero */}
       <section className="pt-16 pb-20 bg-bg relative overflow-hidden">
         <div className="absolute inset-0 bg-hero-gradient pointer-events-none" />
@@ -79,9 +115,12 @@ export default function BuilderScorePage() {
             <span className="text-amber">built for construction</span>
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mb-8 leading-relaxed">
-            Not just stars that anyone can fake. Builder Score™ is a 0–1000 proprietary algorithm
-            calculated from verified reviews, compliance records, dispute history, payment
-            behaviour, and insurance status. Every contractor on Dwellinger has a score.
+            Builder Score™ is a 0–1000 trust rating published by Dwellinger Ltd for every
+            contractor on the platform. It is calculated from six verified components: verified
+            reviews (35%), CDM compliance record (20%), payment behaviour (15%), insurance and
+            accreditation (15%), dispute resolution record (10%) and response rate and platform
+            activity (5%). Score tiers: Platinum 900–1000, Gold 700–899, Silver 500–699,
+            Bronze 0–499, Unrated.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link href="/search" className="btn-primary-lg">
@@ -135,6 +174,34 @@ export default function BuilderScorePage() {
                 <span className="text-amber font-display font-bold text-2xl">{totalExample}/1000</span>
               </div>
             </div>
+          </div>
+
+          {/* Accessible methodology table (SEO) */}
+          <div className="mt-14 overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <caption className="sr-only">Builder Score™ component weightings and methodology</caption>
+              <thead>
+                <tr className="border-b border-border">
+                  <th scope="col" className="text-left py-3 pr-4 text-text font-semibold">Component</th>
+                  <th scope="col" className="text-right py-3 pr-4 text-text font-semibold">Weight</th>
+                  <th scope="col" className="text-right py-3 text-text font-semibold">Max points</th>
+                </tr>
+              </thead>
+              <tbody>
+                {components.map((c) => (
+                  <tr key={c.label} className="border-b border-border/50">
+                    <td className="py-3 pr-4 text-text-secondary">{c.label}</td>
+                    <td className="py-3 pr-4 text-right text-amber font-semibold">{c.weight}</td>
+                    <td className="py-3 text-right text-text-muted">{c.max}</td>
+                  </tr>
+                ))}
+                <tr>
+                  <td className="py-3 pr-4 text-text font-bold">Total</td>
+                  <td className="py-3 pr-4 text-right text-amber font-bold">100%</td>
+                  <td className="py-3 text-right text-amber font-bold">1,000</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -204,6 +271,24 @@ export default function BuilderScorePage() {
             <Link href="/contractors" className="btn-secondary text-base px-8 py-4">
               Learn about contractor features
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-bg-surface border-t border-border">
+        <div className="container mx-auto max-w-3xl">
+          <div className="text-center mb-12">
+            <p className="section-tag mb-3">Common questions</p>
+            <h2 className="section-title">Builder Score™ FAQ</h2>
+          </div>
+          <div className="space-y-6">
+            {faqSchema.mainEntity.map((faq) => (
+              <div key={faq.name} className="card-raised p-6">
+                <h3 className="text-text font-semibold mb-3">{faq.name}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
