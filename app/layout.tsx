@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     siteName: 'Dwellinger',
     title: "Dwellinger — UK's Property Intelligence Platform",
     description: 'Find verified contractors, get AI estimates, analyse planning data — one platform.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Dwellinger — UK Construction Intelligence' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Dwellinger — UK Construction Intelligence' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@dwellinger',
     title: "Dwellinger — UK's Property Intelligence Platform",
     description: 'Builder Score™. AI estimates. Verified contractors. One platform.',
-    images: ['/og-image.png'],
+    images: ['/opengraph-image'],
   },
   robots: {
     index: true,
