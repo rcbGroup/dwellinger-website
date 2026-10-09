@@ -21,18 +21,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://dwellinger.co.uk'),
   alternates: {
     canonical: '/',
-    languages: {
-      'en-GB': '/',
-      'ro': '/ro',
-      'pl': '/pl',
-      'pt': '/pt',
-      'es': '/es',
-      'de': '/de',
-      'fr': '/fr',
-      'it': '/it',
-      'ar': '/ar',
-      'zh': '/zh',
-    },
   },
   openGraph: {
     type: 'website',
@@ -142,6 +130,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-GB">
       <head>
+        {/* Google Analytics GA4 — TODO: replace GA_MEASUREMENT_ID once property created */}
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" /> */}
+        {/* <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');` }} /> */}
+        {/* Google Search Console verification — TODO: add meta tag once property verified */}
+        {/* <meta name="google-site-verification" content="VERIFICATION_CODE" /> */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -168,9 +161,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </LanguageProvider>
         </ThemeProvider>
-        {/* Google Translate widget — hidden, controlled by LangToggle in Nav */}
+        {/* Google Translate widget — hidden, controlled by LangToggle */}
         <div id="google_translate_element" style={{ display: 'none' }} />
-        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         <script
           dangerouslySetInnerHTML={{
             __html: `function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'ro,pl,pt,it,es,de,fr,ru,bg,hu,ar,zh-CN',autoDisplay:false},'google_translate_element');}`,
