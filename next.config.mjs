@@ -10,6 +10,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/pricing',
+        destination: '/platform/pricing',
+        permanent: true,
+      },
+      {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.dwellinger.co.uk' }],
         destination: 'https://dwellinger.co.uk/:path*',
