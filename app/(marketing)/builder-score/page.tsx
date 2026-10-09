@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Shield } from 'lucide-react'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Builder Score™ — The UK Contractor Trust Rating',
+export const metadata = pageMetadata({
+  path: '/builder-score',
+  title: 'Builder Score™ — The UK Contractor Trust Rating | Dwellinger',
   description: 'Builder Score™ is a 0–1000 proprietary trust rating for contractors. Calculated from verified reviews, compliance records, dispute history, and payment behaviour.',
-}
+})
 
 const components = [
   {

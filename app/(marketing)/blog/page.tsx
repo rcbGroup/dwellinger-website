@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Clock } from 'lucide-react'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Blog — Construction & Property Intelligence',
+export const metadata = pageMetadata({
+  path: '/blog',
+  title: 'Blog — Construction & Property Intelligence | Dwellinger',
   description: 'Expert guides on home extensions, loft conversions, builder costs, planning applications, and property investment — written by the Dwellinger editorial team.',
-}
+})
 
 const posts = [
   {

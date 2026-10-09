@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, X } from 'lucide-react'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Pricing — Plans & Features',
+export const metadata = pageMetadata({
+  path: '/pricing',
+  title: 'Pricing — Dwellinger Plans & Features',
   description: 'From £19/month. Starter, Professional, Business, and Agents+ plans. Builder Score™, AI agents, estimating tools, and more. Start free for 14 days.',
-}
+})
 
 const plans = [
   {
@@ -215,8 +216,8 @@ export default function PricingPage() {
                 <tr className="border-b border-border">
                   <th className="text-left text-text-muted font-medium pb-4 pr-6 w-1/3">Feature</th>
                   {plans.map((p) => (
-                    <th key={p.name} className="text-center pb-4 font-bold text-text">
-                      {p.name}
+                    <th key={p.name} className="text-center pb-4 font-bold text-white">
+                      <span className="text-text">{p.name}</span>
                       <div className="text-amber font-normal text-xs mt-0.5">£{p.price}/mo</div>
                     </th>
                   ))}

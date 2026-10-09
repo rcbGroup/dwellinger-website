@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Zap, MessageSquare, FileEdit, BarChart3, Shield } from 'lucide-react'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'For Contractors — Win More Work, Less Admin',
+export const metadata = pageMetadata({
+  path: '/contractors',
+  title: 'For Contractors — Win More Work, Less Admin | Dwellinger',
   description: 'Builder Score™ badge, Dwell AI agents, Quote Studio and CDM documents. Run your entire contracting business from Dwellinger.',
-}
+})
 
 const plans = [
   {
@@ -222,7 +223,7 @@ export default function ContractorsPage() {
               </div>
               <div className="text-xs text-text-muted font-mono bg-bg p-3 rounded text-left">
                 <p className="text-amber mb-1">// Input: Voice note (2 min 14 sec)</p>
-                <p className="text-text-secondary">"OK so we&apos;ve got the rear extension, single storey, about 5 metres by 4, bifold doors to the garden, kitchen reconfiguration inside, new WC under the stairs..."</p>
+                <p className="text-text-secondary">&quot;OK so we&apos;ve got the rear extension, single storey, about 5 metres by 4, bifold doors to the garden, kitchen reconfiguration inside, new WC under the stairs...&quot;</p>
               </div>
               <div className="text-xs text-text-secondary">↓ Generating Scope of Works...</div>
               <div className="bg-bg p-3 rounded space-y-1.5">

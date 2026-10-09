@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Shield, Zap, Users, BarChart3 } from 'lucide-react'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'About — The UK Construction Intelligence Platform',
-  description: 'Dwellinger is the UK\'s national design, build, and property intelligence platform — connecting homeowners, contractors, and property investors with the tools, trust, and intelligence to plan, price, and deliver any construction project.',
-}
+export const metadata = pageMetadata({
+  path: '/about',
+  title: 'About Dwellinger — UK Construction Intelligence Platform',
+  description: "Dwellinger is the UK's national design, build, and property intelligence platform — connecting homeowners, contractors, and property investors with the tools, trust, and intelligence to plan, price, and deliver any construction project.",
+})
 
 const milestones = [
   { year: '2021', event: 'Dwellinger.co.uk domain registered. The vision: one platform that connects every part of UK construction.' },
