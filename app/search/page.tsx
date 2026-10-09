@@ -139,7 +139,7 @@ export default function SearchPage() {
 
         <section className="py-8">
           <div className="container mx-auto flex gap-8">
-            {/* Sidebar filters — desktop */}
+            {/* Sidebar filters */}
             <aside className="hidden lg:block w-60 flex-shrink-0">
               <div className="card p-5 sticky top-20">
                 <div className="flex items-center gap-2 mb-4">
@@ -195,10 +195,9 @@ export default function SearchPage() {
                 </Link>
               </div>
               <div className="space-y-4">
-                {mockContractors.map((c) => (
+                {mockContractors.slice(0, 2).map((c) => (
                   <div key={c.slug} className="card p-5 hover:border-amber transition-colors">
                     <div className="flex items-start gap-4">
-                      {/* Score ring placeholder */}
                       <div className="w-14 h-14 rounded-full bg-bg-raised border-2 border-amber-border flex flex-col items-center justify-center flex-shrink-0">
                         <span className={`font-display font-bold text-base leading-none ${scoreTierColour(c.tier)}`}>{c.score}</span>
                         <span className="text-text-muted text-[9px] leading-none mt-0.5">Score</span>
@@ -245,9 +244,56 @@ export default function SearchPage() {
                     </div>
                   </div>
                 ))}
+
+                {/* Registration gate */}
+                <div className="relative">
+                  <div style={{ filter: 'blur(4px)', pointerEvents: 'none', userSelect: 'none', opacity: 0.4 }}>
+                    {mockContractors.slice(2, 4).map((c) => (
+                      <div key={c.slug} className="card p-5 mb-4">
+                        <div className="flex items-start gap-4">
+                          <div className="w-14 h-14 rounded-full bg-bg-raised border-2 border-amber-border flex flex-col items-center justify-center flex-shrink-0">
+                            <span className="font-display font-bold text-base leading-none text-amber">{c.score}</span>
+                            <span className="text-text-muted text-[9px] leading-none mt-0.5">Score</span>
+                          </div>
+                          <div className="flex-1">
+                            <div className="text-white font-bold text-base mb-1">{c.name}</div>
+                            <div className="text-text-muted text-xs">{c.trade} · {c.location}</div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ backgroundColor: 'var(--color-bg-surface, #111827)', border: '1px solid #C4773B', borderRadius: 12, padding: '32px 40px', textAlign: 'center', maxWidth: 420, boxShadow: '0 8px 32px rgba(0,0,0,0.5)' }}>
+                      <div style={{ width: 48, height: 48, borderRadius: '50%', backgroundColor: 'rgba(196,119,59,0.15)', border: '1px solid rgba(196,119,59,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
+                        <Shield style={{ width: 24, height: 24, color: '#C4773B' }} />
+                      </div>
+                      <h3 style={{ color: '#F5F0E8', fontWeight: 800, fontSize: '1.1rem', marginBottom: 8 }}>
+                        {mockContractors.length - 2} more verified contractors
+                      </h3>
+                      <p style={{ color: '#c8c0b0', fontSize: '0.875rem', marginBottom: 20, lineHeight: 1.6 }}>
+                        Create a free account to see all verified contractors, their full Builder Score™ breakdown, and contact details.
+                      </p>
+                      <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+                        <Link
+                          href="/register"
+                          style={{ backgroundColor: '#C4773B', color: '#fff', padding: '10px 24px', borderRadius: 6, fontWeight: 700, textDecoration: 'none', fontSize: '0.875rem', display: 'inline-flex', alignItems: 'center', gap: 6 }}
+                        >
+                          Create free account <CheckCircle style={{ width: 14, height: 14 }} />
+                        </Link>
+                        <Link
+                          href="/login"
+                          style={{ border: '1px solid rgba(245,240,232,0.2)', color: '#F5F0E8', padding: '10px 20px', borderRadius: 6, fontWeight: 600, textDecoration: 'none', fontSize: '0.875rem' }}
+                        >
+                          Sign in
+                        </Link>
+                      </div>
+                      <p style={{ color: '#c8c0b0', fontSize: '0.75rem', marginTop: 14 }}>Free forever · No credit card needed</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Join CTA */}
               <div className="mt-8 card p-6 border-amber text-center">
                 <p className="section-tag mb-2">Are you a contractor?</p>
                 <h3 className="text-white font-bold text-lg mb-2">Get your Builder Score™ listed</h3>
