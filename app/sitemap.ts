@@ -40,36 +40,52 @@ const STATIC_PAGES: MetadataRoute.Sitemap = [
   { url: `${BASE_URL}/terms`, lastModified: TODAY, changeFrequency: 'yearly', priority: 0.3 },
   { url: `${BASE_URL}/privacy`, lastModified: TODAY, changeFrequency: 'yearly', priority: 0.3 },
   { url: `${BASE_URL}/cookies`, lastModified: TODAY, changeFrequency: 'yearly', priority: 0.2 },
+  { url: `${BASE_URL}/locations`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
+  { url: `${BASE_URL}/locations/barking-and-dagenham`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/barnet`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/bexley`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/brent`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/bromley`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/camden`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/city-of-london`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/croydon`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/ealing`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/enfield`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/greenwich`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/hackney`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/hammersmith-and-fulham`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/haringey`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/harrow`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/havering`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/hillingdon`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/hounslow`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/islington`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/kensington-and-chelsea`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/kingston-upon-thames`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/lambeth`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/lewisham`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/merton`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/newham`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/redbridge`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/richmond-upon-thames`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/southwark`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/sutton`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/tower-hamlets`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/waltham-forest`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/wandsworth`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/locations/westminster`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+  { url: `${BASE_URL}/ro`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
+  { url: `${BASE_URL}/pl`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
+  { url: `${BASE_URL}/es`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
+  { url: `${BASE_URL}/fr`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
+  { url: `${BASE_URL}/de`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
+  { url: `${BASE_URL}/it`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
+  { url: `${BASE_URL}/pt`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
+  { url: `${BASE_URL}/uk`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
+  { url: `${BASE_URL}/ru`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
 ]
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Try to get blog posts — best-effort, never breaks the sitemap
-  let blogEntries: MetadataRoute.Sitemap = []
-  try {
-    const { prisma } = await import('@/lib/prisma')
-    const rows = await prisma.setting.findMany({
-      where: { key: { startsWith: 'blog_post_' } },
-      orderBy: { key: 'desc' },
-      take: 500,
-    })
-    const seen = new Set<string>()
-    for (const r of rows) {
-      try {
-        const parsed = JSON.parse(r.value)
-        if (parsed?.slug && !seen.has(parsed.slug)) {
-          seen.add(parsed.slug)
-          blogEntries.push({
-            url: `${BASE_URL}/blog/${parsed.slug}`,
-            lastModified: parsed.updatedAt ?? parsed.date ?? TODAY,
-            changeFrequency: 'monthly' as const,
-            priority: 0.7,
-          })
-        }
-      } catch { /* skip malformed */ }
-    }
-  } catch {
-    // DB not available at build time — skip dynamic blog entries
-  }
-
-  return [...STATIC_PAGES, ...blogEntries]
+export default function sitemap(): MetadataRoute.Sitemap {
+  // Blog posts are added to STATIC_PAGES manually — no DB dependency at build time
+  return STATIC_PAGES
 }
