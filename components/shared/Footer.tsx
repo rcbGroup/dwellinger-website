@@ -9,6 +9,7 @@ const footerColumns: { heading: string; links: NavItem[] }[] = [
     heading: 'Find',
     links: [
       { label: 'Find Contractors', href: '/search' },
+      { label: 'Locations', href: '/locations' },
       { label: 'Post a Project', href: '/register?type=homeowner' },
       { label: 'Design & Build', href: '/services/design-and-build' },
       { label: 'Principal Contractors', href: '/services/principal-contractor' },
@@ -20,9 +21,20 @@ const footerColumns: { heading: string; links: NavItem[] }[] = [
     links: [
       { label: 'Get an Estimate', href: '/services/estimating' },
       { label: 'Quantity Surveying', href: '/services/quantity-surveying' },
+      { label: 'Cost Calculator', href: '/tools/cost-calculator' },
       { label: 'Extension Calculator', href: '/tools/extension-cost-calculator' },
       { label: 'Loft Calculator', href: '/tools/loft-conversion-calculator' },
+      { label: 'Project Readiness', href: '/tools/project-readiness' },
       { label: 'Development Appraisal', href: '/tools/development-appraisal' },
+    ],
+  },
+  {
+    heading: 'For You',
+    links: [
+      { label: 'Homeowners', href: '/homeowners' },
+      { label: 'Contractors', href: '/contractors' },
+      { label: 'Investors', href: '/investors' },
+      { label: 'Professionals', href: '/professionals' },
     ],
   },
   {
@@ -38,10 +50,10 @@ const footerColumns: { heading: string; links: NavItem[] }[] = [
     heading: 'Platform',
     links: [
       { label: 'Platform Overview', href: '/platform' },
-      { label: 'For Contractors', href: '/platform/for-contractors' },
       { label: 'Platform Pricing', href: '/platform/pricing' },
       { label: 'Planning Intelligence', href: '/tools/planning' },
-      { label: 'Investor Hub', href: '/investor-hub' },
+      { label: 'Builder Score™', href: '/builder-score' },
+      { label: 'Trust & Safety', href: '/trust' },
       { label: 'Blog', href: '/blog' },
       { label: 'About', href: '/about' },
       { label: 'Contact', href: '/contact' },
@@ -176,7 +188,7 @@ export default function Footer() {
                   onMouseLeave={(e) => {
                     const el = e.currentTarget
                     el.style.backgroundColor = 'var(--color-bg-raised)'
-                    el.style.borderColor = 'var(--color-border)'
+                    el.style.borderColor: 'var(--color-border)'
                     el.style.color = 'var(--color-text-secondary)'
                   }}
                 >
