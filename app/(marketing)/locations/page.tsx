@@ -47,8 +47,12 @@ export default function LocationsPage() {
     <main className="min-h-screen bg-white">
       <section className="bg-gray-50 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Find Verified Contractors Across London</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Search verified builders and contractors in all 32 London boroughs and the City of London. Every contractor carries a Builder Score™ — a verified trust rating based on reviews, compliance records and payment history.</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Find Verified Contractors Across London
+          </h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Search verified builders and contractors in all 32 London boroughs and the City of London. Every contractor carries a Builder Score™ — a verified trust rating based on reviews, compliance records and payment history.
+          </p>
         </div>
       </section>
 
@@ -57,9 +61,13 @@ export default function LocationsPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-8">Browse by Borough</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {BOROUGHS.map(borough => (
-              <a key={borough.slug} href={`/locations/${borough.slug}`} className="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-sm transition-all group">
-                <span className="font-medium text-gray-900 group-hover:text-blue-600">{borough.name}</span>
-                <span className="text-gray-400 group-hover:text-blue-500">→</span>
+              <a
+                key={borough.slug}
+                href={`/locations/${borough.slug}`}
+                className="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-sm transition-all group"
+              >
+                <span className="font-medium text-gray-900 group-hover:text-blue-600 text-sm">{borough.name}</span>
+                <span className="text-gray-400 group-hover:text-blue-500 ml-2">→</span>
               </a>
             ))}
           </div>
@@ -70,7 +78,9 @@ export default function LocationsPage() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Not sure where to start?</h2>
           <p className="text-gray-600 mb-6">Search by postcode to find verified contractors near you.</p>
-          <a href="/search" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">Search All Contractors →</a>
+          <a href="/search" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+            Search All Contractors →
+          </a>
         </div>
       </section>
     </main>
