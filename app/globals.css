@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── FONT VARIABLES ─────────────────────────────────── */
+/* ─── FONT VARIABLES ─────────────────────────────── */
 :root {
   --font-inter: 'Inter', system-ui, sans-serif;
   --font-cal: 'Playfair Display', Georgia, serif;
@@ -15,7 +15,7 @@
   --amber-border: #3D2010;
 }
 
-/* ─── DARK THEME (default) ───────────────────────────────── */
+/* ─── DARK THEME (default) ──────────────────────────────────── */
 :root,
 [data-theme="dark"] {
   --color-bg: #0A0A0A;
@@ -36,7 +36,7 @@
   --amber-border: rgba(61,32,16,1);
 }
 
-/* ─── MID / TWILIGHT THEME ─────────────────────────────── */
+/* ─── MID / TWILIGHT THEME ─────────────────────────── */
 [data-theme="mid"] {
   --color-bg: #1A1D24;
   --color-bg-surface: #21252E;
@@ -56,7 +56,7 @@
   --amber-border: rgba(55,32,12,1);
 }
 
-/* ─── LIGHT THEME ──────────────────────────────────────── */
+/* ─── LIGHT THEME ─────────────────────────────────── */
 [data-theme="light"] {
   --color-bg: #F9F6F1;
   --color-bg-surface: #FFFFFF;
@@ -76,7 +76,7 @@
   --amber-border: rgba(220,166,110,0.3);
 }
 
-/* ─── BASE STYLES ─────────────────────────────────────── */
+/* ─── BASE STYLES ─────────────────────────────────── */
 @layer base {
   * { border-color: var(--color-border); }
   html {
@@ -94,7 +94,7 @@
   }
 }
 
-/* ─── COMPONENT CLASSES ───────────────────────────────────── */
+/* ─── COMPONENT CLASSES ────────────────────────────────────── */
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2
@@ -201,7 +201,7 @@
   .border-amber { border-color: var(--amber); }
 }
 
-/* ─── GOOGLE TRANSLATE — hide toolbar, keep translation ────────── */
+/* ─── GOOGLE TRANSLATE — hide toolbar, keep translation ────────────── */
 .goog-te-banner-frame,
 .goog-te-balloon-frame,
 .goog-tooltip,
@@ -212,7 +212,7 @@
 body { top: 0 !important; }
 .goog-te-gadget-simple { display: none !important; }
 
-/* ─── PWA ───────────────────────────────────────────────── */
+/* ─── PWA ───────────────────────────────────────── */
 @media (display-mode: standalone) {
   body {
     padding-top: env(safe-area-inset-top);
@@ -220,7 +220,7 @@ body { top: 0 !important; }
   }
 }
 
-/* ─── ANIMATIONS ───────────────────────────────────────────────── */
+/* ─── ANIMATIONS ────────────────────────────────────────────── */
 @keyframes scoreReveal {
   from { stroke-dashoffset: 1000; }
   to { stroke-dashoffset: var(--offset); }
@@ -245,9 +245,87 @@ body { top: 0 !important; }
   animation: shimmer 1.5s infinite;
 }
 
-/* ─── THEME TRANSITION ───────────────────────────────────────────── */
+/* ─── THEME TRANSITION ─────────────────────────────────────── */
 *, *::before, *::after {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: ease;
   transition-duration: 200ms;
+}
+
+/* ─── DESIGN SYSTEM ADDITIONS (2026-10-10) ────────────────────────────────── */
+
+/* Noise / Texture Overlay */
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+/* Grid Dot Pattern */
+.grid-pattern {
+  background-image: radial-gradient(circle, var(--color-border, rgba(255,255,255,0.08)) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Hero Mesh Gradient */
+.hero-mesh {
+  background:
+    radial-gradient(ellipse 70% 60% at 60% 0%, rgba(196,119,59,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(74,144,217,0.06) 0%, transparent 50%),
+    var(--color-bg, #0A0A0A);
+}
+
+/* Product Window (browser mockup) */
+.product-window {
+  background: var(--color-bg-surface, #111);
+  border: 1px solid var(--color-border-strong, rgba(255,255,255,0.12));
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
+}
+.product-window-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--color-bg-raised, #161616);
+  border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.06));
+}
+
+/* Gradient Text */
+.text-gradient-amber {
+  background: linear-gradient(135deg, #D4956A 0%, #C4773B 50%, #A85F2A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated stat counters */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stat-number {
+  animation: countUp 0.6s ease-out forwards;
+}
+
+/* Fix missing --font-mono */
+:root {
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+}
+
+/* Slow pulse for hero badge */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
