@@ -1,0 +1,761 @@
+export type Locale = 'en' | 'ro' | 'pl' | 'es' | 'fr' | 'de' | 'it' | 'pt' | 'uk' | 'ru'
+
+export const LOCALES: Locale[] = ['en', 'ro', 'pl', 'es', 'fr', 'de', 'it', 'pt', 'uk', 'ru']
+
+export const LOCALE_NAMES: Record<Locale, string> = {
+  en: 'English',
+  ro: 'Română',
+  pl: 'Polski',
+  es: 'Español',
+  fr: 'Français',
+  de: 'Deutsch',
+  it: 'Italiano',
+  pt: 'Português',
+  uk: 'Українська',
+  ru: 'Русский',
+}
+
+export const LOCALE_FLAGS: Record<Locale, string> = {
+  en: '🇬🇧',
+  ro: '🇷🇴',
+  pl: '🇵🇱',
+  es: '🇪🇸',
+  fr: '🇫🇷',
+  de: '🇩🇪',
+  it: '🇮🇹',
+  pt: '🇵🇹',
+  uk: '🇺🇦',
+  ru: '🇷🇺',
+}
+
+export interface Dictionary {
+  nav: {
+    search: string
+    contractors: string
+    homeowners: string
+    professionals: string
+    platform: string
+    blog: string
+    about: string
+    contact: string
+    signIn: string
+    getStarted: string
+  }
+  home: {
+    heroTitle: string
+    heroSubtitle: string
+    heroCta: string
+    heroCtaSecondary: string
+    searchPlaceholder: string
+    trustBadge: string
+    howItWorksTitle: string
+    step1Title: string
+    step1Desc: string
+    step2Title: string
+    step2Desc: string
+    step3Title: string
+    step3Desc: string
+    builderScoreTitle: string
+    builderScoreDesc: string
+    ctaTitle: string
+    ctaDesc: string
+    ctaButton: string
+  }
+  common: {
+    builderScore: string
+    verifiedContractor: string
+    searchContractors: string
+    learnMore: string
+    viewAll: string
+    readMore: string
+    back: string
+    home: string
+    freeToStart: string
+    trialBadge: string
+  }
+  footer: {
+    tagline: string
+    forContractors: string
+    forHomeowners: string
+    forProfessionals: string
+    tools: string
+    company: string
+    legal: string
+    privacy: string
+    terms: string
+    contact: string
+    copyright: string
+    legalLine: string
+  }
+  meta: {
+    homeTitle: string
+    homeDescription: string
+    siteDescription: string
+  }
+}
+
+export const dictionaries: Record<Locale, Dictionary> = {
+  en: {
+    nav: {
+      search: 'Search contractors',
+      contractors: 'For contractors',
+      homeowners: 'For homeowners',
+      professionals: 'For professionals',
+      platform: 'Platform',
+      blog: 'Blog',
+      about: 'About',
+      contact: 'Contact',
+      signIn: 'Sign in',
+      getStarted: 'Get started free',
+    },
+    home: {
+      heroTitle: 'Find Verified UK Builders You Can Trust',
+      heroSubtitle: 'Every contractor on Dwellinger has a Builder Score™ — a verified trust rating built from compliance records, payment history and real project reviews.',
+      heroCta: 'Search Contractors',
+      heroCtaSecondary: 'How it works',
+      searchPlaceholder: 'Trade or postcode...',
+      trustBadge: 'Trusted by homeowners across London',
+      howItWorksTitle: 'How Dwellinger works',
+      step1Title: 'Search by trade and location',
+      step1Desc: 'Find builders, electricians, plumbers and more — filtered by Builder Score™ and location.',
+      step2Title: 'Check their Builder Score™',
+      step2Desc: 'Every contractor has a verified 0–1000 trust rating based on CDM compliance, payment behaviour and verified reviews.',
+      step3Title: 'Hire with confidence',
+      step3Desc: 'Contact verified contractors directly. No middleman. Full project history visible.',
+      builderScoreTitle: 'What is Builder Score™?',
+      builderScoreDesc: 'Builder Score™ is a 0–1000 trust rating calculated from six independently verified components — not just star ratings. CDM compliance records, payment behaviour, insurance status and more.',
+      ctaTitle: 'Ready to find a verified contractor?',
+      ctaDesc: 'Search verified builders and contractors across Greater London.',
+      ctaButton: 'Start your search',
+    },
+    common: {
+      builderScore: 'Builder Score™',
+      verifiedContractor: 'Verified contractor',
+      searchContractors: 'Search contractors',
+      learnMore: 'Learn more',
+      viewAll: 'View all',
+      readMore: 'Read more',
+      back: 'Back',
+      home: 'Home',
+      freeToStart: 'Free to start',
+      trialBadge: '14-day free trial — no card required',
+    },
+    footer: {
+      tagline: 'The trusted platform for verified UK building contractors.',
+      forContractors: 'For contractors',
+      forHomeowners: 'For homeowners',
+      forProfessionals: 'For professionals',
+      tools: 'Tools',
+      company: 'Company',
+      legal: 'Legal',
+      privacy: 'Privacy policy',
+      terms: 'Terms of service',
+      contact: 'Contact us',
+      copyright: '© 2026 Dwellinger Ltd. All rights reserved.',
+      legalLine: 'Registered in England and Wales. Company no. 16871183. Registered office: 280-282 Church Road, Sheldon, Birmingham B26 3YH.',
+    },
+    meta: {
+      homeTitle: 'Dwellinger — Find Verified UK Builders & Contractors',
+      homeDescription: 'Search verified UK builders, contractors and tradespeople. Every contractor has a Builder Score™ — a trust rating built from verified reviews, CDM compliance and payment history.',
+      siteDescription: 'UK contractor trust and verification platform',
+    },
+  },
+
+  ro: {
+    nav: {
+      search: 'Caută antreprenori',
+      contractors: 'Pentru antreprenori',
+      homeowners: 'Pentru proprietari',
+      professionals: 'Pentru profesioniști',
+      platform: 'Platformă',
+      blog: 'Blog',
+      about: 'Despre noi',
+      contact: 'Contact',
+      signIn: 'Conectare',
+      getStarted: 'Începe gratuit',
+    },
+    home: {
+      heroTitle: 'Găsește Constructori Verificați în UK în Care Poți Avea Încredere',
+      heroSubtitle: 'Fiecare antreprenor de pe Dwellinger are un Builder Score™ — un rating de încredere verificat, bazat pe înregistrări de conformitate, istoricul plăților și recenzii reale ale proiectelor.',
+      heroCta: 'Caută Antreprenori',
+      heroCtaSecondary: 'Cum funcționează',
+      searchPlaceholder: 'Meserie sau cod poștal...',
+      trustBadge: 'De încredere pentru proprietari din toată Londra',
+      howItWorksTitle: 'Cum funcționează Dwellinger',
+      step1Title: 'Caută după meserie și locație',
+      step1Desc: 'Găsește constructori, electricieni, instalatori și alții — filtrați după Builder Score™ și locație.',
+      step2Title: 'Verifică Builder Score™',
+      step2Desc: 'Fiecare antreprenor are un rating de încredere verificat între 0 și 1000, bazat pe conformitatea CDM, comportamentul de plată și recenzii verificate.',
+      step3Title: 'Angajează cu încredere',
+      step3Desc: 'Contactează antreprenorii verificați direct. Fără intermediar. Istoricul complet al proiectelor vizibil.',
+      builderScoreTitle: 'Ce este Builder Score™?',
+      builderScoreDesc: 'Builder Score™ este un rating de încredere de la 0 la 1000, calculat din șase componente verificate independent — nu doar stele. Înregistrări de conformitate CDM, comportament de plată, statut de asigurare și altele.',
+      ctaTitle: 'Ești gata să găsești un antreprenor verificat?',
+      ctaDesc: 'Caută constructori și antreprenori verificați în Greater London.',
+      ctaButton: 'Începe căutarea',
+    },
+    common: {
+      builderScore: 'Builder Score™',
+      verifiedContractor: 'Antreprenor verificat',
+      searchContractors: 'Caută antreprenori',
+      learnMore: 'Află mai multe',
+      viewAll: 'Vezi tot',
+      readMore: 'Citește mai mult',
+      back: 'Înapoi',
+      home: 'Acasă',
+      freeToStart: 'Gratuit pentru a începe',
+      trialBadge: '14 zile de probă gratuită — fără card necesar',
+    },
+    footer: {
+      tagline: 'Platforma de încredere pentru antreprenori de construcții verificați din UK.',
+      forContractors: 'Pentru antreprenori',
+      forHomeowners: 'Pentru proprietari',
+      forProfessionals: 'Pentru profesioniști',
+      tools: 'Instrumente',
+      company: 'Companie',
+      legal: 'Legal',
+      privacy: 'Politica de confidențialitate',
+      terms: 'Termeni și condiții',
+      contact: 'Contactează-ne',
+      copyright: '© 2026 Dwellinger Ltd. Toate drepturile rezervate.',
+      legalLine: 'Înregistrată în Anglia și Țara Galilor. Nr. companie 16871183. Sediu înregistrat: 280-282 Church Road, Sheldon, Birmingham B26 3YH.',
+    },
+    meta: {
+      homeTitle: 'Dwellinger — Găsește Constructori și Antreprenori Verificați în UK',
+      homeDescription: 'Caută constructori, antreprenori și meșteri verificați din UK. Fiecare antreprenor are un Builder Score™ — un rating de încredere bazat pe recenzii verificate, conformitate CDM și istoricul plăților.',
+      siteDescription: 'Platformă de încredere și verificare a antreprenorilor din UK',
+    },
+  },
+
+  pl: {
+    nav: {
+      search: 'Szukaj wykonawców',
+      contractors: 'Dla wykonawców',
+      homeowners: 'Dla właścicieli',
+      professionals: 'Dla profesjonalistów',
+      platform: 'Platforma',
+      blog: 'Blog',
+      about: 'O nas',
+      contact: 'Kontakt',
+      signIn: 'Zaloguj się',
+      getStarted: 'Zacznij za darmo',
+    },
+    home: {
+      heroTitle: 'Znajdź Zweryfikowanych Wykonawców w UK, Którym Możesz Zaufać',
+      heroSubtitle: 'Każdy wykonawca na Dwellinger ma Builder Score™ — zweryfikowany wskaźnik zaufania oparty na zapisach zgodności, historii płatności i prawdziwych recenzjach projektów.',
+      heroCta: 'Szukaj Wykonawców',
+      heroCtaSecondary: 'Jak to działa',
+      searchPlaceholder: 'Branża lub kod pocztowy...',
+      trustBadge: 'Zaufany przez właścicieli domów w całym Londynie',
+      howItWorksTitle: 'Jak działa Dwellinger',
+      step1Title: 'Szukaj według branży i lokalizacji',
+      step1Desc: 'Znajdź budowniczych, elektryków, hydraulików i innych — filtrowanych według Builder Score™ i lokalizacji.',
+      step2Title: 'Sprawdź Builder Score™',
+      step2Desc: 'Każdy wykonawca ma zweryfikowany wskaźnik zaufania od 0 do 1000, oparty na zgodności CDM, zachowaniach płatniczych i zweryfikowanych recenzjach.',
+      step3Title: 'Zatrudnij z pewnością',
+      step3Desc: 'Kontaktuj się bezpośrednio ze zweryfikowanymi wykonawcami. Bez pośrednika. Pełna historia projektów widoczna.',
+      builderScoreTitle: 'Czym jest Builder Score™?',
+      builderScoreDesc: 'Builder Score™ to wskaźnik zaufania od 0 do 1000, obliczany na podstawie sześciu niezależnie weryfikowanych składników — nie tylko gwiazdek. Zapisy zgodności CDM, zachowania płatnicze, status ubezpieczeniowy i więcej.',
+      ctaTitle: 'Gotowy, aby znaleźć zweryfikowanego wykonawcę?',
+      ctaDesc: 'Szukaj zweryfikowanych budowniczych i wykonawców w Greater London.',
+      ctaButton: 'Rozpocznij wyszukiwanie',
+    },
+    common: {
+      builderScore: 'Builder Score™',
+      verifiedContractor: 'Zweryfikowany wykonawca',
+      searchContractors: 'Szukaj wykonawców',
+      learnMore: 'Dowiedz się więcej',
+      viewAll: 'Zobacz wszystko',
+      readMore: 'Czytaj więcej',
+      back: 'Wstecz',
+      home: 'Strona główna',
+      freeToStart: 'Bezpłatne rozpoczęcie',
+      trialBadge: '14-dniowy bezpłatny okres próbny — karta nie wymagana',
+    },
+    footer: {
+      tagline: 'Zaufana platforma dla zweryfikowanych wykonawców budowlanych w UK.',
+      forContractors: 'Dla wykonawców',
+      forHomeowners: 'Dla właścicieli',
+      forProfessionals: 'Dla profesjonalistów',
+      tools: 'Narzędzia',
+      company: 'Firma',
+      legal: 'Informacje prawne',
+      privacy: 'Polityka prywatności',
+      terms: 'Warunki korzystania',
+      contact: 'Skontaktuj się z nami',
+      copyright: '© 2026 Dwellinger Ltd. Wszelkie prawa zastrzeżone.',
+      legalLine: 'Zarejestrowana w Anglii i Walii. Nr spółki 16871183. Siedziba: 280-282 Church Road, Sheldon, Birmingham B26 3YH.',
+    },
+    meta: {
+      homeTitle: 'Dwellinger — Znajdź Zweryfikowanych Budowniczych i Wykonawców w UK',
+      homeDescription: 'Szukaj zweryfikowanych budowniczych, wykonawców i rzemieślników w UK. Każdy wykonawca ma Builder Score™ — wskaźnik zaufania oparty na zweryfikowanych recenzjach, zgodności CDM i historii płatności.',
+      siteDescription: 'Platforma zaufania i weryfikacji wykonawców w UK',
+    },
+  },
+
+  es: {
+    nav: {
+      search: 'Buscar contratistas',
+      contractors: 'Para contratistas',
+      homeowners: 'Para propietarios',
+      professionals: 'Para profesionales',
+      platform: 'Plataforma',
+      blog: 'Blog',
+      about: 'Sobre nosotros',
+      contact: 'Contacto',
+      signIn: 'Iniciar sesión',
+      getStarted: 'Empezar gratis',
+    },
+    home: {
+      heroTitle: 'Encuentra Constructores Verificados en el Reino Unido en Quien Confiar',
+      heroSubtitle: 'Cada contratista en Dwellinger tiene un Builder Score™ — una calificación de confianza verificada basada en registros de cumplimiento, historial de pagos y reseñas reales de proyectos.',
+      heroCta: 'Buscar Contratistas',
+      heroCtaSecondary: 'Cómo funciona',
+      searchPlaceholder: 'Oficio o código postal...',
+      trustBadge: 'De confianza para propietarios en todo Londres',
+      howItWorksTitle: 'Cómo funciona Dwellinger',
+      step1Title: 'Busca por oficio y ubicación',
+      step1Desc: 'Encuentra constructores, electricistas, fontaneros y más — filtrados por Builder Score™ y ubicación.',
+      step2Title: 'Comprueba el Builder Score™',
+      step2Desc: 'Cada contratista tiene una calificación de confianza verificada de 0 a 1000, basada en el cumplimiento CDM, comportamiento de pago y reseñas verificadas.',
+      step3Title: 'Contrata con confianza',
+      step3Desc: 'Contacta directamente con contratistas verificados. Sin intermediarios. Historial completo del proyecto visible.',
+      builderScoreTitle: '¿Qué es Builder Score™?',
+      builderScoreDesc: 'Builder Score™ es una calificación de confianza de 0 a 1000 calculada a partir de seis componentes verificados independientemente — no solo estrellas. Registros de cumplimiento CDM, comportamiento de pago, estado de seguro y más.',
+      ctaTitle: '¿Listo para encontrar un contratista verificado?',
+      ctaDesc: 'Busca constructores y contratistas verificados en el Gran Londres.',
+      ctaButton: 'Comenzar búsqueda',
+    },
+    common: {
+      builderScore: 'Builder Score™',
+      verifiedContractor: 'Contratista verificado',
+      searchContractors: 'Buscar contratistas',
+      learnMore: 'Saber más',
+      viewAll: 'Ver todo',
+      readMore: 'Leer más',
+      back: 'Atrás',
+      home: 'Inicio',
+      freeToStart: 'Gratis para empezar',
+      trialBadge: 'Prueba gratuita de 14 días — sin tarjeta requerida',
+    },
+    footer: {
+      tagline: 'La plataforma de confianza para contratistas de construcción verificados en el Reino Unido.',
+      forContractors: 'Para contratistas',
+      forHomeowners: 'Para propietarios',
+      forProfessionals: 'Para profesionales',
+      tools: 'Herramientas',
+      company: 'Empresa',
+      legal: 'Legal',
+      privacy: 'Política de privacidad',
+      terms: 'Términos de servicio',
+      contact: 'Contáctenos',
+      copyright: '© 2026 Dwellinger Ltd. Todos los derechos reservados.',
+      legalLine: 'Registrada en Inglaterra y Gales. Número de empresa 16871183. Domicilio social: 280-282 Church Road, Sheldon, Birmingham B26 3YH.',
+    },
+    meta: {
+      homeTitle: 'Dwellinger — Encuentra Constructores y Contratistas Verificados en el Reino Unido',
+      homeDescription: 'Busca constructores, contratistas y trabajadores verificados en el Reino Unido. Cada contratista tiene un Builder Score™ — una calificación de confianza basada en reseñas verificadas, cumplimiento CDM e historial de pagos.',
+      siteDescription: 'Plataforma de confianza y verificación de contratistas en el Reino Unido',
+    },
+  },
+
+  fr: {
+    nav: {
+      search: 'Rechercher des entrepreneurs',
+      contractors: 'Pour les entrepreneurs',
+      homeowners: 'Pour les propriétaires',
+      professionals: 'Pour les professionnels',
+      platform: 'Plateforme',
+      blog: 'Blog',
+      about: 'À propos',
+      contact: 'Contact',
+      signIn: 'Se connecter',
+      getStarted: 'Commencer gratuitement',
+    },
+    home: {
+      heroTitle: 'Trouvez des Constructeurs Vérifiés au Royaume-Uni en Qui Vous Pouvez Avoir Confiance',
+      heroSubtitle: "Chaque entrepreneur sur Dwellinger possède un Builder Score™ — une note de confiance vérifiée basée sur les dossiers de conformité, l'historique des paiements et les avis réels de projets.",
+      heroCta: 'Rechercher des Entrepreneurs',
+      heroCtaSecondary: 'Comment ça marche',
+      searchPlaceholder: 'Métier ou code postal...',
+      trustBadge: 'Approuvé par des propriétaires dans tout Londres',
+      howItWorksTitle: 'Comment fonctionne Dwellinger',
+      step1Title: 'Recherchez par métier et localisation',
+      step1Desc: 'Trouvez des constructeurs, électriciens, plombiers et plus — filtrés par Builder Score™ et localisation.',
+      step2Title: 'Vérifiez le Builder Score™',
+      step2Desc: "Chaque entrepreneur dispose d'une note de confiance vérifiée de 0 à 1000, basée sur la conformité CDM, le comportement de paiement et les avis vérifiés.",
+      step3Title: 'Embauchez en toute confiance',
+      step3Desc: 'Contactez directement les entrepreneurs vérifiés. Sans intermédiaire. Historique complet du projet visible.',
+      builderScoreTitle: "Qu'est-ce que le Builder Score™?",
+      builderScoreDesc: "Le Builder Score™ est une note de confiance de 0 à 1000 calculée à partir de six composantes vérifiées indépendamment — pas seulement des étoiles. Dossiers de conformité CDM, comportement de paiement, statut d'assurance et plus.",
+      ctaTitle: 'Prêt à trouver un entrepreneur vérifié?',
+      ctaDesc: 'Recherchez des constructeurs et entrepreneurs vérifiés dans le Grand Londres.',
+      ctaButton: 'Commencer la recherche',
+    },
+    common: {
+      builderScore: 'Builder Score™',
+      verifiedContractor: 'Entrepreneur vérifié',
+      searchContractors: 'Rechercher des entrepreneurs',
+      learnMore: 'En savoir plus',
+      viewAll: 'Voir tout',
+      readMore: 'Lire la suite',
+      back: 'Retour',
+      home: 'Accueil',
+      freeToStart: 'Gratuit pour commencer',
+      trialBadge: 'Essai gratuit de 14 jours — aucune carte requise',
+    },
+    footer: {
+      tagline: 'La plateforme de confiance pour les entrepreneurs en construction vérifiés au Royaume-Uni.',
+      forContractors: 'Pour les entrepreneurs',
+      forHomeowners: 'Pour les propriétaires',
+      forProfessionals: 'Pour les professionnels',
+      tools: 'Outils',
+      company: 'Entreprise',
+      legal: 'Mentions légales',
+      privacy: 'Politique de confidentialité',
+      terms: "Conditions d'utilisation",
+      contact: 'Nous contacter',
+      copyright: '© 2026 Dwellinger Ltd. Tous droits réservés.',
+      legalLine: "Enregistrée en Angleterre et au Pays de Galles. Numéro d'entreprise 16871183. Siège social: 280-282 Church Road, Sheldon, Birmingham B26 3YH.",
+    },
+    meta: {
+      homeTitle: 'Dwellinger — Trouvez des Constructeurs et Entrepreneurs Vérifiés au Royaume-Uni',
+      homeDescription: "Recherchez des constructeurs, entrepreneurs et artisans vérifiés au Royaume-Uni. Chaque entrepreneur a un Builder Score™ — une note de confiance basée sur des avis vérifiés, la conformité CDM et l'historique des paiements.",
+      siteDescription: 'Plateforme de confiance et de vérification des entrepreneurs au Royaume-Uni',
+    },
+  },
+
+  de: {
+    nav: {
+      search: 'Auftragnehmer suchen',
+      contractors: 'Für Auftragnehmer',
+      homeowners: 'Für Hausbesitzer',
+      professionals: 'Für Fachleute',
+      platform: 'Plattform',
+      blog: 'Blog',
+      about: 'Über uns',
+      contact: 'Kontakt',
+      signIn: 'Anmelden',
+      getStarted: 'Kostenlos starten',
+    },
+    home: {
+      heroTitle: 'Finden Sie Geprüfte Bauunternehmer in Großbritannien, Denen Sie Vertrauen Können',
+      heroSubtitle: 'Jeder Auftragnehmer auf Dwellinger hat einen Builder Score™ — eine geprüfte Vertrauensbewertung, die auf Compliance-Aufzeichnungen, Zahlungshistorie und echten Projektbewertungen basiert.',
+      heroCta: 'Auftragnehmer Suchen',
+      heroCtaSecondary: 'Wie es funktioniert',
+      searchPlaceholder: 'Gewerk oder Postleitzahl...',
+      trustBadge: 'Von Hausbesitzern in ganz London vertraut',
+      howItWorksTitle: 'Wie Dwellinger funktioniert',
+      step1Title: 'Nach Gewerk und Standort suchen',
+      step1Desc: 'Finden Sie Bauunternehmer, Elektriker, Klempner und mehr — gefiltert nach Builder Score™ und Standort.',
+      step2Title: 'Builder Score™ prüfen',
+      step2Desc: 'Jeder Auftragnehmer hat eine geprüfte Vertrauensbewertung von 0 bis 1000, basierend auf CDM-Compliance, Zahlungsverhalten und verifizierten Bewertungen.',
+      step3Title: 'Mit Vertrauen einstellen',
+      step3Desc: 'Kontaktieren Sie geprüfte Auftragnehmer direkt. Kein Vermittler. Vollständige Projekthistorie sichtbar.',
+      builderScoreTitle: 'Was ist der Builder Score™?',
+      builderScoreDesc: 'Der Builder Score™ ist eine Vertrauensbewertung von 0 bis 1000, die aus sechs unabhängig verifizierten Komponenten berechnet wird — nicht nur Sterne. CDM-Compliance-Aufzeichnungen, Zahlungsverhalten, Versicherungsstatus und mehr.',
+      ctaTitle: 'Bereit, einen geprüften Auftragnehmer zu finden?',
+      ctaDesc: 'Suchen Sie nach geprüften Bauunternehmern in Greater London.',
+      ctaButton: 'Suche starten',
+    },
+    common: {
+      builderScore: 'Builder Score™',
+      verifiedContractor: 'Geprüfter Auftragnehmer',
+      searchContractors: 'Auftragnehmer suchen',
+      learnMore: 'Mehr erfahren',
+      viewAll: 'Alle anzeigen',
+      readMore: 'Weiterlesen',
+      back: 'Zurück',
+      home: 'Startseite',
+      freeToStart: 'Kostenlos starten',
+      trialBadge: '14-tägige kostenlose Testversion — keine Karte erforderlich',
+    },
+    footer: {
+      tagline: 'Die vertrauenswürdige Plattform für geprüfte Bauunternehmer in Großbritannien.',
+      forContractors: 'Für Auftragnehmer',
+      forHomeowners: 'Für Hausbesitzer',
+      forProfessionals: 'Für Fachleute',
+      tools: 'Werkzeuge',
+      company: 'Unternehmen',
+      legal: 'Rechtliches',
+      privacy: 'Datenschutzrichtlinie',
+      terms: 'Nutzungsbedingungen',
+      contact: 'Kontaktieren Sie uns',
+      copyright: '© 2026 Dwellinger Ltd. Alle Rechte vorbehalten.',
+      legalLine: 'Eingetragen in England und Wales. Unternehmensnummer 16871183. Eingetragener Sitz: 280-282 Church Road, Sheldon, Birmingham B26 3YH.',
+    },
+    meta: {
+      homeTitle: 'Dwellinger — Geprüfte Bauunternehmer in Großbritannien Finden',
+      homeDescription: 'Suchen Sie nach geprüften Bauunternehmern in Großbritannien. Jeder Auftragnehmer hat einen Builder Score™ — eine Vertrauensbewertung basierend auf verifizierten Bewertungen, CDM-Compliance und Zahlungshistorie.',
+      siteDescription: 'Vertrauens- und Verifizierungsplattform für Bauunternehmer in Großbritannien',
+    },
+  },
+
+  it: {
+    nav: {
+      search: 'Cerca appaltatori',
+      contractors: 'Per appaltatori',
+      homeowners: 'Per proprietari',
+      professionals: 'Per professionisti',
+      platform: 'Piattaforma',
+      blog: 'Blog',
+      about: 'Chi siamo',
+      contact: 'Contatti',
+      signIn: 'Accedi',
+      getStarted: 'Inizia gratis',
+    },
+    home: {
+      heroTitle: 'Trova Costruttori Verificati nel Regno Unito di Cui Fidarti',
+      heroSubtitle: 'Ogni appaltatore su Dwellinger ha un Builder Score™ — un punteggio di fiducia verificato basato su registrazioni di conformità, storico dei pagamenti e recensioni reali di progetti.',
+      heroCta: 'Cerca Appaltatori',
+      heroCtaSecondary: 'Come funziona',
+      searchPlaceholder: 'Mestiere o codice postale...',
+      trustBadge: 'Fidato dai proprietari di tutta Londra',
+      howItWorksTitle: 'Come funziona Dwellinger',
+      step1Title: 'Cerca per mestiere e posizione',
+      step1Desc: 'Trova costruttori, elettricisti, idraulici e altro — filtrati per Builder Score™ e posizione.',
+      step2Title: 'Controlla il Builder Score™',
+      step2Desc: 'Ogni appaltatore ha un punteggio di fiducia verificato da 0 a 1000, basato sulla conformità CDM, il comportamento di pagamento e le recensioni verificate.',
+      step3Title: 'Assumi con fiducia',
+      step3Desc: 'Contatta direttamente gli appaltatori verificati. Senza intermediari. Cronologia completa del progetto visibile.',
+      builderScoreTitle: "Cos'è il Builder Score™?",
+      builderScoreDesc: 'Il Builder Score™ è un punteggio di fiducia da 0 a 1000 calcolato da sei componenti verificate in modo indipendente — non solo stelle. Registrazioni di conformità CDM, comportamento di pagamento, stato assicurativo e altro.',
+      ctaTitle: 'Pronto a trovare un appaltatore verificato?',
+      ctaDesc: 'Cerca costruttori e appaltatori verificati nella Grande Londra.',
+      ctaButton: 'Inizia la ricerca',
+    },
+    common: {
+      builderScore: 'Builder Score™',
+      verifiedContractor: 'Appaltatore verificato',
+      searchContractors: 'Cerca appaltatori',
+      learnMore: 'Scopri di più',
+      viewAll: 'Vedi tutto',
+      readMore: 'Leggi di più',
+      back: 'Indietro',
+      home: 'Home',
+      freeToStart: 'Gratuito per iniziare',
+      trialBadge: 'Prova gratuita di 14 giorni — nessuna carta richiesta',
+    },
+    footer: {
+      tagline: 'La piattaforma di fiducia per appaltatori edili verificati nel Regno Unito.',
+      forContractors: 'Per appaltatori',
+      forHomeowners: 'Per proprietari',
+      forProfessionals: 'Per professionisti',
+      tools: 'Strumenti',
+      company: 'Azienda',
+      legal: 'Legale',
+      privacy: 'Informativa sulla privacy',
+      terms: 'Termini di servizio',
+      contact: 'Contattaci',
+      copyright: '© 2026 Dwellinger Ltd. Tutti i diritti riservati.',
+      legalLine: 'Registrata in Inghilterra e Galles. Numero azienda 16871183. Sede legale: 280-282 Church Road, Sheldon, Birmingham B26 3YH.',
+    },
+    meta: {
+      homeTitle: 'Dwellinger — Trova Costruttori e Appaltatori Verificati nel Regno Unito',
+      homeDescription: 'Cerca costruttori, appaltatori e artigiani verificati nel Regno Unido. Ogni appaltatore ha un Builder Score™ — un punteggio di fiducia basato su recensioni verificate, conformità CDM e storico dei pagamenti.',
+      siteDescription: 'Piattaforma di fiducia e verifica degli appaltatori nel Regno Unito',
+    },
+  },
+
+  pt: {
+    nav: {
+      search: 'Pesquisar contratados',
+      contractors: 'Para contratados',
+      homeowners: 'Para proprietários',
+      professionals: 'Para profissionais',
+      platform: 'Plataforma',
+      blog: 'Blog',
+      about: 'Sobre nós',
+      contact: 'Contacto',
+      signIn: 'Iniciar sessão',
+      getStarted: 'Começar gratuitamente',
+    },
+    home: {
+      heroTitle: 'Encontre Construtores Verificados no Reino Unido em Quem Confiar',
+      heroSubtitle: 'Cada contratado no Dwellinger tem um Builder Score™ — uma classificação de confiança verificada baseada em registos de conformidade, historial de pagamentos e avaliações reais de projetos.',
+      heroCta: 'Pesquisar Contratados',
+      heroCtaSecondary: 'Como funciona',
+      searchPlaceholder: 'Ofício ou código postal...',
+      trustBadge: 'Confiável para proprietários em todo Londres',
+      howItWorksTitle: 'Como o Dwellinger funciona',
+      step1Title: 'Pesquise por ofício e localização',
+      step1Desc: 'Encontre construtores, eletricistas, canalizadores e mais — filtrados por Builder Score™ e localização.',
+      step2Title: 'Verifique o Builder Score™',
+      step2Desc: 'Cada contratado tem uma classificação de confiança verificada de 0 a 1000, baseada na conformidade CDM, comportamento de pagamento e avaliações verificadas.',
+      step3Title: 'Contrate com confiança',
+      step3Desc: 'Contacte diretamente os contratados verificados. Sem intermediários. Historial completo do projeto visível.',
+      builderScoreTitle: 'O que é o Builder Score™?',
+      builderScoreDesc: 'O Builder Score™ é uma classificação de confiança de 0 a 1000 calculada a partir de seis componentes verificados de forma independente — não apenas estrelas. Registos de conformidade CDM, comportamento de pagamento, estado de seguro e mais.',
+      ctaTitle: 'Pronto para encontrar um contratado verificado?',
+      ctaDesc: 'Pesquise construtores e contratados verificados na Grande Londres.',
+      ctaButton: 'Iniciar pesquisa',
+    },
+    common: {
+      builderScore: 'Builder Score™',
+      verifiedContractor: 'Contratado verificado',
+      searchContractors: 'Pesquisar contratados',
+      learnMore: 'Saber mais',
+      viewAll: 'Ver tudo',
+      readMore: 'Ler mais',
+      back: 'Voltar',
+      home: 'Início',
+      freeToStart: 'Gratuito para começar',
+      trialBadge: 'Teste gratuito de 14 dias — sem cartão necessário',
+    },
+    footer: {
+      tagline: 'A plataforma de confiança para contratados de construção verificados no Reino Unido.',
+      forContractors: 'Para contratados',
+      forHomeowners: 'Para proprietários',
+      forProfessionals: 'Para profissionais',
+      tools: 'Ferramentas',
+      company: 'Empresa',
+      legal: 'Legal',
+      privacy: 'Política de privacidade',
+      terms: 'Termos de serviço',
+      contact: 'Contacte-nos',
+      copyright: '© 2026 Dwellinger Ltd. Todos os direitos reservados.',
+      legalLine: 'Registada em Inglaterra e País de Gales. Número de empresa 16871183. Sede social: 280-282 Church Road, Sheldon, Birmingham B26 3YH.',
+    },
+    meta: {
+      homeTitle: 'Dwellinger — Encontre Construtores e Contratados Verificados no Reino Unido',
+      homeDescription: 'Pesquise construtores, contratados e artesãos verificados no Reino Unido. Cada contratado tem um Builder Score™ — uma classificação de confiança baseada em avaliações verificadas, conformidade CDM e historial de pagamentos.',
+      siteDescription: 'Plataforma de confiança e verificação de contratados no Reino Unido',
+    },
+  },
+
+  uk: {
+    nav: {
+      search: 'Пошук підрядників',
+      contractors: 'Для підрядників',
+      homeowners: 'Для власників нерухомості',
+      professionals: 'Для фахівців',
+      platform: 'Платформа',
+      blog: 'Блог',
+      about: 'Про нас',
+      contact: 'Контакти',
+      signIn: 'Увійти',
+      getStarted: 'Почати безкоштовно',
+    },
+    home: {
+      heroTitle: 'Знайдіть Перевірених Будівельників у Великій Британії, Яким Можна Довіряти',
+      heroSubtitle: 'Кожен підрядник на Dwellinger має Builder Score™ — перевірений рейтинг довіри, заснований на записах відповідності, історії платежів і реальних відгуках про проекти.',
+      heroCta: 'Пошук Підрядників',
+      heroCtaSecondary: 'Як це працює',
+      searchPlaceholder: 'Спеціалізація або поштовий індекс...',
+      trustBadge: 'Довіряють власники нерухомості по всьому Лондону',
+      howItWorksTitle: 'Як працює Dwellinger',
+      step1Title: 'Шукайте за спеціалізацією та розташуванням',
+      step1Desc: 'Знайдіть будівельників, електриків, сантехніків та інших — відфільтрованих за Builder Score™ і розташуванням.',
+      step2Title: 'Перевірте Builder Score™',
+      step2Desc: 'Кожен підрядник має перевірений рейтинг довіри від 0 до 1000, заснований на відповідності CDM, поведінці платежів і перевірених відгуках.',
+      step3Title: 'Наймайте з впевненістю',
+      step3Desc: 'Звертайтеся безпосередньо до перевірених підрядників. Без посередників. Повна історія проекту видима.',
+      builderScoreTitle: 'Що таке Builder Score™?',
+      builderScoreDesc: 'Builder Score™ — це рейтинг довіри від 0 до 1000, розрахований на основі шести незалежно перевірених компонентів — не лише зірок. Записи відповідності CDM, поведінка платежів, статус страхування тощо.',
+      ctaTitle: 'Готові знайти перевіреного підрядника?',
+      ctaDesc: 'Шукайте перевірених будівельників і підрядників у Великому Лондоні.',
+      ctaButton: 'Почати пошук',
+    },
+    common: {
+      builderScore: 'Builder Score™',
+      verifiedContractor: 'Перевірений підрядник',
+      searchContractors: 'Пошук підрядників',
+      learnMore: 'Дізнатися більше',
+      viewAll: 'Переглянути все',
+      readMore: 'Читати далі',
+      back: 'Назад',
+      home: 'Головна',
+      freeToStart: 'Безкоштовний початок',
+      trialBadge: '14-денне безкоштовне пробне використання — картка не потрібна',
+    },
+    footer: {
+      tagline: 'Надійна платформа для перевірених будівельних підрядників у Великій Британії.',
+      forContractors: 'Для підрядників',
+      forHomeowners: 'Для власників нерухомості',
+      forProfessionals: 'Для фахівців',
+      tools: 'Інструменти',
+      company: 'Компанія',
+      legal: 'Правова інформація',
+      privacy: 'Політика конфіденційності',
+      terms: 'Умови використання',
+      contact: "Зв'яжіться з нами",
+      copyright: '© 2026 Dwellinger Ltd. Всі права захищені.',
+      legalLine: 'Зареєстрована в Англії та Уельсі. Номер компанії 16871183. Юридична адреса: 280-282 Church Road, Sheldon, Birmingham B26 3YH.',
+    },
+    meta: {
+      homeTitle: 'Dwellinger — Знайдіть Перевірених Будівельників і Підрядників у Великій Британії',
+      homeDescription: 'Шукайте перевірених будівельників, підрядників і ремісників у Великій Британії. Кожен підрядник має Builder Score™ — рейтинг довіри на основі перевірених відгуків, відповідності CDM та історії платежів.',
+      siteDescription: 'Платформа довіри та перевірки підрядників у Великій Британії',
+    },
+  },
+
+  ru: {
+    nav: {
+      search: 'Поиск подрядчиков',
+      contractors: 'Для подрядчиков',
+      homeowners: 'Для владельцев',
+      professionals: 'Для специалистов',
+      platform: 'Платформа',
+      blog: 'Блог',
+      about: 'О нас',
+      contact: 'Контакты',
+      signIn: 'Войти',
+      getStarted: 'Начать бесплатно',
+    },
+    home: {
+      heroTitle: 'Найдите Проверенных Строителей в Великобритании, Которым Можно Доверять',
+      heroSubtitle: 'Каждый подрядчик на Dwellinger имеет Builder Score™ — проверенный рейтинг доверия, основанный на записях соответствия, истории платежей и реальных отзывах о проектах.',
+      heroCta: 'Поиск Подрядчиков',
+      heroCtaSecondary: 'Как это работает',
+      searchPlaceholder: 'Специализация или почтовый индекс...',
+      trustBadge: 'Доверяют владельцы недвижимости по всему Лондону',
+      howItWorksTitle: 'Как работает Dwellinger',
+      step1Title: 'Ищите по специализации и расположению',
+      step1Desc: 'Найдите строителей, электриков, сантехников и других — отфильтрованных по Builder Score™ и расположению.',
+      step2Title: 'Проверьте Builder Score™',
+      step2Desc: 'Каждый подрядчик имеет проверенный рейтинг доверия от 0 до 1000, основанный на соответствии CDM, поведении платежей и проверенных отзывах.',
+      step3Title: 'Нанимайте с уверенностью',
+      step3Desc: 'Связывайтесь напрямую с проверенными подрядчиками. Без посредников. Полная история проекта видна.',
+      builderScoreTitle: 'Что такое Builder Score™?',
+      builderScoreDesc: 'Builder Score™ — это рейтинг доверия от 0 до 1000, рассчитанный из шести независимо проверенных компонентов — не только звёзд. Записи соответствия CDM, поведение платежей, статус страхования и многое другое.',
+      ctaTitle: 'Готовы найти проверенного подрядчика?',
+      ctaDesc: 'Ищите проверенных строителей и подрядчиков в Большом Лондоне.',
+      ctaButton: 'Начать поиск',
+    },
+    common: {
+      builderScore: 'Builder Score™',
+      verifiedContractor: 'Проверенный подрядчик',
+      searchContractors: 'Поиск подрядчиков',
+      learnMore: 'Узнать больше',
+      viewAll: 'Посмотреть все',
+      readMore: 'Читать далее',
+      back: 'Назад',
+      home: 'Главная',
+      freeToStart: 'Бесплатный старт',
+      trialBadge: '14-дневный бесплатный пробный период — карта не нужна',
+    },
+    footer: {
+      tagline: 'Надёжная платформа для проверенных строительных подрядчиков в Великобритании.',
+      forContractors: 'Для подрядчиков',
+      forHomeowners: 'Для владельцев',
+      forProfessionals: 'Для специалистов',
+      tools: 'Инструменты',
+      company: 'Компания',
+      legal: 'Правовая информация',
+      privacy: 'Политика конфиденциальности',
+      terms: 'Условия использования',
+      contact: 'Свяжитесь с нами',
+      copyright: '© 2026 Dwellinger Ltd. Все права защищены.',
+      legalLine: 'Зарегистрирована в Англии и Уэльсе. Номер компании 16871183. Юридический адрес: 280-282 Church Road, Sheldon, Birmingham B26 3YH.',
+    },
+    meta: {
+      homeTitle: 'Dwellinger — Найдите Проверенных Строителей и Подрядчиков в Великобритании',
+      homeDescription: 'Ищите проверенных строителей, подрядчиков и мастеров в Великобритании. Каждый подрядчик имеет Builder Score™ — рейтинг доверия на основе проверенных отзывов, соответствия CDM и истории платежей.',
+      siteDescription: 'Платформа доверия и проверки подрядчиков в Великобритании',
+    },
+  },
+}
+
+export function getDictionary(locale: Locale): Dictionary {
+  return dictionaries[locale] ?? dictionaries.en
+}

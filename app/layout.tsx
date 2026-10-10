@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { LanguageProvider } from '@/components/providers/LanguageProvider'
-import { GoogleTranslate } from '@/components/GoogleTranslate'
 
 export const metadata: Metadata = {
   title: {
@@ -20,6 +19,22 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Dwellinger Ltd', url: 'https://dwellinger.co.uk' }],
   metadataBase: new URL('https://dwellinger.co.uk'),
+  alternates: {
+    canonical: 'https://dwellinger.co.uk/',
+    languages: {
+      'x-default': 'https://dwellinger.co.uk/',
+      'en': 'https://dwellinger.co.uk/',
+      'ro': 'https://dwellinger.co.uk/ro',
+      'pl': 'https://dwellinger.co.uk/pl',
+      'es': 'https://dwellinger.co.uk/es',
+      'fr': 'https://dwellinger.co.uk/fr',
+      'de': 'https://dwellinger.co.uk/de',
+      'it': 'https://dwellinger.co.uk/it',
+      'pt': 'https://dwellinger.co.uk/pt',
+      'uk': 'https://dwellinger.co.uk/uk',
+      'ru': 'https://dwellinger.co.uk/ru',
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
@@ -174,8 +189,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js');})}`,
           }}
         />
-        {/* Google Translate — loads after page is interactive, does not block render */}
-        <GoogleTranslate />
       </body>
     </html>
   )
