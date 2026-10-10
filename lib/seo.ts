@@ -14,15 +14,19 @@ interface PageSeo {
 export function pageMetadata(p: PageSeo): Metadata {
   const isArticle = p.type === 'article'
   const images = p.image ? [{ url: p.image, width: 1200, height: 630 }] : undefined
+  // Strip trailing " | Dwellinger" suffix if callers included it —
+  // the root layout's metadata template already appends it, so leaving it
+  // in the page title would produce "Title | Dwellinger | Dwellinger".
+  const cleanTitle = p.title.replace(/ \| Dwellinger$/, '')
   return {
-    title: p.title,
+    title: cleanTitle,
     description: p.description,
     alternates: { canonical: p.path },
     ...(p.noindex && { robots: { index: false, follow: false } }),
     openGraph: {
       type: isArticle ? 'article' : 'website',
       url: p.path,
-      title: p.title,
+      title: cleanTitle,
       description: p.description,
       siteName: 'Dwellinger',
       locale: 'en_GB',
@@ -34,7 +38,7 @@ export function pageMetadata(p: PageSeo): Metadata {
     },
     twitter: {
       card: 'summary_large_image',
-      title: p.title,
+      title: cleanTitle,
       description: p.description,
       ...(images && { images: images.map(i => i.url) }),
     },
