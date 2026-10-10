@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── FONT VARIABLES ─────────────────────────────── */
+/* ─── FONT VARIABLES ─────────────────────────────────── */
 :root {
   --font-inter: 'Inter', system-ui, sans-serif;
   --font-cal: 'Playfair Display', Georgia, serif;
@@ -15,7 +15,7 @@
   --amber-border: #3D2010;
 }
 
-/* ─── DARK THEME (default) ──────────────────────────────────── */
+/* ─── DARK THEME (default) ───────────────────────────────── */
 :root,
 [data-theme="dark"] {
   --color-bg: #0A0A0A;
@@ -36,7 +36,7 @@
   --amber-border: rgba(61,32,16,1);
 }
 
-/* ─── MID / TWILIGHT THEME ─────────────────────────── */
+/* ─── MID / TWILIGHT THEME ─────────────────────────────── */
 [data-theme="mid"] {
   --color-bg: #1A1D24;
   --color-bg-surface: #21252E;
@@ -56,11 +56,11 @@
   --amber-border: rgba(55,32,12,1);
 }
 
-/* ─── LIGHT THEME ─────────────────────────────────── */
+/* ─── LIGHT THEME ──────────────────────────────────────── */
 [data-theme="light"] {
   --color-bg: #F9F6F1;
   --color-bg-surface: #FFFFFF;
-  --color-bg-raised: #F0EBE2;
+  --color-bg-raised: $F0EBE2;
   --color-bg-overlay: #E8E0D5;
   --color-text: #1A2340;
   --color-text-secondary: #4A5568;
@@ -76,7 +76,7 @@
   --amber-border: rgba(220,166,110,0.3);
 }
 
-/* ─── BASE STYLES ─────────────────────────────────── */
+/* ─── BASE STYLES ─────────────────────────────────────── */
 @layer base {
   * { border-color: var(--color-border); }
   html {
@@ -94,7 +94,7 @@
   }
 }
 
-/* ─── COMPONENT CLASSES ────────────────────────────────────── */
+/* ─── COMPONENT CLASSES ───────────────────────────────────── */
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2
@@ -201,7 +201,7 @@
   .border-amber { border-color: var(--amber); }
 }
 
-/* ─── GOOGLE TRANSLATE — hide toolbar, keep translation ────────────── */
+/* ─── GOOGLE TRANSLATE — hide toolbar, keep translation ────────── */
 .goog-te-banner-frame,
 .goog-te-balloon-frame,
 .goog-tooltip,
@@ -212,7 +212,7 @@
 body { top: 0 !important; }
 .goog-te-gadget-simple { display: none !important; }
 
-/* ─── PWA ───────────────────────────────────────── */
+/* ─── PWA ───────────────────────────────────────────────── */
 @media (display-mode: standalone) {
   body {
     padding-top: env(safe-area-inset-top);
@@ -220,7 +220,7 @@ body { top: 0 !important; }
   }
 }
 
-/* ─── ANIMATIONS ────────────────────────────────────────────── */
+/* ─── ANIMATIONS ───────────────────────────────────────────────── */
 @keyframes scoreReveal {
   from { stroke-dashoffset: 1000; }
   to { stroke-dashoffset: var(--offset); }
@@ -245,14 +245,14 @@ body { top: 0 !important; }
   animation: shimmer 1.5s infinite;
 }
 
-/* ─── THEME TRANSITION ─────────────────────────────────────── */
+/* ─── THEME TRANSITION ───────────────────────────────────────────── */
 *, *::before, *::after {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: ease;
   transition-duration: 200ms;
 }
 
-/* ─── DESIGN SYSTEM ADDITIONS (2026-10-10) ────────────────────────────────── */
+/* ─── DESIGN SYSTEM ADDITIONS (2026-10-10) ──────────────────────────── */
 
 /* Noise / Texture Overlay */
 .noise-overlay {
@@ -328,4 +328,130 @@ body { top: 0 !important; }
 }
 .animate-pulse-slow {
   animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ============================
+   Animation System — Scroll Reveals
+   ============================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Stagger delay utilities */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Data-reveal pattern for CSS-only approach */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+[data-reveal].reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal][data-delay="100"] { transition-delay: 100ms; }
+[data-reveal][data-delay="200"] { transition-delay: 200ms; }
+[data-reveal][data-delay="300"] { transition-delay: 300ms; }
+[data-reveal][data-delay="400"] { transition-delay: 400ms; }
+[data-reveal][data-delay="500"] { transition-delay: 500ms; }
+[data-reveal][data-delay="600"] { transition-delay: 600ms; }
+
+/* Score bar animation */
+@keyframes growWidth {
+  from { width: 0; }
+  to { width: var(--target-width, 100%); }
+}
+
+.score-bar {
+  animation: growWidth 1s ease-out forwards;
+}
+
+/* Shine effect for cards */
+@keyframes shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.card-shine {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 100%
+  );
+  background-size: 200% auto;
+}
+
+.card-shine:hover {
+  animation: shine 1.5s linear;
+}
+
+/* Button press feedback */
+.btn-press {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+/* Floating animation for hero elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Amber glow pulse for CTAs */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(196, 119, 59, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(196, 119, 59, 0); }
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
 }
