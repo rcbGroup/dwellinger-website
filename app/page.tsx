@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import Nav from '@/components/shared/Nav'
 import Footer from '@/components/shared/Footer'
-import { ArrowRight, Star, CheckCircle, Zap, Shield, TrendingUp, Users } from 'lucide-react'
+import { ArrowRight, Star, CheckCircle, Zap, Shield, TrendingUp, Users, Home, HardHat, BarChart2, Compass } from 'lucide-react'
 import { pageMetadata } from '@/lib/seo'
+import { HeroProductWindow } from '@/components/marketing/HeroProductWindow'
+import { StatCounter } from '@/components/marketing/StatCounter'
 
 export const metadata = pageMetadata({
   path: '/',
@@ -52,7 +54,7 @@ const reviews = [
 
 const audienceTracks = [
   {
-    icon: '🏠',
+    icon: <Home className="w-6 h-6" style={{ color: 'var(--amber)' }} />,
     audience: 'Homeowners',
     headline: 'Know the real cost before committing',
     points: [
@@ -64,7 +66,7 @@ const audienceTracks = [
     href: '/homeowners',
   },
   {
-    icon: '🔨',
+    icon: <HardHat className="w-6 h-6" style={{ color: 'var(--amber)' }} />,
     audience: 'Contractors',
     headline: 'Win more work, spend less time on admin',
     points: [
@@ -77,7 +79,7 @@ const audienceTracks = [
     highlight: true,
   },
   {
-    icon: '📈',
+    icon: <BarChart2 className="w-6 h-6" style={{ color: 'var(--amber)' }} />,
     audience: 'Investors',
     headline: 'Construction intelligence for every deal',
     points: [
@@ -89,7 +91,7 @@ const audienceTracks = [
     href: '/investors',
   },
   {
-    icon: '📐',
+    icon: <Compass className="w-6 h-6" style={{ color: 'var(--amber)' }} />,
     audience: 'Professionals',
     headline: 'Tools for architects, PMs and consultants',
     points: [
@@ -192,61 +194,95 @@ export default function HomePage() {
       <Nav />
       <main>
         {/* ─── HERO ─── */}
-        <section className="relative overflow-hidden pt-20 pb-24 bg-bg">
-          {/* Ambient glow */}
-          <div className="absolute inset-0 bg-hero-gradient pointer-events-none" />
-
-          <div className="container mx-auto relative z-10 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-subtle border border-amber-border text-amber text-xs font-semibold mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
-              Now live — UK&apos;s construction intelligence platform
-            </div>
-
-            <h1 className="font-display text-hero text-text max-w-4xl mx-auto mb-6">
-              The UK construction intelligence platform for{' '}
-              <span className="text-amber">homeowners, contractors</span>{' '}
-              and property investors
-            </h1>
-
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-              Find verified contractors with Builder Score™. Get AI-powered estimates grounded in
-              real project data. Manage your build from first idea to final handover — one platform.
-            </p>
-
-            <div className="flex flex-wrap gap-4 justify-center mb-16">
-              <Link href="/register" className="btn-primary-lg">
-                Get started free <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            {/* Score preview */}
-            <div className="inline-flex items-center gap-4 bg-bg-raised border border-border rounded-lg px-6 py-4 text-left">
-              <div className="relative w-16 h-16 flex-shrink-0">
-                <svg viewBox="0 0 64 64" className="-rotate-90 w-full h-full">
-                  <circle cx="32" cy="32" r="28" fill="none" stroke="#2A2A2A" strokeWidth="4" />
-                  <circle cx="32" cy="32" r="28" fill="none" stroke="#C4773B" strokeWidth="4"
-                    strokeLinecap="round" strokeDasharray="175.9" strokeDashoffset="15.8"
-                    style={{ transition: 'stroke-dashoffset 1.2s ease' }} />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-text font-bold text-sm">912</span>
-                </div>
-              </div>
+        <section className="relative overflow-hidden pt-24 pb-20 hero-mesh">
+          <div
+            className="absolute inset-0 grid-pattern pointer-events-none"
+            style={{ backgroundSize: '32px 32px', opacity: 0.3 }}
+          />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-14 items-center">
+              {/* ── Left: copy ── */}
               <div>
-                <div className="text-text font-bold text-sm">Builder Score™ 912/1000</div>
-                <div className="text-text-muted text-xs mt-0.5">Platinum tier · 34 verified reviews</div>
-                <div className="flex items-center gap-1 mt-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 text-amber fill-amber" />
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-8"
+                  style={{ background: 'rgba(196,119,59,0.1)', border: '1px solid rgba(196,119,59,0.25)', color: 'var(--amber, #C4773B)' }}>
+                  <span className="w-1.5 h-1.5 rounded-full animate-pulse-slow" style={{ background: 'var(--amber, #C4773B)' }} />
+                  UK&apos;s property &amp; construction intelligence platform
+                </div>
+
+                <h1 className="font-display text-5xl lg:text-6xl font-bold leading-tight mb-6"
+                  style={{ color: 'var(--color-text, #fff)' }}>
+                  Find builders{' '}
+                  <span className="text-gradient-amber">you can actually trust</span>
+                </h1>
+
+                <p className="text-lg leading-relaxed mb-8 max-w-xl"
+                  style={{ color: 'var(--color-text-secondary, #999)' }}>
+                  Every contractor on Dwellinger carries a{' '}
+                  <strong style={{ color: 'var(--color-text, #fff)' }}>Builder Score™</strong> —
+                  a trust rating built from verified reviews, CDM compliance records, and real payment
+                  behaviour. Not just stars.
+                </p>
+
+                {/* Social proof strip */}
+                <div className="flex items-center gap-4 mb-10">
+                  <div className="flex" style={{ gap: -8 }}>
+                    {['A','S','L','G','R'].map((initial, i) => (
+                      <div key={i} style={{
+                        width: 32, height: 32, borderRadius: '50%',
+                        background: 'rgba(196,119,59,0.15)',
+                        border: '2px solid var(--color-bg, #0A0A0A)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontSize: 11, fontWeight: 700, color: 'var(--amber, #C4773B)',
+                        marginLeft: i > 0 ? -8 : 0,
+                      }}>
+                        {initial}
+                      </div>
+                    ))}
+                  </div>
+                  <div>
+                    <div style={{ display: 'flex', gap: 2, marginBottom: 3 }}>
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} style={{ width: 13, height: 13, fill: 'var(--amber, #C4773B)', color: 'var(--amber, #C4773B)' }} />
+                      ))}
+                    </div>
+                    <div style={{ fontSize: 12, color: 'var(--color-text-muted, #666)' }}>
+                      Rated 5.0 · Google Reviews
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-3 mb-8">
+                  <Link href="/register" className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-base font-semibold rounded-lg">
+                    Get started free
+                    <ArrowRight style={{ width: 16, height: 16 }} />
+                  </Link>
+                  <Link href="/builder-score" className="btn-secondary inline-flex items-center px-8 py-4 text-base font-semibold rounded-lg">
+                    See Builder Score™
+                  </Link>
+                </div>
+
+                {/* Trust pills */}
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { icon: Shield, text: 'Verified contractors' },
+                    { icon: Zap,    text: 'AI estimates' },
+                    { icon: TrendingUp, text: 'Planning intelligence' },
+                  ].map(({ icon: Icon, text }) => (
+                    <div key={text} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs"
+                      style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: 'var(--color-text-secondary, #999)' }}>
+                      <Icon style={{ width: 13, height: 13, color: 'var(--amber, #C4773B)' }} />
+                      {text}
+                    </div>
                   ))}
-                  <span className="text-xs text-text-secondary ml-1">4.9/5</span>
                 </div>
               </div>
-              <div className="pl-4 border-l border-border">
-                <div className="badge-amber text-xs">Verified</div>
-                <div className="text-text-muted text-xs mt-1">
-                  Example profile <CheckCircle className="w-3 h-3 text-amber inline" />
-                </div>
+
+              {/* ── Right: product window ── */}
+              <div className="relative">
+                <div className="absolute inset-0 blur-3xl opacity-20 pointer-events-none"
+                  style={{ background: 'radial-gradient(ellipse at center, #C4773B, transparent 70%)' }}
+                />
+                <HeroProductWindow />
               </div>
             </div>
           </div>
@@ -281,14 +317,12 @@ export default function HomePage() {
         </section>
 
         {/* ─── STATS BAR ─── */}
-        <section className="bg-bg-surface border-y border-border py-8">
-          <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {stats.map((s) => (
-              <div key={s.label}>
-                <div className="text-h3 font-display text-amber font-bold">{s.number}</div>
-                <div className="text-text-muted text-sm mt-1">{s.label}</div>
-              </div>
-            ))}
+        <section style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '40px 0', background: 'rgba(255,255,255,0.01)' }}>
+          <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <StatCounter target="1972" label="Knowledge articles" />
+            <StatCounter target="1000" label="Builder Score™ max" />
+            <StatCounter target="0" label="Cost to get started" prefix="£" />
+            <StatCounter target="14" label="Day free trial — no card" suffix="-day" />
           </div>
         </section>
 
@@ -333,7 +367,10 @@ export default function HomePage() {
                       <span className="badge-amber px-4 py-1 text-xs">Most popular</span>
                     </div>
                   )}
-                  <div className="text-3xl mb-4">{track.icon}</div>
+                  <div className="w-11 h-11 rounded-lg flex items-center justify-center mb-5"
+                    style={{ background: 'rgba(196,119,59,0.1)', border: '1px solid rgba(196,119,59,0.2)' }}>
+                    {track.icon}
+                  </div>
                   <div className="text-xs font-bold text-amber uppercase tracking-widest mb-2">
                     {track.audience}
                   </div>
