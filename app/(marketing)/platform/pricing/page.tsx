@@ -7,6 +7,30 @@ import Link from 'next/link'
 // For SEO, a parent layout or a separate metadata file can export it.
 // The title is set via document.title or a parent server component.
 
+const faqs = [
+  { q: 'Is there a free tier?', a: 'Yes. Homeowners and investors can use Dwellinger for free — cost estimates, contractor search, and project creation are free. Contractor profiles and advanced features are on paid plans.' },
+  { q: 'Can I cancel at any time?', a: 'Yes. All plans are monthly or annual. Cancel any time — no lock-in, no cancellation fees.' },
+  { q: 'What payment methods do you accept?', a: 'We accept all major credit and debit cards via Stripe. Annual plans can be paid by bank transfer.' },
+  { q: 'Do contractors have to pay to appear in search?', a: 'Contractors need a profile to appear in search. Basic profiles are free. Paid plans unlock verification badges, priority placement, and platform tools.' },
+  { q: 'How does Builder Score™ work?', a: 'Builder Score™ is calculated from six components: verified reviews (35%), CDM compliance (20%), payment history (15%), insurance status (15%), dispute resolution (10%), and response rate (5%). It cannot be purchased — it grows from verified evidence.' },
+]
+
+const comparisonRows = [
+  { feature: 'Builder Score™ profile listing', member: true, professional: true, premium: true, franchise: true },
+  { feature: 'Leads per month', member: '10', professional: '30', premium: 'Unlimited', franchise: 'Unlimited' },
+  { feature: 'Builder Score™ dimensions', member: 'Basic', professional: 'All 6', premium: 'All 6', franchise: 'All 6 + white-label' },
+  { feature: 'AI Estimator', member: '3/mo', professional: 'Unlimited', premium: 'Unlimited', franchise: 'Unlimited' },
+  { feature: 'Planning alerts', member: false, professional: true, premium: true, franchise: true },
+  { feature: 'WhatsApp automation', member: false, professional: false, premium: true, franchise: true },
+  { feature: 'Full CRM pipeline', member: false, professional: false, premium: true, franchise: true },
+  { feature: 'Dwell Agents (AI)', member: false, professional: false, premium: 'All 4', franchise: 'All 4' },
+  { feature: 'Team users', member: '1', professional: '1', premium: '3', franchise: 'Unlimited' },
+  { feature: 'API access', member: false, professional: false, premium: false, franchise: true },
+  { feature: 'Custom domain', member: false, professional: false, premium: false, franchise: true },
+  { feature: 'Account manager', member: false, professional: false, premium: false, franchise: true },
+  { feature: 'Support', member: 'Email', professional: 'Chat + priority', premium: 'Onboarding call', franchise: 'Dedicated AM' },
+]
+
 const tiers = [
   {
     name: 'Member',
@@ -211,6 +235,81 @@ export default function PlatformPricingPage() {
               </Link>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Feature comparison table */}
+      <section style={{ padding: '60px 24px', backgroundColor: '#fff' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <h2 style={{ color: '#1A2340', fontSize: '1.5rem', fontWeight: 800, marginBottom: 8, textAlign: 'center' }}>
+            Compare plans
+          </h2>
+          <p style={{ color: '#4A5568', textAlign: 'center', marginBottom: 40, fontSize: '0.95rem' }}>
+            Every feature, side by side.
+          </p>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+              <thead>
+                <tr style={{ borderBottom: '2px solid #EDE8DC' }}>
+                  <th style={{ textAlign: 'left', padding: '12px 16px', color: '#1A2340', fontWeight: 700, width: '30%' }}>Feature</th>
+                  {['Member', 'Professional', 'Premium', 'Franchise'].map((name, i) => (
+                    <th key={name} style={{ textAlign: 'center', padding: '12px 12px', color: i === 1 ? '#C4773B' : '#1A2340', fontWeight: 700 }}>
+                      {name}{i === 1 ? ' ★' : ''}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonRows.map((row, i) => (
+                  <tr key={row.feature} style={{ borderBottom: '1px solid #EDE8DC', backgroundColor: i % 2 === 0 ? '#faf9f7' : '#fff' }}>
+                    <td style={{ padding: '11px 16px', color: '#4A5568' }}>{row.feature}</td>
+                    {([row.member, row.professional, row.premium, row.franchise] as (boolean | string)[]).map((val, j) => (
+                      <td key={j} style={{ textAlign: 'center', padding: '11px 12px', color: val === false ? '#CBD5E0' : '#1A2340', fontWeight: typeof val === 'string' ? 500 : 400 }}>
+                        {val === true ? '✓' : val === false ? '—' : val}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust row */}
+      <section style={{ backgroundColor: '#f0ede6', padding: '40px 24px' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 24, justifyContent: 'center' }}>
+          {[
+            { icon: '🔒', text: 'No long-term contracts' },
+            { icon: '↩️', text: 'Cancel anytime' },
+            { icon: '💳', text: 'Secure payments via Stripe' },
+            { icon: '🄓', text: '14-day free trial, no card required' },
+          ].map(item => (
+            <div key={item.text} style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#1A2340', fontWeight: 600, fontSize: '0.9rem' }}>
+              <span>{item.icon}</span>
+              <span>{item.text}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section style={{ padding: '60px 24px', backgroundColor: '#fff' }}>
+        <div style={{ maxWidth: 680, margin: '0 auto' }}>
+          <h2 style={{ color: '#1A2340', fontSize: '1.5rem', fontWeight: 800, marginBottom: 8, textAlign: 'center' }}>
+            Frequently asked questions
+          </h2>
+          <p style={{ color: '#4A5568', textAlign: 'center', marginBottom: 40, fontSize: '0.95rem' }}>
+            Anything else? <Link href="/contact" style={{ color: '#C4773B', fontWeight: 600, textDecoration: 'none' }}>Get in touch →</Link>
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+            {faqs.map((faq, i) => (
+              <div key={faq.q} style={{ borderTop: '1px solid #EDE8DC', padding: '20px 0', ...(i === faqs.length - 1 ? { borderBottom: '1px solid #EDE8DC' } : {}) }}>
+                <h3 style={{ color: '#1A2340', fontWeight: 700, fontSize: '0.95rem', marginBottom: 8 }}>{faq.q}</h3>
+                <p style={{ color: '#4A5568', fontSize: '0.9rem', lineHeight: 1.65, margin: 0 }}>{faq.a}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
