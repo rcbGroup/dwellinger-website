@@ -4,8 +4,8 @@ import { pageMetadata } from '@/lib/seo'
 
 export const metadata = pageMetadata({
   path: '/about',
-  title: 'About Dwellinger — UK Construction Intelligence Platform',
-  description: "Dwellinger is the UK's national design, build, and property intelligence platform — connecting homeowners, contractors, and property investors with the tools, trust, and intelligence to plan, price, and deliver any construction project.",
+  title: 'About Dwellinger — Building Trust in UK Construction',
+  description: 'Dwellinger was built to fix the trust gap in UK construction. Learn about our mission, how Builder Score™ works, and the platform connecting homeowners, contractors, and property investors.',
 })
 
 const milestones = [
