@@ -1,86 +1,90 @@
 import { pageMetadata } from '@/lib/seo'
 
+const BOROUGHS = [
+  { name: 'Barking and Dagenham', slug: 'barking-and-dagenham' },
+  { name: 'Barnet', slug: 'barnet' },
+  { name: 'Bexley', slug: 'bexley' },
+  { name: 'Brent', slug: 'brent' },
+  { name: 'Bromley', slug: 'bromley' },
+  { name: 'Camden', slug: 'camden' },
+  { name: 'City of London', slug: 'city-of-london' },
+  { name: 'Croydon', slug: 'croydon' },
+  { name: 'Ealing', slug: 'ealing' },
+  { name: 'Enfield', slug: 'enfield' },
+  { name: 'Greenwich', slug: 'greenwich' },
+  { name: 'Hackney', slug: 'hackney' },
+  { name: 'Hammersmith and Fulham', slug: 'hammersmith-and-fulham' },
+  { name: 'Haringey', slug: 'haringey' },
+  { name: 'Harrow', slug: 'harrow' },
+  { name: 'Havering', slug: 'havering' },
+  { name: 'Hillingdon', slug: 'hillingdon' },
+  { name: 'Hounslow', slug: 'hounslow' },
+  { name: 'Islington', slug: 'islington' },
+  { name: 'Kensington and Chelsea', slug: 'kensington-and-chelsea' },
+  { name: 'Kingston upon Thames', slug: 'kingston-upon-thames' },
+  { name: 'Lambeth', slug: 'lambeth' },
+  { name: 'Lewisham', slug: 'lewisham' },
+  { name: 'Merton', slug: 'merton' },
+  { name: 'Newham', slug: 'newham' },
+  { name: 'Redbridge', slug: 'redbridge' },
+  { name: 'Richmond upon Thames', slug: 'richmond-upon-thames' },
+  { name: 'Southwark', slug: 'southwark' },
+  { name: 'Sutton', slug: 'sutton' },
+  { name: 'Tower Hamlets', slug: 'tower-hamlets' },
+  { name: 'Waltham Forest', slug: 'waltham-forest' },
+  { name: 'Wandsworth', slug: 'wandsworth' },
+  { name: 'Westminster', slug: 'westminster' },
+]
+
 export const metadata = pageMetadata({
   path: '/locations',
-  title: 'Find Verified Contractors by London Borough | Dwellinger',
-  description: 'Find verified builders and contractors across all 32 London boroughs and the City of London. Every contractor has a Builder Score™ trust rating.',
+  title: 'Find Verified Contractors in London | Dwellinger',
+  description: 'Search verified builders and contractors across all 32 London boroughs and the City of London. Every contractor carries a Builder Score™ trust rating.',
 })
-
-const BOROUGHS = [
-  { slug: 'barking-and-dagenham', name: 'Barking and Dagenham' },
-  { slug: 'barnet', name: 'Barnet' },
-  { slug: 'bexley', name: 'Bexley' },
-  { slug: 'brent', name: 'Brent' },
-  { slug: 'bromley', name: 'Bromley' },
-  { slug: 'camden', name: 'Camden' },
-  { slug: 'city-of-london', name: 'City of London' },
-  { slug: 'croydon', name: 'Croydon' },
-  { slug: 'ealing', name: 'Ealing' },
-  { slug: 'enfield', name: 'Enfield' },
-  { slug: 'greenwich', name: 'Greenwich' },
-  { slug: 'hackney', name: 'Hackney' },
-  { slug: 'hammersmith-and-fulham', name: 'Hammersmith and Fulham' },
-  { slug: 'haringey', name: 'Haringey' },
-  { slug: 'harrow', name: 'Harrow' },
-  { slug: 'havering', name: 'Havering' },
-  { slug: 'hillingdon', name: 'Hillingdon' },
-  { slug: 'hounslow', name: 'Hounslow' },
-  { slug: 'islington', name: 'Islington' },
-  { slug: 'kensington-and-chelsea', name: 'Kensington and Chelsea' },
-  { slug: 'kingston-upon-thames', name: 'Kingston upon Thames' },
-  { slug: 'lambeth', name: 'Lambeth' },
-  { slug: 'lewisham', name: 'Lewisham' },
-  { slug: 'merton', name: 'Merton' },
-  { slug: 'newham', name: 'Newham' },
-  { slug: 'redbridge', name: 'Redbridge' },
-  { slug: 'richmond-upon-thames', name: 'Richmond upon Thames' },
-  { slug: 'southwark', name: 'Southwark' },
-  { slug: 'sutton', name: 'Sutton' },
-  { slug: 'tower-hamlets', name: 'Tower Hamlets' },
-  { slug: 'waltham-forest', name: 'Waltham Forest' },
-  { slug: 'wandsworth', name: 'Wandsworth' },
-  { slug: 'westminster', name: 'Westminster' },
-]
 
 export default function LocationsPage() {
   return (
     <main className="min-h-screen bg-white">
       <section className="bg-gray-50 py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto">
+          <nav className="text-sm text-gray-500 mb-4">
+            <a href="/" className="hover:text-blue-600">Home</a>
+            <span className="mx-2">›</span>
+            <span className="text-gray-900">Locations</span>
+          </nav>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Find Verified Contractors Across London
+            Verified Contractors Across London
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Search verified builders and contractors in all 32 London boroughs and the City of London. Every contractor carries a Builder Score™ — a verified trust rating based on reviews, compliance records and payment history.
+          <p className="text-xl text-gray-600 max-w-2xl">
+            Dwellinger covers all 32 London boroughs and the City of London. Every contractor carries a Builder Score™ — a trust rating built from verified reviews, CDM compliance records and payment history.
           </p>
         </div>
       </section>
 
-      <section className="py-16 px-4">
+      <section className="py-12 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Browse by Borough</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {BOROUGHS.map(borough => (
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">Select your borough</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+            {BOROUGHS.map(({ name, slug }) => (
               <a
-                key={borough.slug}
-                href={`/locations/${borough.slug}`}
-                className="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-sm transition-all group"
+                key={slug}
+                href={`/locations/${slug}`}
+                className="block bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm font-medium text-gray-800 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 transition-colors"
               >
-                <span className="font-medium text-gray-900 group-hover:text-blue-600 text-sm">{borough.name}</span>
-                <span className="text-gray-400 group-hover:text-blue-500 ml-2">→</span>
+                {name}
               </a>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-blue-50 py-12 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Not sure where to start?</h2>
-          <p className="text-gray-600 mb-6">Search by postcode to find verified contractors near you.</p>
-          <a href="/search" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-            Search All Contractors →
-          </a>
+      <section className="bg-gray-50 py-12 px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">What is Builder Score™?</h2>
+          <p className="text-gray-600 mb-4">
+            Builder Score™ is a 0–1000 trust rating published by Dwellinger for every contractor on the platform. Unlike star ratings, Builder Score is calculated from verified data — CDM compliance records, payment behaviour, insurance status and dispute outcomes.
+          </p>
+          <a href="/builder-score" className="text-blue-600 hover:underline font-medium">Learn how Builder Score™ is calculated →</a>
         </div>
       </section>
     </main>
