@@ -209,101 +209,35 @@ These are the things Builder Score™ is designed to surface.
   'loft-conversion-planning-permission-guide': {
     slug: 'loft-conversion-planning-permission-guide',
     category: 'Planning & Compliance',
-    title: 'Loft conversion: do you need planning permission?',
-    date: '29 Aug 2026',
-    readTime: '5 min read',
-    author: 'Dwellinger Editorial',
-    description: 'Most loft conversions fall under Permitted Development rights — but not all. Head height, dormer size, conservation areas, and Article 4 directions all matter.',
+    title: 'Loft Conversion Planning Permission: A UK Homeowner\'s Complete Guide',
+    date: '3 Oct 2026',
+    readTime: '6 min read',
+    author: 'James Hargrove',
+    description: 'Most loft conversions do not need planning permission — but the rules depend on your property type, location and what changes you make to the roof.',
     content: `
-## The short answer
+## Permitted development rights for loft conversions
 
-**Most loft conversions in England do not require planning permission.** They fall under Permitted Development (PD) rights, which allow certain types of work without the need for a full planning application.
+Most loft conversions in England are permitted development — meaning you do not need to apply for planning permission before starting work. But the rules have limits, and getting it wrong can mean enforcement action or problems when you sell.
 
-However, there are important exceptions — and getting this wrong is expensive.
+Under permitted development, you can add: up to 40m³ of additional roof space for terraced houses; up to 50m³ for detached and semi-detached houses. These limits are cumulative — they include any previous loft conversions. Key conditions: no extension beyond the plane of the existing roof slope at the front; no alteration higher than the existing ridge; materials must match the existing house; side-facing windows must be obscure-glazed if within 1.7m of floor level.
 
----
+## When you do need planning permission
 
-## When permitted development applies
+Planning permission is required when: you exceed the volume limits; you want to alter the ridge height; the property is in a Conservation Area, National Park, or Area of Outstanding Natural Beauty; the property is listed. In Conservation Areas, any roof alteration visible from a public road needs planning consent, even if within volume limits.
 
-Under current PD rules (as of 2025), the following loft conversions are generally permitted without planning permission:
+## Types of loft conversion
 
-- **Roof extensions that do not exceed 40m³** of additional roof space for terraced houses
-- **Roof extensions that do not exceed 50m³** of additional roof space for detached and semi-detached houses
-- **Extensions that do not protrude beyond the existing roof slope** on the side facing the highway
-- **Materials that are similar in appearance** to the existing house
+Rooflight conversion: simplest — no change to roofline, just add roof windows (Velux-style). Dormer conversion: extends out from the slope, adding headroom. Usually permitted development for rear dormers; front dormers visible from the street typically need planning. Mansard conversion: flat roof with steeply sloped sides, maximum space. Almost always requires planning as it significantly alters the roofline. Hip-to-gable conversion: changes a hipped roof to a gable end. Usually permitted development for detached and semi-detached houses.
 
-Crucially, the total volume added must be calculated cumulatively — if you have already added a dormer in the past, that volume counts toward your allowance.
+## Building Regulations — always required
 
----
+Regardless of whether planning permission is needed, Building Regulations approval is always required for a loft conversion. This covers: structural adequacy of the new floor; fire safety — protected escape route from the new room; thermal insulation to current standards; sound insulation between floors; safe stair access.
 
-## When you DO need planning permission
+## Party Wall Act
 
-You will need to apply for planning permission if:
+If your loft conversion involves work to a shared wall with a neighbour — common in terraced houses — you may need to serve a Party Wall Notice at least 2 months before starting. Your contractor or architect can advise on whether this applies.
 
-### 1. The property is in a conservation area, AONB, or World Heritage Site
-
-In these designated areas, PD rights are more restricted. Dormer windows on roof slopes visible from the highway are typically not permitted without consent. Check your local authority's website to see if your property is in a designated area.
-
-### 2. Article 4 Direction applies
-
-Some local authorities have issued Article 4 Directions that remove PD rights in specific areas — often in streets of particular architectural interest. This is more common than homeowners realise in inner London boroughs.
-
-### 3. The property is a listed building
-
-Listed buildings require Listed Building Consent for almost any alterations, internal or external. The planning process for listed buildings is entirely separate from standard planning permission.
-
-### 4. The property is a flat
-
-Flats typically do not have PD rights. Any extensions or alterations will require planning permission and, in almost all cases, the agreement of a freeholder or management company.
-
-### 5. You want a hip-to-gable conversion
-
-Hip-to-gable conversions — where one of the sloping sides of the roof is replaced with a vertical gable wall — are often within PD allowances for semi-detached and detached homes, but can require permission in conservation areas.
-
----
-
-## What about Building Control?
-
-This is separate from planning permission and applies to **all** loft conversions regardless of whether planning permission is needed.
-
-A loft conversion is almost always notifiable under Building Regulations. You must submit either:
-- A **Full Plans** application before work starts (recommended — gives certainty before committing)
-- Or a **Building Notice** (faster, but no advance sign-off of plans)
-
-Building Control will inspect the work at key stages and issue a Completion Certificate on sign-off. This document is important when you come to sell — buyers' solicitors routinely request it.
-
----
-
-## Do I need a lawful development certificate?
-
-A Lawful Development Certificate (LDC) is optional but often advisable. It is a formal confirmation from the local authority that your proposed development is lawful under PD rights.
-
-An LDC is useful when:
-- You want certainty before spending significant money
-- A lender requires confirmation of permitted development
-- You want a clean record for future sale
-
-The application fee (around £103 in England as of 2025) is modest relative to the cost of the project.
-
----
-
-## Common mistakes
-
-- **Not checking for Article 4 Directions**: The local planning authority's website will show if Article 4 applies to your area
-- **Ignoring the party wall**: A loft conversion often involves work to a shared party wall or party wall structure. The Party Wall Act may apply
-- **Underestimating the Building Control cost**: Factor in inspection fees when budgeting
-- **Starting work without checking**: The consequences of unauthorised development can include an enforcement notice requiring you to remove the work
-
----
-
-## Getting advice
-
-If you are unsure whether planning permission is needed, speak to:
-- Your local planning authority (most offer informal pre-application advice)
-- An architect or planning consultant
-- Your principal contractor — a quality contractor should advise you on your compliance position before work starts
-
-[Get a loft conversion estimate](/estimate)
+Find a verified loft conversion specialist on Dwellinger and check their Builder Score before inviting quotes.
 `,
   },
 
@@ -647,6 +581,166 @@ Dwell Agents are available to contractors on Dwellinger's Professional and Enter
 [See contractor plans](/platform/pricing)
 `,
   },
+
+  'rear-extension-cost-uk-guide': {
+    slug: 'rear-extension-cost-uk-guide',
+    category: 'Cost Guides',
+    title: 'How Much Does a Rear Extension Cost in the UK? (2026 Guide)',
+    date: '1 Oct 2026',
+    readTime: '7 min read',
+    author: 'James Hargrove',
+    description: 'UK rear extension costs range from £1,800–£3,500/m². This guide covers typical costs, what affects price, planning requirements and how to verify your contractor.',
+    content: `
+## Typical costs in 2026
+
+A rear extension is one of the most effective ways to add space and value to a UK home. But costs vary significantly — and understanding what drives price is essential before you sign anything.
+
+Single-storey rear extension: £25,000–£60,000 (basic to mid-spec). Double-storey rear extension: £45,000–£120,000. Cost per m²: £1,800–£2,200 (basic), £2,200–£2,800 (mid-spec), £2,800–£3,500 (high specification). These figures reflect Greater London and the South East. Expect 10–15% lower outside London.
+
+## What affects the cost
+
+Size is the primary driver — but specification matters as much. Key factors: structural complexity (steels, underpinning), M&E (full rewire, new heating circuits), quality of finishes (bifold doors, roof lights, underfloor heating), planning fees and surveys, and site access. A basic 4m × 5m single-storey extension in London typically costs £36,000–£44,000 fully finished.
+
+## Planning permission
+
+Most single-storey rear extensions are permitted development — no planning application required — if they stay within 4m (detached house) or 3m (semi-detached or terraced) from the original rear wall. Extensions beyond this need planning consent, which typically takes 8 weeks. Conservation areas and listed buildings have stricter rules regardless of size.
+
+## Getting accurate quotes
+
+Get at least 3 written quotes based on the same detailed scope of works. A quote without a site visit is unreliable. Ask each contractor for their Builder Score™ on Dwellinger — it shows their CDM compliance record, payment history and verified review track record. Red flags: quotes that exclude VAT without clearly stating it, demands for full payment upfront, no fixed timeline.
+
+## FAQ
+
+Do I need an architect? Not always — but you need someone to produce drawings for Building Control approval. For anything structural, a structural engineer is also required. How long does a rear extension take? 12–20 weeks from start on site is typical for a single-storey extension. Does a rear extension need building regulations approval? Yes, always — regardless of whether planning permission is required.
+
+Search verified extension contractors on Dwellinger and check their Builder Score before you invite quotes.
+`,
+  },
+
+  'cdm-regulations-homeowners-guide': {
+    slug: 'cdm-regulations-homeowners-guide',
+    category: 'Planning & Compliance',
+    title: 'CDM 2015 Regulations: What UK Homeowners Need to Know',
+    date: '2 Oct 2026',
+    readTime: '6 min read',
+    author: 'James Hargrove',
+    description: 'The Construction (Design and Management) Regulations 2015 apply to most domestic building projects. Here is what homeowners need to know about their legal duties.',
+    content: `
+## When CDM applies
+
+The Construction (Design and Management) Regulations 2015 — known as CDM 2015 — set out the legal framework for health and safety on UK construction projects. As a homeowner commissioning work, you have duties under these regulations whether you know it or not.
+
+CDM 2015 applies to virtually all construction work. For domestic clients (homeowners), the regulations apply when: the project involves more than one contractor working simultaneously; or the project lasts more than 30 working days with more than 20 workers; or total person-days exceed 500. Even smaller projects must comply with basic notification requirements.
+
+## Your duty as domestic client
+
+As a domestic client, you can transfer your CDM duties to your Principal Contractor — the main contractor managing the project. This transfer happens automatically when you appoint a single contractor. Your principal contractor then takes on responsibility for: producing a Construction Phase Plan before work starts; ensuring health and safety is managed on site; producing a Health and Safety File at project completion.
+
+## Pre-Construction Information
+
+You should provide your contractor with any information you hold about the property — asbestos surveys, structural reports, drainage plans, previous works. This is called Pre-Construction Information and helps your contractor plan the work safely.
+
+## The Health and Safety File
+
+At the end of the project, your principal contractor should hand you a Health and Safety File — a document containing as-built drawings, materials specifications, and maintenance instructions. Keep it. You will need it if you ever sell the property or do further works.
+
+## How Dwellinger helps
+
+Builder Score™ includes a CDM compliance component worth 20% of the total score. Dwellinger checks whether contractors have produced Construction Phase Plans and Health and Safety Files on qualifying past projects. A contractor with a strong CDM record is less likely to create problems for you on site. Reference: HSE CDM 2015 guidance at hse.gov.uk/construction/cdm/2015.
+
+## FAQ
+
+Do I need CDM for a kitchen refurbishment? If only one contractor is involved and the project is under 30 working days, CDM notification is not required — but basic H&S obligations still apply. Who is the Principal Contractor? The company or individual you appoint to manage and coordinate the work on site. What are the penalties for non-compliance? Improvement notices, prohibition notices, and in serious cases prosecution by the HSE.
+`,
+  },
+
+  'how-to-choose-a-building-contractor': {
+    slug: 'how-to-choose-a-building-contractor',
+    category: 'Choosing a Builder',
+    title: 'How to Choose a Building Contractor in the UK: 7 Things to Check',
+    date: '4 Oct 2026',
+    readTime: '6 min read',
+    author: 'James Hargrove',
+    description: 'Choosing the right contractor is the most important decision in any building project. Here are 7 things to verify before you sign anything.',
+    content: `
+The difference between a successful building project and a nightmare often comes down to the contractor you choose. These 7 checks help you separate trustworthy professionals from those who will cause problems.
+
+## 1. Verify their legal status
+
+Check the company exists on Companies House (find-and-update.company-information.service.gov.uk). A legitimate building contractor should be registered and have at least one year of trading history. Check their registered address matches what they have told you.
+
+## 2. Confirm public liability insurance
+
+Any contractor working on your property should carry public liability insurance of at least £2 million. Ask for a copy of the certificate and check the expiry date. If they cannot provide it, walk away.
+
+## 3. Check their compliance record
+
+A contractor's track record on health, safety and compliance matters more than any marketing claim. Ask for references on previous projects. Dwellinger's Builder Score™ checks CDM compliance records, payment behaviour to suppliers, and dispute outcomes — data that no review platform provides.
+
+## 4. Read verified project reviews
+
+Look for reviews tied to specific completed projects — with photos, dates, and client names. Reviews without project context are easy to fake. On Dwellinger, reviews are linked to specific jobs and cannot be submitted without a verified project record.
+
+## 5. Get at least 3 written quotes on the same scope
+
+Never compare quotes that are not based on identical scopes of work. Write your own brief — or use Dwellinger's Scope Builder tool — and give it to all three contractors. A quote that comes back significantly lower than the others usually means something has been omitted.
+
+## 6. Insist on a written contract
+
+Do not start work without a written contract. At minimum it should cover: full scope of works, payment schedule, start date and estimated completion, what happens if there are variations. For projects over £10,000, consider a JCT Minor Works Contract.
+
+## 7. Check their Builder Score™ on Dwellinger
+
+Builder Score™ is a 0–1000 trust rating calculated from six independently verified components — not self-reported reviews. A contractor with a Gold or Platinum score has demonstrated verified compliance, payment integrity and a strong review track record. Search by trade and location at dwellinger.co.uk.
+
+## Red flags to avoid
+
+Cash-only payment; pressure to start immediately; no fixed business address; unwillingness to provide references; requesting more than 25% upfront before work starts.
+`,
+  },
+
+  'why-builder-score-beats-star-ratings': {
+    slug: 'why-builder-score-beats-star-ratings',
+    category: 'Builder Score™',
+    title: 'Why Star Ratings Are Not Enough: Introducing Builder Score™',
+    date: '5 Oct 2026',
+    readTime: '7 min read',
+    author: 'James Hargrove',
+    description: 'Star ratings can be bought, faked or manipulated. Builder Score™ is a 0–1000 trust rating calculated from verified compliance data — here is how it works and why it matters.',
+    content: `
+Five-star ratings are everywhere in the UK trades industry — and almost meaningless. A contractor can have a 4.9-star average while being months behind on payments to suppliers, with a live dispute from a previous client and no public liability insurance. None of that appears in their star rating. Builder Score™ was built to fix this.
+
+## The problem with star ratings
+
+Most trades review platforms allow contractors to: receive reviews without verified project documentation; remove negative reviews through dispute processes; generate reviews from non-project sources; maintain high averages despite serious compliance failures. The result is that star ratings tell you how good a contractor is at gathering positive reviews — not how good they are at building.
+
+## How Builder Score™ works
+
+Builder Score™ is a 0–1000 trust rating published by Dwellinger Ltd for every contractor on the platform. It is calculated from six independently verified components:
+
+- Verified reviews (35% — 350 points): reviews must be tied to a completed project with photos and client confirmation
+- CDM compliance record (20% — 200 points): Pre-Construction Information, Construction Phase Plan and Health and Safety File for qualifying projects
+- Payment behaviour (15% — 150 points): supplier and subcontractor payment patterns — late payments, disputes and non-payment events
+- Insurance and accreditation (15% — 150 points): current public liability insurance, professional indemnity where applicable, trade body membership, identity check
+- Dispute resolution record (10% — 100 points): outcome of disputes lodged through Dwellinger or third-party resolution
+- Response rate and platform activity (5% — 50 points): lead response time and communication quality
+
+## Score tiers
+
+Platinum: 900–1000 — outstanding across all components. Gold: 700–899 — strong track record, verified across all key areas. Silver: 500–699 — solid, with some components still building. Bronze: 0–499 — less verified history available. Unrated: new contractor, score issued within one working day of verification.
+
+## What a Platinum contractor looks like
+
+A Platinum-rated contractor has: a strong portfolio of verified project reviews; full CDM documentation on all qualifying projects; a clean payment record with no supplier disputes; current insurance and trade body membership; no unresolved disputes.
+
+## How to use Builder Score when comparing quotes
+
+When you receive three quotes on the same scope of works, filter by Builder Score before comparing price. A Gold-rated contractor quoting 10% higher than an Unrated contractor is often the lower-risk choice — the difference in price is unlikely to cover the cost of a dispute or remedial work.
+
+Search contractors by Builder Score™ on Dwellinger.
+`,
+  },
+
 }
 
 export async function generateStaticParams() {
