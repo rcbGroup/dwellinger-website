@@ -1,151 +1,194 @@
-import Link from 'next/link'
-import { ArrowRight, CheckCircle, Home, FileText, MessageCircle, BarChart3 } from 'lucide-react'
 import { pageMetadata } from '@/lib/seo'
+import Link from 'next/link'
+import { Home, CheckCircle, ArrowRight, Shield, Zap, FileText, AlertCircle } from 'lucide-react'
 
 export const metadata = pageMetadata({
   path: '/homeowners',
-  title: 'For Homeowners — Plan, Budget & Manage Your Build | Dwellinger',
-  description: 'Get a free AI-powered estimate, find verified contractors with Builder Score™, and manage your extension, loft conversion or refurbishment from start to finish.',
+  title: 'For Homeowners — Find Verified Builders | Dwellinger',
+  description: 'Dwellinger helps homeowners find verified builders for extensions, loft conversions, refurbishments and more. Get AI cost estimates. Compare Builder Score™ rated contractors.',
 })
 
-const benefits = [
-  {
-    icon: <BarChart3 className="w-6 h-6 text-amber" />,
-    title: 'Know your real cost before committing',
-    desc: 'Free instant ballpark estimate from real UK project data. Not Google guesses. Not a salesman\'s number designed to get you to sign. An honest starting point.',
-  },
-  {
-    icon: <CheckCircle className="w-6 h-6 text-amber" />,
-    title: 'Find contractors you can actually trust',
-    desc: 'Builder Score™ rates every contractor 0–1000 based on verified reviews, compliance records, payment behaviour, and dispute history. You see the score before you call.',
-  },
-  {
-    icon: <FileText className="w-6 h-6 text-amber" />,
-    title: 'A project brief that gets you better quotes',
-    desc: 'Our AI generates a structured project brief for your architect and contractors. Less confusion, better responses, more comparable quotes.',
-  },
-  {
-    icon: <MessageCircle className="w-6 h-6 text-amber" />,
-    title: 'Dwell — your AI guide, always available',
-    desc: 'Ask anything. What planning permission do I need? What\'s a fair price for a rear extension? What questions should I ask a contractor? Dwell knows.',
-  },
-  {
-    icon: <Home className="w-6 h-6 text-amber" />,
-    title: 'Project management from day one',
-    desc: 'Milestones, payments, documents, photos, and communication — all in one place. You stay in control without being on site every day.',
-  },
-  {
-    icon: <ArrowRight className="w-6 h-6 text-amber" />,
-    title: 'One accountable party, end to end',
-    desc: 'Through Dwellinger\'s verified contractor network, you deal with ONE responsible party — not seven trades, not a builder who disappears mid-project.',
-  },
+const projectTypes = [
+  { name: 'Rear extensions', range: '£35k–£120k', link: '/tools/extension-cost-calculator?type=extension' },
+  { name: 'Loft conversions', range: '£30k–£85k', link: '/tools/loft-conversion-calculator?type=loft' },
+  { name: 'Full refurbishments', range: '£40k–£200k+', link: '/estimate?type=refurb' },
+  { name: 'Kitchen extensions', range: '£45k–£130k', link: '/tools/extension-cost-calculator?type=kitchen-extension' },
+  { name: 'Structural alterations', range: '£8k–£45k', link: '/estimate?type=structural' },
+  { name: 'Bathroom renovation', range: '£5k–£25k', link: '/estimate?type=bathroom' },
 ]
 
 const steps = [
-  { n: '01', t: 'Get your free estimate', d: 'Tell us your project type and London postcode. Receive an AI-powered ballpark within seconds — no sign-up required for the first estimate.' },
-  { n: '02', t: 'Build your project profile', d: 'Add details, upload existing plans or surveys, and set your budget range. Dwell reads your documents and flags any issues.' },
-  { n: '03', t: 'Match with verified contractors', d: 'Browse contractors ranked by Builder Score™ for your area and project type. Request quotes from two or three with one click.' },
-  { n: '04', t: 'Manage your build on the platform', d: 'Once you select a contractor, your project moves to the management dashboard — milestones, invoices, photos, and sign-off all tracked.' },
-]
-
-const projectTypes = [
-  { name: 'Rear Extension', range: '£45k–£120k', icon: '🏗️' },
-  { name: 'Loft Conversion', range: '£40k–£95k', icon: '🏠' },
-  { name: 'Full Refurbishment', range: '£60k–£200k', icon: '🔨' },
-  { name: 'Side Extension', range: '£35k–£90k', icon: '📐' },
-  { name: 'Double Storey', range: '£80k–£180k', icon: '🏛️' },
-  { name: 'Kitchen Extension', range: '£30k–£80k', icon: '🍳' },
+  { n: '01', title: 'Describe your project', desc: "Tell us what you want to achieve. We'll ask the right questions to understand your project." },
+  { n: '02', title: 'Get an AI cost estimate', desc: 'Receive an instant ballpark range grounded in real UK project data — not pulled from thin air.' },
+  { n: '03', title: 'Check Builder Score™', desc: 'Search verified contractors ranked by compliance records, payment history, and verified reviews.' },
+  { n: '04', title: 'Invite contractors to quote', desc: 'Send your project brief to matched contractors. They come to you with informed quotes.' },
+  { n: '05', title: 'Compare properly', desc: "Our comparison tool shows what's included and what's missing in each quote — not just the totals." },
+  { n: '06', title: 'Appoint and manage', desc: 'Issue a contract, agree milestones, and manage everything — documents, payments, sign-off — on-platform.' },
 ]
 
 export default function HomeownersPage() {
   return (
-    <div>
+    <main>
       {/* Hero */}
-      <section className="pt-16 pb-20 bg-bg relative overflow-hidden">
-        <div className="absolute inset-0 bg-hero-gradient pointer-events-none" />
-        <div className="container mx-auto relative z-10">
-          <p className="section-tag mb-3">For Homeowners</p>
-          <h1 className="font-display text-h1 text-white max-w-3xl mb-6">
-            Plan, budget and manage your build{' '}
-            <span className="text-amber">with confidence</span>
+      <section style={{ background: 'var(--color-bg)', padding: '80px 0 60px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6"
+            style={{ background: 'rgba(196,119,59,0.1)', border: '1px solid rgba(196,119,59,0.2)', color: 'var(--amber)' }}
+          >
+            <Home style={{ width: 12, height: 12 }} />
+            For homeowners
+          </div>
+          <h1 className="font-display text-4xl lg:text-5xl font-bold mb-6 max-w-3xl" style={{ color: 'var(--color-text)' }}>
+            Build with confidence.<br />
+            Know the cost before you start.
           </h1>
-          <p className="text-text-secondary text-lg max-w-2xl mb-8 leading-relaxed">
-            Get a real cost estimate before you call a single contractor. Find verified builders
-            ranked by Builder Score™. Manage your entire project — from planning to final sign-off —
-            in one place.
+          <p className="text-xl mb-8 max-w-2xl" style={{ color: 'var(--color-text-secondary)' }}>
+            Dwellinger helps homeowners understand project costs, find verified contractors, and manage their build — from first idea to final handover.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/estimate" className="btn-primary-lg">
-              Get a free estimate <ArrowRight className="w-4 h-4" />
+          <div className="flex flex-wrap gap-3">
+            <Link href="/estimate" className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-base font-semibold rounded-lg">
+              Get a free cost estimate
+              <ArrowRight style={{ width: 16, height: 16 }} />
             </Link>
-            <Link href="/search" className="btn-secondary text-base px-8 py-4">
-              Find contractors near me
+            <Link href="/search" className="btn-secondary inline-flex items-center px-8 py-4 text-base font-semibold rounded-lg">
+              Find a contractor
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Warning — what most homeowners don't know */}
+      <section style={{ padding: '32px 0', background: 'rgba(239,68,68,0.04)', borderBottom: '1px solid rgba(239,68,68,0.12)' }}>
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="flex gap-3">
+            <AlertCircle style={{ width: 20, height: 20, color: '#ef4444', flexShrink: 0, marginTop: 2 }} />
+            <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+              <strong style={{ color: 'var(--color-text)' }}>The average homeowner receives 3 quotes with no way to properly compare them.</strong>{' '}
+              Scope is different. Exclusions are hidden. The cheapest quote often misses the most. Dwellinger shows you what&apos;s actually in each quote — and what&apos;s missing.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Project types */}
-      <section className="py-12 bg-bg-surface border-y border-border">
-        <div className="container mx-auto">
-          <p className="text-text-muted text-sm mb-6 text-center">
-            Typical project cost ranges in Greater London (2026)
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-            {projectTypes.map((pt) => (
-              <div key={pt.name} className="card p-4 text-center">
-                <div className="text-2xl mb-2">{pt.icon}</div>
-                <div className="text-white font-semibold text-xs mb-1">{pt.name}</div>
-                <div className="text-amber text-xs font-bold">{pt.range}</div>
-              </div>
-            ))}
-          </div>
-          <p className="text-text-muted text-xs text-center mt-4">
-            Ranges are indicative — actual costs vary by specification, site conditions, and contractor.
-            Get a personalised estimate for your project.
-          </p>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="py-20 bg-bg">
-        <div className="container mx-auto">
+      <section style={{ padding: '80px 0', background: 'var(--color-bg-surface)' }}>
+        <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
-            <p className="section-tag mb-3">Why Dwellinger</p>
-            <h2 className="section-title">Everything you need to build with confidence</h2>
+            <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: 'var(--amber)' }}>Project types</p>
+            <h2 className="font-display text-3xl font-bold" style={{ color: 'var(--color-text)' }}>
+              What does your project cost?
+            </h2>
+            <p className="mt-3" style={{ color: 'var(--color-text-secondary)' }}>
+              UK ranges based on real project data. Actual cost depends on spec, location, and site conditions.
+            </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {benefits.map((b) => (
-              <div key={b.title} className="card p-6">
-                <div className="mb-4">{b.icon}</div>
-                <h3 className="font-bold text-white text-base mb-2">{b.title}</h3>
-                <p className="text-text-muted text-sm leading-relaxed">{b.desc}</p>
-              </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {projectTypes.map((pt) => (
+              <Link
+                key={pt.name}
+                href={pt.link}
+                className="p-5 rounded-xl flex items-center justify-between transition-all duration-200"
+                style={{ background: 'var(--color-bg)', border: '1px solid rgba(255,255,255,0.06)', textDecoration: 'none' }}
+              >
+                <div>
+                  <div className="font-semibold mb-1" style={{ color: 'var(--color-text)' }}>{pt.name}</div>
+                  <div className="text-sm" style={{ color: 'var(--amber)' }}>{pt.range}</div>
+                </div>
+                <ArrowRight style={{ width: 16, height: 16, color: 'rgba(255,255,255,0.3)' }} />
+              </Link>
             ))}
           </div>
+          <p className="text-center text-xs mt-6" style={{ color: 'var(--color-text-muted)' }}>
+            Ranges are illustrative. UK market data, Q4 2026. Excludes VAT. Excludes professional fees.
+          </p>
         </div>
       </section>
 
       {/* How it works */}
-      <section className="py-20 bg-bg-surface border-y border-border">
-        <div className="container mx-auto">
-          <div className="text-center mb-14">
-            <p className="section-tag mb-3">How it works</p>
-            <h2 className="section-title">From idea to keys in your hand</h2>
+      <section style={{ padding: '80px 0', background: 'var(--color-bg)' }}>
+        <div className="container mx-auto px-4 max-w-2xl">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: 'var(--amber)' }}>The journey</p>
+            <h2 className="font-display text-3xl font-bold" style={{ color: 'var(--color-text)' }}>How Dwellinger helps</h2>
           </div>
-          <div className="max-w-2xl mx-auto space-y-0">
-            {steps.map((step, i) => (
-              <div key={step.n} className="flex gap-6">
-                <div className="flex flex-col items-center">
-                  <div className="w-10 h-10 rounded-full bg-amber flex items-center justify-center flex-shrink-0">
-                    <span className="text-text-inverse font-display font-bold text-sm">{step.n}</span>
-                  </div>
-                  {i < steps.length - 1 && <div className="w-px flex-1 bg-border my-2" />}
+          {steps.map((step, i) => (
+            <div key={step.n} className="flex gap-6" style={{ marginBottom: i < steps.length - 1 ? 40 : 0, position: 'relative' }}>
+              {i < steps.length - 1 && (
+                <div style={{ position: 'absolute', left: 19, top: 44, bottom: -40, width: 1, background: 'linear-gradient(to bottom, rgba(196,119,59,0.4), transparent)' }} />
+              )}
+              <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'rgba(196,119,59,0.1)', border: '1px solid rgba(196,119,59,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--amber)' }}>{step.n}</span>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1.5" style={{ color: 'var(--color-text)' }}>{step.title}</h3>
+                <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Reassurance cards */}
+      <section style={{ padding: '80px 0', background: 'var(--color-bg-surface)' }}>
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Shield,
+                title: 'Builder Score™ on every contractor',
+                desc: 'Not just star ratings. CDM compliance, payment behaviour, insurance, and verified reviews — one score.',
+              },
+              {
+                icon: FileText,
+                title: 'Project Passport',
+                desc: 'All drawings, decisions, contracts, and sign-offs in one place. Yours to keep forever.',
+              },
+              {
+                icon: Zap,
+                title: 'AI assistant, human options',
+                desc: 'Get AI guidance instantly. Escalate to a real professional when it matters.',
+              },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="p-6 rounded-xl" style={{ background: 'var(--color-bg)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                <div
+                  className="w-11 h-11 rounded-lg flex items-center justify-center mb-4"
+                  style={{ background: 'rgba(196,119,59,0.1)', border: '1px solid rgba(196,119,59,0.2)' }}
+                >
+                  <Icon style={{ width: 20, height: 20, color: 'var(--amber)' }} />
                 </div>
-                <div className="pb-10 last:pb-0">
-                  <h3 className="font-bold text-white text-base mb-2">{step.t}</h3>
-                  <p className="text-text-secondary text-sm leading-relaxed">{step.d}</p>
+                <h3 className="font-semibold mb-2" style={{ color: 'var(--color-text)' }}>{title}</h3>
+                <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What to check next */}
+      <section style={{ padding: '64px 0', background: 'var(--color-bg)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="text-center mb-10">
+            <h2 className="font-display text-2xl font-bold mb-3" style={{ color: 'var(--color-text)' }}>Useful next steps</h2>
+            <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+              Not sure where to start? These tools help you get project-ready faster.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { title: 'Project readiness', desc: '20-point checklist — see if you have enough to go to tender.', href: '/tools/project-readiness', cta: 'Check readiness' },
+              { title: 'Scope builder', desc: "Document what you want built so every contractor quotes the same project.", href: '/tools/scope-builder', cta: 'Build scope' },
+              { title: 'Planning checker', desc: 'Find out whether your project needs planning permission or qualifies as permitted development.', href: '/tools/planning', cta: 'Check planning' },
+            ].map((item) => (
+              <div key={item.title} className="p-5 rounded-xl flex flex-col" style={{ background: 'var(--color-bg-surface)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                <div className="flex items-center gap-2 mb-2">
+                  <CheckCircle style={{ width: 14, height: 14, color: 'var(--amber)', flexShrink: 0 }} />
+                  <span className="font-semibold text-sm" style={{ color: 'var(--color-text)' }}>{item.title}</span>
                 </div>
+                <p className="text-xs mb-4 flex-1" style={{ color: 'var(--color-text-muted)' }}>{item.desc}</p>
+                <Link href={item.href} className="text-xs font-semibold inline-flex items-center gap-1" style={{ color: 'var(--amber)', textDecoration: 'none' }}>
+                  {item.cta} <ArrowRight style={{ width: 12, height: 12 }} />
+                </Link>
               </div>
             ))}
           </div>
@@ -153,17 +196,24 @@ export default function HomeownersPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-bg">
-        <div className="container mx-auto text-center">
-          <h2 className="section-title mb-4">Ready to get your free estimate?</h2>
-          <p className="text-text-secondary mb-8 max-w-lg mx-auto">
-            No sign-up required for your first ballpark. Enter your project type and postcode — get a real cost range in under 10 seconds.
+      <section style={{ padding: '80px 0', background: 'var(--amber)' }}>
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-display text-3xl font-bold mb-4" style={{ color: '#0A0A0A' }}>
+            Know your costs before you commit
+          </h2>
+          <p className="mb-8 text-lg" style={{ color: 'rgba(0,0,0,0.7)' }}>
+            Get a free AI estimate for your project in under 2 minutes.
           </p>
-          <Link href="/estimate" className="btn-primary-lg">
-            Start your free estimate <ArrowRight className="w-4 h-4" />
+          <Link
+            href="/estimate"
+            className="inline-flex items-center gap-2 px-8 py-4 text-base font-bold rounded-lg"
+            style={{ background: '#0A0A0A', color: '#C4773B', textDecoration: 'none' }}
+          >
+            Get my free estimate
+            <ArrowRight style={{ width: 16, height: 16 }} />
           </Link>
         </div>
       </section>
-    </div>
+    </main>
   )
 }
