@@ -252,7 +252,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="flex flex-wrap gap-3 mb-8">
-                  <Link href="/register" className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-base font-semibold rounded-lg">
+                  <Link href="/register" className="btn-primary animate-glow-pulse inline-flex items-center gap-2 px-8 py-4 text-base font-semibold rounded-lg">
                     Get started free
                     <ArrowRight style={{ width: 16, height: 16 }} />
                   </Link>
@@ -317,7 +317,7 @@ export default function HomePage() {
         </section>
 
         {/* ─── STATS BAR ─── */}
-        <section style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '40px 0', background: 'rgba(255,255,255,0.01)' }}>
+        <section data-reveal style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '40px 0', background: 'rgba(255,255,255,0.01)' }}>
           <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
             <StatCounter target="1972" label="Knowledge articles" />
             <StatCounter target="1000" label="Builder Score™ max" />
@@ -341,7 +341,7 @@ export default function HomePage() {
         </section>
 
         {/* ─── AUDIENCE TRACKS ─── */}
-        <section className="py-20 bg-bg">
+        <section className="py-20 bg-bg" data-reveal>
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <p className="section-tag mb-3">Who Dwellinger is for</p>
@@ -353,14 +353,16 @@ export default function HomePage() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {audienceTracks.map((track) => (
+              {audienceTracks.map((track, i) => (
                 <div
                   key={track.audience}
-                  className={`relative card p-7 flex flex-col ${
+                  className={`relative card card-shine p-7 flex flex-col ${
                     track.highlight
                       ? 'border-amber bg-bg-raised shadow-glow'
                       : ''
                   }`}
+                  data-reveal
+                  data-delay={i > 0 ? String(i * 100) : undefined}
                 >
                   {track.highlight && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -413,10 +415,12 @@ export default function HomePage() {
                 { icon: '🔍', title: 'Compare', desc: 'Search verified contractors ranked by Builder Score™. Filter by trade, location, score tier, and project type.' },
                 { icon: '📋', title: 'Appoint', desc: 'Issue a contract, set milestones, and agree payment terms — all on-platform. No paperwork outside the system.' },
                 { icon: '📊', title: 'Manage', desc: 'Documents, communication, payments, and sign-off — one dashboard from mobilisation to final handover.' },
-              ].map((step) => (
+              ].map((step, i) => (
                 <div
                   key={step.title}
                   className="flex items-center gap-4 p-4 bg-bg-raised rounded-lg border-l-4 border-amber"
+                  data-reveal
+                  data-delay={i > 0 ? String(i * 100) : undefined}
                 >
                   <div className="text-2xl flex-shrink-0">{step.icon}</div>
                   <div>
@@ -446,10 +450,12 @@ export default function HomePage() {
                 { name: 'Standard', price: '£150', days: '5 working days', popular: true },
                 { name: 'Full', price: '£250', days: '7 working days' },
                 { name: 'Premium', price: '£350', days: '7–10 days' },
-              ].map((tier) => (
+              ].map((tier, i) => (
                 <div
                   key={tier.name}
                   className={`relative card p-5 text-center ${'popular' in tier && tier.popular ? 'border-amber bg-bg-raised shadow-glow' : ''}`}
+                  data-reveal
+                  data-delay={i > 0 ? String(i * 100) : undefined}
                 >
                   {'popular' in tier && tier.popular && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -566,8 +572,8 @@ export default function HomePage() {
               <h2 className="section-title">Built for the complexity of UK construction</h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {features.map((f) => (
-                <Link key={f.title} href={f.href} className="card-raised p-6 block hover:border-amber-border transition-colors group">
+              {features.map((f, i) => (
+                <Link key={f.title} href={f.href} className="card-raised p-6 block hover:border-amber-border transition-colors group" data-reveal data-delay={i > 0 ? String(i * 100) : undefined}>
                   <div className="mb-4">{f.icon}</div>
                   <h3 className="font-bold text-text text-base mb-2 group-hover:text-amber transition-colors">
                     {f.title}
@@ -592,7 +598,7 @@ export default function HomePage() {
                 { n: '02', t: 'Find your verified contractor', d: 'Browse contractors ranked by Builder Score™ — a 0–1000 trust rating calculated from verified reviews, compliance records, and project history.' },
                 { n: '03', t: 'Manage your build on the platform', d: 'From contract signing to final sign-off — documents, payments, milestones, and communication all in one place.' },
               ].map((step, i) => (
-                <div key={step.n} className="flex gap-6 mb-8 last:mb-0">
+                <div key={step.n} className="flex gap-6 mb-8 last:mb-0" data-reveal data-delay={i > 0 ? String(i * 100) : undefined}>
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-full bg-amber-subtle border border-amber-border flex items-center justify-center">
                       <span className="text-amber font-display font-bold text-sm">{step.n}</span>
@@ -674,8 +680,8 @@ export default function HomePage() {
               </div>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {reviews.map((r) => (
-                <div key={r.name} className="card p-5">
+              {reviews.map((r, i) => (
+                <div key={r.name} className="card p-5" data-reveal data-delay={i > 0 ? String(i * 100) : undefined}>
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-full bg-amber-subtle border border-amber-border flex items-center justify-center flex-shrink-0">

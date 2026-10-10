@@ -22,7 +22,7 @@ export function HeroProductWindow() {
   }, [])
 
   return (
-    <div className="product-window w-full max-w-[420px] mx-auto lg:mx-0">
+    <div className="product-window w-full max-w-[420px] mx-auto lg:mx-0 animate-float">
       {/* Window bar */}
       <div className="product-window-bar">
         <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#FF5F57' }} />
