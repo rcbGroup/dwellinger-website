@@ -4,6 +4,7 @@ import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { LanguageProvider } from '@/components/providers/LanguageProvider'
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
 import { ScrollRevealProvider } from '@/components/ui/ScrollRevealProvider'
+import { AskDwellinger } from '@/components/ui/AskDwellinger'
 
 export const metadata: Metadata = {
   title: {
@@ -187,6 +188,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <ScrollRevealProvider>
               {children}
             </ScrollRevealProvider>
+            <AskDwellinger />
           </LanguageProvider>
         </ThemeProvider>
         <script
