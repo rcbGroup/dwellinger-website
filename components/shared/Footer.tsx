@@ -188,7 +188,7 @@ export default function Footer() {
                   onMouseLeave={(e) => {
                     const el = e.currentTarget
                     el.style.backgroundColor = 'var(--color-bg-raised)'
-                    el.style.borderColor: 'var(--color-border)'
+                    el.style.borderColor = 'var(--color-border)'
                     el.style.color = 'var(--color-text-secondary)'
                   }}
                 >
