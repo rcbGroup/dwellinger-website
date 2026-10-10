@@ -4,7 +4,7 @@ import { pageMetadata } from '@/lib/seo'
 
 export const metadata = pageMetadata({
   path: '/blog',
-  title: 'Blog — Construction & Property Intelligence | Dwellinger',
+  title: 'Blog — Construction & Property Intelligence',
   description: 'Expert guides on home extensions, loft conversions, builder costs, planning applications, and property investment — written by the Dwellinger editorial team.',
 })
 
@@ -61,7 +61,7 @@ const posts = [
     excerpt: 'A realistic breakdown of rear extension costs across London and the South East — including groundworks, structure, M&E, finishes, and professional fees. With real project examples and verified cost data.',
     readTime: '8 min read',
     date: '12 Sept 2026',
-    author: 'Dwellinger Editorial',
+    author: 'James Hargrove',
   },
   {
     slug: 'builder-score-explained-why-star-ratings-arent-enough',
@@ -70,7 +70,7 @@ const posts = [
     excerpt: 'Anyone can buy reviews on Checkatrade. Anyone can create a Companies House record. But neither tells you whether a contractor pays their subcontractors, holds valid insurance, or knows what a CDM Construction Phase Plan is. We built Builder Score™ to answer the harder questions.',
     readTime: '6 min read',
     date: '5 Sept 2026',
-    author: 'Dwellinger Editorial',
+    author: 'James Hargrove',
   },
   {
     slug: 'residual-land-value-calculator-explained',
@@ -79,7 +79,7 @@ const posts = [
     excerpt: 'The single most important number in property investment is the maximum you should pay for a site. Here\'s how to calculate it — and why the build cost assumption is the number most developers get wrong.',
     readTime: '7 min read',
     date: '20 Aug 2026',
-    author: 'Dwellinger Editorial',
+    author: 'James Hargrove',
   },
   {
     slug: 'cdm-2015-for-homeowners-what-you-need-to-know',
@@ -88,7 +88,7 @@ const posts = [
     excerpt: 'If your project involves more than one trade working at the same time, CDM 2015 applies. Most homeowners have never heard of it. Most contractors ignore it. Here\'s what it means, who is responsible, and what the practical obligations are.',
     readTime: '6 min read',
     date: '11 Aug 2026',
-    author: 'Dwellinger Editorial',
+    author: 'James Hargrove',
   },
   {
     slug: 'dwell-agents-ai-for-construction-businesses',
@@ -97,7 +97,7 @@ const posts = [
     excerpt: 'Four AI agents designed for the specific, unglamorous reality of running a construction business: responding to leads, generating scope of works, writing CDM documents, and coaching your commercial decision-making. Here\'s how they work.',
     readTime: '9 min read',
     date: '3 Aug 2026',
-    author: 'Dwellinger Editorial',
+    author: 'James Hargrove',
   },
 ]
 

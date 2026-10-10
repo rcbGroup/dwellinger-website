@@ -19,7 +19,7 @@ const posts: Record<string, {
     title: 'How much does a rear extension cost in the UK? (2025 guide)',
     date: '12 Sept 2026',
     readTime: '8 min read',
-    author: 'Dwellinger Editorial',
+    author: 'James Hargrove',
     description: 'A realistic breakdown of rear extension costs across London and the South East — including groundworks, structure, M&E, finishes, and professional fees.',
     content: `
 ## The honest answer: it depends — but here are real numbers
@@ -126,7 +126,7 @@ The Dwellinger estimating tool can give you a free ballpark based on your projec
     title: 'Why star ratings aren\'t enough — the case for Builder Score™',
     date: '5 Sept 2026',
     readTime: '6 min read',
-    author: 'Dwellinger Editorial',
+    author: 'James Hargrove',
     description: 'Anyone can buy reviews on Checkatrade. Anyone can create a Companies House record. Neither tells you whether a contractor pays their subcontractors or holds valid insurance.',
     content: `
 ## The problem with stars
@@ -247,7 +247,7 @@ Find a verified loft conversion specialist on Dwellinger and check their Builder
     title: 'Residual land value explained — and how to calculate it in 5 minutes',
     date: '20 Aug 2026',
     readTime: '7 min read',
-    author: 'Dwellinger Editorial',
+    author: 'James Hargrove',
     description: 'The single most important number in property investment is the maximum you should pay for a site. Here\'s how to calculate it.',
     content: `
 ## What is residual land value?
@@ -394,7 +394,7 @@ Our free development appraisal tool walks you through this calculation for any U
     title: 'CDM 2015 for homeowners — what you actually need to know',
     date: '14 Aug 2026',
     readTime: '6 min read',
-    author: 'Dwellinger Editorial',
+    author: 'James Hargrove',
     description: 'The Construction (Design and Management) Regulations 2015 apply to domestic projects too. Here is what homeowners commissioning work need to understand.',
     content: `
 ## CDM 2015: the basics for homeowners
@@ -508,7 +508,7 @@ When you work with a Builder Score™-verified contractor through Dwellinger, yo
     title: 'Dwell Agents — how AI is changing the day-to-day for construction businesses',
     date: '8 Aug 2026',
     readTime: '5 min read',
-    author: 'Dwellinger Editorial',
+    author: 'James Hargrove',
     description: 'Four AI agents designed specifically for construction: Dwell Coord, Dwell Create, Dwell Clarity, and Dwell Coach. Here\'s what they do and how contractors are using them.',
     content: `
 ## The paperwork problem in construction
