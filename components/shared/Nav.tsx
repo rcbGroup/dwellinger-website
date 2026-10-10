@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { Menu, X, ChevronDown, Sun, Moon, SunMedium } from 'lucide-react'
 import { useTheme, type Theme } from '@/components/providers/ThemeProvider'
 import { useLang, LANGUAGES, type Lang } from '@/components/providers/LanguageProvider'
@@ -69,7 +70,7 @@ const THEMES = [
   { value: 'light' as Theme, label: 'Light',    Icon: Sun       },
 ]
 
-// ── Helpers ─────────────────────────────────────────────────────────────────────────────
+// ── Helpers ──────────────────────────────────────────────────────────────────────────────────────
 
 function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () => void }) {
   return (
@@ -118,7 +119,7 @@ function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () =
   )
 }
 
-// ── Theme controls ────────────────────────────────────────────────────────────────────────
+// ── Theme controls ────────────────────────────────────────────────────────────────────────────────────
 
 /**
  * ThemePill — compact 3-button segment, always visible in the nav bar.
@@ -167,7 +168,7 @@ function ThemePill() {
   )
 }
 
-// ── Language control ─────────────────────────────────────────────────────────────────────
+// ── Language control ─────────────────────────────────────────────────────────────────────────────────────
 
 // Map our lang codes to Google Translate language codes
 const GT_LANG_MAP: Record<string, string> = {
@@ -207,6 +208,7 @@ function restoreEnglish() {
 
 function LangToggle() {
   const { lang, setLang } = useLang()
+  const router = useRouter()
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -221,6 +223,13 @@ function LangToggle() {
   const handleSelect = (code: Lang) => {
     setLang(code)
     setOpen(false)
+    // Navigate to URL-based language route (primary)
+    if (code === 'en') {
+      router.push('/')
+    } else {
+      router.push(`/${code}`)
+    }
+    // Also trigger Google Translate as in-page fallback for non-routed content
     if (code === 'en') {
       restoreEnglish()
     } else {
@@ -300,7 +309,7 @@ function LangToggle() {
   )
 }
 
-// ── Nav ───────────────────────────────────────────────────────────────────────────────────
+// ── Nav ──────────────────────────────────────────────────────────────────────────────────────────
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
@@ -337,7 +346,7 @@ export default function Nav() {
         backdropFilter: 'blur(12px)',
       }}
     >
-      {/* ── Top bar ─────────────────────────────────────────────────────────────────── */}
+      {/* ── Top bar ───────────────────────────────────────────────────────────────────────────────── */}
       <nav
         style={{
           maxWidth: 1200,
@@ -474,7 +483,7 @@ export default function Nav() {
         </div>
       </nav>
 
-      {/* ── Mobile drawer ────────────────────────────────────────────────────────────────────── */}
+      {/* ── Mobile drawer ────────────────────────────────────────────────────────────────────────────────────── */}
       {open && (
         <div
           className="md:hidden"
