@@ -4,7 +4,7 @@ import { createServerSupabaseClient } from '@/lib/supabase/server'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { email } = body
+    const { email, metadata } = body
 
     if (!email || typeof email !== 'string') {
       return NextResponse.json({ error: 'Email is required' }, { status: 400 })
@@ -17,11 +17,29 @@ export async function POST(req: NextRequest) {
 
     const supabase = createServerSupabaseClient()
 
+    // Build safe metadata object — only allow known fields
+    const safeMetadata: Record<string, string> = {}
+    if (metadata && typeof metadata === 'object') {
+      const allowed = ['first_name', 'last_name', 'company', 'phone', 'role'] as const
+      for (const key of allowed) {
+        if (typeof metadata[key] === 'string' && metadata[key].trim()) {
+          safeMetadata[key] = metadata[key].trim()
+        }
+      }
+      // Validate role is one of the known values
+      const validRoles = ['homeowner', 'contractor', 'investor', 'professional']
+      if (safeMetadata.role && !validRoles.includes(safeMetadata.role)) {
+        safeMetadata.role = 'homeowner'
+      }
+    }
+
     const { error } = await supabase.auth.admin.generateLink({
       type: 'magiclink',
       email: emailLower,
       options: {
         redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dwellinger.co.uk'}/auth-callback`,
+        // Store user metadata so it's available in user.user_metadata on first sign-in
+        data: Object.keys(safeMetadata).length > 0 ? safeMetadata : undefined,
       },
     })
 
