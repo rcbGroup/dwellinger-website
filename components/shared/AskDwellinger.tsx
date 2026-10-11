@@ -27,7 +27,7 @@ export function AskDwellinger() {
   async function handleSend() {
     const text = input.trim()
     if (!text || loading) return
-    const next: Message[] = [...messages, { role: 'user', content: text }]
+    const next: Message[] = [...messages, { role: 'user' as const, content: text }]
     setMessages(next)
     setInput('')
     setLoading(true)
@@ -38,18 +38,18 @@ export function AskDwellinger() {
         body: JSON.stringify({ messages: next }),
       })
       const reply = await res.text()
-      setMessages([...next, { role: 'assistant', content: reply }])
-    } catch {
-      setMessages([...next, { role: 'assistant', content: 'Sorry, I could not connect right now. Please try again in a moment.' }])
+      setMessages([...next, { role: 'assistant' as const, content: reply }])
+    } catch (_err) {
+      setMessages([...next, { role: 'assistant' as const, content: 'Sorry, I could not connect right now. Please try again in a moment.' }])
     } finally {
       setLoading(false)
     }
   }
 
-  function handleKey(e: React.KeyboardEvent) {
+  function handleKey(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
-      handleSend()
+      void handleSend()
     }
   }
 
@@ -75,7 +75,7 @@ export function AskDwellinger() {
           justifyContent: 'center',
           boxShadow: '0 4px 20px rgba(0,0,0,0.35)',
           zIndex: 1000,
-          transition: 'transform 0.2s, background-color 0.2s',
+          transition: 'transform 0.2s',
         }}
         onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.1)' }}
         onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)' }}
@@ -119,7 +119,7 @@ export function AskDwellinger() {
                 Ask Dwellinger
               </p>
               <p style={{ margin: 0, fontSize: '0.7rem', color: 'var(--color-text-muted, #aaa)', marginTop: 2 }}>
-                AI assistant for construction & costs
+                AI assistant for construction &amp; costs
               </p>
             </div>
           </div>
@@ -169,7 +169,7 @@ export function AskDwellinger() {
                     gap: 6,
                   }}
                 >
-                  <Loader2 size={14} style={{ animation: 'spin 1s linear infinite' }} />
+                  <Loader2 size={14} className="animate-spin" />
                   Thinking...
                 </div>
               </div>
@@ -207,7 +207,7 @@ export function AskDwellinger() {
               }}
             />
             <button
-              onClick={handleSend}
+              onClick={() => { void handleSend() }}
               disabled={loading || !input.trim()}
               style={{
                 width: 36,
@@ -228,13 +228,6 @@ export function AskDwellinger() {
           </div>
         </div>
       )}
-
-      <style jsx global>{`
-        @keyframes spin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-      `}</style>
     </>
   )
 }
