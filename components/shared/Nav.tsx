@@ -17,6 +17,7 @@ const navItems: NavItem[] = [
   {
     label: 'Find',
     dropdown: [
+      { label: 'Contractor Directory', href: '/contractors' },
       { label: 'Find Contractors', href: '/search' },
       { label: 'Post a Project', href: '/register?type=homeowner' },
       { label: 'Design & Build Contractors', href: '/services/design-and-build' },
@@ -70,7 +71,7 @@ const THEMES = [
   { value: 'light' as Theme, label: 'Light',    Icon: Sun       },
 ]
 
-// ── Helpers ──────────────────────────────────────────────────────────────────────────────────────
+// ── Helpers ─────────────────────────────────────────────────────────────────────────────────────
 
 function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () => void }) {
   return (
@@ -121,10 +122,6 @@ function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () =
 
 // ── Theme controls ────────────────────────────────────────────────────────────────────────────────────
 
-/**
- * ThemePill — compact 3-button segment, always visible in the nav bar.
- * Used on ALL screen sizes. Replaces the dropdown ThemeToggle on mobile.
- */
 function ThemePill() {
   const { theme, setTheme } = useTheme()
   return (
@@ -168,9 +165,8 @@ function ThemePill() {
   )
 }
 
-// ── Language control ─────────────────────────────────────────────────────────────────────────────────────
+// ── Language control ─────────────────────────────────────────────────────────────────────────────
 
-// Map our lang codes to Google Translate language codes
 const GT_LANG_MAP: Record<string, string> = {
   en: 'en', ro: 'ro', pl: 'pl', pt: 'pt', it: 'it',
   es: 'es', de: 'de', fr: 'fr', ru: 'ru', bg: 'bg',
@@ -188,7 +184,6 @@ function triggerGoogleTranslate(gtCode: string) {
     return false
   }
   if (!attempt()) {
-    // Widget not ready yet — poll until it is (max 3s)
     let tries = 0
     const interval = setInterval(() => {
       if (attempt() || ++tries > 30) clearInterval(interval)
@@ -197,7 +192,6 @@ function triggerGoogleTranslate(gtCode: string) {
 }
 
 function restoreEnglish() {
-  // Clear googtrans cookies
   const host = window.location.hostname
   const exp = 'Thu, 01 Jan 1970 00:00:00 UTC'
   document.cookie = `googtrans=; expires=${exp}; path=/`
@@ -223,13 +217,11 @@ function LangToggle() {
   const handleSelect = (code: Lang) => {
     setLang(code)
     setOpen(false)
-    // Navigate to URL-based language route (primary)
     if (code === 'en') {
       router.push('/')
     } else {
       router.push(`/${code}`)
     }
-    // Also trigger Google Translate as in-page fallback for non-routed content
     if (code === 'en') {
       restoreEnglish()
     } else {
@@ -309,7 +301,7 @@ function LangToggle() {
   )
 }
 
-// ── Nav ──────────────────────────────────────────────────────────────────────────────────────────
+// ── Nav ────────────────────────────────────────────────────────────────────────────────────────
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
@@ -327,7 +319,6 @@ export default function Nav() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  // Close mobile menu on resize to desktop
   useEffect(() => {
     const handler = () => { if (window.innerWidth >= 768) setOpen(false) }
     window.addEventListener('resize', handler)
@@ -346,7 +337,6 @@ export default function Nav() {
         backdropFilter: 'blur(12px)',
       }}
     >
-      {/* ── Top bar ───────────────────────────────────────────────────────────────────────────────── */}
       <nav
         style={{
           maxWidth: 1200,
@@ -359,12 +349,10 @@ export default function Nav() {
           gap: 8,
         }}
       >
-        {/* Logo */}
         <div style={{ flexShrink: 0 }}>
           <Logo size="sm" />
         </div>
 
-        {/* Desktop nav links — NOTE: NO inline display:flex here; Tailwind hidden/md:flex controls it */}
         <div
           className="hidden md:flex"
           style={{ alignItems: 'center', gap: 4, flex: 1, justifyContent: 'center' }}
@@ -419,16 +407,9 @@ export default function Nav() {
           })}
         </div>
 
-        {/* Right-side controls */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
-
-          {/* ThemePill — ALWAYS visible on every device */}
           <ThemePill />
-
-          {/* LangToggle — ALWAYS visible on every device */}
           <LangToggle />
-
-          {/* Sign in + Get started — desktop only */}
           <div
             className="hidden md:flex"
             style={{ alignItems: 'center', gap: 10, marginLeft: 4 }}
@@ -462,7 +443,6 @@ export default function Nav() {
             </Link>
           </div>
 
-          {/* Hamburger — mobile only */}
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden"
@@ -483,7 +463,6 @@ export default function Nav() {
         </div>
       </nav>
 
-      {/* ── Mobile drawer ────────────────────────────────────────────────────────────────────────────────────── */}
       {open && (
         <div
           className="md:hidden"
@@ -493,8 +472,6 @@ export default function Nav() {
           }}
         >
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: '8px 16px 16px' }}>
-
-            {/* Nav items */}
             {navItems.map((item) => {
               if (item.dropdown) {
                 const expanded = mobileExpanded === item.label
@@ -565,7 +542,6 @@ export default function Nav() {
               )
             })}
 
-            {/* CTA buttons */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, paddingTop: 14 }}>
               <Link
                 href="/login"
