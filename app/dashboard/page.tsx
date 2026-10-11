@@ -5,10 +5,11 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase/client'
 import {
-  LogOut, User, Settings, ChevronRight, TrendingUp, FileText, Search,
-  BarChart3, Home, Star, Calculator, Clipboard, Map, Building2, Wrench,
+  User, Settings, ChevronRight, TrendingUp, FileText, Search,
+  BarChart3, Home, Star, Calculator, Clipboard, Map, Building2,
   HardHat, DollarSign, PieChart, Plus,
 } from 'lucide-react'
+import AppNav from '@/components/ui/AppNav'
 import type { User as SupabaseUser } from '@supabase/supabase-js'
 
 type Project = {
@@ -31,7 +32,7 @@ const ROLE_LINKS: Record<string, Array<{ icon: React.ElementType; label: string;
     { icon: FileText, label: 'Scope Builder', href: '/scope-builder', desc: 'Build scope of works' },
     { icon: Search, label: 'Find Contractors', href: '/contractors', desc: 'Browse verified builders' },
     { icon: Clipboard, label: 'Messages', href: '/messages', desc: 'Contractor conversations' },
-    { icon: TrendingUp, label: 'Project Readiness', href: '/tools/project-readiness', desc: 'See what\'s ready to go' },
+    { icon: TrendingUp, label: 'Project Readiness', href: '/tools/project-readiness', desc: "See what's ready to go" },
     { icon: Calculator, label: 'Cost Calculator', href: '/tools/extension-cost-calculator', desc: 'Estimate your build' },
     { icon: Map, label: 'Planning Data', href: '/tools/planning', desc: 'What gets approved nearby' },
   ],
@@ -145,7 +146,6 @@ function RolePanel({ role, project }: { role: string; project: Project | null })
     )
   }
   if (role === 'homeowner' || role === 'professional') {
-    // No project yet — show create CTA
     if (!project) {
       return (
         <div className="card p-6 mb-6 border-dashed" style={{ borderColor: 'rgba(196,119,59,0.4)' }}>
@@ -164,7 +164,6 @@ function RolePanel({ role, project }: { role: string; project: Project | null })
         </div>
       )
     }
-    // Real project data
     const checklist = buildChecklist(project)
     const statusLabel = STATUS_LABELS[project.status] ?? project.status
     return (
@@ -202,7 +201,7 @@ function RolePanel({ role, project }: { role: string; project: Project | null })
     <div className="card p-6 mb-6">
       <div className="flex items-center justify-between mb-4">
         <h2 className="font-display text-base text-white">Professional toolkit</h2>
-        <Link href="/tools/scope-builder" className="text-amber text-xs hover:underline">Open scope builder</Link>
+        <Link href="/scope-builder" className="text-amber text-xs hover:underline">Open scope builder</Link>
       </div>
       <p className="text-text-muted text-sm leading-relaxed">Access contractor procurement, scope building, quote comparison, and planning intelligence — all in one platform.</p>
     </div>
@@ -214,14 +213,12 @@ export default function DashboardPage() {
   const [user, setUser] = useState<SupabaseUser | null>(null)
   const [project, setProject] = useState<Project | null>(null)
   const [loading, setLoading] = useState(true)
-  const [signingOut, setSigningOut] = useState(false)
 
   useEffect(() => {
     async function checkAuth() {
       const { data: { session } } = await supabase.auth.getSession()
       if (!session) { router.replace('/login'); return }
       setUser(session.user)
-      // Fetch latest project for homeowners / professionals
       const role = session.user.user_metadata?.role ?? 'homeowner'
       if (role === 'homeowner' || role === 'professional') {
         try {
@@ -245,13 +242,6 @@ export default function DashboardPage() {
     return () => subscription.unsubscribe()
   }, [router])
 
-  async function handleSignOut() {
-    setSigningOut(true)
-    await fetch('/api/auth/signout', { method: 'POST' })
-    await supabase.auth.signOut()
-    router.replace('/login')
-  }
-
   if (loading) {
     return (
       <div className="min-h-screen bg-bg flex items-center justify-center">
@@ -266,27 +256,16 @@ export default function DashboardPage() {
   const role: string = user?.user_metadata?.role ?? 'homeowner'
   const quickLinks = ROLE_LINKS[role] ?? ROLE_LINKS.homeowner
   const roleLabel = ROLE_LABELS[role] ?? role
-  const displayName = user?.user_metadata?.first_name ? `${user.user_metadata.first_name} ${user.user_metadata.last_name ?? ''}`.trim() : user?.email?.split('@')[0] ?? 'there'
-  const initials = user?.user_metadata?.first_name ? `${user.user_metadata.first_name[0]}${user.user_metadata.last_name?.[0] ?? ''}`.toUpperCase() : user?.email?.[0].toUpperCase() ?? '?'
+  const displayName = user?.user_metadata?.first_name
+    ? `${user.user_metadata.first_name} ${user.user_metadata.last_name ?? ''}`.trim()
+    : user?.email?.split('@')[0] ?? 'there'
+  const initials = user?.user_metadata?.first_name
+    ? `${user.user_metadata.first_name[0]}${user.user_metadata.last_name?.[0] ?? ''}`.toUpperCase()
+    : user?.email?.[0].toUpperCase() ?? '?'
 
   return (
     <div className="min-h-screen bg-bg">
-      <header className="border-b border-border bg-bg/80 backdrop-blur-md sticky top-0 z-40">
-        <div className="container mx-auto h-14 flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-2">
-            <Home className="w-4 h-4 text-text-muted" />
-            <span className="font-display font-bold text-white text-lg">Dwell<span style={{ color: '#C4773B' }}>inger</span></span>
-          </Link>
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ backgroundColor: '#C4773B' }}>{initials}</div>
-            <span className="text-text-secondary text-sm hidden md:block">{user?.email}</span>
-            <button onClick={handleSignOut} disabled={signingOut} className="flex items-center gap-1.5 text-text-muted hover:text-white text-xs transition-colors" title="Sign out">
-              <LogOut className="w-4 h-4" />
-              <span className="hidden md:inline">{signingOut ? 'Signing out…' : 'Sign out'}</span>
-            </button>
-          </div>
-        </div>
-      </header>
+      <AppNav />
       <main className="container mx-auto px-4 py-10 max-w-4xl">
         <div className="mb-8">
           <h1 className="font-display text-3xl text-white mb-1">Welcome back, <span style={{ color: '#C4773B' }}>{displayName}</span></h1>
@@ -325,7 +304,7 @@ export default function DashboardPage() {
           </div>
         </div>
         <div className="card divide-y divide-border mb-6">
-          {[{ icon: User, label: 'Profile settings', desc: 'Update your name, company and contact details', href: '#' }, { icon: Settings, label: 'Notifications', desc: 'Manage email and alert preferences', href: '#' }].map((item) => (
+          {[{ icon: User, label: 'Profile settings', desc: 'Update your name, company and contact details', href: '/settings' }, { icon: Settings, label: 'Notifications', desc: 'Manage email and alert preferences', href: '#' }].map((item) => (
             <Link key={item.label} href={item.href} className="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors group">
               <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
                 <item.icon className="w-4 h-4 text-text-secondary group-hover:text-amber transition-colors" />
