@@ -7,9 +7,23 @@ import { supabase } from '@/lib/supabase/client'
 import {
   LogOut, User, Settings, ChevronRight, TrendingUp, FileText, Search,
   BarChart3, Home, Star, Calculator, Clipboard, Map, Building2, Wrench,
-  HardHat, DollarSign, PieChart,
+  HardHat, DollarSign, PieChart, Plus,
 } from 'lucide-react'
 import type { User as SupabaseUser } from '@supabase/supabase-js'
+
+type Project = {
+  id: string
+  name: string
+  type: string
+  address: string
+  postcode: string | null
+  description: string | null
+  status: string
+  readiness: number
+  budget_estimate: string | null
+  docs_count: number
+  created_at: string
+}
 
 const ROLE_LINKS: Record<string, Array<{ icon: React.ElementType; label: string; href: string; desc: string }>> = {
   homeowner: [
@@ -51,7 +65,42 @@ const ROLE_LABELS: Record<string, string> = {
   professional: 'Property Professional',
 }
 
-function RolePanel({ role }: { role: string }) {
+const STATUS_LABELS: Record<string, string> = {
+  idea: 'Early planning',
+  drawings: 'Drawings stage',
+  approved: 'Planning approved',
+  ready: 'Build ready',
+}
+
+function buildChecklist(p: Project) {
+  return [
+    { label: 'Project type defined', done: !!p.type },
+    { label: 'Address confirmed', done: !!p.address },
+    { label: 'Budget range set', done: !!p.budget_estimate },
+    { label: 'Description added', done: (p.description?.length ?? 0) >= 20 },
+    { label: 'Planning status known', done: p.status !== 'idea' },
+  ]
+}
+
+function ReadinessRing({ score }: { score: number }) {
+  const circumference = 2 * Math.PI * 26
+  const offset = circumference - (score / 100) * circumference
+  const colour = score >= 70 ? '#10B981' : score >= 40 ? '#C4773B' : '#71717A'
+  return (
+    <div className="relative w-16 h-16 flex-shrink-0">
+      <svg viewBox="0 0 64 64" className="w-16 h-16 -rotate-90">
+        <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="8" />
+        <circle cx="32" cy="32" r="26" fill="none" stroke={colour} strokeWidth="8"
+          strokeDasharray={circumference} strokeDashoffset={offset} strokeLinecap="round" />
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="font-bold text-sm" style={{ color: colour }}>{score}%</span>
+      </div>
+    </div>
+  )
+}
+
+function RolePanel({ role, project }: { role: string; project: Project | null }) {
   if (role === 'contractor') {
     return (
       <div className="card p-6 mb-6">
@@ -95,35 +144,56 @@ function RolePanel({ role }: { role: string }) {
       </div>
     )
   }
-  if (role === 'homeowner') {
+  if (role === 'homeowner' || role === 'professional') {
+    // No project yet — show create CTA
+    if (!project) {
+      return (
+        <div className="card p-6 mb-6 border-dashed" style={{ borderColor: 'rgba(196,119,59,0.4)' }}>
+          <div className="flex items-center gap-4">
+            <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(196,119,59,0.1)', border: '1px solid rgba(196,119,59,0.3)' }}>
+              <Plus className="w-6 h-6 text-amber" />
+            </div>
+            <div className="flex-1">
+              <p className="text-white font-semibold mb-0.5">No project yet</p>
+              <p className="text-text-muted text-xs leading-relaxed mb-3">Create your Project Passport to track readiness, manage documents, and get matched with the right contractors.</p>
+              <Link href="/passport/new" className="inline-flex items-center gap-2 text-xs font-semibold text-white px-4 py-2 rounded-lg" style={{ background: '#C4773B' }}>
+                <Plus className="w-3.5 h-3.5" /> Create your first project
+              </Link>
+            </div>
+          </div>
+        </div>
+      )
+    }
+    // Real project data
+    const checklist = buildChecklist(project)
+    const statusLabel = STATUS_LABELS[project.status] ?? project.status
     return (
       <div className="card p-6 mb-6">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="font-display text-base text-white">Project Readiness</h2>
+          <div>
+            <h2 className="font-display text-base text-white">Project Readiness</h2>
+            <p className="text-text-muted text-xs mt-0.5">{project.name}</p>
+          </div>
           <Link href="/tools/project-readiness" className="text-amber text-xs hover:underline">Complete checklist</Link>
         </div>
         <div className="flex items-center gap-4 mb-4">
-          <div className="relative w-16 h-16 flex-shrink-0">
-            <svg viewBox="0 0 64 64" className="w-16 h-16 -rotate-90">
-              <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="8" />
-              <circle cx="32" cy="32" r="26" fill="none" stroke="#C4773B" strokeWidth="8" strokeDasharray="163" strokeDashoffset="130" strokeLinecap="round" />
-            </svg>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-amber font-bold text-sm">20%</span>
-            </div>
-          </div>
+          <ReadinessRing score={project.readiness} />
           <div>
-            <p className="text-white font-semibold mb-0.5">Getting started</p>
-            <p className="text-text-muted text-xs leading-relaxed">Complete your project checklist to see your readiness score improve and get matched with the right contractors.</p>
+            <p className="text-white font-semibold mb-0.5">{statusLabel}</p>
+            <p className="text-text-muted text-xs leading-relaxed">Keep filling out your project details to improve your readiness score and attract better-matched contractors.</p>
           </div>
         </div>
         <div className="space-y-2">
-          {[{ label: 'Project type defined', done: false }, { label: 'Budget range set', done: false }, { label: 'Location confirmed', done: true }].map((item) => (
+          {checklist.map((item) => (
             <div key={item.label} className="flex items-center gap-2 text-xs">
               <div className={`w-3.5 h-3.5 rounded-full flex-shrink-0 ${item.done ? 'bg-green-500' : 'bg-white/10 border border-white/20'}`} />
               <span className={item.done ? 'text-text-secondary' : 'text-text-muted'}>{item.label}</span>
             </div>
           ))}
+        </div>
+        <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
+          <Link href="/passport" className="text-amber text-xs font-semibold hover:underline">View Project Passport →</Link>
+          <Link href="/passport/new" className="text-text-muted text-xs hover:text-white">+ Add another project</Link>
         </div>
       </div>
     )
@@ -142,6 +212,7 @@ function RolePanel({ role }: { role: string }) {
 export default function DashboardPage() {
   const router = useRouter()
   const [user, setUser] = useState<SupabaseUser | null>(null)
+  const [project, setProject] = useState<Project | null>(null)
   const [loading, setLoading] = useState(true)
   const [signingOut, setSigningOut] = useState(false)
 
@@ -150,6 +221,20 @@ export default function DashboardPage() {
       const { data: { session } } = await supabase.auth.getSession()
       if (!session) { router.replace('/login'); return }
       setUser(session.user)
+      // Fetch latest project for homeowners / professionals
+      const role = session.user.user_metadata?.role ?? 'homeowner'
+      if (role === 'homeowner' || role === 'professional') {
+        try {
+          const { data } = await supabase
+            .from('projects')
+            .select('*')
+            .eq('user_id', session.user.id)
+            .order('created_at', { ascending: false })
+            .limit(1)
+            .maybeSingle()
+          if (data) setProject(data as Project)
+        } catch {}
+      }
       setLoading(false)
     }
     checkAuth()
@@ -210,7 +295,7 @@ export default function DashboardPage() {
             {user?.user_metadata?.role && <span className="text-xs text-amber bg-amber-subtle border border-amber-border rounded-full px-2.5 py-0.5 capitalize">{roleLabel}</span>}
           </div>
         </div>
-        <RolePanel role={role} />
+        <RolePanel role={role} project={project} />
         <h2 className="font-display text-lg text-white mb-3">Quick access</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
           {quickLinks.map((link) => (
