@@ -317,7 +317,7 @@ export default function HomePage() {
         </section>
 
         {/* ─── STATS BAR ─── */}
-        <section data-reveal style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '40px 0', background: 'rgba(255,255,255,0.01)' }}>
+        <section data-reveal style={{ borderTop: '1px solid rgba(196,119,59,0.25)', borderBottom: '1px solid rgba(196,119,59,0.25)', padding: '56px 0', background: 'linear-gradient(135deg, rgba(196,119,59,0.14) 0%, rgba(196,119,59,0.04) 100%)' }}>
           <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
             <StatCounter target="1972" label="Knowledge articles" />
             <StatCounter target="1000" label="Builder Score™ max" />
