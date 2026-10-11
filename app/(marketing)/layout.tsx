@@ -1,8 +1,8 @@
-import type { ReactNode } from 'react'
 import Nav from '@/components/shared/Nav'
 import Footer from '@/components/shared/Footer'
-import SuggestionWidget from '@/components/shared/SuggestionWidget'
 import { CookieConsent } from '@/components/shared/CookieConsent'
+import { AskDwellinger } from '@/components/shared/AskDwellinger'
+import type { ReactNode } from 'react'
 
 export default function MarketingLayout({ children }: { children: ReactNode }) {
   return (
@@ -10,8 +10,8 @@ export default function MarketingLayout({ children }: { children: ReactNode }) {
       <Nav />
       <main style={{ flex: 1 }}>{children}</main>
       <Footer />
-      <SuggestionWidget />
       <CookieConsent />
+      <AskDwellinger />
     </div>
   )
 }
