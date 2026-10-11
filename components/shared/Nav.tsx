@@ -2,8 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { Menu, X, ChevronDown, Sun, Moon, SunMedium } from 'lucide-react'
+import { useRouter, usePathname } from 'next/navigation'
+import { Menu, X, ChevronDown, Moon, SunMedium } from 'lucide-react'
 import { useTheme, type Theme } from '@/components/providers/ThemeProvider'
 import { useLang, LANGUAGES, type Lang } from '@/components/providers/LanguageProvider'
 import { Logo } from '@/components/shared/Logo'
@@ -68,10 +68,7 @@ const navItems: NavItem[] = [
 const THEMES = [
   { value: 'dark' as Theme,  label: 'Dark',     Icon: Moon      },
   { value: 'mid' as Theme,   label: 'Twilight', Icon: SunMedium },
-  { value: 'light' as Theme, label: 'Light',    Icon: Sun       },
 ]
-
-// ── Helpers ─────────────────────────────────────────────────────────────────────────────────────
 
 function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () => void }) {
   return (
@@ -120,8 +117,6 @@ function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () =
   )
 }
 
-// ── Theme controls ────────────────────────────────────────────────────────────────────────────────────
-
 function ThemePill() {
   const { theme, setTheme } = useTheme()
   return (
@@ -165,13 +160,13 @@ function ThemePill() {
   )
 }
 
-// ── Language control ─────────────────────────────────────────────────────────────────────────────
-
 const GT_LANG_MAP: Record<string, string> = {
   en: 'en', ro: 'ro', pl: 'pl', pt: 'pt', it: 'it',
   es: 'es', de: 'de', fr: 'fr', ru: 'ru', bg: 'bg',
   hu: 'hu', ar: 'ar', zh: 'zh-CN',
 }
+
+const KNOWN_LANGS = new Set(Object.keys(LANGUAGES))
 
 function triggerGoogleTranslate(gtCode: string) {
   const attempt = () => {
@@ -203,8 +198,12 @@ function restoreEnglish() {
 function LangToggle() {
   const { lang, setLang } = useLang()
   const router = useRouter()
+  const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+
+  const pathSegment = pathname?.split('/')[1] ?? ''
+  const urlLang: Lang = (KNOWN_LANGS.has(pathSegment) ? pathSegment : 'en') as Lang
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -235,7 +234,7 @@ function LangToggle() {
     <div ref={ref} style={{ position: 'relative', flexShrink: 0 }}>
       <button
         onClick={() => setOpen(!open)}
-        title={`Language: ${LANGUAGES[lang].label}`}
+        title={`Language: ${LANGUAGES[urlLang]?.label ?? 'English'}`}
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -252,7 +251,7 @@ function LangToggle() {
           whiteSpace: 'nowrap',
         }}
       >
-        🌐 <span>{lang.toUpperCase()}</span>
+        🌐 <span>{urlLang.toUpperCase()}</span>
       </button>
       {open && (
         <div
@@ -282,17 +281,17 @@ function LangToggle() {
                 justifyContent: 'space-between',
                 width: '100%',
                 padding: '8px 14px',
-                background: lang === code ? 'var(--color-bg-raised)' : 'none',
+                background: urlLang === code ? 'var(--color-bg-raised)' : 'none',
                 border: 'none',
                 cursor: 'pointer',
-                color: lang === code ? 'var(--color-text)' : 'var(--color-text-secondary)',
+                color: urlLang === code ? 'var(--color-text)' : 'var(--color-text-secondary)',
                 fontSize: '0.8rem',
-                fontWeight: lang === code ? 700 : 500,
+                fontWeight: urlLang === code ? 700 : 500,
                 textAlign: 'left',
               }}
             >
               <span>{info.native}</span>
-              {lang === code && <span style={{ color: 'var(--amber)', fontSize: '0.6rem' }}>✓</span>}
+              {urlLang === code && <span style={{ color: 'var(--amber)', fontSize: '0.6rem' }}>✓</span>}
             </button>
           ))}
         </div>
@@ -300,8 +299,6 @@ function LangToggle() {
     </div>
   )
 }
-
-// ── Nav ────────────────────────────────────────────────────────────────────────────────────────
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
@@ -352,7 +349,6 @@ export default function Nav() {
         <div style={{ flexShrink: 0 }}>
           <Logo size="sm" />
         </div>
-
         <div
           className="hidden md:flex"
           style={{ alignItems: 'center', gap: 4, flex: 1, justifyContent: 'center' }}
@@ -406,116 +402,34 @@ export default function Nav() {
             )
           })}
         </div>
-
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
           <ThemePill />
           <LangToggle />
-          <div
-            className="hidden md:flex"
-            style={{ alignItems: 'center', gap: 10, marginLeft: 4 }}
-          >
-            <Link
-              href="/login"
-              style={{
-                color: 'var(--color-text-secondary)',
-                textDecoration: 'none',
-                fontSize: '0.875rem',
-                fontWeight: 500,
-                whiteSpace: 'nowrap',
-              }}
-            >
-              Sign in
-            </Link>
-            <Link
-              href="/register"
-              style={{
-                backgroundColor: 'var(--amber)',
-                color: '#fff',
-                padding: '7px 14px',
-                borderRadius: 6,
-                fontWeight: 700,
-                textDecoration: 'none',
-                fontSize: '0.875rem',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              Get started free
-            </Link>
+          <div className="hidden md:flex" style={{ alignItems: 'center', gap: 10, marginLeft: 4 }}>
+            <Link href="/login" style={{ color: 'var(--color-text-secondary)', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, whiteSpace: 'nowrap' }}>Sign in</Link>
+            <Link href="/register" style={{ backgroundColor: 'var(--amber)', color: '#fff', padding: '7px 14px', borderRadius: 6, fontWeight: 700, textDecoration: 'none', fontSize: '0.875rem', whiteSpace: 'nowrap' }}>Get started free</Link>
           </div>
-
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden"
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              color: 'var(--color-text)',
-              padding: 4,
-              display: 'flex',
-              alignItems: 'center',
-              flexShrink: 0,
-            }}
-            aria-label="Toggle menu"
-          >
+          <button onClick={() => setOpen(!open)} className="md:hidden" style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text)', padding: 4, display: 'flex', alignItems: 'center', flexShrink: 0 }} aria-label="Toggle menu">
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </nav>
-
       {open && (
-        <div
-          className="md:hidden"
-          style={{
-            backgroundColor: 'var(--color-bg-surface)',
-            borderTop: '1px solid var(--color-border)',
-          }}
-        >
+        <div className="md:hidden" style={{ backgroundColor: 'var(--color-bg-surface)', borderTop: '1px solid var(--color-border)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: '8px 16px 16px' }}>
             {navItems.map((item) => {
               if (item.dropdown) {
                 const expanded = mobileExpanded === item.label
                 return (
                   <div key={item.label} style={{ borderBottom: '1px solid var(--color-border)' }}>
-                    <button
-                      onClick={() => setMobileExpanded(expanded ? null : item.label)}
-                      style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        padding: '12px 0',
-                        background: 'none',
-                        border: 'none',
-                        cursor: 'pointer',
-                        color: 'var(--color-text-secondary)',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                      }}
-                    >
+                    <button onClick={() => setMobileExpanded(expanded ? null : item.label)} style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 0', background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-secondary)', fontSize: '0.9rem', fontWeight: 600 }}>
                       {item.label}
-                      <ChevronDown
-                        size={16}
-                        style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}
-                      />
+                      <ChevronDown size={16} style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
                     </button>
                     {expanded && (
                       <div style={{ paddingLeft: 12, paddingBottom: 10 }}>
                         {item.dropdown.map((sub) => (
-                          <Link
-                            key={sub.href}
-                            href={sub.href}
-                            onClick={() => { setOpen(false); setMobileExpanded(null) }}
-                            style={{
-                              display: 'block',
-                              padding: '8px 0',
-                              color: 'var(--color-text-muted)',
-                              textDecoration: 'none',
-                              fontSize: '0.875rem',
-                            }}
-                          >
-                            {sub.label}
-                          </Link>
+                          <Link key={sub.href} href={sub.href} onClick={() => { setOpen(false); setMobileExpanded(null) }} style={{ display: 'block', padding: '8px 0', color: 'var(--color-text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>{sub.label}</Link>
                         ))}
                       </div>
                     )}
@@ -523,61 +437,12 @@ export default function Nav() {
                 )
               }
               return (
-                <Link
-                  key={item.label}
-                  href={item.href!}
-                  onClick={() => setOpen(false)}
-                  style={{
-                    display: 'block',
-                    padding: '12px 0',
-                    color: 'var(--color-text-secondary)',
-                    textDecoration: 'none',
-                    fontSize: '0.9rem',
-                    fontWeight: 600,
-                    borderBottom: '1px solid var(--color-border)',
-                  }}
-                >
-                  {item.label}
-                </Link>
+                <Link key={item.label} href={item.href!} onClick={() => setOpen(false)} style={{ display: 'block', padding: '12px 0', color: 'var(--color-text-secondary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, borderBottom: '1px solid var(--color-border)' }}>{item.label}</Link>
               )
             })}
-
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, paddingTop: 14 }}>
-              <Link
-                href="/login"
-                onClick={() => setOpen(false)}
-                style={{
-                  display: 'block',
-                  textAlign: 'center',
-                  padding: '11px',
-                  backgroundColor: 'var(--color-bg-raised)',
-                  border: '1px solid var(--color-border)',
-                  borderRadius: 8,
-                  color: 'var(--color-text)',
-                  textDecoration: 'none',
-                  fontWeight: 600,
-                  fontSize: '0.9rem',
-                }}
-              >
-                Sign in
-              </Link>
-              <Link
-                href="/register"
-                onClick={() => setOpen(false)}
-                style={{
-                  display: 'block',
-                  textAlign: 'center',
-                  padding: '11px',
-                  backgroundColor: 'var(--amber)',
-                  borderRadius: 8,
-                  color: '#fff',
-                  textDecoration: 'none',
-                  fontWeight: 700,
-                  fontSize: '0.9rem',
-                }}
-              >
-                Get started free
-              </Link>
+              <Link href="/login" onClick={() => setOpen(false)} style={{ display: 'block', textAlign: 'center', padding: '11px', backgroundColor: 'var(--color-bg-raised)', border: '1px solid var(--color-border)', borderRadius: 8, color: 'var(--color-text)', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem' }}>Sign in</Link>
+              <Link href="/register" onClick={() => setOpen(false)} style={{ display: 'block', textAlign: 'center', padding: '11px', backgroundColor: 'var(--amber)', borderRadius: 8, color: '#fff', textDecoration: 'none', fontWeight: 700, fontSize: '0.9rem' }}>Get started free</Link>
             </div>
           </div>
         </div>
