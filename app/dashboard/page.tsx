@@ -1,5 +1,6 @@
 'use client'
 
+import type { ElementType } from 'react'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
@@ -26,7 +27,7 @@ type Project = {
   created_at: string
 }
 
-const ROLE_LINKS: Record<string, Array<{ icon: React.ElementType; label: string; href: string; desc: string }>> = {
+const ROLE_LINKS: Record<string, Array<{ icon: ElementType; label: string; href: string; desc: string }>> = {
   homeowner: [
     { icon: Home, label: 'My Project', href: '/passport', desc: 'Project Passport' },
     { icon: FileText, label: 'Scope Builder', href: '/scope-builder', desc: 'Build scope of works' },
