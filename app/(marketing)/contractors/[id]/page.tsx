@@ -1,7 +1,40 @@
 import Link from 'next/link'
 import { MapPin, CheckCircle, Circle, ArrowRight, Calendar, Building2, Star, MessageSquare, Bookmark, Users, FileText, Shield } from 'lucide-react'
+import { createServerSupabaseClient } from '@/lib/supabase/server'
+
+type ContractorRow = {
+  id: string
+  slug: string
+  name: string
+  tagline: string | null
+  location: string
+  score: number
+  verified: boolean
+  description: string | null
+  specialisms: string[]
+  accreditations: string[]
+  years_experience: number | null
+  projects_completed: number | null
+  response_time: string | null
+}
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
+  // Try to get real name from DB first
+  try {
+    const supabase = createServerSupabaseClient()
+    const { data } = await supabase
+      .from('contractors')
+      .select('name, tagline')
+      .eq('slug', params.id)
+      .maybeSingle()
+    if (data) {
+      return {
+        title: `${data.name} — Contractor Profile | Dwellinger`,
+        description: data.tagline || `View Builder Score™, services, portfolio and reviews for ${data.name} on Dwellinger.`,
+      }
+    }
+  } catch {}
+  // Fallback: derive from slug
   const name = params.id.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
   return {
     title: `${name} — Contractor Profile | Dwellinger`,
@@ -40,6 +73,53 @@ const DEMO = {
     { name: 'J. Thompson', project: 'Rear extension', rating: 5, text: 'Professional team, delivered on time and within budget. Highly recommend for extension work.', date: 'Aug 2024' },
     { name: 'C. Okafor', project: 'Loft conversion', rating: 4, text: 'Great communication throughout. Minor snagging items resolved promptly.', date: 'May 2024' },
   ],
+  isDemo: true,
+}
+
+const RCB_COVERAGE = ['Hackney', 'Tower Hamlets', 'Newham', 'Waltham Forest', 'Redbridge', 'Barking & Dagenham', 'Havering', 'Southwark', 'Lewisham', 'Greenwich', 'Hounslow', 'Ealing', 'All of Greater London']
+
+async function getContractor(slug: string) {
+  try {
+    const supabase = createServerSupabaseClient()
+    const { data, error } = await supabase
+      .from('contractors')
+      .select('*')
+      .eq('slug', slug)
+      .eq('active', true)
+      .maybeSingle()
+    if (error || !data) return null
+    return data as ContractorRow
+  } catch {
+    return null
+  }
+}
+
+function buildProfileFromDB(c: ContractorRow) {
+  return {
+    id: c.slug,
+    name: c.name,
+    tagline: c.tagline || '',
+    location: c.location,
+    coverage: c.slug === 'rcb-design-build' ? RCB_COVERAGE : [c.location.split(',')[0].trim()],
+    score: c.score,
+    tier: c.verified ? 'BUSINESS VERIFIED' : 'IDENTITY VERIFIED',
+    tierOrdinal: c.verified ? 3 : 2,
+    available: true,
+    companiesHouse: c.verified ? 'Verified via Companies House' : 'Pending verification',
+    insurance: c.verified ? 'Public liability insurance confirmed' : 'Pending verification',
+    lastVerified: c.verified ? 'October 2026' : 'Pending',
+    services: c.specialisms || [],
+    evidence: [
+      { label: 'Identity', done: c.verified },
+      { label: 'Insurance', done: c.verified },
+      { label: 'Projects', done: (c.projects_completed || 0) > 0 },
+      { label: 'Reviews', done: false },
+      { label: 'Health & Safety', done: false },
+    ],
+    portfolio: [] as { type: string; location: string; year: string }[],
+    reviews: [] as { name: string; project: string; rating: number; text: string; date: string }[],
+    isDemo: false,
+  }
 }
 
 function ScoreRing({ score, size = 100 }: { score: number; size?: number }) {
@@ -72,8 +152,10 @@ function StarRating({ rating }: { rating: number }) {
   )
 }
 
-export default function ContractorProfilePage({ params }: { params: { id: string } }) {
-  const c = DEMO
+export default async function ContractorProfilePage({ params }: { params: { id: string } }) {
+  const dbContractor = await getContractor(params.id)
+  const c = dbContractor ? buildProfileFromDB(dbContractor) : DEMO
+
   return (
     <div style={{ backgroundColor: 'var(--color-bg)', minHeight: '100vh' }}>
       <div style={{ borderBottom: '1px solid var(--color-border)', background: 'var(--color-bg-surface)', padding: '10px 0' }}>
@@ -85,11 +167,13 @@ export default function ContractorProfilePage({ params }: { params: { id: string
           <span style={{ color: 'var(--color-text)' }}>{c.name}</span>
         </div>
       </div>
-      <div style={{ background: 'var(--amber-subtle)', borderBottom: '1px solid var(--amber-border)', padding: '8px 0' }}>
-        <div className="container mx-auto" style={{ textAlign: 'center' }}>
-          <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.8rem', margin: 0 }}>This is an illustrative contractor profile. Live contractor data will be available at platform launch.</p>
+      {c.isDemo && (
+        <div style={{ background: 'var(--amber-subtle)', borderBottom: '1px solid var(--amber-border)', padding: '8px 0' }}>
+          <div className="container mx-auto" style={{ textAlign: 'center' }}>
+            <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.8rem', margin: 0 }}>This is an illustrative contractor profile. Live contractor data will be available at platform launch.</p>
+          </div>
         </div>
-      </div>
+      )}
       <div className="container mx-auto" style={{ padding: '2rem 0', display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr)', gap: '1.5rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -155,43 +239,70 @@ export default function ContractorProfilePage({ params }: { params: { id: string
                 </div>
               </div>
             </div>
-            <div className="card" style={{ padding: '1.5rem' }}>
-              <h2 className="font-display" style={{ fontSize: '1rem', color: 'var(--color-text)', marginBottom: '1rem' }}>Portfolio</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 12 }}>
-                {c.portfolio.map((p, i) => (
-                  <div key={i} style={{ borderRadius: 8, overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-                    <div style={{ height: 120, background: 'var(--color-bg-raised)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <div style={{ textAlign: 'center' }}>
-                        <FileText style={{ color: 'var(--color-text-muted)' }} className="w-8 h-8 mx-auto mb-1" />
-                        <span style={{ color: 'var(--color-text-muted)', fontSize: '0.7rem' }}>Photo coming soon</span>
+            {c.portfolio.length > 0 && (
+              <div className="card" style={{ padding: '1.5rem' }}>
+                <h2 className="font-display" style={{ fontSize: '1rem', color: 'var(--color-text)', marginBottom: '1rem' }}>Portfolio</h2>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 12 }}>
+                  {c.portfolio.map((p, i) => (
+                    <div key={i} style={{ borderRadius: 8, overflow: 'hidden', border: '1px solid var(--color-border)' }}>
+                      <div style={{ height: 120, background: 'var(--color-bg-raised)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{ textAlign: 'center' }}>
+                          <FileText style={{ color: 'var(--color-text-muted)' }} className="w-8 h-8 mx-auto mb-1" />
+                          <span style={{ color: 'var(--color-text-muted)', fontSize: '0.7rem' }}>Photo coming soon</span>
+                        </div>
+                      </div>
+                      <div style={{ padding: '8px 10px', background: 'var(--color-bg-surface)' }}>
+                        <p style={{ color: 'var(--color-text)', fontWeight: 600, fontSize: '0.8rem', margin: '0 0 2px' }}>{p.type}</p>
+                        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.72rem', margin: 0 }}>{p.location} · {p.year}</p>
                       </div>
                     </div>
-                    <div style={{ padding: '8px 10px', background: 'var(--color-bg-surface)' }}>
-                      <p style={{ color: 'var(--color-text)', fontWeight: 600, fontSize: '0.8rem', margin: '0 0 2px' }}>{p.type}</p>
-                      <p style={{ color: 'var(--color-text-muted)', fontSize: '0.72rem', margin: 0 }}>{p.location} · {p.year}</p>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
+            {c.isDemo && (
+              <div className="card" style={{ padding: '1.5rem' }}>
+                <h2 className="font-display" style={{ fontSize: '1rem', color: 'var(--color-text)', marginBottom: '1rem' }}>Portfolio</h2>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 12 }}>
+                  {DEMO.portfolio.map((p, i) => (
+                    <div key={i} style={{ borderRadius: 8, overflow: 'hidden', border: '1px solid var(--color-border)' }}>
+                      <div style={{ height: 120, background: 'var(--color-bg-raised)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{ textAlign: 'center' }}>
+                          <FileText style={{ color: 'var(--color-text-muted)' }} className="w-8 h-8 mx-auto mb-1" />
+                          <span style={{ color: 'var(--color-text-muted)', fontSize: '0.7rem' }}>Photo coming soon</span>
+                        </div>
+                      </div>
+                      <div style={{ padding: '8px 10px', background: 'var(--color-bg-surface)' }}>
+                        <p style={{ color: 'var(--color-text)', fontWeight: 600, fontSize: '0.8rem', margin: '0 0 2px' }}>{p.type}</p>
+                        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.72rem', margin: 0 }}>{p.location} · {p.year}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="card" style={{ padding: '1.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
                 <h2 className="font-display" style={{ fontSize: '1rem', color: 'var(--color-text)', margin: 0 }}>Reviews</h2>
                 <span style={{ background: 'var(--color-bg-raised)', color: 'var(--color-text-muted)', padding: '2px 10px', borderRadius: 20, fontSize: '0.72rem' }}>Platform reviews coming soon</span>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-                {c.reviews.map((r, i) => (
-                  <div key={i} style={{ paddingBottom: 16, borderBottom: i < c.reviews.length - 1 ? '1px solid var(--color-border)' : 'none' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-                      <StarRating rating={r.rating} />
-                      <span style={{ color: 'var(--color-text-secondary)', fontWeight: 600, fontSize: '0.85rem' }}>{r.name}</span>
-                      <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>· {r.project} · {r.date}</span>
+              {c.isDemo ? (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                  {DEMO.reviews.map((r, i) => (
+                    <div key={i} style={{ paddingBottom: 16, borderBottom: i < DEMO.reviews.length - 1 ? '1px solid var(--color-border)' : 'none' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                        <StarRating rating={r.rating} />
+                        <span style={{ color: 'var(--color-text-secondary)', fontWeight: 600, fontSize: '0.85rem' }}>{r.name}</span>
+                        <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>· {r.project} · {r.date}</span>
+                      </div>
+                      <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.85rem', lineHeight: 1.5, margin: 0 }}>{r.text}</p>
+                      <p style={{ color: 'var(--color-text-muted)', fontSize: '0.72rem', marginTop: 4, marginBottom: 0 }}>Illustrative review — not from a real client</p>
                     </div>
-                    <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.85rem', lineHeight: 1.5, margin: 0 }}>{r.text}</p>
-                    <p style={{ color: 'var(--color-text-muted)', fontSize: '0.72rem', marginTop: 4, marginBottom: 0 }}>Illustrative review — not from a real client</p>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              ) : (
+                <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem' }}>Client reviews will appear here once the platform launches and this contractor has completed verified projects.</p>
+              )}
             </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

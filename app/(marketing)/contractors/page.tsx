@@ -1,12 +1,25 @@
 import Link from 'next/link'
 import { Search, MapPin, Star, CheckCircle, ChevronRight, Filter } from 'lucide-react'
 import { pageMetadata } from '@/lib/seo'
+import { createServerSupabaseClient } from '@/lib/supabase/server'
 
 export const metadata = pageMetadata({
   path: '/contractors',
   title: 'Find Verified Contractors — Contractor Directory',
   description: 'Browse verified contractors with Builder Score™ ratings. Filter by project type, location, and verification tier to find the right builder for your project.',
 })
+
+type ContractorRow = {
+  id: string
+  slug: string
+  name: string
+  tagline: string | null
+  location: string
+  score: number
+  verified: boolean
+  specialisms: string[]
+  active: boolean
+}
 
 const SAMPLE_CONTRACTORS = [
   { id: 'demo-contractor', name: 'Meridian Build & Renovate', tagline: 'Extensions, lofts & full refurbishments across South London', location: 'Brixton, South London', score: 82, tier: 'BUSINESS VERIFIED', services: ['Extensions', 'Loft Conversions', 'Refurbishments'], available: true },
@@ -16,6 +29,21 @@ const SAMPLE_CONTRACTORS = [
   { id: 'apex-developments', name: 'Apex Developments Ltd', tagline: 'Loft conversions and rear extensions, East London specialists', location: 'Stratford, East London', score: 59, tier: 'IDENTITY VERIFIED', services: ['Loft Conversions', 'Extensions', 'Planning'], available: false },
   { id: 'blueprint-build', name: 'Blueprint Build Ltd', tagline: 'Full project management from planning to handover', location: 'Islington, North London', score: 77, tier: 'BUSINESS VERIFIED', services: ['Project Management', 'Extensions', 'Refurbishments'], available: true },
 ]
+
+type ContractorCard = typeof SAMPLE_CONTRACTORS[0]
+
+function mapDBtoCard(c: ContractorRow): ContractorCard {
+  return {
+    id: c.slug,
+    name: c.name,
+    tagline: c.tagline || '',
+    location: c.location,
+    score: c.score,
+    tier: c.verified ? 'BUSINESS VERIFIED' : 'IDENTITY VERIFIED',
+    services: (c.specialisms || []).slice(0, 3),
+    available: true,
+  }
+}
 
 const TIERS = ['All tiers', 'PROJECT VERIFIED', 'BUSINESS VERIFIED', 'IDENTITY VERIFIED']
 const PROJECT_TYPES = ['All types', 'Extensions', 'Loft Conversions', 'Refurbishments', 'New Build', 'Kitchen', 'Bathroom', 'HMO Conversion']
@@ -39,7 +67,25 @@ function ScoreRing({ score }: { score: number }) {
   )
 }
 
-export default function ContractorDirectoryPage() {
+export default async function ContractorDirectoryPage() {
+  // Try to load real contractor data from Supabase
+  let contractors: ContractorCard[] = SAMPLE_CONTRACTORS
+  let isLiveData = false
+  try {
+    const supabase = createServerSupabaseClient()
+    const { data } = await supabase
+      .from('contractors')
+      .select('id, slug, name, tagline, location, score, verified, specialisms, active')
+      .eq('active', true)
+      .order('score', { ascending: false })
+    if (data && data.length > 0) {
+      contractors = data.map(mapDBtoCard)
+      isLiveData = true
+    }
+  } catch {
+    // fall through to demo data silently
+  }
+
   return (
     <div style={{ backgroundColor: 'var(--color-bg)', minHeight: '100vh' }}>
       <section style={{ paddingTop: '4rem', paddingBottom: '3rem', background: 'var(--color-bg)', position: 'relative', overflow: 'hidden' }}>
@@ -91,11 +137,12 @@ export default function ContractorDirectoryPage() {
         <div className="container mx-auto">
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: 8 }}>
             <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
-              Showing <strong style={{ color: 'var(--color-text)' }}>6 contractors</strong> — illustrative profiles, live data coming soon
+              Showing <strong style={{ color: 'var(--color-text)' }}>{contractors.length} contractor{contractors.length !== 1 ? 's' : ''}</strong>
+              {!isLiveData && <span style={{ color: 'var(--color-text-muted)' }}> — illustrative profiles, live data coming soon</span>}
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1rem' }}>
-            {SAMPLE_CONTRACTORS.map((c) => (
+            {contractors.map((c) => (
               <Link key={c.id} href={`/contractors/${c.id}`} style={{ textDecoration: 'none', display: 'block' }}>
                 <div className="card" style={{ padding: '1.25rem', cursor: 'pointer' }}>
                   <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 12 }}>
@@ -129,7 +176,11 @@ export default function ContractorDirectoryPage() {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginBottom: 12 }}>More contractors will appear here as the platform launches.</p>
+            {isLiveData ? (
+              <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginBottom: 12 }}>More contractors will appear here as the platform grows.</p>
+            ) : (
+              <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginBottom: 12 }}>More contractors will appear here as the platform launches.</p>
+            )}
             <Link href="/register" className="btn-primary">Register to get early access</Link>
           </div>
         </div>
