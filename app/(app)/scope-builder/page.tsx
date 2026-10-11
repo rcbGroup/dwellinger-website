@@ -5,8 +5,9 @@ import Link from 'next/link'
 import {
   Home, Layers, Wrench, ChefHat, Bath, HardHat, PenLine,
   ChevronLeft, ChevronRight, Check, Download, Folder, Search,
-  CheckSquare, Square,
+  CheckSquare, Square, Loader2, BookmarkCheck,
 } from 'lucide-react'
+import { supabase } from '@/lib/supabase/client'
 
 const PROJECT_TYPES = [
   { id: 'extension', label: 'Extension', icon: Home, desc: 'Rear, side return, wrap-around' },
@@ -81,6 +82,9 @@ export default function ScopeBuilderPage() {
   const [requirements, setRequirements] = useState<string[]>([])
   const [notes, setNotes] = useState('')
   const [generated, setGenerated] = useState(false)
+  const [saving, setSaving] = useState(false)
+  const [saved, setSaved] = useState(false)
+  const [saveError, setSaveError] = useState('')
 
   function toggleReq(r: string) {
     setRequirements((prev) => prev.includes(r) ? prev.filter((x) => x !== r) : [...prev, r])
@@ -91,6 +95,45 @@ export default function ScopeBuilderPage() {
   function handleNext() {
     if (step < 5) setStep(step + 1)
     else setGenerated(true)
+  }
+
+  async function handleSaveToAccount() {
+    setSaving(true)
+    setSaveError('')
+    try {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) {
+        setSaveError('Sign in to save scopes to your account.')
+        setSaving(false)
+        return
+      }
+      const trades = TRADES[projectType] || TRADES.other
+      const professionals = PROFESSIONALS[projectType] || []
+      const documents = DOCUMENTS[projectType] || []
+      const { error } = await supabase.from('scopes').insert({
+        user_id: user.id,
+        project_type: projectType,
+        address: address || null,
+        size_m2: size ? parseFloat(size) : null,
+        storeys: storeys || null,
+        design_status: designStatus,
+        spec_level: specLevel,
+        requirements,
+        notes: notes || null,
+        trades,
+        professionals,
+        documents,
+      })
+      if (error) {
+        setSaveError(error.message)
+      } else {
+        setSaved(true)
+      }
+    } catch {
+      setSaveError('Unexpected error — please try again.')
+    } finally {
+      setSaving(false)
+    }
   }
 
   const trades = TRADES[projectType] || TRADES.other
@@ -205,11 +248,6 @@ export default function ScopeBuilderPage() {
             </div>
           </div>
 
-          <div className="card" style={{ padding: '1.25rem', marginBottom: '1rem' }}>
-            <h2 style={{ color: 'var(--color-text)', fontSize: '0.95rem', fontWeight: 700, marginBottom: 8 }}>Client Supplied Items</h2>
-            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', fontStyle: 'italic' }}>To be confirmed during tender — list items here when known (labour-only items).</p>
-          </div>
-
           {professionals.length > 0 && (
             <div className="card" style={{ padding: '1.25rem', marginBottom: '1rem' }}>
               <h2 style={{ color: 'var(--color-text)', fontSize: '0.95rem', fontWeight: 700, marginBottom: 10 }}>Required Professionals</h2>
@@ -244,15 +282,28 @@ export default function ScopeBuilderPage() {
               style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'var(--amber)', color: '#fff', fontWeight: 700, padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: '0.875rem' }}>
               <Download className="w-4 h-4" /> Download PDF
             </button>
-            <Link href="/passport" style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'var(--color-bg-raised)', color: 'var(--color-text)', fontWeight: 600, padding: '10px 18px', borderRadius: 8, textDecoration: 'none', fontSize: '0.875rem', border: '1px solid var(--color-border)' }}>
-              <Folder className="w-4 h-4" /> Save to Project
-            </Link>
+            {saved ? (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(16,185,129,0.1)', color: '#10B981', fontWeight: 700, padding: '10px 18px', borderRadius: 8, fontSize: '0.875rem', border: '1px solid rgba(16,185,129,0.3)' }}>
+                <BookmarkCheck className="w-4 h-4" /> Saved to your account
+              </div>
+            ) : (
+              <button
+                onClick={handleSaveToAccount}
+                disabled={saving}
+                style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'var(--color-bg-raised)', color: 'var(--color-text)', fontWeight: 600, padding: '10px 18px', borderRadius: 8, textDecoration: 'none', fontSize: '0.875rem', border: '1px solid var(--color-border)', cursor: saving ? 'not-allowed' : 'pointer', opacity: saving ? 0.7 : 1 }}>
+                {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Folder className="w-4 h-4" />}
+                {saving ? 'Saving…' : 'Save to account'}
+              </button>
+            )}
             <Link href="/contractors" style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'transparent', color: 'var(--color-text-secondary)', fontWeight: 600, padding: '10px 18px', borderRadius: 8, textDecoration: 'none', fontSize: '0.875rem', border: '1px solid var(--color-border)' }}>
               <Search className="w-4 h-4" /> Find Contractors
             </Link>
           </div>
+          {saveError && (
+            <p style={{ color: '#ef4444', fontSize: '0.78rem', marginTop: 10 }}>{saveError}</p>
+          )}
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', marginTop: 10 }}>
-            Tip: use your browser&apos;s print dialog to save as PDF. Project saving goes live at platform launch.
+            Tip: use your browser&apos;s print dialog to save as PDF.
           </p>
         </div>
       </div>
