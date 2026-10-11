@@ -1,14 +1,13 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
-import type { ReactNode, CSSProperties } from 'react'
 
 interface RevealSectionProps {
-  children: ReactNode
+  children: React.ReactNode
   className?: string
   delay?: number
   direction?: 'up' | 'down' | 'left' | 'right' | 'none'
-  style?: CSSProperties
+  style?: React.CSSProperties
 }
 
 export function RevealSection({
@@ -25,6 +24,13 @@ export function RevealSection({
     const el = ref.current
     if (!el) return
 
+    // Reveal immediately if already in viewport
+    const rect = el.getBoundingClientRect()
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setTimeout(() => setVisible(true), delay)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -32,7 +38,7 @@ export function RevealSection({
           observer.unobserve(el)
         }
       },
-      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+      { threshold: 0.05, rootMargin: '0px' }
     )
 
     observer.observe(el)
