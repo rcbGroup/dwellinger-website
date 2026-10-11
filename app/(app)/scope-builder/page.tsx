@@ -169,9 +169,15 @@ export default function ScopeBuilderPage() {
           <div className="card" style={{ padding: '1.25rem', marginBottom: '1rem' }}>
             <h2 style={{ color: 'var(--color-text)', fontSize: '0.95rem', fontWeight: 700, marginBottom: 10 }}>Assumptions</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              {['Site is accessible for deliveries and skips', 'Existing structural elements are in satisfactory condition unless noted', 'Ground conditions are suitable without abnormal piling or drainage', 'Planning conditions have been discharged prior to commencement', 'Client will confirm material selections within agreed lead times'].map((a, i) => (
+              {[
+                'Site is accessible for deliveries and skips',
+                'Existing structural elements are in satisfactory condition unless noted',
+                'Ground conditions are suitable without abnormal piling or drainage',
+                'Planning conditions have been discharged prior to commencement',
+                'Client will confirm material selections within agreed lead times',
+              ].map((a, i) => (
                 <div key={i} style={{ display: 'flex', gap: 8 }}>
-                  <span style={{ color: 'var(--color-text-muted)', fontSize: '0.82rem' }}>-</span>
+                  <span style={{ color: 'var(--color-text-muted)', fontSize: '0.82rem' }}>–</span>
                   <span style={{ color: 'var(--color-text-secondary)', fontSize: '0.82rem' }}>{a}</span>
                 </div>
               ))}
@@ -181,9 +187,18 @@ export default function ScopeBuilderPage() {
           <div className="card" style={{ padding: '1.25rem', marginBottom: '1rem' }}>
             <h2 style={{ color: 'var(--color-text)', fontSize: '0.95rem', fontWeight: 700, marginBottom: 10 }}>Exclusions</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              {['Floor coverings (carpet, rugs)', 'Furniture and freestanding items', 'Specialist art installation', 'Window dressings and blinds', 'Items marked Client Supplied (CS) in the schedule', 'Landscaping and garden works (unless specified)', 'Party wall surveyor fees', 'Statutory authority fees (planning, building control)'].map((e, i) => (
+              {[
+                'Floor coverings (carpet, rugs)',
+                'Furniture and freestanding items',
+                'Specialist art installation',
+                'Window dressings and blinds',
+                'Items marked Client Supplied (CS) in the schedule',
+                'Landscaping and garden works (unless specified)',
+                'Party wall surveyor fees',
+                'Statutory authority fees (planning, building control)',
+              ].map((e, i) => (
                 <div key={i} style={{ display: 'flex', gap: 8 }}>
-                  <span style={{ color: 'var(--color-text-muted)', fontSize: '0.82rem' }}>-</span>
+                  <span style={{ color: 'var(--color-text-muted)', fontSize: '0.82rem' }}>–</span>
                   <span style={{ color: 'var(--color-text-secondary)', fontSize: '0.82rem' }}>{e}</span>
                 </div>
               ))}
@@ -224,7 +239,9 @@ export default function ScopeBuilderPage() {
           )}
 
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            <button style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'var(--amber)', color: '#fff', fontWeight: 700, padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: '0.875rem' }}>
+            <button
+              onClick={() => window.print()}
+              style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'var(--amber)', color: '#fff', fontWeight: 700, padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: '0.875rem' }}>
               <Download className="w-4 h-4" /> Download PDF
             </button>
             <Link href="/passport" style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'var(--color-bg-raised)', color: 'var(--color-text)', fontWeight: 600, padding: '10px 18px', borderRadius: 8, textDecoration: 'none', fontSize: '0.875rem', border: '1px solid var(--color-border)' }}>
@@ -235,8 +252,7 @@ export default function ScopeBuilderPage() {
             </Link>
           </div>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', marginTop: 10 }}>
-            PDF download and project saving require a Dwellinger account.{' '}
-            <Link href="/register" style={{ color: 'var(--amber)' }}>Register free</Link>
+            Tip: use your browser&apos;s print dialog to save as PDF. Project saving goes live at platform launch.
           </p>
         </div>
       </div>
