@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import type { FormEvent } from 'react'
 import Link from 'next/link'
 import { Shield, CheckCircle, Loader2 } from 'lucide-react'
 
@@ -65,7 +66,7 @@ export default function RegisterPage() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'sent' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault()
     if (!agreed) { setErrorMsg('Please accept the Terms of Service and Privacy Policy.'); return }
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import type { FormEvent } from 'react'
 import Link from 'next/link'
 
 const callTypes = [
@@ -56,7 +57,7 @@ export default function BookACallPage() {
 
   const selectedCall = callTypes.find((c) => c.id === selectedType)
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: FormEvent) {
     e.preventDefault()
     const subject = encodeURIComponent(`Book a Call — ${selectedCall?.name} at ${selectedSlot}`)
     const body = encodeURIComponent(

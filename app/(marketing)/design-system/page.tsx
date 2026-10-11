@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { pageMetadata } from '@/lib/seo'
 
@@ -7,7 +8,7 @@ export const metadata = pageMetadata({
   description: 'Internal reference for Dwellinger design tokens, components, and patterns.',
 })
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section className="py-12 border-b border-border">
       <h2 className="font-display text-h3 text-white mb-8">{title}</h2>

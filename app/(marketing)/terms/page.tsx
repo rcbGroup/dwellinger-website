@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
@@ -161,7 +162,7 @@ export default function TermsPage() {
   )
 }
 
-function Block({ heading, children }: { heading: string; children: React.ReactNode }) {
+function Block({ heading, children }: { heading: string; children: ReactNode }) {
   return (
     <div style={{ marginBottom: 36 }}>
       <h2
