@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '404 — Page not found',
+  title: '404 — Page not found | Dwellinger',
 }
 
 export default function NotFound() {
@@ -20,14 +20,7 @@ export default function NotFound() {
       }}
     >
       {/* Score badge 404 */}
-      <div
-        style={{
-          width: 88,
-          height: 88,
-          marginBottom: 24,
-          position: 'relative',
-        }}
-      >
+      <div style={{ width: 88, height: 88, marginBottom: 24, position: 'relative' }}>
         <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="12" y="12" width="64" height="64" rx="10" transform="rotate(45 44 44)" fill="#C8773A" fillOpacity="0.15" />
           <rect x="12" y="12" width="64" height="64" rx="10" transform="rotate(45 44 44)" stroke="#C8773A" strokeWidth="1.5" />
@@ -65,16 +58,10 @@ export default function NotFound() {
         <Link
           href="/"
           style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 8,
+            display: 'inline-flex', alignItems: 'center', gap: 8,
             padding: '11px 24px',
-            backgroundColor: '#C8773A',
-            color: '#fff',
-            borderRadius: 8,
-            fontWeight: 700,
-            fontSize: '0.9rem',
-            textDecoration: 'none',
+            backgroundColor: '#C8773A', color: '#fff',
+            borderRadius: 8, fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none',
           }}
         >
           Back to home
@@ -82,17 +69,11 @@ export default function NotFound() {
         <Link
           href="/search"
           style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 8,
+            display: 'inline-flex', alignItems: 'center', gap: 8,
             padding: '11px 24px',
-            backgroundColor: 'var(--color-bg-raised)',
-            color: 'var(--color-text-secondary)',
+            backgroundColor: 'var(--color-bg-raised)', color: 'var(--color-text-secondary)',
             border: '1px solid var(--color-border)',
-            borderRadius: 8,
-            fontWeight: 600,
-            fontSize: '0.9rem',
-            textDecoration: 'none',
+            borderRadius: 8, fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none',
           }}
         >
           Find a contractor
@@ -108,11 +89,7 @@ export default function NotFound() {
           <Link
             key={href}
             href={href}
-            style={{
-              color: 'var(--color-text-muted)',
-              fontSize: '0.8rem',
-              textDecoration: 'none',
-            }}
+            style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', textDecoration: 'none' }}
           >
             {label}
           </Link>
