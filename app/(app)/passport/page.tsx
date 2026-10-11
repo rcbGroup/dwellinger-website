@@ -1,68 +1,114 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import {
   Home, FileText, Users, Calendar, CheckSquare, CreditCard, Package,
-  ArrowRight, Plus, Folder, Clock, AlertCircle, TrendingUp, ChevronRight,
+  ArrowRight, Plus, Folder, Clock, AlertCircle, TrendingUp, ChevronRight, Loader2,
 } from 'lucide-react'
 import { ReadinessScore } from '@/components/marketing/ReadinessScore'
+import { supabase } from '@/lib/supabase/client'
 
-/* ─── Demo project data ─── */
-const DEMO_PROJECT = {
-  name: 'Side Return Extension',
-  address: '14 Kestrel Road, Brixton, SW2 3AA',
-  type: 'Extension',
-  status: 'Planning Stage',
-  readiness: 28,
-  docsCount: 2,
-  teamCount: 1,
-  openDecisions: 3,
-  budgetEstimate: '£65,000–£90,000',
+/* ─── Types ─── */
+interface Project {
+  id: string
+  user_id: string
+  name: string
+  type: string
+  address: string
+  postcode?: string
+  description?: string
+  status: string
+  readiness: number
+  budget_estimate?: string
+  docs_count: number
+  team_count: number
+  open_decisions: number
+  created_at: string
 }
 
-const READINESS_ITEMS = [
-  { label: 'Project type defined', done: true },
-  { label: 'Property address confirmed', done: true },
-  { label: 'Budget range set', done: false },
-  { label: 'Planning drawings uploaded', done: false },
-  { label: 'Structural engineer appointed', done: false },
+/* ─── Readiness items ─── */
+const buildReadinessItems = (p: Project) => [
+  { label: 'Project type defined',        done: !!p.type },
+  { label: 'Property address confirmed',  done: !!p.address },
+  { label: 'Budget range set',            done: !!p.budget_estimate },
+  { label: 'Planning drawings uploaded',  done: p.docs_count > 0 },
+  { label: 'Structural engineer appointed', done: p.team_count > 1 },
   { label: 'Contractor shortlist created', done: false },
-  { label: 'Planning permission obtained', done: false },
+  { label: 'Planning permission obtained', done: p.status === 'approved' || p.status === 'ready' },
 ]
 
 const ACTIVITY = [
-  { icon: FileText, text: 'You uploaded "Existing floor plan.pdf"', time: '2 hours ago' },
-  { icon: Users, text: 'Architect added to project team', time: 'Yesterday' },
-  { icon: CheckSquare, text: 'Project brief completed', time: '3 days ago' },
+  { icon: FileText, text: 'Project passport created', time: 'Just now' },
+  { icon: AlertCircle, text: 'Complete your project brief to improve readiness', time: '' },
 ]
 
 const TABS = [
-  { id: 'overview', label: 'Overview', icon: Home },
-  { id: 'scope', label: 'Scope', icon: FileText },
-  { id: 'documents', label: 'Documents', icon: Folder },
-  { id: 'team', label: 'Team', icon: Users },
-  { id: 'programme', label: 'Programme', icon: Calendar },
-  { id: 'decisions', label: 'Decisions', icon: CheckSquare },
-  { id: 'payments', label: 'Payments', icon: CreditCard },
-  { id: 'handover', label: 'Handover', icon: Package },
+  { id: 'overview',   label: 'Overview',   icon: Home },
+  { id: 'scope',      label: 'Scope',      icon: FileText },
+  { id: 'documents',  label: 'Documents',  icon: Folder },
+  { id: 'team',       label: 'Team',       icon: Users },
+  { id: 'programme',  label: 'Programme',  icon: Calendar },
+  { id: 'decisions',  label: 'Decisions',  icon: CheckSquare },
+  { id: 'payments',   label: 'Payments',   icon: CreditCard },
+  { id: 'handover',   label: 'Handover',   icon: Package },
 ]
 
 const TAB_DESCRIPTIONS: Record<string, { icon: React.ElementType; desc: string }> = {
-  scope: { icon: FileText, desc: 'Your full scope of works — trades, specifications, exclusions, and client-supplied items — will appear here once generated.' },
-  documents: { icon: Folder, desc: 'Upload and organise your planning drawings, structural reports, contracts, warranties, and project correspondence.' },
-  team: { icon: Users, desc: 'Your architect, structural engineer, principal contractor, and other professionals will be listed here with their contact details and roles.' },
-  programme: { icon: Calendar, desc: 'A Gantt-style programme showing key milestones from planning to practical completion.' },
-  decisions: { icon: CheckSquare, desc: 'Track open decisions — tile selections, fixture choices, material specs — with a decision log for each.' },
-  payments: { icon: CreditCard, desc: 'Your payment schedule, valuation dates, and payment certificates will be tracked here.' },
-  handover: { icon: Package, desc: 'At practical completion, your O&M manuals, warranties, Building Control sign-off, and snagging list will live here.' },
+  scope:      { icon: FileText,     desc: 'Your full scope of works — trades, specifications, exclusions, and client-supplied items — will appear here once generated.' },
+  documents:  { icon: Folder,       desc: 'Upload and organise your planning drawings, structural reports, contracts, warranties, and project correspondence.' },
+  team:       { icon: Users,        desc: 'Your architect, structural engineer, principal contractor, and other professionals will be listed here with their contact details and roles.' },
+  programme:  { icon: Calendar,     desc: 'A Gantt-style programme showing key milestones from planning to practical completion.' },
+  decisions:  { icon: CheckSquare,  desc: 'Track open decisions — tile selections, fixture choices, material specs — with a decision log for each.' },
+  payments:   { icon: CreditCard,   desc: 'Your payment schedule, valuation dates, and payment certificates will be tracked here.' },
+  handover:   { icon: Package,      desc: 'At practical completion, your O&M manuals, warranties, Building Control sign-off, and snagging list will live here.' },
+}
+
+const STATUS_LABELS: Record<string, string> = {
+  idea: 'Idea Stage',
+  drawings: 'Drawings Stage',
+  approved: 'Planning Approved',
+  ready: 'Ready to Build',
 }
 
 export default function PassportPage() {
-  const [activeTab, setActiveTab] = useState('overview')
-  const hasProject = true // toggle to false to see empty state
+  const [activeTab, setActiveTab]     = useState('overview')
+  const [isLoading, setIsLoading]     = useState(true)
+  const [project, setProject]         = useState<Project | null>(null)
 
-  if (!hasProject) {
+  useEffect(() => {
+    async function loadProject() {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) { setIsLoading(false); return }
+
+      const { data } = await supabase
+        .from('projects')
+        .select('*')
+        .eq('user_id', user.id)
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .maybeSingle()
+
+      if (data) setProject(data as Project)
+      setIsLoading(false)
+    }
+    loadProject()
+  }, [])
+
+  /* ─── Loading ─── */
+  if (isLoading) {
+    return (
+      <div style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <Loader2 style={{ color: 'var(--amber)', margin: '0 auto 1rem' }} className="w-8 h-8 animate-spin" />
+          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.82rem' }}>Loading your project…</p>
+        </div>
+      </div>
+    )
+  }
+
+  /* ─── Empty state ─── */
+  if (!project) {
     return (
       <div style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
         <div style={{ textAlign: 'center', maxWidth: 420 }}>
@@ -79,6 +125,9 @@ export default function PassportPage() {
     )
   }
 
+  const readinessItems = buildReadinessItems(project)
+  const statusLabel    = STATUS_LABELS[project.status] ?? project.status
+
   return (
     <div style={{ backgroundColor: 'var(--color-bg)', minHeight: '100vh' }}>
       {/* Breadcrumb */}
@@ -88,7 +137,7 @@ export default function PassportPage() {
           <ChevronRight style={{ color: 'var(--color-text-muted)' }} className="w-3 h-3" />
           <Link href="/passport" style={{ color: 'var(--color-text-muted)', textDecoration: 'none' }}>Projects</Link>
           <ChevronRight style={{ color: 'var(--color-text-muted)' }} className="w-3 h-3" />
-          <span style={{ color: 'var(--color-text)' }}>{DEMO_PROJECT.name}</span>
+          <span style={{ color: 'var(--color-text)' }}>{project.name}</span>
         </div>
       </div>
 
@@ -97,12 +146,12 @@ export default function PassportPage() {
         <div className="container mx-auto" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-              <h1 className="font-display" style={{ fontSize: '1.5rem', color: 'var(--color-text)', margin: 0 }}>{DEMO_PROJECT.name}</h1>
+              <h1 className="font-display" style={{ fontSize: '1.5rem', color: 'var(--color-text)', margin: 0 }}>{project.name}</h1>
               <span style={{ background: 'rgba(196,119,59,0.15)', color: 'var(--amber)', fontSize: '0.72rem', fontWeight: 700, padding: '2px 8px', borderRadius: 20, border: '1px solid var(--amber-border)' }}>
-                {DEMO_PROJECT.status}
+                {statusLabel}
               </span>
             </div>
-            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.82rem', margin: 0 }}>{DEMO_PROJECT.address}</p>
+            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.82rem', margin: 0 }}>{project.address}</p>
           </div>
           <Link href="/passport/new" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'var(--color-bg-raised)', color: 'var(--color-text-secondary)', fontWeight: 600, padding: '8px 14px', borderRadius: 8, textDecoration: 'none', fontSize: '0.82rem', border: '1px solid var(--color-border)' }}>
             <Plus className="w-3.5 h-3.5" /> New project
@@ -141,8 +190,8 @@ export default function PassportPage() {
             <div className="card" style={{ padding: '1.25rem' }}>
               <h2 className="font-display" style={{ fontSize: '0.95rem', color: 'var(--color-text)', marginBottom: '1rem' }}>Project Readiness</h2>
               <ReadinessScore
-                score={DEMO_PROJECT.readiness}
-                items={READINESS_ITEMS}
+                score={project.readiness}
+                items={readinessItems}
                 ctaLabel="Complete checklist"
                 ctaHref="/tools/project-readiness"
                 compact
@@ -153,10 +202,10 @@ export default function PassportPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
                 {[
-                  { label: 'Documents', value: DEMO_PROJECT.docsCount, icon: FileText },
-                  { label: 'Team members', value: DEMO_PROJECT.teamCount, icon: Users },
-                  { label: 'Open decisions', value: DEMO_PROJECT.openDecisions, icon: CheckSquare },
-                  { label: 'Budget estimate', value: DEMO_PROJECT.budgetEstimate, icon: TrendingUp },
+                  { label: 'Documents',     value: project.docs_count,      icon: FileText },
+                  { label: 'Team members',  value: project.team_count,      icon: Users },
+                  { label: 'Open decisions',value: project.open_decisions,  icon: CheckSquare },
+                  { label: 'Budget',        value: project.budget_estimate ?? 'TBC', icon: TrendingUp },
                 ].map(({ label, value, icon: Icon }) => (
                   <div key={label} className="card" style={{ padding: '0.875rem' }}>
                     <Icon style={{ color: 'var(--color-text-muted)' }} className="w-4 h-4 mb-1.5" />
@@ -195,10 +244,12 @@ export default function PassportPage() {
                     <div style={{ flex: 1 }}>
                       <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.82rem', margin: 0 }}>{text}</p>
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 3 }}>
-                      <Clock style={{ color: 'var(--color-text-muted)' }} className="w-3 h-3" />
-                      <span style={{ color: 'var(--color-text-muted)', fontSize: '0.72rem' }}>{time}</span>
-                    </div>
+                    {time && (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+                        <Clock style={{ color: 'var(--color-text-muted)' }} className="w-3 h-3" />
+                        <span style={{ color: 'var(--color-text-muted)', fontSize: '0.72rem' }}>{time}</span>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
