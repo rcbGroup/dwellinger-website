@@ -13,13 +13,21 @@ export function useScrollReveal(
   options: ScrollRevealOptions = {}
 ) {
   const {
-    threshold = 0.1,
-    rootMargin = '0px 0px -60px 0px',
+    threshold = 0.05,
+    rootMargin = '0px',
     once = true,
   } = options
 
   useEffect(() => {
     const elements = document.querySelectorAll('[data-reveal]')
+
+    // Immediately reveal elements already in the viewport
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect()
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add(className)
+      }
+    })
 
     const observer = new IntersectionObserver(
       (entries) => {
