@@ -1,13 +1,14 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
+import type { ReactNode, CSSProperties } from 'react'
 
 interface RevealSectionProps {
-  children: React.ReactNode
+  children: ReactNode
   className?: string
   delay?: number
   direction?: 'up' | 'down' | 'left' | 'right' | 'none'
-  style?: React.CSSProperties
+  style?: CSSProperties
 }
 
 export function RevealSection({

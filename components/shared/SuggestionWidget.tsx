@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import type { FormEvent } from 'react'
 import { MessageSquarePlus, X, Send, CheckCircle } from 'lucide-react'
 import { useLang } from '@/components/providers/LanguageProvider'
 
@@ -12,7 +13,7 @@ export default function SuggestionWidget() {
   const [submitted, setSubmitted] = useState(false)
   const [category, setCategory] = useState('feature')
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: FormEvent) {
     e.preventDefault()
     if (!text.trim()) return
     const subject = encodeURIComponent(`[Dwellinger Suggestion — ${category}] User Feedback`)

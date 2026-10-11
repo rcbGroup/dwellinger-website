@@ -1,15 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useState } from 'react'
+import type { CSSProperties, FormEvent } from 'react';
 
-const labelStyle: React.CSSProperties = {
+const labelStyle: CSSProperties = {
   color: '#1A2340',
   fontSize: '0.875rem',
   fontWeight: 600,
   letterSpacing: '0.01em',
 };
 
-const inputStyle: React.CSSProperties = {
+const inputStyle: CSSProperties = {
   border: '1.5px solid #EDE8DC',
   borderRadius: 8,
   padding: '12px 14px',
@@ -26,7 +27,7 @@ const inputStyle: React.CSSProperties = {
 export default function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);

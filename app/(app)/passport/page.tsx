@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import type { ElementType } from 'react'
 import Link from 'next/link'
 import {
   Home, FileText, Users, Calendar, CheckSquare, CreditCard, Package,
@@ -54,7 +55,7 @@ const TABS = [
   { id: 'handover',   label: 'Handover',   icon: Package },
 ]
 
-const TAB_DESCRIPTIONS: Record<string, { icon: React.ElementType; desc: string }> = {
+const TAB_DESCRIPTIONS: Record<string, { icon: ElementType; desc: string }> = {
   scope:      { icon: FileText,     desc: 'Your full scope of works — trades, specifications, exclusions, and client-supplied items — will appear here once generated.' },
   documents:  { icon: Folder,       desc: 'Upload and organise your planning drawings, structural reports, contracts, warranties, and project correspondence.' },
   team:       { icon: Users,        desc: 'Your architect, structural engineer, principal contractor, and other professionals will be listed here with their contact details and roles.' },
