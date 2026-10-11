@@ -2,7 +2,15 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 // Routes that require authentication
-const PROTECTED_PATHS = ['/passport', '/scope-builder', '/messages']
+const PROTECTED_PATHS = [
+  '/passport',
+  '/scope-builder',
+  '/messages',
+  '/scopes',
+  '/settings',
+  '/post-a-job',
+  '/dashboard',
+]
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
@@ -35,5 +43,12 @@ export const config = {
     '/passport/:path*',
     '/scope-builder/:path*',
     '/messages/:path*',
+    '/scopes/:path*',
+    '/scopes',
+    '/settings/:path*',
+    '/settings',
+    '/post-a-job/:path*',
+    '/post-a-job',
+    '/dashboard',
   ],
 }

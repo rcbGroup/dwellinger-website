@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase/client'
 import { User, Save, CheckCircle } from 'lucide-react'
@@ -36,7 +36,7 @@ export default function SettingsPage() {
     load()
   }, [router])
 
-  async function handleSave(e: React.FormEvent) {
+  async function handleSave(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setSaving(true)
     setError('')
@@ -95,7 +95,7 @@ export default function SettingsPage() {
                 id="lastName"
                 type="text"
                 value={lastName}
-                onChange={(e) => setLastName(e.target.value)}  
+                onChange={(e) => setLastName(e.target.value)}
                 className="w-full rounded-lg px-3 py-2.5 text-white text-sm outline-none"
                 style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
               />
