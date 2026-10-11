@@ -9,7 +9,7 @@ import { AskDwellinger } from '@/components/ui/AskDwellinger'
 export const metadata: Metadata = {
   title: {
     default: "Dwellinger — UK's Property & Construction Intelligence Platform",
-    template: '%s | Dwellinger',
+    template: '%s',
   },
   description:
     "The UK's national property and construction intelligence platform. Find verified contractors with Builder Score™, get AI-powered estimates, analyse planning data, and manage your project from first idea to completion.",
@@ -156,11 +156,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-GB">
       <head>
-        {/* Google Analytics GA4 — TODO: replace GA_MEASUREMENT_ID once property created */}
-        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" /> */}
-        {/* <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');` }} /> */}
-        {/* Google Search Console verification — TODO: add meta tag once property verified */}
-        {/* <meta name="google-site-verification" content="VERIFICATION_CODE" /> */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
