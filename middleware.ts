@@ -1,38 +1,38 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-// Routes that require authentication
+// Only these routes require authentication
 const PROTECTED_PATHS = [
+  '/dashboard',
   '/passport',
   '/scope-builder',
   '/messages',
   '/scopes',
   '/settings',
-  '/post-a-job',
-  '/dashboard',
 ]
 
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl
+export async function middleware(req: NextRequest) {
+  const { pathname } = req.nextUrl
 
-  const isProtected = PROTECTED_PATHS.some(
+  // Check if this path requires auth
+  const needsAuth = PROTECTED_PATHS.some(
     (p) => pathname === p || pathname.startsWith(p + '/')
   )
 
-  if (!isProtected) return NextResponse.next()
+  if (!needsAuth) {
+    return NextResponse.next()
+  }
 
-  // Supabase v2 stores the JWT session in a cookie named sb-<project-ref>-auth-token
-  // It may be chunked into .0, .1 etc for large tokens
-  const cookies = request.cookies.getAll()
-  const hasAuthSession = cookies.some(
-    (c) => c.name.includes('-auth-token') && c.value.length > 10
+  // Check for Supabase session cookie (any sb-*-auth-token cookie)
+  const cookies = req.cookies
+  const hasSession = [...cookies.getAll()].some(
+    (c) => c.name.startsWith('sb-') && c.name.endsWith('-auth-token')
   )
 
-  if (!hasAuthSession) {
-    const loginUrl = request.nextUrl.clone()
-    loginUrl.pathname = '/login'
-    loginUrl.searchParams.set('redirect', pathname)
-    return NextResponse.redirect(loginUrl)
+  if (!hasSession) {
+    const url = new URL('/login', req.url)
+    url.searchParams.set('redirect', pathname)
+    return NextResponse.redirect(url)
   }
 
   return NextResponse.next()
@@ -40,15 +40,14 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/passport/:path*',
-    '/scope-builder/:path*',
-    '/messages/:path*',
-    '/scopes/:path*',
-    '/scopes',
-    '/settings/:path*',
-    '/settings',
-    '/post-a-job/:path*',
-    '/post-a-job',
-    '/dashboard',
+    /*
+     * Match all request paths except:
+     * - _next/static (static files)
+     * - _next/image (image optimization)
+     * - favicon.ico
+     * - public files (with extensions)
+     * - api routes (handled separately)
+     */
+    '/((?!_next/static|_next/image|favicon\.ico|.*\..*|api/).*)'
   ],
 }
