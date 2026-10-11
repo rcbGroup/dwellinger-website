@@ -6,22 +6,26 @@ import Link from 'next/link'
 import { supabase } from '@/lib/supabase/client'
 import {
   LogOut, User, Settings, ChevronRight, TrendingUp, FileText, Search,
-  BarChart3, Home, Star, Calculator, Clipboard, Map, Building2,
+  BarChart3, Home, Star, Calculator, Clipboard, Map, Building2, Wrench,
   HardHat, DollarSign, PieChart,
 } from 'lucide-react'
 import type { User as SupabaseUser } from '@supabase/supabase-js'
 
 const ROLE_LINKS: Record<string, Array<{ icon: React.ElementType; label: string; href: string; desc: string }>> = {
   homeowner: [
-    { icon: Search, label: 'Find Contractors', href: '/search', desc: 'Browse verified builders' },
+    { icon: Home, label: 'My Project', href: '/passport', desc: 'Project Passport' },
+    { icon: FileText, label: 'Scope Builder', href: '/scope-builder', desc: 'Build scope of works' },
+    { icon: Search, label: 'Find Contractors', href: '/contractors', desc: 'Browse verified builders' },
+    { icon: Clipboard, label: 'Messages', href: '/messages', desc: 'Contractor conversations' },
     { icon: TrendingUp, label: 'Project Readiness', href: '/tools/project-readiness', desc: 'See what\'s ready to go' },
     { icon: Calculator, label: 'Cost Calculator', href: '/tools/extension-cost-calculator', desc: 'Estimate your build' },
     { icon: Map, label: 'Planning Data', href: '/tools/planning', desc: 'What gets approved nearby' },
   ],
   contractor: [
     { icon: Star, label: 'Builder Score™', href: '/builder-score', desc: 'Your trust rating' },
+    { icon: Clipboard, label: 'Messages', href: '/messages', desc: 'Client conversations' },
+    { icon: FileText, label: 'Scope Builder', href: '/scope-builder', desc: 'Structured project scope' },
     { icon: Clipboard, label: 'Post a Job', href: '/post-a-job', desc: 'Share an opportunity' },
-    { icon: FileText, label: 'Scope Builder', href: '/tools/scope-builder', desc: 'Structured project scope' },
     { icon: BarChart3, label: 'Quote Comparison', href: '/tools/quote-comparison', desc: 'Compare bids' },
   ],
   investor: [
@@ -31,9 +35,11 @@ const ROLE_LINKS: Record<string, Array<{ icon: React.ElementType; label: string;
     { icon: Map, label: 'Planning Intel', href: '/tools/planning', desc: 'Approval rate data' },
   ],
   professional: [
-    { icon: Clipboard, label: 'Scope Builder', href: '/tools/scope-builder', desc: 'Define project scope' },
+    { icon: Home, label: 'My Project', href: '/passport', desc: 'Project Passport' },
+    { icon: FileText, label: 'Scope Builder', href: '/scope-builder', desc: 'Define project scope' },
+    { icon: Clipboard, label: 'Messages', href: '/messages', desc: 'Client conversations' },
+    { icon: Search, label: 'Find Contractors', href: '/contractors', desc: 'Vetted procurement' },
     { icon: PieChart, label: 'Quote Comparison', href: '/tools/quote-comparison', desc: 'Tender analysis' },
-    { icon: Search, label: 'Find Contractors', href: '/search', desc: 'Vetted procurement' },
     { icon: Map, label: 'Planning Data', href: '/tools/planning', desc: 'Application intelligence' },
   ],
 }
@@ -79,7 +85,7 @@ function RolePanel({ role }: { role: string }) {
           <Link href="/tools/development-appraisal" className="text-amber text-xs hover:underline">Open appraisal</Link>
         </div>
         <div className="grid grid-cols-3 gap-3 text-center">
-          {[{label:'Appraisals run',value:'0'},{label:'Saved deals',value:'0'},{label:'Planning searches',value:'0'}].map((s) => (
+          {[{ label: 'Appraisals run', value: '0' }, { label: 'Saved deals', value: '0' }, { label: 'Planning searches', value: '0' }].map((s) => (
             <div key={s.label} className="bg-white/5 rounded-lg p-3">
               <p className="text-white font-semibold">{s.value}</p>
               <p className="text-text-muted text-xs mt-0.5">{s.label}</p>
@@ -108,11 +114,11 @@ function RolePanel({ role }: { role: string }) {
           </div>
           <div>
             <p className="text-white font-semibold mb-0.5">Getting started</p>
-            <p className="text-text-muted text-xs leading-relaxed">Complete your project checklist to get matched with the right contractors.</p>
+            <p className="text-text-muted text-xs leading-relaxed">Complete your project checklist to see your readiness score improve and get matched with the right contractors.</p>
           </div>
         </div>
         <div className="space-y-2">
-          {[{label:'Project type defined',done:false},{label:'Budget range set',done:false},{label:'Location confirmed',done:true}].map((item) => (
+          {[{ label: 'Project type defined', done: false }, { label: 'Budget range set', done: false }, { label: 'Location confirmed', done: true }].map((item) => (
             <div key={item.label} className="flex items-center gap-2 text-xs">
               <div className={`w-3.5 h-3.5 rounded-full flex-shrink-0 ${item.done ? 'bg-green-500' : 'bg-white/10 border border-white/20'}`} />
               <span className={item.done ? 'text-text-secondary' : 'text-text-muted'}>{item.label}</span>
@@ -128,7 +134,7 @@ function RolePanel({ role }: { role: string }) {
         <h2 className="font-display text-base text-white">Professional toolkit</h2>
         <Link href="/tools/scope-builder" className="text-amber text-xs hover:underline">Open scope builder</Link>
       </div>
-      <p className="text-text-muted text-sm leading-relaxed">Access contractor procurement, scope building, quote comparison, and planning intelligence. Your profile is visible to homeowners seeking professional oversight.</p>
+      <p className="text-text-muted text-sm leading-relaxed">Access contractor procurement, scope building, quote comparison, and planning intelligence — all in one platform.</p>
     </div>
   )
 }
@@ -148,7 +154,8 @@ export default function DashboardPage() {
     }
     checkAuth()
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (!session) { router.replace('/login') } else { setUser(session.user); setLoading(false) }
+      if (!session) router.replace('/login')
+      else { setUser(session.user); setLoading(false) }
     })
     return () => subscription.unsubscribe()
   }, [router])
@@ -165,7 +172,7 @@ export default function DashboardPage() {
       <div className="min-h-screen bg-bg flex items-center justify-center">
         <div className="text-center">
           <div className="w-10 h-10 border-2 border-amber border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-text-muted text-sm">Loading your dashboard&hellip;</p>
+          <p className="text-text-muted text-sm">Loading your dashboard…</p>
         </div>
       </div>
     )
@@ -200,9 +207,7 @@ export default function DashboardPage() {
           <h1 className="font-display text-3xl text-white mb-1">Welcome back, <span style={{ color: '#C4773B' }}>{displayName}</span></h1>
           <div className="flex items-center gap-2">
             <p className="text-text-muted text-sm">Here&apos;s your Dwellinger overview.</p>
-            {user?.user_metadata?.role && (
-              <span className="text-xs text-amber bg-amber-subtle border border-amber-border rounded-full px-2.5 py-0.5 capitalize">{roleLabel}</span>
-            )}
+            {user?.user_metadata?.role && <span className="text-xs text-amber bg-amber-subtle border border-amber-border rounded-full px-2.5 py-0.5 capitalize">{roleLabel}</span>}
           </div>
         </div>
         <RolePanel role={role} />
@@ -226,11 +231,7 @@ export default function DashboardPage() {
             </div>
           </div>
           <div className="grid grid-cols-3 gap-3 text-center">
-            {[
-              {label:'Account status',value:'Active'},
-              {label:'Plan',value:'14-day trial'},
-              {label:'Member since',value:new Date(user?.created_at ?? '').toLocaleDateString('en-GB',{month:'short',year:'numeric'})},
-            ].map((stat) => (
+            {[{ label: 'Account status', value: 'Active' }, { label: 'Plan', value: '14-day trial' }, { label: 'Member since', value: new Date(user?.created_at ?? '').toLocaleDateString('en-GB', { month: 'short', year: 'numeric' }) }].map((stat) => (
               <div key={stat.label} className="bg-white/5 rounded-lg p-3">
                 <p className="text-white font-semibold text-sm">{stat.value}</p>
                 <p className="text-text-muted text-xs mt-0.5">{stat.label}</p>
@@ -239,10 +240,7 @@ export default function DashboardPage() {
           </div>
         </div>
         <div className="card divide-y divide-border mb-6">
-          {[
-            {icon:User,label:'Profile settings',desc:'Update your name, company and contact details',href:'#'},
-            {icon:Settings,label:'Notifications',desc:'Manage email and alert preferences',href:'#'},
-          ].map((item) => (
+          {[{ icon: User, label: 'Profile settings', desc: 'Update your name, company and contact details', href: '#' }, { icon: Settings, label: 'Notifications', desc: 'Manage email and alert preferences', href: '#' }].map((item) => (
             <Link key={item.label} href={item.href} className="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors group">
               <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
                 <item.icon className="w-4 h-4 text-text-secondary group-hover:text-amber transition-colors" />

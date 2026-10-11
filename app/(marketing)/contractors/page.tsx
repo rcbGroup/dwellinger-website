@@ -1,110 +1,148 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Zap, FileEdit, BarChart3, Shield } from 'lucide-react'
+import { Search, MapPin, Star, CheckCircle, ChevronRight, Filter } from 'lucide-react'
 import { pageMetadata } from '@/lib/seo'
 
 export const metadata = pageMetadata({
   path: '/contractors',
-  title: 'For Contractors — Win More Work, Less Admin | Dwellinger',
-  description: 'Builder Score™ badge, Dwell AI agents, Quote Studio and CDM documents. Run your entire contracting business from Dwellinger.',
+  title: 'Find Verified Contractors — Contractor Directory',
+  description: 'Browse verified contractors with Builder Score™ ratings. Filter by project type, location, and verification tier to find the right builder for your project.',
 })
 
-const agents = [
-  { name: 'Dwell Coord', role: 'Coordination Agent', icon: '📡', desc: 'Monitors your lead channels, classifies every enquiry, drafts responses in your voice, schedules site visits, and follows up when leads go cold — all automatically.' },
-  { name: 'Dwell Create', role: 'Document Agent', icon: '✍️', desc: 'Voice note from the van → full Scope of Works in 2 minutes. Site photos + description → professional PDF quote with cover letter, itemised breakdown, exclusions, and terms.' },
-  { name: 'Dwell Clarity', role: 'Research Agent', icon: '🔍', desc: 'Upload a planning decision, structural report, or contract — Dwell Clarity extracts the key facts, flags issues, and tells you exactly what you need to action.' },
-  { name: 'Dwell Coach', role: 'Sales Coach', icon: '🎯', desc: 'Roleplay a client who thinks your quote is too high. Practice objection handling, price presentation, and closing. Get scored and coached after every session.' },
+const SAMPLE_CONTRACTORS = [
+  { id: 'demo-contractor', name: 'Meridian Build & Renovate', tagline: 'Extensions, lofts & full refurbishments across South London', location: 'Brixton, South London', score: 82, tier: 'BUSINESS VERIFIED', services: ['Extensions', 'Loft Conversions', 'Refurbishments'], available: true },
+  { id: 'highfield-construction', name: 'Highfield Construction Ltd', tagline: 'New builds and structural alterations, Surrey & SW London', location: 'Croydon, Surrey', score: 74, tier: 'IDENTITY VERIFIED', services: ['New Build', 'Structural Work', 'Extensions'], available: false },
+  { id: 'parkside-interiors', name: 'Parkside Interiors', tagline: 'Kitchen, bathroom & full interior transformations', location: 'Hammersmith, West London', score: 68, tier: 'IDENTITY VERIFIED', services: ['Kitchen', 'Bathroom', 'Refurbishments'], available: true },
+  { id: 'greenfield-build', name: 'Greenfield Build Group', tagline: 'Developer-grade residential construction, North London', location: 'Finchley, North London', score: 91, tier: 'PROJECT VERIFIED', services: ['New Build', 'HMO Conversion', 'Extensions'], available: true },
+  { id: 'apex-developments', name: 'Apex Developments Ltd', tagline: 'Loft conversions and rear extensions, East London specialists', location: 'Stratford, East London', score: 59, tier: 'IDENTITY VERIFIED', services: ['Loft Conversions', 'Extensions', 'Planning'], available: false },
+  { id: 'blueprint-build', name: 'Blueprint Build Ltd', tagline: 'Full project management from planning to handover', location: 'Islington, North London', score: 77, tier: 'BUSINESS VERIFIED', services: ['Project Management', 'Extensions', 'Refurbishments'], available: true },
 ]
 
-export default function ContractorsPage() {
+const TIERS = ['All tiers', 'PROJECT VERIFIED', 'BUSINESS VERIFIED', 'IDENTITY VERIFIED']
+const PROJECT_TYPES = ['All types', 'Extensions', 'Loft Conversions', 'Refurbishments', 'New Build', 'Kitchen', 'Bathroom', 'HMO Conversion']
+
+function ScoreRing({ score }: { score: number }) {
+  const radius = 20
+  const circumference = 2 * Math.PI * radius
+  const offset = circumference - (score / 100) * circumference
+  const colour = score >= 80 ? '#10B981' : score >= 60 ? '#C4773B' : '#71717A'
   return (
-    <div>
-      <section className="pt-16 pb-20 bg-bg relative overflow-hidden">
-        <div className="absolute inset-0 bg-hero-gradient pointer-events-none" />
+    <div className="relative flex-shrink-0" style={{ width: 52, height: 52 }}>
+      <svg viewBox="0 0 52 52" className="-rotate-90" style={{ width: 52, height: 52 }}>
+        <circle cx="26" cy="26" r={radius} fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="7" />
+        <circle cx="26" cy="26" r={radius} fill="none" stroke={colour} strokeWidth="7"
+          strokeDasharray={circumference} strokeDashoffset={offset} strokeLinecap="round" />
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="font-bold text-xs" style={{ color: colour }}>{score}</span>
+      </div>
+    </div>
+  )
+}
+
+export default function ContractorDirectoryPage() {
+  return (
+    <div style={{ backgroundColor: 'var(--color-bg)', minHeight: '100vh' }}>
+      <section style={{ paddingTop: '4rem', paddingBottom: '3rem', background: 'var(--color-bg)', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'var(--hero-gradient)', pointerEvents: 'none' }} />
         <div className="container mx-auto relative z-10">
-          <p className="section-tag mb-3">For Contractors</p>
-          <h1 className="font-display text-h1 text-white max-w-3xl mb-6">Win more work. Spend less time <span className="text-amber">on admin.</span></h1>
-          <p className="text-text-secondary text-lg max-w-2xl mb-8 leading-relaxed">Builder Score™ builds your reputation automatically. Four Dwell AI agents handle your admin, documents, research, and sales coaching. Quote Studio produces professional PDFs in minutes, not hours.</p>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/register?type=contractor" className="btn-primary-lg">Start free trial <ArrowRight className="w-4 h-4" /></Link>
-            <Link href="/pricing" className="btn-secondary text-base px-8 py-4">See pricing</Link>
+          <p className="section-tag mb-3">Contractor Directory</p>
+          <h1 className="font-display text-h1 text-white max-w-2xl mb-4">
+            Find verified contractors with <span style={{ color: 'var(--amber)' }}>Builder Score™</span>
+          </h1>
+          <p style={{ color: 'var(--color-text-secondary)' }} className="text-lg max-w-xl mb-8 leading-relaxed">
+            Every contractor on Dwellinger has a verified Builder Score™ — a composite rating from identity checks, insurance verification, past projects, and client reviews.
+          </p>
+          <div style={{ display: 'flex', gap: 8, maxWidth: 560, flexWrap: 'wrap' }}>
+            <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 8, background: 'var(--color-bg-surface)', border: '1px solid var(--color-border)', borderRadius: 8, padding: '10px 14px', minWidth: 200 }}>
+              <MapPin style={{ color: 'var(--color-text-muted)', flexShrink: 0 }} className="w-4 h-4" />
+              <input type="text" placeholder="Enter a postcode or borough..." style={{ background: 'transparent', border: 'none', outline: 'none', color: 'var(--color-text)', fontSize: '0.875rem', width: '100%' }} />
+            </div>
+            <button style={{ background: 'var(--amber)', color: '#fff', fontWeight: 700, padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.875rem' }}>
+              <Search className="w-4 h-4" /> Search
+            </button>
           </div>
-          <p className="text-text-muted text-xs mt-4">From £49/month · No contract · Cancel anytime</p>
         </div>
       </section>
 
-      <section className="bg-bg-surface border-y border-border py-8">
-        <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {[
-            { icon: <Shield className="w-5 h-5 text-amber mx-auto mb-1.5" />, v: 'Builder Score™', l: 'Trust badge on your profile' },
-            { icon: <Zap className="w-5 h-5 text-amber mx-auto mb-1.5" />, v: '4 AI Agents', l: 'Handling your admin 24/7' },
-            { icon: <FileEdit className="w-5 h-5 text-amber mx-auto mb-1.5" />, v: 'Quote Studio', l: 'Professional quotes in minutes' },
-            { icon: <BarChart3 className="w-5 h-5 text-amber mx-auto mb-1.5" />, v: 'CRM + Pipeline', l: 'Full lead management' },
-          ].map((item) => (
-            <div key={item.v}>{item.icon}<div className="text-white font-bold text-sm">{item.v}</div><div className="text-text-muted text-xs mt-0.5">{item.l}</div></div>
+      <div style={{ borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)', background: 'var(--color-bg-surface)', padding: '12px 0' }}>
+        <div className="container mx-auto" style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
+          <Filter style={{ color: 'var(--color-text-muted)' }} className="w-4 h-4 flex-shrink-0" />
+          <span style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem', fontWeight: 600 }}>Filter:</span>
+          {PROJECT_TYPES.slice(0, 5).map((t) => (
+            <button key={t} style={{ padding: '4px 12px', border: '1px solid var(--color-border)', borderRadius: 20, background: 'transparent', color: 'var(--color-text-secondary)', fontSize: '0.8rem', cursor: 'pointer' }}>{t}</button>
+          ))}
+          {TIERS.slice(1).map((t) => (
+            <button key={t} style={{ padding: '4px 12px', border: '1px solid var(--amber-border)', borderRadius: 20, background: 'var(--amber-subtle)', color: 'var(--amber)', fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer' }}>{t.replace(' VERIFIED', '')}</button>
           ))}
         </div>
-      </section>
+      </div>
 
-      <section className="py-20 bg-bg">
+      <div style={{ background: 'var(--amber-subtle)', borderBottom: '1px solid var(--amber-border)', padding: '10px 0' }}>
+        <div className="container mx-auto" style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+          <Star style={{ color: 'var(--amber)' }} className="w-4 h-4 flex-shrink-0" />
+          <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.85rem', margin: 0 }}>
+            <strong style={{ color: 'var(--color-text)' }}>Register for free</strong> to see Project Match scores — showing how well each contractor fits your specific project.{' '}
+            <Link href="/register" style={{ color: 'var(--amber)', fontWeight: 600 }}>Create account →</Link>
+          </p>
+        </div>
+      </div>
+
+      <section style={{ padding: '2.5rem 0' }}>
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <p className="section-tag mb-3">AI workforce</p>
-            <h2 className="section-title">4 Dwell Agents — trained on UK construction</h2>
-            <p className="text-text-secondary mt-4 max-w-xl mx-auto">Not generic ChatGPT for builders. AI trained on 1,972 expert articles, real UK project data, planning intelligence, regulatory knowledge, and years of estimating experience.</p>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: 8 }}>
+            <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
+              Showing <strong style={{ color: 'var(--color-text)' }}>6 contractors</strong> — illustrative profiles, live data coming soon
+            </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-5">
-            {agents.map((a) => (
-              <div key={a.name} className="card p-6">
-                <div className="flex items-center gap-3 mb-4"><div className="text-3xl">{a.icon}</div><div><div className="text-white font-bold text-base">{a.name}</div><div className="text-amber text-xs font-semibold">{a.role}</div></div></div>
-                <p className="text-text-secondary text-sm leading-relaxed">{a.desc}</p>
-              </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1rem' }}>
+            {SAMPLE_CONTRACTORS.map((c) => (
+              <Link key={c.id} href={`/contractors/${c.id}`} style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="card" style={{ padding: '1.25rem', cursor: 'pointer' }}>
+                  <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 12 }}>
+                    <ScoreRing score={c.score} />
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <h3 style={{ color: 'var(--color-text)', fontWeight: 700, fontSize: '0.95rem', marginBottom: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.name}</h3>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                        <MapPin style={{ color: 'var(--color-text-muted)' }} className="w-3 h-3 flex-shrink-0" />
+                        <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem' }}>{c.location}</span>
+                      </div>
+                    </div>
+                    {c.available && (
+                      <span style={{ background: 'rgba(16,185,129,0.1)', color: '#10B981', fontSize: '0.7rem', fontWeight: 700, padding: '2px 8px', borderRadius: 20, flexShrink: 0, border: '1px solid rgba(16,185,129,0.2)' }}>AVAILABLE</span>
+                    )}
+                  </div>
+                  <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.8rem', lineHeight: '1.4', marginBottom: 10 }}>{c.tagline}</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginBottom: 10 }}>
+                    <CheckCircle style={{ color: 'var(--amber)' }} className="w-3.5 h-3.5" />
+                    <span style={{ color: 'var(--amber)', fontSize: '0.7rem', fontWeight: 700 }}>{c.tier}</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
+                    {c.services.map((s) => (
+                      <span key={s} style={{ background: 'var(--color-bg-raised)', color: 'var(--color-text-secondary)', fontSize: '0.7rem', padding: '2px 8px', borderRadius: 4 }}>{s}</span>
+                    ))}
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', marginTop: 12 }}>
+                    <span style={{ color: 'var(--amber)', fontSize: '0.8rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}>View profile <ChevronRight className="w-3.5 h-3.5" /></span>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-bg-surface border-y border-border">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="section-tag mb-3">Dwell Create in action</p>
-              <h2 className="section-title mb-4">Voice note to Scope of Works in 2 minutes</h2>
-              <p className="text-text-secondary mb-6 leading-relaxed">Record a voice note walking around the site after your survey. Dwell Create transcribes it, structures it into a sequenced Scope of Works, adds quantities, compliance notes, and exclusions — ready for pricing.</p>
-              <ul className="space-y-3">
-                {['Voice note → Full Scope of Works','Photos + description → PDF quote with cover letter','Job description → RAMS document','Project brief → CDM Pre-Construction Pack','Completed job → Project Handover Pack'].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-text-secondary text-sm"><CheckCircle className="w-4 h-4 text-amber flex-shrink-0" />{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="card-raised p-6 space-y-3">
-              <div className="flex items-center gap-3 pb-3 border-b border-border"><div className="w-8 h-8 rounded-full bg-amber flex items-center justify-center text-text-inverse text-sm">✍️</div><div><div className="text-white text-sm font-bold">Dwell Create</div><div className="text-text-muted text-xs">Processing voice note — 2m 14s</div></div></div>
-              <div className="text-xs text-text-muted font-mono bg-bg p-3 rounded text-left"><p className="text-amber mb-1">// Input: Voice note (2 min 14 sec)</p><p className="text-text-secondary">"OK so we&apos;ve got the rear extension, single storey, about 5 metres by 4, bifold doors to the garden..."</p></div>
-              <div className="text-xs text-text-secondary">↓ Generating Scope of Works...</div>
-              <div className="bg-bg p-3 rounded space-y-1.5"><div className="text-amber text-xs font-bold">Scope of Works — Rear Extension, [Address]</div>{['1. Enabling & demolition works','2. Foundation & substructure (1.8m depth, 450mm wide)','3. Masonry superstructure (6m × 4.5m × 2.7m height)','4. Flat roof with warm roof build-up','5. Bifold door opening (3.6m aperture + structural lintel)','6. Internal remodelling — kitchen zone','7. New WC under staircase','...'].map((line) => (<div key={line} className="text-text-muted text-xs">{line}</div>))}</div>
-            </div>
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginBottom: 12 }}>More contractors will appear here as the platform launches.</p>
+            <Link href="/register" className="btn-primary">Register to get early access</Link>
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-3xl mx-auto text-center px-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Contractor Plans</h2>
-          <p className="text-lg text-gray-600 mb-6">Plans from <strong>£49/month</strong> — 14-day free trial, no card required.</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            {[{name:'Member',price:49},{name:'Professional',price:99},{name:'Premium',price:199},{name:'Franchise',price:499}].map(plan => (
-              <div key={plan.name} className="bg-white rounded-lg p-4 border border-gray-200 text-center"><div className="font-semibold text-gray-900">{plan.name}</div><div className="text-2xl font-bold text-gray-900 mt-1">£{plan.price}</div><div className="text-sm text-gray-500">/month</div></div>
-            ))}
+      <section style={{ background: 'var(--color-bg-surface)', borderTop: '1px solid var(--color-border)', padding: '3rem 0' }}>
+        <div className="container mx-auto" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: 16 }}>
+          <h2 className="font-display text-h3 text-white">Are you a contractor?</h2>
+          <p style={{ color: 'var(--color-text-secondary)', maxWidth: 480, lineHeight: 1.6 }}>List your business, earn a Builder Score™ badge, and get matched with homeowners, investors, and professionals looking for your services.</p>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+            <Link href="/register?type=contractor" className="btn-primary">Get your Builder Score™</Link>
+            <Link href="/builder-score" className="btn-secondary" style={{ padding: '10px 20px' }}>Learn about Builder Score</Link>
           </div>
-          <a href="/platform/pricing" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">See all plans and features →</a>
-          <p className="text-sm text-gray-500 mt-3">20% discount on annual plans</p>
-        </div>
-      </section>
-
-      <section className="py-16 bg-amber-subtle border-t border-amber-border">
-        <div className="container mx-auto text-center">
-          <h2 className="section-title mb-4">Ready to run a smarter contracting business?</h2>
-          <p className="text-text-secondary mb-8 max-w-lg mx-auto">Join Dwellinger today. Set up your Builder Score™ profile, connect your lead channels, and let the Dwell agents start handling your admin.</p>
-          <Link href="/register?type=contractor" className="btn-primary-lg">Start 14-day free trial <ArrowRight className="w-4 h-4" /></Link>
         </div>
       </section>
     </div>
