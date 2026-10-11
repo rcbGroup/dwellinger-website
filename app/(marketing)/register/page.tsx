@@ -5,13 +5,57 @@ import Link from 'next/link'
 import { Shield, CheckCircle, Loader2 } from 'lucide-react'
 
 const ROLES = [
-  { id: 'homeowner', label: 'Homeowner', icon: '🏠' },
-  { id: 'contractor', label: 'Contractor', icon: '🔨' },
-  { id: 'investor', label: 'Investor', icon: '📊' },
+  {
+    id: 'homeowner',
+    label: 'Homeowner',
+    icon: '🏠',
+    hint: 'Find verified builders, track your project, get AI-powered cost estimates.',
+  },
+  {
+    id: 'contractor',
+    label: 'Contractor',
+    icon: '🔨',
+    hint: 'Build your Builder Score™, win more work, and manage projects on-platform.',
+  },
+  {
+    id: 'investor',
+    label: 'Investor',
+    icon: '📊',
+    hint: 'Pre-purchase build costs, GDV analysis, residual land value, planning data.',
+  },
+  {
+    id: 'professional',
+    label: 'Professional',
+    icon: '📐',
+    hint: 'Tools for architects, QS, PMs and consultants — procurement to handover.',
+  },
 ]
 
+const ROLE_BENEFITS: Record<string, string[]> = {
+  homeowner: [
+    'Project readiness score and guided next steps',
+    'Verified contractor search with Builder Score™',
+    'AI-powered cost estimates from day one',
+  ],
+  contractor: [
+    'Builder Score™ profile created automatically',
+    'Dwell Agents handle your admin and quotes',
+    'Access to homeowner enquiries in your area',
+  ],
+  investor: [
+    'Development appraisal tools from day one',
+    'Live planning approval data across the UK',
+    'Residual land value and ROI calculators',
+  ],
+  professional: [
+    'Contractor procurement and vetting tools',
+    'Quote comparison and scope builder',
+    'Client-ready project dashboards',
+  ],
+}
+
 export default function RegisterPage() {
-  const [role, setRole] = useState('contractor')
+  const [role, setRole] = useState('homeowner')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
@@ -96,10 +140,15 @@ export default function RegisterPage() {
     )
   }
 
+  const selectedRole = ROLES.find(r => r.id === role)!
+  const benefits = ROLE_BENEFITS[role] ?? []
+  const emailLabel = role === 'homeowner' ? 'Email address' : 'Work email'
+  const companyLabel = role === 'homeowner' ? 'Company (optional)' : role === 'contractor' ? 'Business name' : 'Organisation (optional)'
+  const companyRequired = role === 'contractor'
+
   return (
     <div className="min-h-screen bg-bg flex flex-col items-center justify-center py-16">
       <div className="w-full max-w-md px-4">
-        {/* Logo */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2">
             <span className="font-display font-bold text-white text-xl tracking-tight">Dwellinger</span>
@@ -112,37 +161,37 @@ export default function RegisterPage() {
           <h1 className="font-display text-h3 text-white mb-1">Create your account</h1>
           <p className="text-text-muted text-sm mb-6">Free for 14 days. No credit card required.</p>
 
-          {/* Role selector */}
-          <div className="mb-6">
-            <label className="text-xs font-semibold text-text-secondary block mb-2">I am a…</label>
-            <div className="grid grid-cols-3 gap-2">
+          <div className="mb-4">
+            <label className="text-xs font-semibold text-text-secondary block mb-2">I am a&hellip;</label>
+            <div className="grid grid-cols-2 gap-2">
               {ROLES.map((r) => (
                 <button
                   key={r.id}
                   type="button"
                   onClick={() => setRole(r.id)}
-                  className="flex flex-col items-center gap-1.5 p-3 rounded-lg border transition-colors"
+                  className="flex items-center gap-2.5 p-3 rounded-lg border transition-colors text-left"
                   style={{
                     backgroundColor: role === r.id ? 'rgba(196,119,59,0.1)' : 'rgba(255,255,255,0.03)',
                     borderColor: role === r.id ? '#C4773B' : 'rgba(255,255,255,0.1)',
                   }}
                 >
-                  <span className="text-lg">{r.icon}</span>
-                  <span className="text-xs font-semibold text-text-secondary">{r.label}</span>
+                  <span className="text-base flex-shrink-0">{r.icon}</span>
+                  <span className="text-xs font-semibold text-text-secondary leading-tight">{r.label}</span>
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Magic link notice */}
+          <div className="mb-6 rounded-lg px-3.5 py-3 text-xs text-text-muted leading-relaxed" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            {selectedRole.hint}
+          </div>
+
           <div className="bg-amber-subtle border border-amber-border rounded-lg p-4 mb-6">
             <div className="flex items-start gap-2.5">
               <Shield className="w-4 h-4 text-amber flex-shrink-0 mt-0.5" />
               <div>
                 <p className="text-amber text-xs font-bold mb-0.5">Passwordless sign in</p>
-                <p className="text-text-muted text-xs leading-relaxed">
-                  We use magic links — no password to remember or lose.
-                </p>
+                <p className="text-text-muted text-xs leading-relaxed">We use magic links — no password to remember or lose.</p>
               </div>
             </div>
           </div>
@@ -157,115 +206,46 @@ export default function RegisterPage() {
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="text-xs font-semibold text-text-secondary block mb-1.5">First name</label>
-                <input
-                  type="text"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  placeholder="Sarah"
-                  className="input"
-                  required
-                  disabled={status === 'loading'}
-                />
+                <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="Sarah" className="input" required disabled={status === 'loading'} />
               </div>
               <div>
                 <label className="text-xs font-semibold text-text-secondary block mb-1.5">Last name</label>
-                <input
-                  type="text"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  placeholder="Johnson"
-                  className="input"
-                  required
-                  disabled={status === 'loading'}
-                />
+                <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder="Johnson" className="input" required disabled={status === 'loading'} />
               </div>
             </div>
             <div>
-              <label className="text-xs font-semibold text-text-secondary block mb-1.5">Work email</label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="sarah@company.com"
-                className="input"
-                required
-                autoComplete="email"
-                disabled={status === 'loading'}
-              />
+              <label className="text-xs font-semibold text-text-secondary block mb-1.5">{emailLabel}</label>
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={role === 'homeowner' ? 'sarah@example.com' : 'sarah@company.com'} className="input" required autoComplete="email" disabled={status === 'loading'} />
             </div>
             <div>
               <label className="text-xs font-semibold text-text-secondary block mb-1.5">
-                Company name <span className="text-text-muted font-normal">(optional)</span>
+                {companyLabel}
+                {!companyRequired && <span className="text-text-muted font-normal"> (optional)</span>}
               </label>
-              <input
-                type="text"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
-                placeholder="Your company"
-                className="input"
-                disabled={status === 'loading'}
-              />
+              <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} placeholder={role === 'contractor' ? 'Johnson Builders Ltd' : 'Your company'} className="input" required={companyRequired} disabled={status === 'loading'} />
             </div>
             <div>
-              <label className="text-xs font-semibold text-text-secondary block mb-1.5">
-                Phone <span className="text-text-muted font-normal">(optional)</span>
-              </label>
-              <input
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                placeholder="+44 7..."
-                className="input"
-                disabled={status === 'loading'}
-              />
+              <label className="text-xs font-semibold text-text-secondary block mb-1.5">Phone <span className="text-text-muted font-normal">(optional)</span></label>
+              <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+44 7..." className="input" disabled={status === 'loading'} />
             </div>
-
             <div className="flex items-start gap-2.5 pt-1">
-              <input
-                type="checkbox"
-                id="terms"
-                checked={agreed}
-                onChange={(e) => setAgreed(e.target.checked)}
-                className="mt-0.5 flex-shrink-0 accent-amber"
-                disabled={status === 'loading'}
-              />
+              <input type="checkbox" id="terms" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} className="mt-0.5 flex-shrink-0 accent-amber" disabled={status === 'loading'} />
               <label htmlFor="terms" className="text-xs text-text-muted leading-relaxed cursor-pointer">
-                I agree to Dwellinger&apos;s{' '}
-                <Link href="/terms" className="text-amber hover:underline">Terms of Service</Link>
-                {' '}and{' '}
-                <Link href="/privacy" className="text-amber hover:underline">Privacy Policy</Link>.
+                I agree to Dwellinger&apos;s <Link href="/terms" className="text-amber hover:underline">Terms of Service</Link> and <Link href="/privacy" className="text-amber hover:underline">Privacy Policy</Link>.
               </label>
             </div>
-
-            <button
-              type="submit"
-              className="btn-primary w-full py-3.5 flex items-center justify-center gap-2"
-              disabled={status === 'loading' || !email.trim() || !firstName.trim()}
-            >
-              {status === 'loading' ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  Sending link…
-                </>
-              ) : (
-                'Send me a magic link'
-              )}
+            <button type="submit" className="btn-primary w-full py-3.5 flex items-center justify-center gap-2" disabled={status === 'loading' || !email.trim() || !firstName.trim() || (companyRequired && !company.trim())}>
+              {status === 'loading' ? (<><Loader2 className="w-4 h-4 animate-spin" />Sending link&hellip;</>) : ('Send me a magic link')}
             </button>
           </form>
 
           <p className="text-center text-text-muted text-xs mt-5">
-            Already have an account?{' '}
-            <Link href="/login" className="text-amber hover:underline">Sign in</Link>
+            Already have an account? <Link href="/login" className="text-amber hover:underline">Sign in</Link>
           </p>
         </div>
 
-        {/* Social proof mini */}
         <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-          {[
-            { v: '14 days', l: 'Free trial' },
-            { v: 'No card', l: 'Required' },
-            { v: 'Cancel', l: 'Anytime' },
-          ].map((s) => (
+          {[{v:'14 days',l:'Free trial'},{v:'No card',l:'Required'},{v:'Cancel',l:'Anytime'}].map((s) => (
             <div key={s.l} className="card-raised px-3 py-2">
               <div className="text-amber font-bold text-sm">{s.v}</div>
               <div className="text-text-muted text-xs">{s.l}</div>
@@ -274,11 +254,7 @@ export default function RegisterPage() {
         </div>
 
         <div className="mt-4 space-y-2">
-          {[
-            'Builder Score™ profile created automatically',
-            'Access to Estimating Studio from day one',
-            'All 4 Dwell Agents available on Professional trial',
-          ].map((item) => (
+          {benefits.map((item) => (
             <div key={item} className="flex items-center gap-2 text-text-muted text-xs">
               <CheckCircle className="w-3.5 h-3.5 text-amber flex-shrink-0" />
               {item}
