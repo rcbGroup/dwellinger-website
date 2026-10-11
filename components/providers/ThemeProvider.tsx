@@ -1,7 +1,6 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState, useCallback } from 'react'
-import type { ReactNode } from 'react'
 
 export type Theme = 'dark' | 'mid' | 'light'
 
@@ -15,16 +14,20 @@ const ThemeContext = createContext<ThemeContextValue>({
   setTheme: () => {},
 })
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>('dark')
   useEffect(() => {
     const saved = (typeof window !== 'undefined'
       ? localStorage.getItem('dwell-theme')
       : null) as Theme | null
-    if (saved && ['dark', 'mid', 'light'].includes(saved)) {
+    // 'light' is no longer a valid theme — treat it as dark (fallback)
+    const validThemes: Theme[] = ['dark', 'mid']
+    if (saved && validThemes.includes(saved as Theme)) {
       setThemeState(saved)
       document.documentElement.setAttribute('data-theme', saved)
     } else {
+      // Reset invalid/old 'light' value to dark
+      if (typeof window !== 'undefined') localStorage.setItem('dwell-theme', 'dark')
       document.documentElement.setAttribute('data-theme', 'dark')
     }
   }, [])
