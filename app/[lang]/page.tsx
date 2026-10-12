@@ -1,14 +1,10 @@
 import Link from 'next/link'
-import { getDictionary, LOCALES, LOCALE_NAMES, LOCALE_FLAGS, type Locale } from '@/lib/i18n/dictionaries'
+import { getDictionary, SUPPORTED_LANGS, type Locale } from '@/lib/i18n/dictionaries'
 import { pageMetadata } from '@/lib/seo'
 import { notFound } from 'next/navigation'
-import { ArrowRight, Shield, Zap, Users, TrendingUp, CheckCircle, Star } from 'lucide-react'
+import { ArrowRight, Shield, Zap, Users, TrendingUp } from 'lucide-react'
 
-const SUPPORTED_LANGS: Locale[] = ['ro', 'pl', 'es', 'fr', 'de', 'it', 'pt', 'uk', 'ru']
-
-interface Props {
-  params: { lang: string }
-}
+type Props = { params: { lang: string } }
 
 export async function generateStaticParams() {
   return SUPPORTED_LANGS.map(lang => ({ lang }))
@@ -38,27 +34,6 @@ export default function LocalisedHomePage({ params }: Props) {
 
   return (
     <div className="flex flex-col min-h-screen bg-bg">
-
-      {/* Language selector strip */}
-      <div style={{ background: 'var(--color-bg-surface)', borderBottom: '1px solid var(--color-border)', padding: '8px 16px' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-          <a href="/" style={{ color: 'var(--color-text-muted)', fontWeight: 500, fontSize: '0.75rem', textDecoration: 'none' }}>🇬🇧 EN</a>
-          {SUPPORTED_LANGS.map(l => (
-            <a
-              key={l}
-              href={`/${l}`}
-              style={{
-                color: l === lang ? 'var(--amber)' : 'var(--color-text-muted)',
-                fontWeight: l === lang ? 700 : 400,
-                fontSize: '0.75rem',
-                textDecoration: 'none',
-              }}
-            >
-              {LOCALE_FLAGS[l]} {LOCALE_NAMES[l]}
-            </a>
-          ))}
-        </div>
-      </div>
 
       {/* Hero */}
       <section style={{ padding: '80px 0 60px', background: 'var(--color-bg)', position: 'relative', overflow: 'hidden' }}>
@@ -93,7 +68,6 @@ export default function LocalisedHomePage({ params }: Props) {
               {d.home.heroCtaSecondary}
             </Link>
           </div>
-          {/* Trust badge */}
           <p style={{ marginTop: 24, fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>
             {d.common.freeToStart} &middot; {d.common.trialBadge}
           </p>
@@ -145,7 +119,7 @@ export default function LocalisedHomePage({ params }: Props) {
                 }}>
                   {step.n}
                 </div>
-                <h3 style={{ fontWeight: 700, color: 'var(--color-text)', marginBottom: 8, fontSize: '1rem' }}>{step.t}</h3>
+                <h3 style={{ fontWeight: 700, color: 'var(--color-text)', fontSize: '1rem', marginBottom: 8 }}>{step.t}</h3>
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem', lineHeight: 1.6 }}>{step.d}</p>
               </div>
             ))}
