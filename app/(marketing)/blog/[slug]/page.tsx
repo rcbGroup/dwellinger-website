@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, Clock, Calendar, CheckCircle, AlertCircle } from 'lucide-react'
+import { ArrowLeft, Clock, Calendar } from 'lucide-react'
 
 const posts: Record<string, {
   slug: string
@@ -14,6 +14,251 @@ const posts: Record<string, {
   image: string
   content: string
 }> = {
+  'loft-conversion-cost-london-2026': {
+    slug: 'loft-conversion-cost-london-2026',
+    category: 'Cost Guides',
+    title: 'Loft Conversion Cost in London: 2026 Guide',
+    date: '13 Oct 2026',
+    readTime: '7 min read',
+    author: 'James Hargrove',
+    image: 'https://images.unsplash.com/photo-1600607687644-c7171b46aba2?w=1400&auto=format&q=80',
+    description: 'A loft conversion in London costs £60,000–£130,000 depending on type and specification. This 2026 guide breaks down costs by conversion type, borough premiums, what’s included, and how to get accurate quotes.',
+    content: `
+## Loft conversion costs in London in 2026
+
+A loft conversion in London will typically cost between **£60,000 and £130,000** in 2026, depending on the type of conversion, size of the loft, specification level, and your location within Greater London.
+
+The London premium over equivalent work elsewhere in the UK is typically **20–40%**, driven by higher trade labour rates, ULEZ and Congestion Charge logistics costs, and longer lead times for specialist subcontractors.
+
+---
+
+## Cost by conversion type (London, 2026)
+
+| Conversion type | Typical London cost |
+|---|---|
+| Rooflight conversion | £25,000–£45,000 |
+| Dormer (rear) | £55,000–£90,000 |
+| Dormer (rear) with en-suite | £65,000–£105,000 |
+| Hip-to-gable conversion | £60,000–£95,000 |
+| Hip-to-gable with rear dormer | £75,000–£120,000 |
+| Mansard conversion | £85,000–£130,000+ |
+
+All figures include structural floor, staircase, insulation, windows, basic finishes, and Building Regulations compliance. En-suite bathroom costs are included where stated. Second-fix materials vary.
+
+---
+
+## What drives the cost up in London
+
+### Labour rates
+London carpenters, electricians, plumbers, and plasterers earn 20–40% more than equivalent trades in the Midlands or North. A specialist loft conversion carpenter in South East London may charge £300–£450 per day.
+
+### Structural complexity
+Most London lofts are Victorian or Edwardian terraced houses with traditional cut-roof structures. Converting these properly requires careful removal of purlins and ceiling joists, insertion of steel beams, and often temporary propping. On a party wall structure, this adds cost and Party Wall Agreement requirements.
+
+### The staircase
+A new staircase is one of the highest cost items. A straight flight in a simple position costs £2,500–£4,500 installed. An alternating tread staircase (for tight spaces) costs £4,000–£6,500. A bespoke helical or open-tread design can reach £15,000–£25,000.
+
+### Planning and heritage
+London has a higher concentration of Conservation Areas, Article 4 Directions, and listed buildings than most UK cities. In Conservation Areas, front-facing dormers typically require planning permission. Mansard conversions in Article 4 areas always need consent.
+
+---
+
+## London borough cost comparison
+
+- **Inner London (Westminster, Kensington & Chelsea, Islington)**: Add 20–30% to mid-range figures
+- **East London (Hackney, Tower Hamlets, Newham)**: Within 10% of mid-range figures
+- **South London (Lambeth, Lewisham, Southwark)**: Within 5–12% of mid-range
+- **West London (Ealing, Hammersmith, Richmond)**: Mid-range; Richmond adds heritage premium
+- **North London (Barnet, Enfield, Haringey)**: Generally mid-range for terraced work
+
+---
+
+## What’s included (and what isn’t)
+
+**Typically included**: structural works (new floor, steels, propping), roof alterations (dormer construction or rooflight openings), Velux or equivalent roof windows, staircase supply and fit, insulation to current Part L standards, plasterboard and skim, electrics (lighting, sockets, fuse spur), heating (extension of existing system), basic decoration.
+
+**Not typically included**: en-suite unless specified, joinery and fitted storage, flooring, high-specification bathroom, structural engineer fees (£1,500–£4,000), architect or designer fees if used, Building Control fees (£2,000–£4,000), Party Wall Surveyor fees (£1,200–£2,500 per adjoining neighbour).
+
+---
+
+## Getting an accurate quote
+
+Any quote generated without a site visit and survey of the existing loft is indicative only. A properly prepared quote requires the contractor or their representative to: measure the loft, assess the existing roof structure, check head height at different points, identify the best staircase position, and assess the feasibility of the en-suite plumbing route.
+
+Get at least 3 written quotes on the same specification. Check each contractor’s Builder Score™ on Dwellinger before inviting them to site.
+
+[Get a free loft conversion estimate](/estimate)
+`,
+  },
+
+  'house-extension-planning-permission-uk': {
+    slug: 'house-extension-planning-permission-uk',
+    category: 'Planning & Compliance',
+    title: 'House Extension Planning Permission UK: Complete 2026 Guide',
+    date: '12 Oct 2026',
+    readTime: '8 min read',
+    author: 'James Hargrove',
+    image: 'https://images.unsplash.com/photo-1564078516393-cf04bd966db3?w=1400&auto=format&q=80',
+    description: 'Many house extensions in England do not need planning permission. But the rules are specific and the exceptions matter. This 2026 guide covers exactly when you do and don’t need to apply.',
+    content: `
+## Do you need planning permission for a house extension?
+
+In England, many house extensions can be built under **Permitted Development (PD) rights** — meaning you don’t need to apply for planning permission. But the rules are more specific than most homeowners realise, and the exceptions are significant.
+
+The key factors that determine whether your extension needs planning permission: the size and height of the extension, where it sits relative to the original house, whether you have a detached, semi-detached, or terraced property, whether you’re in a restricted area, and whether your PD rights have been removed.
+
+---
+
+## Permitted development rules for rear extensions
+
+### Single-storey rear extensions
+
+**Detached houses**: up to **6 metres** from the original rear wall, or up to **8 metres** under the Larger Home Extension scheme (with prior approval).
+**Semi-detached and terraced houses**: up to **3 metres** from the original rear wall, or up to **6 metres** under the Larger Home Extension scheme (with prior approval).
+
+Additional conditions: maximum height at the eaves of 3m (4m at the ridge); maximum height of 4m overall; doesn't cover more than half the garden; materials must match the existing house.
+
+### Double-storey rear extensions
+
+Double-storey extensions are more restricted: up to **3 metres** from the original rear wall. The roof pitch must match the existing house. There must be no windows or doors on the upper floor side elevation within 1 metre of the side boundary. A minimum 7 metres must remain between the rear of the extension and the rear boundary.
+
+---
+
+## Side extensions
+
+Single-storey side extensions are permitted development if they don’t exceed half the width of the original house. Extensions on the principal elevation (front of the house) always need planning permission.
+
+---
+
+## The Larger Home Extension scheme
+
+For single-storey rear extensions that exceed the basic 3m or 6m thresholds, homeowners in England can apply under the Larger Home Extension scheme (formerly the Neighbour Consultation Scheme). This allows extensions up to 6m (semi/terraced) or 8m (detached) provided:
+
+- Prior approval is obtained from the local authority
+- Neighbours are notified and given the opportunity to object
+- The authority assesses impact on amenity
+
+Prior approval applications take 42 days. This is different from planning permission — the authority can only consider specific impacts, not general planning policy.
+
+---
+
+## When you always need planning permission
+
+Planning permission is always required for:
+
+- Extensions that exceed the PD volume or dimension thresholds
+- Extensions on listed buildings (which also need Listed Building Consent)
+- Extensions in National Parks, AONBs, World Heritage Sites, or Conservation Areas that alter the external appearance from the road
+- Properties where permitted development rights have been removed by an Article 4 Direction — common in many London boroughs and some other local authority areas
+- Flats and maisonettes (PD rights apply to houses only)
+
+---
+
+## How to check whether PD applies to your property
+
+The most reliable method: apply for a **Lawful Development Certificate (LDC)** from your local planning authority. This is a formal confirmation that your proposed works are permitted development and don’t need planning permission. An LDC costs £103 (England, 2026) and provides legal certainty — important if you ever sell the property.
+
+An alternative is a Pre-Application Enquiry, which gives informal guidance without legal certainty.
+
+---
+
+## Scotland, Wales, and Northern Ireland
+
+PD rights in Scotland, Wales, and Northern Ireland differ from England and from each other. In Wales, PD rules were updated in 2023. In Scotland, different GPDO provisions apply. Always check with the relevant local planning authority before assuming English PD rules apply.
+
+---
+
+## Building Regulations — always required regardless of planning
+
+Even if your extension doesn’t need planning permission, **Building Regulations approval is always required** for: structural work, thermal insulation to Part L standards, fire safety, electrical work, plumbing and drainage connections, and means of escape from upper floors if the work affects fire safety.
+
+Your principal contractor should manage the Building Regulations application unless you’re managing the project yourself.
+
+[Check your planning situation with our free guide](/tools/planning)
+`,
+  },
+
+  'quantity-surveyor-cost-uk': {
+    slug: 'quantity-surveyor-cost-uk',
+    category: 'Cost Guides',
+    title: 'How Much Does a Quantity Surveyor Cost in the UK? (2026 Guide)',
+    date: '11 Oct 2026',
+    readTime: '6 min read',
+    author: 'James Hargrove',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&auto=format&q=80',
+    description: 'Quantity surveyor fees in the UK range from 1% to 3% of project value for residential work, or £800–£6,000+ as a fixed fee. Here’s what you get for your money and when a QS is worth it.',
+    content: `
+## What does a quantity surveyor cost in the UK?
+
+Quantity surveyor fees for domestic projects in the UK typically fall into two models:
+
+**Percentage-based**: 1–3% of the total project construction cost. On a £150,000 extension and loft project, this means £1,500–£4,500 in QS fees.
+
+**Fixed fee**: £800–£6,000+ for domestic residential projects, depending on complexity, scope, and what services are included.
+
+For larger or more complex projects (new builds, multi-unit developments, commercial), QS fees are typically 1–2% of contract value, with complex schemes negotiated separately.
+
+---
+
+## What a QS actually does for domestic projects
+
+A quantity surveyor on a domestic project can provide some or all of:
+
+### Pre-contract services
+- **Cost planning**: establishing a realistic budget before committing to design
+- **Cost estimation**: detailed cost plan based on drawings and specification
+- **Value engineering**: identifying where specification can be adjusted to improve value without compromising quality
+- **Tender management**: preparing bills of quantities, issuing to contractors, evaluating returns, recommending award
+
+### During construction
+- **Interim valuations**: checking contractor applications and certifying the correct amount for each payment stage
+- **Variation assessment**: pricing changes to scope as they arise
+- **Final account agreement**: agreeing the final total with the contractor
+
+---
+
+## Fixed-fee QS services for domestic projects
+
+Many homeowners on extension or refurbishment projects don’t need a full QS appointment. Instead, they use fixed-fee services:
+
+| Service | Typical cost |
+|---|---|
+| Ballpark estimate (phone/online) | £150–£400 |
+| Detailed cost estimate from drawings | £500–£1,500 |
+| Tender documents and bills of quantities | £1,500–£3,500 |
+| Full pre-contract QS service | £2,000–£6,000 |
+| Interim valuations (per visit) | £350–£700 per visit |
+
+---
+
+## When is a QS worth it for a domestic project?
+
+A QS provides clearest value when:
+
+- The project is above £80,000–£100,000
+- You are using a traditional (not design-and-build) procurement route and need to evaluate competitive tenders properly
+- You need objective, professionally prepared figures before approaching contractors
+- The project involves significant complexity, unknowns, or structural elements
+- You are managing the project yourself without a main contractor
+
+For smaller projects (under £50,000), a detailed cost plan from a design-and-build contractor with transparent pricing may deliver similar value without the separate professional fee.
+
+---
+
+## The difference between an estimate and a QS
+
+A contractor’s estimate is prepared by someone with a financial interest in winning the work. A QS estimate is prepared by an independent professional with no stake in who is appointed. This independence matters most when evaluating multiple tenders, when the project is large enough that errors are costly, and when client-contractor disputes are more likely.
+
+---
+
+## Dwellinger’s free estimating tool
+
+Dwellinger provides a free ballpark estimate for domestic projects based on project type, location, size, and specification. This is not a QS service — but it’s a useful starting point before you decide whether to appoint a QS.
+
+[Get a free estimate](/estimate)
+`,
+  },
+
   'average-cost-to-build-a-house-uk-2026': {
     slug: 'average-cost-to-build-a-house-uk-2026',
     category: 'Cost Guides',
@@ -39,8 +284,6 @@ Add professional fees (10–15%), planning and Building Control (£5,000–£15,
 ---
 
 ## Cost per m² by specification
-
-The most reliable way to estimate build cost is cost per m² of gross internal area.
 
 ### Basic specification (£1,750–£2,100/m²)
 
@@ -68,7 +311,7 @@ Premium kitchen and bathrooms. Smart home systems. Bespoke joinery. Air source h
 
 ---
 
-## What build cost includes — and what it doesn't
+## What build cost includes — and what it doesn’t
 
 A build contract typically covers: groundworks and foundations; superstructure (walls, floors, roof); roof covering and rainwater goods; external doors, windows, and glazing; first-fix plumbing, heating, and electrical; insulation; plasterboard, skim, and decoration; second-fix plumbing and electrical; kitchen and bathroom fittings (if specified).
 
@@ -82,12 +325,6 @@ What a build contract typically **does not** include: land cost; architect fees 
 - **Ignoring abnormal groundwork costs**: London clay, contaminated ground, high water tables can add £20,000–£80,000
 - **Underestimating professional fees**: 12–18% is realistic for a one-off house
 - **No contingency**: 10–15% on top of the contractor price is a minimum
-
----
-
-## How to get an accurate cost for your project
-
-Dwellinger's free estimating tool gives you a project-specific ballpark based on size, location, and specification — before you commit to architect fees.
 
 [Get a free build cost estimate](/estimate)
 `,
@@ -115,11 +352,11 @@ The premium reflects: **labour costs** (London trades earn 20–40% more than ou
 
 ### New build residential
 
-- **Basic specification**: £2,200–£2,700/m² GIA
-- **Mid specification**: £2,700–£3,400/m² GIA
-- **High specification**: £3,400–£4,500/m² GIA
-
-For a 200m² detached house in outer London at mid specification: £540,000–£680,000 build cost (excluding land, fees, and planning).
+| Specification | Cost per m² GIA |
+|---|---|
+| Basic | £2,200–£2,700/m² |
+| Mid specification | £2,700–£3,400/m² |
+| High specification | £3,400–£4,500/m² |
 
 ### Rear extension (single-storey)
 
@@ -133,13 +370,11 @@ A typical 4m × 5m (20m²) single-storey rear extension in London: **£48,000–
 
 ### Loft conversion
 
-| Type | Cost per m² |
+| Type | Typical London cost |
 |---|---|
-| Rooflight only | £1,200–£1,800/m² |
-| Dormer | £1,500–£2,200/m² |
-| Mansard | £2,000–£3,000/m² |
-
-A standard 40m² dormer loft conversion in London: **£60,000–£88,000**.
+| Rooflight only | £25,000–£45,000 |
+| Dormer | £55,000–£90,000 |
+| Mansard | £85,000–£130,000 |
 
 ### Full house refurbishment
 
@@ -166,14 +401,6 @@ A standard 40m² dormer loft conversion in London: **£60,000–£88,000**.
 
 **Programme length** — extended programmes mean higher overhead and supervision costs.
 
-**Access and logistics** — crane lifts, traffic management, or scaffolding on narrow streets add real cost.
-
----
-
-## How to use cost per m² figures accurately
-
-Cost per m² is a starting point — not a quotation. Always define the gross internal area (GIA) precisely, state the specification level, allow for professional fees (typically 12–18% of build cost in London), and allow 10–15% contingency on all projects.
-
 [Get a free London cost estimate](/estimate)
 `,
   },
@@ -190,9 +417,7 @@ Cost per m² is a starting point — not a quotation. Always define the gross in
     content: `
 ## What does a garage conversion cost in the UK in 2026?
 
-A garage conversion is one of the most cost-effective ways to add usable space to a home — and one of the most frequently underestimated in terms of what a proper conversion involves.
-
-**Typical cost range: £7,500–£22,000**
+A garage conversion is one of the most cost-effective ways to add usable space to a home.
 
 | Conversion type | Typical cost range |
 |---|---|
@@ -205,118 +430,41 @@ Add 20–30% in London for the labour premium.
 
 ---
 
-## What a garage conversion includes
-
-A properly specified conversion typically covers: structural work (removing or modifying the garage door opening, installing new front wall or glazing, lintels); floor (DPM, insulation, screed or deck, often underfloor heating); walls (insulating external walls, plasterboard and skim); ceiling (insulation and plasterboard); windows and external door; electrics (consumer unit spur, sockets, lighting); heating (extending existing system or new circuit).
-
-Additional costs: en-suite bathroom (add £4,000–£8,000); kitchenette (add £3,000–£8,000).
-
----
-
 ## Do you need planning permission?
 
-Most garage conversions are **permitted development** — no planning application required — provided you're converting the internal space without extending the external footprint.
+Most garage conversions are **permitted development** — no planning application required — provided you’re converting the internal space without extending the external footprint.
 
-Exceptions that require planning: the property is in a Conservation Area and the works affect the external appearance; the garage is on the front elevation in a restricted area; the property is listed; permitted development rights have been removed.
+Exceptions: the property is in a Conservation Area and the works affect the external appearance; PD rights have been removed; the garage is on the front elevation in a restricted area; the property is listed.
 
 ---
 
 ## Building Regulations: always required
 
-Regardless of planning permission, **Building Regulations approval is always required** for a garage conversion. This covers: structural adequacy of any new opening or lintel; thermal insulation to current standards (Part L); ventilation (Part F); fire safety (Part B) — particularly where the garage connects to the house; damp-proofing (Part C); electrics (Part P).
+Regardless of planning permission, **Building Regulations approval is always required** for a garage conversion. This covers: structural adequacy; thermal insulation to current standards (Part L); ventilation (Part F); fire safety (Part B); damp-proofing (Part C); electrics (Part P).
 
 ---
 
 ## Will a garage conversion add value?
 
-A well-executed conversion typically adds **70–85% of the conversion cost** to the property value. Key factors: does the property still have off-street parking? Is the conversion genuinely usable (proper ceiling height, good natural light)? Does it have a Building Regulations completion certificate?
-
----
-
-## Getting the right contractor
-
-Garage conversions are multi-trade projects. A principal contractor who coordinates all trades is worth the coordination premium. Before inviting a quote, check the contractor's Builder Score™ on Dwellinger — it shows verified project reviews, CDM compliance record, and payment behaviour to suppliers.
+A well-executed conversion typically adds **70–85% of the conversion cost** to the property value. Key factors: does the property still have off-street parking? Is the conversion genuinely usable? Does it have a Building Regulations completion certificate?
 
 [Find verified garage conversion contractors](/search)
 `,
   },
 
-  'how-much-does-a-rear-extension-cost-uk-2025': {
-    slug: 'how-much-does-a-rear-extension-cost-uk-2025',
-    category: 'Cost Guides',
-    title: 'How much does a rear extension cost in the UK? (2025 guide)',
-    date: '12 Sept 2026',
-    readTime: '8 min read',
-    author: 'James Hargrove',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&auto=format&q=80',
-    description: 'A realistic breakdown of rear extension costs across London and the South East — including groundworks, structure, M&E, finishes, and professional fees.',
-    content: `
-## The honest answer: it depends — but here are real numbers
-
-A 4m × 4m single-storey rear extension in London will typically cost between **£60,000 and £95,000** in 2025, including VAT. The range is wide because extensions are bespoke construction projects, and cost is shaped by dozens of decisions: how deep you go, what you put in the walls, what the floor does, what glazing you choose, and how much your contractor's overhead and margin are.
-
----
-
-## The main cost drivers
-
-### 1. Size and footprint
-
-Extension cost scales roughly with floor area, but not linearly. A 3m × 3m extension costs significantly less than twice a 6m × 3m extension, because groundworks, roof structure, and connections to the existing house are relatively fixed costs.
-
-Rule of thumb for London in 2025:
-- **£2,500–£3,500/m²** for a standard single-storey extension
-- **£3,000–£4,000/m²** for a double-storey
-- **£4,000–£6,000/m²+** for high-specification finishes and bespoke glazing
-
-### 2. Specification and finishes
-
-Nothing moves the price like specification: bi-fold or sliding doors (£5,000–£15,000+), underfloor heating (add £80–£150/m²), structural glazing or roof lanterns (£3,000–£10,000+ per unit), oak-framed additions or bespoke joinery.
-
-### 3. Structural complexity
-
-Most single-storey extensions require a steel beam to span the new opening in the existing rear wall (typically £1,500–£4,000 installed). If you have clay soils (common in London), deep strip or mini-pile foundations can add £8,000–£20,000 to groundworks costs.
-
-### 4. Party wall matters
-
-If your extension is within 3m of a neighbour's foundation, the Party Wall Act applies. Budget **£1,000–£3,000** per adjoining neighbour for Party Wall Awards.
-
----
-
-## What's included in the headline figure?
-
-A well-structured extension quotation includes: groundworks and foundations; structure; roof; external doors and windows; first-fix M&E; insulation; plasterboard and skim; second-fix M&E; decoration; floor finish if specified.
-
-What's often *not* included: kitchen or bathroom fitting; tiles; architect/designer fees (£3,000–£10,000); Building Control applications (£500–£2,000).
-
----
-
-## London vs rest of UK
-
-London and the South East command a price premium of **20–40%** over equivalent work in the Midlands or North. A £65,000 single-storey extension in London might cost £45,000–£50,000 in Manchester or Birmingham.
-
----
-
-## How to get an accurate quote
-
-A ballpark figure is useful for budget-setting. A real quotation requires: architectural drawings, structural engineer calculations, specification schedule, and a site visit. If a contractor quotes you from a conversation and a few photos, treat the figure as indicative only.
-
-[Get a free estimate](/estimate)
-`,
-  },
-
-  'builder-score-explained-why-star-ratings-arent-enough': {
-    slug: 'builder-score-explained-why-star-ratings-arent-enough',
+  'why-builder-score-beats-star-ratings': {
+    slug: 'why-builder-score-beats-star-ratings',
     category: 'Builder Score™',
-    title: 'Why star ratings aren\'t enough — the case for Builder Score™',
-    date: '5 Sept 2026',
-    readTime: '6 min read',
+    title: 'Why Star Ratings Are Not Enough: Introducing Builder Score™',
+    date: '5 Oct 2026',
+    readTime: '7 min read',
     author: 'James Hargrove',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&auto=format&q=80',
-    description: 'Anyone can buy reviews on Checkatrade. Anyone can create a Companies House record. Neither tells you whether a contractor pays their subcontractors or holds valid insurance.',
+    description: 'Star ratings can be bought, faked or manipulated. Builder Score™ is a 0–1000 trust rating calculated from verified compliance data.',
     content: `
 ## The problem with stars
 
-Walk into any contractor's office in London and you'll find the same thing on the wall: a Checkatrade certificate, some five-star reviews, a Gas Safe card. The display is the same whether the contractor is exceptional or barely functional.
+Walk into any contractor’s office in London and you’ll find the same thing on the wall: some five-star reviews, a certificate. The display is the same whether the contractor is exceptional or barely functional.
 
 The review economy has been gamed. Not universally, not by most contractors — but enough that the signal has degraded. The home improvement market handles over **£28 billion in spending per year** in the UK. Most homeowners spend their largest discretionary budget on a contractor they know almost nothing substantive about.
 
@@ -333,18 +481,61 @@ The Construction (Design and Management) Regulations 2015 place legal duties on 
 ### Insurance currency
 A contractor can show you a certificate of public liability insurance dated 18 months ago. Is it still current? A review system cannot answer this.
 
-### Dispute history
-A contractor with 47 five-star reviews and one unresolved £14,000 dispute looks identical to a contractor with 47 five-star reviews and a clean record.
-
 ---
 
 ## How Builder Score™ works
 
-Builder Score™ is Dwellinger's proprietary 0–1000 trust rating, calculated across five weighted dimensions: verified reviews (0–200), CDM and health & safety compliance (0–200), payment behaviour (0–200), dispute history and outcomes (0–200), and insurance and accreditation (0–200).
+Builder Score™ is Dwellinger’s proprietary 0–1000 trust rating, calculated across five weighted dimensions: verified reviews (0–200), CDM and health & safety compliance (0–200), payment behaviour (0–200), dispute history and outcomes (0–200), and insurance and accreditation (0–200).
 
 A Builder Score™ above **800** indicates a contractor with a strong, multi-dimensional trust profile. Above **900** (Platinum tier) indicates outstanding performance across all dimensions.
 
 [Find Builder Score™-verified contractors](/search)
+`,
+  },
+
+  'how-to-choose-a-building-contractor': {
+    slug: 'how-to-choose-a-building-contractor',
+    category: 'Choosing a Builder',
+    title: 'How to Choose a Building Contractor in the UK: 7 Things to Check',
+    date: '4 Oct 2026',
+    readTime: '6 min read',
+    author: 'James Hargrove',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1400&auto=format&q=80',
+    description: 'Choosing the right contractor is the most important decision in any building project. Here are 7 things to verify before you sign anything.',
+    content: `
+The difference between a successful building project and a nightmare often comes down to the contractor you choose.
+
+## 1. Verify their legal status
+
+Check the company exists on Companies House. A legitimate building contractor should be registered and have at least one year of trading history.
+
+## 2. Confirm public liability insurance
+
+Any contractor working on your property should carry public liability insurance of at least £2 million. Ask for a copy of the certificate and check the expiry date.
+
+## 3. Check their Builder Score™
+
+Dwellinger’s Builder Score™ checks CDM compliance records, payment behaviour to suppliers, and dispute outcomes — data that no review platform provides.
+
+## 4. Read verified project reviews
+
+Look for reviews tied to specific completed projects — with photos, dates, and client names.
+
+## 5. Get at least 3 written quotes on the same scope
+
+Never compare quotes that are not based on identical scopes of work. A quote that comes back significantly lower than the others usually means something has been omitted.
+
+## 6. Insist on a written contract
+
+Do not start work without a written contract covering: full scope of works, payment schedule, start date and estimated completion, and what happens if there are variations.
+
+## 7. Check their Builder Score™ on Dwellinger
+
+Builder Score™ is a 0–1000 trust rating calculated from six independently verified components. A Gold or Platinum contractor has demonstrated verified compliance, payment integrity and a strong review track record.
+
+## Red flags to avoid
+
+Cash-only payment; pressure to start immediately; no fixed business address; unwillingness to provide references; requesting more than 25% upfront.
 `,
   },
 
@@ -370,30 +561,164 @@ Key conditions: no extension beyond the plane of the existing roof slope at the 
 
 ## When you do need planning permission
 
-Planning permission is required when: you exceed the volume limits; you want to alter the ridge height; the property is in a Conservation Area, National Park, or Area of Outstanding Natural Beauty; the property is listed. In Conservation Areas, any roof alteration visible from a public road needs planning consent, even if within volume limits.
+Planning permission is required when: you exceed the volume limits; you want to alter the ridge height; the property is in a Conservation Area, National Park, or AONB; the property is listed. In Conservation Areas, any roof alteration visible from a public road needs planning consent, even if within volume limits.
 
 ---
 
 ## Types of loft conversion
 
-- **Rooflight conversion**: simplest — no change to roofline, just add roof windows. Usually permitted development.
-- **Dormer conversion**: extends out from the slope, adding headroom. Rear dormers usually permitted development; front dormers typically need planning.
-- **Mansard conversion**: flat roof with steeply sloped sides, maximum space. Almost always requires planning.
-- **Hip-to-gable conversion**: changes a hipped roof to a gable end. Usually permitted development for detached and semi-detached houses.
+- **Rooflight**: no change to roofline, just add roof windows. Usually permitted development.
+- **Dormer**: extends out from the slope, adding headroom. Rear dormers usually PD; front dormers typically need planning.
+- **Mansard**: flat roof with steeply sloped sides. Almost always requires planning.
+- **Hip-to-gable**: changes a hipped roof to a gable end. Usually PD for detached and semi-detached.
 
 ---
 
 ## Building Regulations — always required
 
-Regardless of whether planning permission is needed, Building Regulations approval is always required for a loft conversion. This covers: structural adequacy of the new floor; fire safety (protected escape route); thermal insulation to current standards; sound insulation between floors; safe stair access.
+Regardless of planning permission, Building Regulations approval is always required for a loft conversion. This covers: structural adequacy; fire safety (protected escape route); thermal insulation; sound insulation between floors; safe stair access.
 
----
+[Find verified loft conversion specialists](/search)
+`,
+  },
 
-## Party Wall Act
+  'cdm-regulations-homeowners-guide': {
+    slug: 'cdm-regulations-homeowners-guide',
+    category: 'Planning & Compliance',
+    title: 'CDM 2015 Regulations: What UK Homeowners Need to Know',
+    date: '2 Oct 2026',
+    readTime: '6 min read',
+    author: 'James Hargrove',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&auto=format&q=80',
+    description: 'The Construction (Design and Management) Regulations 2015 apply to most domestic building projects. Here is what homeowners need to know about their legal duties.',
+    content: `
+## When CDM applies
 
-If your loft conversion involves work to a shared wall with a neighbour — common in terraced houses — you may need to serve a Party Wall Notice at least 2 months before starting.
+CDM 2015 applies when: the project involves more than one contractor working simultaneously; or the project lasts more than 30 working days with more than 20 workers; or total person-days exceed 500.
 
-Find a verified loft conversion specialist on Dwellinger and check their Builder Score before inviting quotes.
+## Your duty as domestic client
+
+As a domestic client, you can transfer your CDM duties to your Principal Contractor. This transfer happens automatically when you appoint a single contractor. Your principal contractor then takes on responsibility for: producing a Construction Phase Plan before work starts; ensuring health and safety is managed on site; producing a Health and Safety File at project completion.
+
+## Pre-Construction Information
+
+Provide your contractor with any information you hold about the property — asbestos surveys, structural reports, drainage plans, previous works.
+
+## The Health and Safety File
+
+At the end of the project, your principal contractor should hand you a Health and Safety File — containing as-built drawings, materials specifications, and maintenance instructions. Keep it. You will need it if you sell the property or do further works.
+
+[Find CDM-aware contractors](/search)
+`,
+  },
+
+  'rear-extension-cost-uk-guide': {
+    slug: 'rear-extension-cost-uk-guide',
+    category: 'Cost Guides',
+    title: 'How Much Does a Rear Extension Cost in the UK? (2026 Guide)',
+    date: '1 Oct 2026',
+    readTime: '7 min read',
+    author: 'James Hargrove',
+    image: 'https://images.unsplash.com/photo-1564078516393-cf04bd966db3?w=1400&auto=format&q=80',
+    description: 'UK rear extension costs range from £1,800–£3,500/m². This guide covers typical costs, what affects price, planning requirements and how to verify your contractor.',
+    content: `
+## Typical costs in 2026
+
+| Extension type | Typical cost range |
+|---|---|
+| Single-storey (basic to mid-spec) | £25,000–£60,000 |
+| Double-storey | £45,000–£120,000 |
+| Cost per m² (basic) | £1,800–£2,200/m² |
+| Cost per m² (mid-spec) | £2,200–£2,800/m² |
+| Cost per m² (high specification) | £2,800–£3,500/m² |
+
+These figures reflect Greater London and the South East. Expect 10–15% lower outside London.
+
+## What affects the cost
+
+Size is the primary driver — but specification matters as much. Key factors: structural complexity (steels, underpinning), M&E (full rewire, new heating circuits), quality of finishes (bifold doors, roof lights, underfloor heating), planning fees and surveys, and site access.
+
+## Planning permission
+
+Most single-storey rear extensions are permitted development — no planning application required — if they stay within 4m (detached house) or 3m (semi-detached or terraced) from the original rear wall. Extensions beyond this need planning consent (typically 8 weeks).
+
+## Getting accurate quotes
+
+Get at least 3 written quotes based on the same detailed scope of works. A quote without a site visit is unreliable.
+
+[Get a free estimate](/estimate)
+`,
+  },
+
+  'how-much-does-a-rear-extension-cost-uk-2025': {
+    slug: 'how-much-does-a-rear-extension-cost-uk-2025',
+    category: 'Cost Guides',
+    title: 'How much does a rear extension cost in the UK? (2025 guide)',
+    date: '12 Sept 2026',
+    readTime: '8 min read',
+    author: 'James Hargrove',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&auto=format&q=80',
+    description: 'A realistic breakdown of rear extension costs across London and the South East — including groundworks, structure, M&E, finishes, and professional fees.',
+    content: `
+## The honest answer: it depends — but here are real numbers
+
+A 4m × 4m single-storey rear extension in London will typically cost between **£60,000 and £95,000** in 2025, including VAT. The range is wide because extensions are bespoke construction projects.
+
+## The main cost drivers
+
+### 1. Size and footprint
+
+Rule of thumb for London in 2025:
+- **£2,500–£3,500/m²** for a standard single-storey extension
+- **£3,000–£4,000/m²** for a double-storey
+- **£4,000–£6,000/m²+** for high-specification finishes and bespoke glazing
+
+### 2. Specification and finishes
+
+Nothing moves the price like specification: bi-fold or sliding doors (£5,000–£15,000+), underfloor heating (add £80–£150/m²), structural glazing or roof lanterns (£3,000–£10,000+ per unit).
+
+### 3. Structural complexity
+
+If you have clay soils (common in London), deep strip or mini-pile foundations can add £8,000–£20,000 to groundworks costs.
+
+### 4. Party wall matters
+
+If your extension is within 3m of a neighbour’s foundation, the Party Wall Act applies. Budget **£1,000–£3,000** per adjoining neighbour for Party Wall Awards.
+
+## London vs rest of UK
+
+London and the South East command a price premium of **20–40%** over equivalent work in the Midlands or North.
+
+[Get a free estimate](/estimate)
+`,
+  },
+
+  'builder-score-explained-why-star-ratings-arent-enough': {
+    slug: 'builder-score-explained-why-star-ratings-arent-enough',
+    category: 'Builder Score™',
+    title: 'Why star ratings aren\'t enough — the case for Builder Score™',
+    date: '5 Sept 2026',
+    readTime: '6 min read',
+    author: 'James Hargrove',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&auto=format&q=80',
+    description: 'Anyone can buy reviews on Checkatrade. Anyone can create a Companies House record. Neither tells you whether a contractor pays their subcontractors or holds valid insurance.',
+    content: `
+## The problem with stars
+
+Walk into any contractor’s office in London and you’ll find the same thing on the wall: some five-star reviews, a certificate. The display is the same whether the contractor is exceptional or barely functional.
+
+The review economy has been gamed. The home improvement market handles over **£28 billion in spending per year** in the UK. Most homeowners spend their largest discretionary budget on a contractor they know almost nothing substantive about.
+
+## What star ratings miss
+
+- Does the contractor pay their subcontractors on time?
+- Do they hold current public liability insurance?
+- Do they have a CDM compliance record?
+- What is their dispute history?
+
+Builder Score™ answers all of these. It’s a 0–1000 trust rating calculated across five independently verified dimensions.
+
+[Find Builder Score™-verified contractors](/search)
 `,
   },
 
@@ -405,23 +730,15 @@ Find a verified loft conversion specialist on Dwellinger and check their Builder
     readTime: '7 min read',
     author: 'James Hargrove',
     image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&auto=format&q=80',
-    description: 'The single most important number in property investment is the maximum you should pay for a site. Here\'s how to calculate it.',
+    description: 'The single most important number in property investment is the maximum you should pay for a site. Here’s how to calculate it.',
     content: `
 ## What is residual land value?
 
 Residual land value (RLV) is the maximum price you should pay for a development site, given the costs involved and the profit you need to make the scheme viable.
 
-**RLV = Gross Development Value − Total Development Costs − Developer\'s Profit**
+**RLV = Gross Development Value − Total Development Costs − Developer’s Profit**
 
-If the answer is positive, the site has value. If it's negative — or lower than the asking price — the scheme does not work at that price.
-
----
-
-## Why this number matters more than any other
-
-Most property developers focus on the wrong question. They find a site, fall in love with it, and then try to make the numbers work. The correct process: establish GDV → establish build cost → decide required profit → **calculate maximum land bid**.
-
----
+If the answer is positive, the site has value. If it’s negative — or lower than the asking price — the scheme does not work at that price.
 
 ## The calculation
 
@@ -439,17 +756,6 @@ For a residential scheme of 6 flats in East London (GDV £2,200,000):
 | Less developer profit (18% GDV) | −£396,000 |
 | **Residual Land Value** | **£409,000** |
 
-This means you can pay up to £409,000 for this site and still achieve your required return. If the vendor is asking £500,000, the scheme does not work at the current parameters.
-
----
-
-## Common mistakes
-
-- **Using optimistic GDV figures**: use comparable evidence from recent sold prices, not asking prices
-- **Ignoring CIL**: in some London boroughs, CIL can be substantial
-- **Underestimating finance costs**: rolled-up interest on a delayed programme erodes return
-- **No contingency**: if it can go wrong, it will
-
 [Use the Development Appraisal Tool](/tools/development-appraisal)
 `,
   },
@@ -462,43 +768,31 @@ This means you can pay up to £409,000 for this site and still achieve your requ
     readTime: '6 min read',
     author: 'James Hargrove',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&auto=format&q=80',
-    description: 'The Construction (Design and Management) Regulations 2015 apply to domestic projects too. Here is what homeowners commissioning work need to understand.',
+    description: 'The Construction (Design and Management) Regulations 2015 apply to domestic projects too.',
     content: `
 ## CDM 2015: the basics for homeowners
 
-The Construction (Design and Management) Regulations 2015 (CDM 2015) are the primary piece of health and safety legislation governing construction projects in Great Britain. Many homeowners assume CDM applies only to commercial or large-scale projects. It does not.
-
----
+CDM 2015 are the primary piece of health and safety legislation governing construction projects in Great Britain. Many homeowners assume CDM applies only to commercial or large-scale projects. It does not.
 
 ## The five duty-holders
 
 ### 1. Client (you, the homeowner)
-You can transfer your CDM duties to the principal contractor in writing. If you don't, the law assumes your duties have passed to the principal contractor by default.
+You can transfer your CDM duties to the principal contractor in writing.
 
 ### 2. Principal Designer
 Coordinates health and safety during the design and pre-construction phase. Must be appointed when more than one contractor is involved.
 
 ### 3. Principal Contractor
-Overall responsibility for health and safety on site. Must produce a Construction Phase Plan before work starts, ensure the site is run safely, and maintain health and safety documentation.
+Overall responsibility for health and safety on site. Must produce a Construction Phase Plan before work starts.
 
 ### 4. Designers and Contractors
 Architects, structural engineers, and all trade contractors on site.
-
----
-
-## When CDM becomes more formal
-
-**More than one contractor**: a principal contractor and principal designer must be formally appointed.
-
-**Notifiable projects**: last longer than 30 working days with more than 20 simultaneous workers, or exceed 500 person-days. These must be registered with the HSE.
-
----
 
 ## What homeowners should actually do
 
 Before appointing a contractor, ask: Who is acting as principal contractor? Can you provide your Construction Phase Plan? Do you have current public liability insurance?
 
-At the end of the project, your principal contractor should hand you a **Health and Safety File** — containing as-built drawings, materials specifications, and maintenance instructions. Keep it. You will need it if you sell the property or do further works.
+At the end of the project, your principal contractor should hand you a **Health and Safety File**.
 
 [Find CDM-aware contractors](/search)
 `,
@@ -516,216 +810,25 @@ At the end of the project, your principal contractor should hand you a **Health 
     content: `
 ## The paperwork problem in construction
 
-The average small construction business spends between 20% and 35% of its working hours on administration. Quotations, client communications, compliance documents, invoices, scheduling, scope of works — the administrative burden on a two-person construction business can consume an entire working day each week.
-
-Dwell Agents are built specifically on UK construction — the terminology, the document types, the compliance requirements, and the commercial realities of running a building business.
-
----
+The average small construction business spends between 20% and 35% of its working hours on administration. Dwell Agents are built specifically on UK construction — the terminology, the document types, the compliance requirements, and the commercial realities of running a building business.
 
 ## The four Dwell Agents
 
 ### Dwell Coord — Project Coordination Agent
-Handles project administration: managing schedules, tracking milestones, sending client updates. Contractors using Dwell Coord report saving 3–6 hours per week.
+Handles project administration: managing schedules, tracking milestones, sending client updates.
 
 ### Dwell Create — Document Creation Agent
-Produces professional construction documents from brief inputs: scope of works, contract summaries, variation notices, practical completion certificates, defects liability notices.
+Produces professional construction documents from brief inputs: scope of works, contract summaries, variation notices, practical completion certificates.
 
 ### Dwell Clarity — Technical Query Agent
 Answers technical questions about UK construction: Building Regulations compliance, permitted development rules, CDM duties, standard details, material specifications.
 
 ### Dwell Coach — Business Development Agent
-Helps construction businesses grow: drafts personalised outreach from lead information, suggests pricing strategies based on job type and location, helps contractors present themselves professionally.
-
----
-
-## How contractors are using them
-
-A typical session: morning — Dwell Coord sends automated progress updates to three active clients. Mid-morning — new enquiry arrives, Dwell Coach produces a personalised response and first-pass scope from the client's brief. Afternoon — Dwell Create produces a formal scope of works document for a loft conversion quotation in fifteen minutes.
+Helps construction businesses grow: drafts personalised outreach from lead information, suggests pricing strategies based on job type and location.
 
 [See contractor plans](/platform/pricing)
 `,
   },
-
-  'rear-extension-cost-uk-guide': {
-    slug: 'rear-extension-cost-uk-guide',
-    category: 'Cost Guides',
-    title: 'How Much Does a Rear Extension Cost in the UK? (2026 Guide)',
-    date: '1 Oct 2026',
-    readTime: '7 min read',
-    author: 'James Hargrove',
-    image: 'https://images.unsplash.com/photo-1564078516393-cf04bd966db3?w=1400&auto=format&q=80',
-    description: 'UK rear extension costs range from £1,800–£3,500/m². This guide covers typical costs, what affects price, planning requirements and how to verify your contractor.',
-    content: `
-## Typical costs in 2026
-
-A rear extension is one of the most effective ways to add space and value to a UK home.
-
-| Extension type | Typical cost range |
-|---|---|
-| Single-storey (basic to mid-spec) | £25,000–£60,000 |
-| Double-storey | £45,000–£120,000 |
-| Cost per m² (basic) | £1,800–£2,200/m² |
-| Cost per m² (mid-spec) | £2,200–£2,800/m² |
-| Cost per m² (high specification) | £2,800–£3,500/m² |
-
-These figures reflect Greater London and the South East. Expect 10–15% lower outside London.
-
----
-
-## What affects the cost
-
-Size is the primary driver — but specification matters as much. Key factors: structural complexity (steels, underpinning), M&E (full rewire, new heating circuits), quality of finishes (bifold doors, roof lights, underfloor heating), planning fees and surveys, and site access.
-
-A basic 4m × 5m single-storey extension in London typically costs **£36,000–£44,000** fully finished.
-
----
-
-## Planning permission
-
-Most single-storey rear extensions are permitted development — no planning application required — if they stay within 4m (detached house) or 3m (semi-detached or terraced) from the original rear wall. Extensions beyond this need planning consent (typically 8 weeks). Conservation areas and listed buildings have stricter rules regardless of size.
-
----
-
-## Getting accurate quotes
-
-Get at least 3 written quotes based on the same detailed scope of works. A quote without a site visit is unreliable. Red flags: quotes that exclude VAT without clearly stating it, demands for full payment upfront, no fixed timeline.
-
-Check each contractor's Builder Score™ on Dwellinger before inviting quotes.
-`,
-  },
-
-  'cdm-regulations-homeowners-guide': {
-    slug: 'cdm-regulations-homeowners-guide',
-    category: 'Planning & Compliance',
-    title: 'CDM 2015 Regulations: What UK Homeowners Need to Know',
-    date: '2 Oct 2026',
-    readTime: '6 min read',
-    author: 'James Hargrove',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&auto=format&q=80',
-    description: 'The Construction (Design and Management) Regulations 2015 apply to most domestic building projects. Here is what homeowners need to know about their legal duties.',
-    content: `
-## When CDM applies
-
-The Construction (Design and Management) Regulations 2015 — known as CDM 2015 — set out the legal framework for health and safety on UK construction projects. As a homeowner commissioning work, you have duties under these regulations whether you know it or not.
-
-CDM 2015 applies when: the project involves more than one contractor working simultaneously; or the project lasts more than 30 working days with more than 20 workers; or total person-days exceed 500.
-
----
-
-## Your duty as domestic client
-
-As a domestic client, you can transfer your CDM duties to your Principal Contractor. This transfer happens automatically when you appoint a single contractor. Your principal contractor then takes on responsibility for: producing a Construction Phase Plan before work starts; ensuring health and safety is managed on site; producing a Health and Safety File at project completion.
-
----
-
-## Pre-Construction Information
-
-Provide your contractor with any information you hold about the property — asbestos surveys, structural reports, drainage plans, previous works. This is called Pre-Construction Information and helps your contractor plan the work safely.
-
----
-
-## The Health and Safety File
-
-At the end of the project, your principal contractor should hand you a Health and Safety File — containing as-built drawings, materials specifications, and maintenance instructions. Keep it. You will need it if you sell the property or do further works.
-
----
-
-## How Dwellinger helps
-
-Builder Score™ includes a CDM compliance component worth 20% of the total score. Dwellinger checks whether contractors have produced Construction Phase Plans and Health and Safety Files on qualifying past projects.
-`,
-  },
-
-  'how-to-choose-a-building-contractor': {
-    slug: 'how-to-choose-a-building-contractor',
-    category: 'Choosing a Builder',
-    title: 'How to Choose a Building Contractor in the UK: 7 Things to Check',
-    date: '4 Oct 2026',
-    readTime: '6 min read',
-    author: 'James Hargrove',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1400&auto=format&q=80',
-    description: 'Choosing the right contractor is the most important decision in any building project. Here are 7 things to verify before you sign anything.',
-    content: `
-The difference between a successful building project and a nightmare often comes down to the contractor you choose.
-
-## 1. Verify their legal status
-
-Check the company exists on Companies House. A legitimate building contractor should be registered and have at least one year of trading history.
-
-## 2. Confirm public liability insurance
-
-Any contractor working on your property should carry public liability insurance of at least £2 million. Ask for a copy of the certificate and check the expiry date.
-
-## 3. Check their compliance record
-
-Dwellinger's Builder Score™ checks CDM compliance records, payment behaviour to suppliers, and dispute outcomes — data that no review platform provides.
-
-## 4. Read verified project reviews
-
-Look for reviews tied to specific completed projects — with photos, dates, and client names. On Dwellinger, reviews are linked to specific jobs and cannot be submitted without a verified project record.
-
-## 5. Get at least 3 written quotes on the same scope
-
-Never compare quotes that are not based on identical scopes of work. A quote that comes back significantly lower than the others usually means something has been omitted.
-
-## 6. Insist on a written contract
-
-Do not start work without a written contract. At minimum it should cover: full scope of works, payment schedule, start date and estimated completion, and what happens if there are variations.
-
-## 7. Check their Builder Score™ on Dwellinger
-
-Builder Score™ is a 0–1000 trust rating calculated from six independently verified components. A contractor with a Gold or Platinum score has demonstrated verified compliance, payment integrity and a strong review track record.
-
-## Red flags to avoid
-
-Cash-only payment; pressure to start immediately; no fixed business address; unwillingness to provide references; requesting more than 25% upfront before work starts.
-`,
-  },
-
-  'why-builder-score-beats-star-ratings': {
-    slug: 'why-builder-score-beats-star-ratings',
-    category: 'Builder Score™',
-    title: 'Why Star Ratings Are Not Enough: Introducing Builder Score™',
-    date: '5 Oct 2026',
-    readTime: '7 min read',
-    author: 'James Hargrove',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&auto=format&q=80',
-    description: 'Star ratings can be bought, faked or manipulated. Builder Score™ is a 0–1000 trust rating calculated from verified compliance data.',
-    content: `
-Five-star ratings are everywhere in the UK trades industry — and almost meaningless. A contractor can have a 4.9-star average while being months behind on payments to suppliers, with a live dispute from a previous client and no public liability insurance.
-
-## The problem with star ratings
-
-Most trades review platforms allow contractors to: receive reviews without verified project documentation; remove negative reviews through dispute processes; generate reviews from non-project sources; maintain high averages despite serious compliance failures.
-
-## How Builder Score™ works
-
-Builder Score™ is a 0–1000 trust rating calculated from six independently verified components:
-
-| Component | Weight | Max Points |
-|---|---|---|
-| Verified reviews | 35% | 350 |
-| CDM compliance record | 20% | 200 |
-| Payment behaviour | 15% | 150 |
-| Insurance and accreditation | 15% | 150 |
-| Dispute resolution record | 10% | 100 |
-| Response rate and platform activity | 5% | 50 |
-
-## Score tiers
-
-- **Platinum**: 900–1000 — outstanding across all components
-- **Gold**: 700–899 — strong track record, verified across all key areas
-- **Silver**: 500–699 — solid, with some components still building
-- **Bronze**: 0–499 — less verified history available
-
-## How to use Builder Score when comparing quotes
-
-When you receive three quotes on the same scope of works, filter by Builder Score before comparing price. A Gold-rated contractor quoting 10% higher than an Unrated contractor is often the lower-risk choice.
-
-Search contractors by Builder Score™ on Dwellinger.
-`,
-  },
-
 }
 
 export async function generateStaticParams() {
@@ -844,7 +947,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     <div style={{ backgroundColor: '#FFFFFF' }}>
       {/* Hero with full-width image */}
       <section style={{ position: 'relative', minHeight: 320, display: 'flex', alignItems: 'flex-end' }}>
-        {/* Background image */}
         <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
           <img
             src={post.image}
@@ -853,7 +955,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,35,64,0.97) 0%, rgba(26,35,64,0.75) 50%, rgba(26,35,64,0.4) 100%)' }} />
         </div>
-        {/* Content over image */}
         <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: 760, margin: '0 auto', padding: '80px 24px 48px' }}>
           <div style={{ display: 'inline-block', backgroundColor: 'rgba(196,119,59,0.9)', color: '#fff', padding: '4px 12px', borderRadius: 100, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 20 }}>
             {post.category}
@@ -875,7 +976,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {/* Content */}
       <article style={{ maxWidth: 760, margin: '0 auto', padding: '48px 24px 80px' }}>
         <Link
           href="/blog"
@@ -892,7 +992,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         {renderContent(post.content)}
       </article>
 
-      {/* CTA */}
       <section style={{ backgroundColor: '#F5F0E8', padding: '64px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: 600, margin: '0 auto' }}>
           <h2 style={{ color: '#1A2340', fontSize: '1.5rem', fontWeight: 800, marginBottom: 16 }}>

@@ -30,6 +30,7 @@ const navItems: NavItem[] = [
     dropdown: [
       { label: 'Get an Estimate', href: '/services/estimating' },
       { label: 'Quantity Surveying', href: '/services/quantity-surveying' },
+      { label: 'Costs by City', href: '/locations' },
       { label: 'Extension Calculator', href: '/tools/extension-cost-calculator' },
       { label: 'Loft Calculator', href: '/tools/loft-conversion-calculator' },
       { label: 'Development Appraisal', href: '/tools/development-appraisal' },
@@ -65,10 +66,13 @@ const navItems: NavItem[] = [
   { label: 'Blog', href: '/blog' },
 ]
 
+// Only dark + twilight — light mode removed from Dwellinger (dark-first brand)
 const THEMES = [
   { value: 'dark' as Theme,  label: 'Dark',     Icon: Moon      },
   { value: 'mid' as Theme,   label: 'Twilight', Icon: SunMedium },
 ]
+
+// ── Helpers ─────────────────────────────────────────────────────────────────────────────────
 
 function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () => void }) {
   return (
@@ -117,6 +121,12 @@ function DropdownMenu({ items, onClose }: { items: DropdownItem[]; onClose: () =
   )
 }
 
+// ── Theme controls ──────────────────────────────────────────────────────────────────────────
+
+/**
+ * ThemePill — compact 2-button segment (dark + twilight only).
+ * Light mode removed — Dwellinger is a dark-first premium brand.
+ */
 function ThemePill() {
   const { theme, setTheme } = useTheme()
   return (
@@ -160,12 +170,16 @@ function ThemePill() {
   )
 }
 
+// ── Language control ───────────────────────────────────────────────────────────────────────────
+
+// Map our lang codes to Google Translate language codes
 const GT_LANG_MAP: Record<string, string> = {
   en: 'en', ro: 'ro', pl: 'pl', pt: 'pt', it: 'it',
   es: 'es', de: 'de', fr: 'fr', ru: 'ru', bg: 'bg',
   hu: 'hu', ar: 'ar', zh: 'zh-CN',
 }
 
+// Known lang codes — used to detect language from URL path segment
 const KNOWN_LANGS = new Set(Object.keys(LANGUAGES))
 
 function triggerGoogleTranslate(gtCode: string) {
@@ -179,6 +193,7 @@ function triggerGoogleTranslate(gtCode: string) {
     return false
   }
   if (!attempt()) {
+    // Widget not ready yet — poll until it is (max 3s)
     let tries = 0
     const interval = setInterval(() => {
       if (attempt() || ++tries > 30) clearInterval(interval)
@@ -187,6 +202,7 @@ function triggerGoogleTranslate(gtCode: string) {
 }
 
 function restoreEnglish() {
+  // Clear googtrans cookies
   const host = window.location.hostname
   const exp = 'Thu, 01 Jan 1970 00:00:00 UTC'
   document.cookie = `googtrans=; expires=${exp}; path=/`
@@ -202,6 +218,7 @@ function LangToggle() {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
+  // Derive current language from URL path — e.g. /ro/... → 'ro', /pl → 'pl', / → 'en'
   const pathSegment = pathname?.split('/')[1] ?? ''
   const urlLang: Lang = (KNOWN_LANGS.has(pathSegment) ? pathSegment : 'en') as Lang
 
@@ -216,11 +233,13 @@ function LangToggle() {
   const handleSelect = (code: Lang) => {
     setLang(code)
     setOpen(false)
+    // Navigate to URL-based language route (primary)
     if (code === 'en') {
       router.push('/')
     } else {
       router.push(`/${code}`)
     }
+    // Also trigger Google Translate as in-page fallback for non-routed content
     if (code === 'en') {
       restoreEnglish()
     } else {
@@ -300,6 +319,8 @@ function LangToggle() {
   )
 }
 
+// ── Nav ────────────────────────────────────────────────────────────────────────────────────
+
 export default function Nav() {
   const [open, setOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
@@ -316,6 +337,7 @@ export default function Nav() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
+  // Close mobile menu on resize to desktop
   useEffect(() => {
     const handler = () => { if (window.innerWidth >= 768) setOpen(false) }
     window.addEventListener('resize', handler)
@@ -334,6 +356,7 @@ export default function Nav() {
         backdropFilter: 'blur(12px)',
       }}
     >
+      {/* ── Top bar ───────────────────────────────────────────────────────────────────────── */}
       <nav
         style={{
           maxWidth: 1200,
@@ -346,9 +369,12 @@ export default function Nav() {
           gap: 8,
         }}
       >
+        {/* Logo */}
         <div style={{ flexShrink: 0 }}>
           <Logo size="sm" />
         </div>
+
+        {/* Desktop nav links — NOTE: NO inline display:flex here; Tailwind hidden/md:flex controls it */}
         <div
           className="hidden md:flex"
           style={{ alignItems: 'center', gap: 4, flex: 1, justifyContent: 'center' }}
@@ -402,34 +428,127 @@ export default function Nav() {
             )
           })}
         </div>
+
+        {/* Right-side controls */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
+
+          {/* ThemePill — ALWAYS visible on every device */}
           <ThemePill />
+
+          {/* LangToggle — ALWAYS visible on every device */}
           <LangToggle />
-          <div className="hidden md:flex" style={{ alignItems: 'center', gap: 10, marginLeft: 4 }}>
-            <Link href="/login" style={{ color: 'var(--color-text-secondary)', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, whiteSpace: 'nowrap' }}>Sign in</Link>
-            <Link href="/register" style={{ backgroundColor: 'var(--amber)', color: '#fff', padding: '7px 14px', borderRadius: 6, fontWeight: 700, textDecoration: 'none', fontSize: '0.875rem', whiteSpace: 'nowrap' }}>Get started free</Link>
+
+          {/* Sign in + Get started — desktop only */}
+          <div
+            className="hidden md:flex"
+            style={{ alignItems: 'center', gap: 10, marginLeft: 4 }}
+          >
+            <Link
+              href="/login"
+              style={{
+                color: 'var(--color-text-secondary)',
+                textDecoration: 'none',
+                fontSize: '0.875rem',
+                fontWeight: 500,
+                whiteSpace: 'nowrap',
+              }}
+            >
+              Sign in
+            </Link>
+            <Link
+              href="/register"
+              style={{
+                backgroundColor: 'var(--amber)',
+                color: '#fff',
+                padding: '7px 14px',
+                borderRadius: 6,
+                fontWeight: 700,
+                textDecoration: 'none',
+                fontSize: '0.875rem',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              Get started free
+            </Link>
           </div>
-          <button onClick={() => setOpen(!open)} className="md:hidden" style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text)', padding: 4, display: 'flex', alignItems: 'center', flexShrink: 0 }} aria-label="Toggle menu">
+
+          {/* Hamburger — mobile only */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden"
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: 'var(--color-text)',
+              padding: 4,
+              display: 'flex',
+              alignItems: 'center',
+              flexShrink: 0,
+            }}
+            aria-label="Toggle menu"
+          >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </nav>
+
+      {/* ── Mobile drawer ──────────────────────────────────────────────────────────────────────────────────── */}
       {open && (
-        <div className="md:hidden" style={{ backgroundColor: 'var(--color-bg-surface)', borderTop: '1px solid var(--color-border)' }}>
+        <div
+          className="md:hidden"
+          style={{
+            backgroundColor: 'var(--color-bg-surface)',
+            borderTop: '1px solid var(--color-border)',
+          }}
+        >
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: '8px 16px 16px' }}>
+
+            {/* Nav items */}
             {navItems.map((item) => {
               if (item.dropdown) {
                 const expanded = mobileExpanded === item.label
                 return (
                   <div key={item.label} style={{ borderBottom: '1px solid var(--color-border)' }}>
-                    <button onClick={() => setMobileExpanded(expanded ? null : item.label)} style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 0', background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-secondary)', fontSize: '0.9rem', fontWeight: 600 }}>
+                    <button
+                      onClick={() => setMobileExpanded(expanded ? null : item.label)}
+                      style={{
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '12px 0',
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        color: 'var(--color-text-secondary)',
+                        fontSize: '0.9rem',
+                        fontWeight: 600,
+                      }}
+                    >
                       {item.label}
-                      <ChevronDown size={16} style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+                      <ChevronDown
+                        size={16}
+                        style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}
+                      />
                     </button>
                     {expanded && (
                       <div style={{ paddingLeft: 12, paddingBottom: 10 }}>
                         {item.dropdown.map((sub) => (
-                          <Link key={sub.href} href={sub.href} onClick={() => { setOpen(false); setMobileExpanded(null) }} style={{ display: 'block', padding: '8px 0', color: 'var(--color-text-muted)', textDecoration: 'none', fontSize: '0.875rem' }}>{sub.label}</Link>
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={() => { setOpen(false); setMobileExpanded(null) }}
+                            style={{
+                              display: 'block',
+                              padding: '8px 0',
+                              color: 'var(--color-text-muted)',
+                              textDecoration: 'none',
+                              fontSize: '0.875rem',
+                            }}
+                          >
+                            {sub.label}
+                          </Link>
                         ))}
                       </div>
                     )}
@@ -437,12 +556,62 @@ export default function Nav() {
                 )
               }
               return (
-                <Link key={item.label} href={item.href!} onClick={() => setOpen(false)} style={{ display: 'block', padding: '12px 0', color: 'var(--color-text-secondary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, borderBottom: '1px solid var(--color-border)' }}>{item.label}</Link>
+                <Link
+                  key={item.label}
+                  href={item.href!}
+                  onClick={() => setOpen(false)}
+                  style={{
+                    display: 'block',
+                    padding: '12px 0',
+                    color: 'var(--color-text-secondary)',
+                    textDecoration: 'none',
+                    fontSize: '0.9rem',
+                    fontWeight: 600,
+                    borderBottom: '1px solid var(--color-border)',
+                  }}
+                >
+                  {item.label}
+                </Link>
               )
             })}
+
+            {/* CTA buttons */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, paddingTop: 14 }}>
-              <Link href="/login" onClick={() => setOpen(false)} style={{ display: 'block', textAlign: 'center', padding: '11px', backgroundColor: 'var(--color-bg-raised)', border: '1px solid var(--color-border)', borderRadius: 8, color: 'var(--color-text)', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem' }}>Sign in</Link>
-              <Link href="/register" onClick={() => setOpen(false)} style={{ display: 'block', textAlign: 'center', padding: '11px', backgroundColor: 'var(--amber)', borderRadius: 8, color: '#fff', textDecoration: 'none', fontWeight: 700, fontSize: '0.9rem' }}>Get started free</Link>
+              <Link
+                href="/login"
+                onClick={() => setOpen(false)}
+                style={{
+                  display: 'block',
+                  textAlign: 'center',
+                  padding: '11px',
+                  backgroundColor: 'var(--color-bg-raised)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: 8,
+                  color: 'var(--color-text)',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                  fontSize: '0.9rem',
+                }}
+              >
+                Sign in
+              </Link>
+              <Link
+                href="/register"
+                onClick={() => setOpen(false)}
+                style={{
+                  display: 'block',
+                  textAlign: 'center',
+                  padding: '11px',
+                  backgroundColor: 'var(--amber)',
+                  borderRadius: 8,
+                  color: '#fff',
+                  textDecoration: 'none',
+                  fontWeight: 700,
+                  fontSize: '0.9rem',
+                }}
+              >
+                Get started free
+              </Link>
             </div>
           </div>
         </div>

@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight, Clock } from 'lucide-react'
 import { pageMetadata } from '@/lib/seo'
-import Image from 'next/image'
 
 export const metadata = pageMetadata({
   path: '/blog',
@@ -10,6 +9,36 @@ export const metadata = pageMetadata({
 })
 
 const posts = [
+  {
+    slug: 'loft-conversion-cost-london-2026',
+    category: 'Cost Guides',
+    title: 'Loft Conversion Cost in London: 2026 Guide',
+    excerpt: 'A loft conversion in London costs £60,000–£130,000 depending on type and specification. This 2026 guide covers costs by conversion type, London borough premiums, what\'s included, and how to get accurate quotes.',
+    readTime: '7 min read',
+    date: '13 Oct 2026',
+    author: 'James Hargrove',
+    image: 'https://images.unsplash.com/photo-1600607687644-c7171b46aba2?w=800&auto=format&q=75',
+  },
+  {
+    slug: 'house-extension-planning-permission-uk',
+    category: 'Planning & Compliance',
+    title: 'House Extension Planning Permission UK: Complete 2026 Guide',
+    excerpt: 'Many house extensions in England do not need planning permission. But the rules are specific and the exceptions matter. Here\'s exactly when you do and don\'t need to apply.',
+    readTime: '8 min read',
+    date: '12 Oct 2026',
+    author: 'James Hargrove',
+    image: 'https://images.unsplash.com/photo-1564078516393-cf04bd966db3?w=800&auto=format&q=75',
+  },
+  {
+    slug: 'quantity-surveyor-cost-uk',
+    category: 'Cost Guides',
+    title: 'How Much Does a Quantity Surveyor Cost in the UK? (2026 Guide)',
+    excerpt: 'Quantity surveyor fees in the UK range from 1% to 3% of project value, or £800–£6,000+ fixed fee for domestic projects. Here\'s what you get for your money and when a QS is worth it.',
+    readTime: '6 min read',
+    date: '11 Oct 2026',
+    author: 'James Hargrove',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&q=75',
+  },
   {
     slug: 'average-cost-to-build-a-house-uk-2026',
     category: 'Cost Guides',
@@ -34,7 +63,7 @@ const posts = [
     slug: 'garage-conversion-cost-uk-guide',
     category: 'Cost Guides',
     title: 'Garage Conversion Cost UK: 2026 Price Guide',
-    excerpt: 'A garage conversion costs £7,500–£22,000 in the UK in 2026. This guide covers what affects price, whether you need planning permission, Building Regulations requirements, and how to verify your contractor.',
+    excerpt: 'A garage conversion costs £7,500–£22,000 in the UK in 2026. This guide covers what affects price, planning permission rules, Building Regulations requirements, and how to verify your contractor.',
     readTime: '6 min read',
     date: '8 Oct 2026',
     author: 'James Hargrove',
