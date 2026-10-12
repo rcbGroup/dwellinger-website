@@ -1,8 +1,10 @@
 import Link from 'next/link'
-import { getDictionary, SUPPORTED_LANGS, type Locale } from '@/lib/i18n/dictionaries'
+import { getDictionary, type Locale } from '@/lib/i18n/dictionaries'
 import { pageMetadata } from '@/lib/seo'
 import { notFound } from 'next/navigation'
 import { ArrowRight, Shield, Zap, Users, TrendingUp } from 'lucide-react'
+
+const SUPPORTED_LANGS: Locale[] = ['ro', 'pl', 'es', 'fr', 'de', 'it', 'pt', 'uk', 'ru']
 
 type Props = { params: { lang: string } }
 
