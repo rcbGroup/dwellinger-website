@@ -13,6 +13,308 @@ const posts: Record<string, {
   description: string
   content: string
 }> = {
+  'average-cost-to-build-a-house-uk-2026': {
+    slug: 'average-cost-to-build-a-house-uk-2026',
+    category: 'Cost Guides',
+    title: 'Average Cost to Build a House in the UK (2026 Guide)',
+    date: '10 Oct 2026',
+    readTime: '9 min read',
+    author: 'James Hargrove',
+    description: 'Building a new home in the UK costs £1,750–£3,500/m² depending on spec, location and build method. A full 2026 cost breakdown with real figures by region, specification level, and project type.',
+    content: `
+## What does it actually cost to build a house in the UK in 2026?
+
+The honest answer: more than most people expect. Building a new home in the UK in 2026 costs between **£1,750 and £3,500 per m²** of gross internal area (GIA) — and that figure excludes land, professional fees, planning, utilities, and VAT.
+
+For a typical 4-bedroom detached house of 180m², total build costs (construction only) run:
+
+- **Basic specification**: £315,000–£360,000
+- **Mid specification**: £360,000–£540,000
+- **High specification**: £540,000–£630,000+
+
+Add professional fees (10–15%), planning and Building Control (£5,000–£15,000), infrastructure and utilities connection (£15,000–£40,000), and VAT where applicable — and the all-in cost of building a new 4-bedroom home outside London typically falls between **£400,000 and £750,000**.
+
+---
+
+## Cost per m² by specification
+
+The most reliable way to estimate build cost is cost per m² of gross internal area.
+
+### Basic specification (£1,750–£2,100/m²)
+
+Standard block-and-beam or timber frame construction. Off-the-shelf kitchen and bathroom fittings. Conventional windows. No complex structural elements. Suitable for volume housing or tightly controlled budget builds.
+
+### Mid specification (£2,100–£2,800/m²)
+
+Better-quality fittings throughout. Underfloor heating on ground floor. More architectural interest: bi-fold doors, higher ceiling heights, quality glazing. Typically what homeowners commissioning a one-off build will aim for.
+
+### High specification (£2,800–£3,500/m²+)
+
+Premium kitchen and bathrooms. Smart home systems. Bespoke joinery. Air source heat pump, solar PV, MVHR (mechanical ventilation with heat recovery). Complex rooflines, large structural glazing, premium external materials.
+
+Sustainable and Passivhaus builds typically fall in the higher range — but energy savings over time partially offset the premium.
+
+---
+
+## Cost by region (2026)
+
+London and the South East command the highest build costs:
+
+| Region | Cost per m² range |
+|--------|------------------|
+| London | £2,200–£4,000/m² |
+| South East and East of England | £1,900–£2,800/m² |
+| Midlands | £1,750–£2,400/m² |
+| North of England | £1,650–£2,200/m² |
+| Scotland and Wales | £1,700–£2,300/m² |
+
+These figures reflect labour rates — which account for roughly 40–45% of total build cost. London trades cost significantly more per day than equivalent trades in the North, and logistics, parking, and access add further overhead.
+
+---
+
+## What build cost includes — and what it doesn't
+
+A build contract typically covers:
+
+- Groundworks and foundations
+- Superstructure (walls, floors, roof)
+- Roof covering and rainwater goods
+- External doors, windows, and glazing
+- External rendering or brick/stone cladding
+- First-fix plumbing, heating, and electrical
+- Insulation (walls, floor, roof)
+- Internal walls and partitions
+- Plasterboard, skim, and decoration
+- Second-fix plumbing and electrical
+- Kitchen and bathroom fittings (if specified)
+
+What a build contract typically **does not** include:
+
+- Land cost
+- Architect fees (typically 8–12% of build cost)
+- Structural engineer fees (typically 1–3%)
+- QS / cost consultant fees
+- Planning application fees
+- Building Control fees (£2,000–£6,000 for a new house)
+- Infrastructure: road, drainage, electricity, water connections (£15,000–£50,000 depending on location)
+- VAT — new build homes are zero-rated for the end owner, but VAT applies in the supply chain
+
+---
+
+## Common mistakes in estimating build cost
+
+- **Using m² figures without defining specification**: a £2,500/m² estimate at mid-spec is very different from £2,500/m² at basic-spec
+- **Ignoring abnormal groundwork costs**: London clay, contaminated ground, high water tables can add £20,000–£80,000 to foundation costs
+- **Underestimating professional fees**: 12–18% is realistic for a one-off house; budget cuts here create risk later
+- **No contingency**: 10–15% on top of the contractor price is a minimum. Unexpected conditions are normal, not exceptional.
+
+---
+
+## How to get an accurate cost for your project
+
+1. **Architectural drawings** — Planning drawings are insufficient for pricing. You need technical drawings.
+2. **Structural calculations** — Foundation type, beam sizes, and floor loadings.
+3. **Specification document** — What finishes, appliances, and systems.
+4. **Three contractor tenders** — From contractors who have visited the site.
+5. **Contingency allowance** — 10–15% over the contractor figure.
+
+Dwellinger's free estimating tool gives you a project-specific ballpark based on size, location, and specification — before you commit to architect fees.
+
+[Get a free build cost estimate](/estimate)
+`,
+  },
+
+  'building-costs-per-sqm-london-2026': {
+    slug: 'building-costs-per-sqm-london-2026',
+    category: 'Cost Guides',
+    title: 'Building Costs Per m² in London: 2026 Guide for Homeowners and Developers',
+    date: '9 Oct 2026',
+    readTime: '7 min read',
+    author: 'James Hargrove',
+    description: 'London building costs range from £1,800 to £4,500+ per m² in 2026. This guide breaks down costs by project type, specification level, and London borough.',
+    content: `
+## Why London building costs are different
+
+Building in London costs more — significantly more — than anywhere else in the UK. The premium has widened since 2020 and, despite softening in some trades, remains substantial in 2026.
+
+The premium reflects:
+
+- **Labour costs**: London trades earn 20–40% more than equivalent trades outside the M25. A skilled electrician or plumber charges £350–£600/day in London versus £220–£380 elsewhere.
+- **Logistics**: Loading restrictions, ULEZ and Congestion Charge zones, parking permits, and tight delivery windows add real cost to every project.
+- **Lead times**: Demand for skilled trades means longer lead times and less competitive tendering on mid-sized projects.
+- **Planning complexity**: Conservation areas, listed buildings, and borough-specific restrictions add cost and time.
+
+---
+
+## Building costs per m² in London by project type (2026)
+
+### New build residential
+
+- **Basic specification**: £2,200–£2,700/m² GIA
+- **Mid specification**: £2,700–£3,400/m² GIA
+- **High specification**: £3,400–£4,500/m² GIA
+
+For a 200m² detached house in outer London at mid specification: £540,000–£680,000 build cost (excluding land, fees, and planning).
+
+### Rear extension (single-storey)
+
+| Specification | Cost per m² |
+|---|---|
+| Basic | £1,800–£2,400/m² |
+| Mid specification | £2,400–£3,000/m² |
+| High spec (bifold doors / lanterns) | £3,000–£4,200/m² |
+
+A typical 4m × 5m (20m²) single-storey rear extension in London: **£48,000–£84,000** depending on specification.
+
+### Loft conversion
+
+- Rooflight only: £1,200–£1,800/m² of new floor area
+- Dormer: £1,500–£2,200/m²
+- Mansard: £2,000–£3,000/m²
+
+For a standard 40m² dormer loft conversion in London: **£60,000–£88,000**.
+
+### Full house refurbishment
+
+- Basic refit: £700–£1,100/m²
+- Mid-specification: £1,100–£1,600/m²
+- High specification: £1,600–£2,500/m²
+
+These figures cover all trades. Kitchen units, bathroom suites, and appliances are typically priced separately.
+
+---
+
+## Cost variation by London borough
+
+- **Inner London (Westminster, Kensington, Islington, Camden)**: Add 15–25% to mid-range figures. Logistics are harder, trades charge more, conservation constraints are more common.
+- **Outer East London (Hackney, Walthamstow, Leyton)**: Within 5–10% of the mid-range figures above.
+- **Outer West London (Ealing, Hounslow, Richmond)**: Mid-range on most project types. Richmond has significant conservation area coverage.
+- **South London (Lambeth, Lewisham, Southwark)**: Generally mid-range.
+
+---
+
+## What drives cost per m² higher
+
+**Specification** is the biggest single lever. Choosing bifold doors (£8,000–£20,000 for a typical opening), a premium kitchen (£20,000–£60,000 supply-only), or underfloor heating (add £80–£150/m²) can increase overall cost per m² significantly.
+
+**Ground conditions** — London clay is prevalent and requires appropriate foundation design. On some sites, mini-piles or raft foundations replace conventional strip footings at significant additional cost.
+
+**Programme length** increases cost. A project that takes 6 months instead of 3 months runs higher overhead and supervision costs.
+
+**Access and logistics** — projects requiring crane lifts, traffic management, or scaffolding on narrow streets cost more than the equivalent project with clear site access.
+
+---
+
+## How to use cost per m² figures accurately
+
+Cost per m² is a starting point — not a quotation. Always:
+
+1. Define the gross internal area (GIA) precisely — every floor, including circulation
+2. State the specification level — basic, mid, or high
+3. State the project type — new build, extension, or refurbishment
+4. Allow for professional fees: typically 12–18% of build cost in London
+5. Allow 10–15% contingency on all projects
+
+[Get a free London cost estimate](/estimate)
+`,
+  },
+
+  'garage-conversion-cost-uk-guide': {
+    slug: 'garage-conversion-cost-uk-guide',
+    category: 'Cost Guides',
+    title: 'Garage Conversion Cost UK: 2026 Price Guide',
+    date: '8 Oct 2026',
+    readTime: '6 min read',
+    author: 'James Hargrove',
+    description: 'A garage conversion costs £7,500–£22,000 in the UK in 2026. This guide covers what affects price, planning permission rules, Building Regulations, and how to verify your contractor.',
+    content: `
+## What does a garage conversion cost in the UK in 2026?
+
+A garage conversion is one of the most cost-effective ways to add usable space to a home — and one of the most frequently underestimated in terms of what a proper conversion involves.
+
+**Typical cost range: £7,500–£22,000**
+
+| Conversion type | Typical cost range |
+|---|---|
+| Basic habitable conversion (no bathroom) | £7,500–£12,000 |
+| Living space or home office (mid-spec) | £10,000–£16,000 |
+| Bedroom with en-suite | £14,000–£22,000 |
+| High-spec with bifold door | £16,000–£28,000+ |
+
+Add 20–30% in London for the labour premium.
+
+---
+
+## What a garage conversion includes
+
+A properly specified conversion typically covers:
+
+- **Structural work**: Removing or modifying the garage door opening; installing a new front wall or glazing; lintels where required
+- **Floor**: DPM (damp-proof membrane), insulation, and floor screed or deck; often underfloor heating
+- **Walls**: Insulating external walls (cavity or internal board); plasterboard and skim
+- **Ceiling**: Insulation and plasterboard
+- **Windows and external door**: Supply and installation
+- **Electrics**: Consumer unit spur, sockets, lighting
+- **Heating**: Extending existing system or new circuit
+
+Additional costs for a bedroom/bathroom conversion:
+- En-suite bathroom: add £4,000–£8,000
+- Kitchenette: add £3,000–£8,000
+
+---
+
+## Do you need planning permission?
+
+Most garage conversions are **permitted development** — no planning application required — provided you're converting the internal space without extending the external footprint.
+
+Exceptions that require planning permission:
+
+- The property is in a Conservation Area and the works affect the external appearance
+- The garage is on the front elevation in an area where this is restricted
+- The property is a listed building
+- Permitted development rights have been removed by a planning condition or Article 4 Direction
+
+Always check with your local planning authority if in doubt. Most councils offer a pre-application enquiry service.
+
+---
+
+## Building Regulations: always required
+
+Regardless of planning permission, **Building Regulations approval is always required** for a garage conversion. This covers:
+
+- Structural adequacy of any new opening or lintel
+- Thermal insulation to current standards (Part L)
+- Ventilation (Part F)
+- Fire safety (Part B) — particularly important where the garage connects to the house
+- Damp-proofing (Part C)
+- Electrics (Part P)
+
+You have two routes: Full Plans approval (submit drawings for checking before work starts) or Building Notice (inspections as you go). Full Plans is usually preferred for conversions — it confirms compliance before money is spent.
+
+---
+
+## Will a garage conversion add value?
+
+A well-executed conversion typically adds **70–85% of the conversion cost** to the property value. In high-demand areas — most of London and the South East commuter belt — well-designed conversions can add more than they cost.
+
+Key value factors:
+
+- **Off-street parking**: Does the property still have parking after conversion? Loss of parking reduces value, particularly in outer London.
+- **Usability**: Proper ceiling height, good natural light, appropriate insulation.
+- **Building Regulations certificate**: Essential for conveyancing. Without it, expect delays or deductions at sale.
+
+---
+
+## Getting the right contractor
+
+Garage conversions are multi-trade projects — structural builder, electrician, plumber (if adding a bathroom), and plasterer. A principal contractor who coordinates all trades is worth the coordination premium.
+
+Before inviting a quote, check the contractor's Builder Score™ on Dwellinger — it shows verified project reviews, CDM compliance record, and payment behaviour to suppliers.
+
+[Find verified garage conversion contractors](/search)
+`,
+  },
+
   'how-much-does-a-rear-extension-cost-uk-2025': {
     slug: 'how-much-does-a-rear-extension-cost-uk-2025',
     category: 'Cost Guides',
@@ -141,8 +443,6 @@ This matters because the home improvement market handles over **£28 billion in 
 
 ## What star ratings miss
 
-Here are the things a five-star rating cannot tell you:
-
 ### Payment behaviour
 
 Does the contractor pay their subcontractors on time? Do they hold deposits on materials and then fail to pay suppliers, leaving homeowners exposed when insolvency follows? A review from a satisfied homeowner says nothing about what happened to the plasterer and the plumber after the job was complete.
@@ -153,7 +453,7 @@ The Construction (Design and Management) Regulations 2015 place legal duties on 
 
 ### Insurance currency
 
-A contractor can show you a certificate of public liability insurance dated 18 months ago. Is it still current? Has it been renewed? What is the claims history? A review system cannot answer any of these questions.
+A contractor can show you a certificate of public liability insurance dated 18 months ago. Is it still current? Has it been renewed? A review system cannot answer any of these questions.
 
 ### Dispute history
 
@@ -166,7 +466,7 @@ A contractor with 47 five-star reviews and one unresolved dispute — where a ho
 Builder Score™ is Dwellinger's proprietary 0–1000 trust rating for contractors. It is calculated across five weighted dimensions:
 
 **1. Verified reviews (0–200 points)**
-Not just the star average — we weight by recency, job type, and whether the review is independently corroborated. Recent reviews on a diverse mix of project types score higher than a cluster of reviews from a single period.
+Not just the star average — we weight by recency, job type, and whether the review is independently corroborated.
 
 **2. CDM and health & safety compliance (0–200 points)**
 We review documentation and assess whether the contractor demonstrates awareness of their statutory duties as principal contractor.
@@ -187,8 +487,6 @@ Current proof of public liability and employers' liability insurance, plus any r
 A Builder Score™ above **800** indicates a contractor with a strong, multi-dimensional trust profile. Above **900** (Platinum tier) indicates outstanding performance across all dimensions.
 
 A score below **600** should prompt careful questions, even if the contractor has attractive reviews.
-
-The score is not a guarantee. No scoring system can eliminate risk entirely. But it provides a substantially richer signal than a star average — because it evaluates the things that actually matter when something goes wrong on a project.
 
 ---
 
@@ -272,7 +570,7 @@ The correct process:
 3. Decide what profit margin you require
 4. **Calculate the maximum you can pay for the land**
 
-This final step is the residual land value. It is the number that determines whether you can make money — and it is the number that tells you your maximum bid.
+This final step is the residual land value. It determines whether you can make money — and sets your maximum bid.
 
 ---
 
@@ -290,64 +588,31 @@ For a residential scheme of six flats in East London:
 
 ### 2. Build costs
 
-Build costs include everything required to construct the development:
-- Demolition and enabling works
-- Groundworks and foundations
-- Superstructure
-- Roof
-- M&E (mechanical and electrical)
-- Internal fit-out
-- External works
-
-For a residential scheme, build costs in London typically run **£2,000–£3,500/m²** GIA (Gross Internal Area), depending on specification and scheme complexity.
+For a residential scheme, build costs in London typically run **£2,000–£3,500/m²** GIA, depending on specification and scheme complexity.
 
 In our example: 400m² GIA at £2,500/m² = £1,000,000
 
-### 3. Professional fees
+### 3. Professional fees (10–15% of build cost)
 
-Add 10–15% of build cost for:
-- Architect
-- Structural engineer
-- QS / cost consultant
-- Planning consultant
-- Party wall surveyor
+Architect, structural engineer, QS/cost consultant, planning consultant, party wall surveyor.
 
 In our example: £1,000,000 × 12% = £120,000
 
 ### 4. Planning, CIL, and S106
 
-- Planning application fees
-- Community Infrastructure Levy (CIL) — varies by borough, can be significant
-- Section 106 affordable housing contributions
-
-Allow £50,000–£150,000 for these on a scheme of 6 units in inner London.
+Planning fees, Community Infrastructure Levy (CIL), and Section 106 contributions. Allow £50,000–£150,000 for 6 units in inner London.
 
 ### 5. Finance costs
 
-If you are borrowing to fund the scheme:
-- Arrangement fees (typically 1–2% of loan)
-- Rolled-up interest during construction
-- Exit/redemption fees
-
 On a 12-month build programme with 65% LTC at 8% interest: approximately £65,000–£90,000.
 
-### 6. Sales and marketing costs
+### 6. Contingency
 
-Agent fees (1–2.5% of GDV), legal fees, and marketing.
+**Always include 5–10% contingency** on build cost. Allow £60,000 (6% of build cost).
 
-Allow £55,000–£80,000 on a £2.2m GDV.
+### 7. Developer's profit
 
-### 7. Contingency
-
-**Always include 5–10% contingency** on build cost. Unexpected groundwork conditions, programme overruns, and scope changes are normal in development.
-
-Allow £60,000 (6% of build cost).
-
-### 8. Developer's profit
-
-The required return on risk. Typically **15–20% of GDV** or **20–25% of total development costs** for residential development in the UK.
-
-At 18% of GDV: £2,200,000 × 18% = £396,000
+Typically **15–20% of GDV** for residential development. At 18% of GDV: £2,200,000 × 18% = £396,000
 
 ---
 
@@ -365,24 +630,7 @@ At 18% of GDV: £2,200,000 × 18% = £396,000
 | Less developer profit (18% GDV) | −£396,000 |
 | **Residual Land Value** | **£409,000** |
 
-This means you can pay up to £409,000 for this site and still achieve your required return.
-
-If the vendor is asking £500,000, the scheme does not work at the current specification, GDV assumptions, or profit requirement. You need to either renegotiate the price, increase the GDV (through redesign, planning uplift, or specification increase), or reduce costs.
-
----
-
-## Common mistakes
-
-- **Using optimistic GDV figures**: Use comparable evidence from recent sold prices, not asking prices
-- **Ignoring CIL**: In some London boroughs, CIL can be substantial
-- **Underestimating finance costs**: Rolled-up interest on a delayed programme can significantly erode return
-- **No contingency**: If it can go wrong, it will
-
----
-
-## Use the Dwellinger development appraisal tool
-
-Our free development appraisal tool walks you through this calculation for any UK residential scheme — and connects you with QS-reviewed build cost estimates when you need more precision.
+This means you can pay up to £409,000 for this site and still achieve your required return. If the vendor is asking £500,000, the scheme does not work at the current parameters.
 
 [Use the Development Appraisal Tool](/tools/development-appraisal)
 `,
@@ -403,100 +651,48 @@ The Construction (Design and Management) Regulations 2015 (CDM 2015) are the pri
 
 Many homeowners assume CDM applies only to commercial or large-scale projects. It does not. CDM 2015 applies to virtually all construction work in Great Britain — including domestic projects.
 
-What changes for domestic projects is who carries the legal duties, and how onerous those duties are. But the law applies.
-
 ---
 
 ## The five duty-holders
 
-CDM 2015 defines five categories of duty-holder:
-
 ### 1. Client
 
-In a domestic project, the **client is you** — the homeowner commissioning the work. CDM recognises that domestic clients are not construction professionals and makes a significant concession: you can transfer your client duties to the **principal contractor** or **principal designer** in writing.
-
-If you don't do this, the law assumes your duties have passed to the principal contractor by default.
+In a domestic project, the **client is you** — the homeowner commissioning the work. You can transfer your client duties to the **principal contractor** in writing. If you don't, the law assumes your duties have passed to the principal contractor by default.
 
 ### 2. Principal Designer
 
-The principal designer (PD) coordinates health and safety during the design and pre-construction phase. On projects where more than one contractor is involved, a PD must be appointed.
-
-For a kitchen extension with an architect drawing the plans, the architect may take on the PD role — or you may need to appoint a separate CDM coordinator.
+The principal designer coordinates health and safety during the design and pre-construction phase. On projects where more than one contractor is involved, a PD must be appointed.
 
 ### 3. Principal Contractor
 
-The principal contractor (PC) has overall responsibility for health and safety on site during the construction phase. This is typically your main contractor.
-
-The PC must:
+The principal contractor has overall responsibility for health and safety on site. They must:
 - Produce a **Construction Phase Plan** before work starts
 - Ensure the site is run safely
 - Coordinate sub-contractors
 - Maintain health and safety documentation
 
-A quality principal contractor takes these duties seriously and can demonstrate it through documentation. Be wary of contractors who cannot explain what a Construction Phase Plan is.
+### 4. Designers and Contractors
 
-### 4. Designers
-
-Architects, structural engineers, and anyone producing design information that will be built from.
-
-### 5. Contractors
-
-Any trade or firm carrying out construction work on site.
+Architects, structural engineers, and anyone producing design information, as well as all trade contractors on site.
 
 ---
 
-## When do CDM requirements become more formal?
+## When CDM becomes more formal
 
-CDM 2015 scales with project complexity. Two thresholds trigger additional requirements:
+**More than one contractor**: If two or more contractors work on your project, a principal contractor and principal designer must be formally appointed.
 
-**Threshold 1: More than one contractor**
-If two or more contractors work on your project, a **principal contractor** and **principal designer** must be formally appointed. This is true for virtually all extensions and refurbishments.
-
-**Threshold 2: Notifiable projects**
-A project becomes notifiable if it is likely to:
-- Last longer than 30 working days with more than 20 workers simultaneously, or
-- Exceed 500 person-days total
-
-Notifiable projects must be registered with the Health and Safety Executive (HSE) before work starts. Most domestic projects don't reach this threshold — but large refurbishments or complex extensions involving multiple trades over extended periods may.
+**Notifiable projects**: A project becomes notifiable if it is likely to last longer than 30 working days with more than 20 workers simultaneously, or exceed 500 person-days total. These must be registered with the HSE before work starts.
 
 ---
 
-## What should homeowners actually do?
+## What homeowners should actually do
 
-### Before appointing a contractor
-
-Ask your contractor:
+Before appointing a contractor, ask:
 - Who is acting as principal contractor on this project?
 - Can you provide your Construction Phase Plan?
-- Who is the principal designer?
-- Do you have current public liability insurance? Can I see the certificate?
+- Do you have current public liability insurance?
 
-A contractor who cannot answer these questions clearly should prompt caution.
-
-### Get it in writing
-
-Your contract with the principal contractor should specify:
-- That they are acting as principal contractor and accepting your client duties
-- Their CDM responsibilities
-- Health and safety obligations on site
-
-### The Health and Safety File
-
-At the end of the project, the principal designer must prepare a **Health and Safety File** — a record of the completed work, including as-built drawings, materials used, and any information future owners would need for maintenance or alteration. Keep this file safely.
-
----
-
-## What can go wrong?
-
-- **Uninsured accident on site**: If a worker is injured on your property and your contractor is not compliant with CDM requirements, you may face liability
-- **Enforcement action**: The HSE has the power to issue improvement notices and prohibition notices — and in serious cases, to prosecute
-- **Sale implications**: An absence of CDM documentation can complicate conveyancing, particularly if Building Control sign-off was not obtained
-
----
-
-## The Dwellinger approach
-
-When you work with a Builder Score™-verified contractor through Dwellinger, you are working with a contractor who has been assessed on their CDM compliance — not just their review ratings.
+At the end of the project, your principal contractor should hand you a **Health and Safety File** — keep it. You will need it if you sell the property or do further works.
 
 [Find CDM-aware contractors](/search)
 `,
@@ -515,9 +711,7 @@ When you work with a Builder Score™-verified contractor through Dwellinger, yo
 
 The average small construction business spends between 20% and 35% of its working hours on administration. Quotations, client communications, compliance documents, invoices, scheduling, scope of works documents — the administrative burden on a two-person construction business can consume an entire working day each week.
 
-This is not a new observation. But the solutions have been inadequate. Generic project management software doesn't understand construction terminology. CRM tools designed for sales teams don't know what a Construction Phase Plan is. Spreadsheets require manual maintenance that nobody has time for.
-
-Dwell Agents are different because they are trained specifically on UK construction — the terminology, the document types, the compliance requirements, and the commercial realities of running a building business.
+Dwell Agents are built specifically on UK construction — the terminology, the document types, the compliance requirements, and the commercial realities of running a building business.
 
 ---
 
@@ -525,52 +719,29 @@ Dwell Agents are different because they are trained specifically on UK construct
 
 ### Dwell Coord — Project Coordination Agent
 
-Dwell Coord handles project administration: managing schedules, tracking milestones, sending client updates, and keeping programme information organised.
+Handles project administration: managing schedules, tracking milestones, sending client updates, and keeping programme information organised.
 
-What Dwell Coord can do:
 - Generate project programmes from a scope of works
 - Send automated progress updates to clients at key milestones
 - Flag scheduling conflicts across active projects
 - Produce professional project handover documentation
 
-**Time saved**: Contractors using Dwell Coord report saving 3–6 hours per week on scheduling and client communication.
-
 ### Dwell Create — Document Creation Agent
 
-Dwell Create produces professional construction documents from brief inputs. It understands the language of UK construction and can produce:
+Produces professional construction documents from brief inputs:
 - Scope of works documents (stage by stage or room by room)
 - Contract summaries
 - Variation notices
 - Practical completion certificates
 - Defects liability notices
-- Client-facing project reports
-
-The documents Dwell Create produces are professional-grade and specific to construction — not generic templates with fields to fill in.
 
 ### Dwell Clarity — Technical Query Agent
 
-Dwell Clarity answers technical questions about UK construction: Building Regulations compliance, permitted development rules, CDM duties, standard details, material specifications, and more.
-
-It is not a replacement for a structural engineer or planning consultant — but it handles the day-to-day technical queries that currently require calls, Google searches, or guesswork:
-
-- "Does a dormer on a semi-detached house need planning permission?"
-- "What fire resistance does a party wall need in a terraced house?"
-- "What are the minimum ceiling heights under Part K?"
+Answers technical questions about UK construction: Building Regulations compliance, permitted development rules, CDM duties, standard details, material specifications, and more.
 
 ### Dwell Coach — Business Development Agent
 
-Dwell Coach helps construction businesses grow. It works with lead information to draft personalised outreach, helps with follow-up sequences, suggests pricing strategies based on job type and location, and helps contractors present themselves professionally to prospective clients.
-
----
-
-## How contractors are using them
-
-A typical session for a contractor using the Dwell Agent suite:
-
-1. **Morning**: Dwell Coord sends automated progress updates to three active clients — no manual drafting required
-2. **Mid-morning**: New enquiry comes in. Dwell Coach produces a personalised response email and a first-pass scope of works from the client's brief
-3. **Lunchtime**: Dwell Clarity answers a question about permitted development on a tricky rear extension
-4. **Afternoon**: Dwell Create produces a formal scope of works document for a loft conversion quotation — a task that previously took two hours now takes fifteen minutes
+Helps construction businesses grow. Works with lead information to draft personalised outreach, helps with follow-up sequences, and suggests pricing strategies based on job type and location.
 
 ---
 
@@ -630,7 +801,7 @@ Search verified extension contractors on Dwellinger and check their Builder Scor
 
 The Construction (Design and Management) Regulations 2015 — known as CDM 2015 — set out the legal framework for health and safety on UK construction projects. As a homeowner commissioning work, you have duties under these regulations whether you know it or not.
 
-CDM 2015 applies to virtually all construction work. For domestic clients (homeowners), the regulations apply when: the project involves more than one contractor working simultaneously; or the project lasts more than 30 working days with more than 20 workers; or total person-days exceed 500. Even smaller projects must comply with basic notification requirements.
+CDM 2015 applies to virtually all construction work. For domestic clients (homeowners), the regulations apply when: the project involves more than one contractor working simultaneously; or the project lasts more than 30 working days with more than 20 workers; or total person-days exceed 500.
 
 ## Your duty as domestic client
 
@@ -646,11 +817,11 @@ At the end of the project, your principal contractor should hand you a Health an
 
 ## How Dwellinger helps
 
-Builder Score™ includes a CDM compliance component worth 20% of the total score. Dwellinger checks whether contractors have produced Construction Phase Plans and Health and Safety Files on qualifying past projects. A contractor with a strong CDM record is less likely to create problems for you on site. Reference: HSE CDM 2015 guidance at hse.gov.uk/construction/cdm/2015.
+Builder Score™ includes a CDM compliance component worth 20% of the total score. Dwellinger checks whether contractors have produced Construction Phase Plans and Health and Safety Files on qualifying past projects.
 
 ## FAQ
 
-Do I need CDM for a kitchen refurbishment? If only one contractor is involved and the project is under 30 working days, CDM notification is not required — but basic H&S obligations still apply. Who is the Principal Contractor? The company or individual you appoint to manage and coordinate the work on site. What are the penalties for non-compliance? Improvement notices, prohibition notices, and in serious cases prosecution by the HSE.
+Do I need CDM for a kitchen refurbishment? If only one contractor is involved and the project is under 30 working days, CDM notification is not required — but basic H&S obligations still apply. Who is the Principal Contractor? The company or individual you appoint to manage and coordinate the work on site.
 `,
   },
 
@@ -667,15 +838,15 @@ The difference between a successful building project and a nightmare often comes
 
 ## 1. Verify their legal status
 
-Check the company exists on Companies House (find-and-update.company-information.service.gov.uk). A legitimate building contractor should be registered and have at least one year of trading history. Check their registered address matches what they have told you.
+Check the company exists on Companies House (find-and-update.company-information.service.gov.uk). A legitimate building contractor should be registered and have at least one year of trading history.
 
 ## 2. Confirm public liability insurance
 
-Any contractor working on your property should carry public liability insurance of at least £2 million. Ask for a copy of the certificate and check the expiry date. If they cannot provide it, walk away.
+Any contractor working on your property should carry public liability insurance of at least £2 million. Ask for a copy of the certificate and check the expiry date.
 
 ## 3. Check their compliance record
 
-A contractor's track record on health, safety and compliance matters more than any marketing claim. Ask for references on previous projects. Dwellinger's Builder Score™ checks CDM compliance records, payment behaviour to suppliers, and dispute outcomes — data that no review platform provides.
+A contractor's track record on health, safety and compliance matters more than any marketing claim. Dwellinger's Builder Score™ checks CDM compliance records, payment behaviour to suppliers, and dispute outcomes.
 
 ## 4. Read verified project reviews
 
@@ -683,15 +854,15 @@ Look for reviews tied to specific completed projects — with photos, dates, and
 
 ## 5. Get at least 3 written quotes on the same scope
 
-Never compare quotes that are not based on identical scopes of work. Write your own brief — or use Dwellinger's Scope Builder tool — and give it to all three contractors. A quote that comes back significantly lower than the others usually means something has been omitted.
+Never compare quotes that are not based on identical scopes of work. A quote that comes back significantly lower than the others usually means something has been omitted.
 
 ## 6. Insist on a written contract
 
-Do not start work without a written contract. At minimum it should cover: full scope of works, payment schedule, start date and estimated completion, what happens if there are variations. For projects over £10,000, consider a JCT Minor Works Contract.
+Do not start work without a written contract. At minimum it should cover: full scope of works, payment schedule, start date and estimated completion, and what happens if there are variations.
 
 ## 7. Check their Builder Score™ on Dwellinger
 
-Builder Score™ is a 0–1000 trust rating calculated from six independently verified components — not self-reported reviews. A contractor with a Gold or Platinum score has demonstrated verified compliance, payment integrity and a strong review track record. Search by trade and location at dwellinger.co.uk.
+Builder Score™ is a 0–1000 trust rating calculated from six independently verified components — not self-reported reviews. A contractor with a Gold or Platinum score has demonstrated verified compliance, payment integrity and a strong review track record.
 
 ## Red flags to avoid
 
@@ -712,7 +883,7 @@ Five-star ratings are everywhere in the UK trades industry — and almost meanin
 
 ## The problem with star ratings
 
-Most trades review platforms allow contractors to: receive reviews without verified project documentation; remove negative reviews through dispute processes; generate reviews from non-project sources; maintain high averages despite serious compliance failures. The result is that star ratings tell you how good a contractor is at gathering positive reviews — not how good they are at building.
+Most trades review platforms allow contractors to: receive reviews without verified project documentation; remove negative reviews through dispute processes; generate reviews from non-project sources; maintain high averages despite serious compliance failures.
 
 ## How Builder Score™ works
 
@@ -720,22 +891,18 @@ Builder Score™ is a 0–1000 trust rating published by Dwellinger Ltd for ever
 
 - Verified reviews (35% — 350 points): reviews must be tied to a completed project with photos and client confirmation
 - CDM compliance record (20% — 200 points): Pre-Construction Information, Construction Phase Plan and Health and Safety File for qualifying projects
-- Payment behaviour (15% — 150 points): supplier and subcontractor payment patterns — late payments, disputes and non-payment events
-- Insurance and accreditation (15% — 150 points): current public liability insurance, professional indemnity where applicable, trade body membership, identity check
+- Payment behaviour (15% — 150 points): supplier and subcontractor payment patterns
+- Insurance and accreditation (15% — 150 points): current public liability insurance, professional indemnity where applicable, trade body membership
 - Dispute resolution record (10% — 100 points): outcome of disputes lodged through Dwellinger or third-party resolution
 - Response rate and platform activity (5% — 50 points): lead response time and communication quality
 
 ## Score tiers
 
-Platinum: 900–1000 — outstanding across all components. Gold: 700–899 — strong track record, verified across all key areas. Silver: 500–699 — solid, with some components still building. Bronze: 0–499 — less verified history available. Unrated: new contractor, score issued within one working day of verification.
-
-## What a Platinum contractor looks like
-
-A Platinum-rated contractor has: a strong portfolio of verified project reviews; full CDM documentation on all qualifying projects; a clean payment record with no supplier disputes; current insurance and trade body membership; no unresolved disputes.
+Platinum: 900–1000. Gold: 700–899. Silver: 500–699. Bronze: 0–499.
 
 ## How to use Builder Score when comparing quotes
 
-When you receive three quotes on the same scope of works, filter by Builder Score before comparing price. A Gold-rated contractor quoting 10% higher than an Unrated contractor is often the lower-risk choice — the difference in price is unlikely to cover the cost of a dispute or remedial work.
+When you receive three quotes on the same scope of works, filter by Builder Score before comparing price. A Gold-rated contractor quoting 10% higher than an Unrated contractor is often the lower-risk choice.
 
 Search contractors by Builder Score™ on Dwellinger.
 `,

@@ -10,6 +10,33 @@ export const metadata = pageMetadata({
 
 const posts = [
   {
+    slug: 'average-cost-to-build-a-house-uk-2026',
+    category: 'Cost Guides',
+    title: 'Average Cost to Build a House in the UK (2026 Guide)',
+    excerpt: 'Building a new home in the UK costs £1,750–£3,500/m² depending on spec, location and build method. A full 2026 cost breakdown with real figures by region, specification level, and project type.',
+    readTime: '9 min read',
+    date: '10 Oct 2026',
+    author: 'James Hargrove',
+  },
+  {
+    slug: 'building-costs-per-sqm-london-2026',
+    category: 'Cost Guides',
+    title: 'Building Costs Per m² in London: 2026 Guide',
+    excerpt: 'London building costs range from £1,800 to £4,500+ per m² in 2026. This guide breaks down costs by project type — extensions, loft conversions, new builds, and refurbishments — with borough-level context.',
+    readTime: '7 min read',
+    date: '9 Oct 2026',
+    author: 'James Hargrove',
+  },
+  {
+    slug: 'garage-conversion-cost-uk-guide',
+    category: 'Cost Guides',
+    title: 'Garage Conversion Cost UK: 2026 Price Guide',
+    excerpt: 'A garage conversion costs £7,500–£22,000 in the UK in 2026. This guide covers what affects price, whether you need planning permission, Building Regulations requirements, and how to verify your contractor.',
+    readTime: '6 min read',
+    date: '8 Oct 2026',
+    author: 'James Hargrove',
+  },
+  {
     slug: 'why-builder-score-beats-star-ratings',
     category: 'Builder Score™',
     title: 'Why Star Ratings Are Not Enough: Introducing Builder Score™',
@@ -101,7 +128,7 @@ const posts = [
   },
 ]
 
-const categories = ['All', 'Cost Guides', 'Builder Score™', 'Planning & Compliance', 'For Investors', 'Platform & Tools']
+const categories = ['All', 'Cost Guides', 'Builder Score™', 'Planning & Compliance', 'For Investors', 'Platform & Tools', 'Choosing a Builder']
 
 export default function BlogPage() {
   return (
