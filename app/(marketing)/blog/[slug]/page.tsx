@@ -1,3 +1,4 @@
+import React from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -73,7 +74,7 @@ London has a higher concentration of Conservation Areas, Article 4 Directions, a
 
 ---
 
-## What’s included (and what isn’t)
+## What is included (and what is not)
 
 **Typically included**: structural works (new floor, steels, propping), roof alterations (dormer construction or rooflight openings), Velux or equivalent roof windows, staircase supply and fit, insulation to current Part L standards, plasterboard and skim, electrics (lighting, sockets, fuse spur), heating (extension of existing system), basic decoration.
 
@@ -85,7 +86,7 @@ London has a higher concentration of Conservation Areas, Article 4 Directions, a
 
 Any quote generated without a site visit and survey of the existing loft is indicative only. A properly prepared quote requires the contractor or their representative to: measure the loft, assess the existing roof structure, check head height at different points, identify the best staircase position, and assess the feasibility of the en-suite plumbing route.
 
-Get at least 3 written quotes on the same specification. Check each contractor’s Builder Score™ on Dwellinger before inviting them to site.
+Get at least 3 written quotes on the same specification. Check each contractor Builder Score on Dwellinger before inviting them to site.
 
 [Get a free loft conversion estimate](/estimate)
 `,
@@ -99,13 +100,13 @@ Get at least 3 written quotes on the same specification. Check each contractor�
     readTime: '8 min read',
     author: 'James Hargrove',
     image: 'https://images.unsplash.com/photo-1564078516393-cf04bd966db3?w=1400&auto=format&q=80',
-    description: 'Many house extensions in England do not need planning permission. But the rules are specific and the exceptions matter. This 2026 guide covers exactly when you do and don’t need to apply.',
+    description: 'Many house extensions in England do not need planning permission. But the rules are specific and the exceptions matter. This 2026 guide covers exactly when you do and do not need to apply.',
     content: `
 ## Do you need planning permission for a house extension?
 
-In England, many house extensions can be built under **Permitted Development (PD) rights** — meaning you don’t need to apply for planning permission. But the rules are more specific than most homeowners realise, and the exceptions are significant.
+In England, many house extensions can be built under **Permitted Development (PD) rights** — meaning you do not need to apply for planning permission. But the rules are more specific than most homeowners realise, and the exceptions are significant.
 
-The key factors that determine whether your extension needs planning permission: the size and height of the extension, where it sits relative to the original house, whether you have a detached, semi-detached, or terraced property, whether you’re in a restricted area, and whether your PD rights have been removed.
+The key factors that determine whether your extension needs planning permission: the size and height of the extension, where it sits relative to the original house, whether you have a detached, semi-detached, or terraced property, whether you are in a restricted area, and whether your PD rights have been removed.
 
 ---
 
@@ -113,10 +114,9 @@ The key factors that determine whether your extension needs planning permission:
 
 ### Single-storey rear extensions
 
-**Detached houses**: up to **6 metres** from the original rear wall, or up to **8 metres** under the Larger Home Extension scheme (with prior approval).
-**Semi-detached and terraced houses**: up to **3 metres** from the original rear wall, or up to **6 metres** under the Larger Home Extension scheme (with prior approval).
+**Detached houses**: up to **6 metres** from the original rear wall, or up to **8 metres** under the Larger Home Extension scheme (with prior approval). **Semi-detached and terraced houses**: up to **3 metres** from the original rear wall, or up to **6 metres** under the Larger Home Extension scheme (with prior approval).
 
-Additional conditions: maximum height at the eaves of 3m (4m at the ridge); maximum height of 4m overall; doesn't cover more than half the garden; materials must match the existing house.
+Additional conditions: maximum height at the eaves of 3m (4m at the ridge); maximum height of 4m overall; does not cover more than half the garden; materials must match the existing house.
 
 ### Double-storey rear extensions
 
@@ -126,53 +126,33 @@ Double-storey extensions are more restricted: up to **3 metres** from the origin
 
 ## Side extensions
 
-Single-storey side extensions are permitted development if they don’t exceed half the width of the original house. Extensions on the principal elevation (front of the house) always need planning permission.
+Single-storey side extensions are permitted development if they do not exceed half the width of the original house. Extensions on the principal elevation (front of the house) always need planning permission.
 
 ---
 
 ## The Larger Home Extension scheme
 
-For single-storey rear extensions that exceed the basic 3m or 6m thresholds, homeowners in England can apply under the Larger Home Extension scheme (formerly the Neighbour Consultation Scheme). This allows extensions up to 6m (semi/terraced) or 8m (detached) provided:
+For single-storey rear extensions that exceed the basic 3m or 6m thresholds, homeowners in England can apply under the Larger Home Extension scheme. This allows extensions up to 6m (semi/terraced) or 8m (detached) provided: prior approval is obtained from the local authority, neighbours are notified and given the opportunity to object, and the authority assesses impact on amenity.
 
-- Prior approval is obtained from the local authority
-- Neighbours are notified and given the opportunity to object
-- The authority assesses impact on amenity
-
-Prior approval applications take 42 days. This is different from planning permission — the authority can only consider specific impacts, not general planning policy.
+Prior approval applications take 42 days. This is different from planning permission.
 
 ---
 
 ## When you always need planning permission
 
-Planning permission is always required for:
-
-- Extensions that exceed the PD volume or dimension thresholds
-- Extensions on listed buildings (which also need Listed Building Consent)
-- Extensions in National Parks, AONBs, World Heritage Sites, or Conservation Areas that alter the external appearance from the road
-- Properties where permitted development rights have been removed by an Article 4 Direction — common in many London boroughs and some other local authority areas
-- Flats and maisonettes (PD rights apply to houses only)
+Planning permission is always required for: extensions that exceed the PD volume or dimension thresholds; extensions on listed buildings (which also need Listed Building Consent); extensions in National Parks, AONBs, World Heritage Sites, or Conservation Areas that alter the external appearance from the road; properties where permitted development rights have been removed by an Article 4 Direction; flats and maisonettes (PD rights apply to houses only).
 
 ---
 
 ## How to check whether PD applies to your property
 
-The most reliable method: apply for a **Lawful Development Certificate (LDC)** from your local planning authority. This is a formal confirmation that your proposed works are permitted development and don’t need planning permission. An LDC costs £103 (England, 2026) and provides legal certainty — important if you ever sell the property.
-
-An alternative is a Pre-Application Enquiry, which gives informal guidance without legal certainty.
+The most reliable method: apply for a **Lawful Development Certificate (LDC)** from your local planning authority. This is a formal confirmation that your proposed works are permitted development and do not need planning permission. An LDC costs £103 (England, 2026) and provides legal certainty.
 
 ---
 
-## Scotland, Wales, and Northern Ireland
+## Building Regulations always required
 
-PD rights in Scotland, Wales, and Northern Ireland differ from England and from each other. In Wales, PD rules were updated in 2023. In Scotland, different GPDO provisions apply. Always check with the relevant local planning authority before assuming English PD rules apply.
-
----
-
-## Building Regulations — always required regardless of planning
-
-Even if your extension doesn’t need planning permission, **Building Regulations approval is always required** for: structural work, thermal insulation to Part L standards, fire safety, electrical work, plumbing and drainage connections, and means of escape from upper floors if the work affects fire safety.
-
-Your principal contractor should manage the Building Regulations application unless you’re managing the project yourself.
+Even if your extension does not need planning permission, **Building Regulations approval is always required** for: structural work, thermal insulation to Part L standards, fire safety, electrical work, plumbing and drainage connections, and means of escape from upper floors.
 
 [Check your planning situation with our free guide](/tools/planning)
 `,
@@ -186,7 +166,7 @@ Your principal contractor should manage the Building Regulations application unl
     readTime: '6 min read',
     author: 'James Hargrove',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&auto=format&q=80',
-    description: 'Quantity surveyor fees in the UK range from 1% to 3% of project value for residential work, or £800–£6,000+ as a fixed fee. Here’s what you get for your money and when a QS is worth it.',
+    description: 'Quantity surveyor fees in the UK range from 1% to 3% of project value for residential work, or £800–£6,000+ as a fixed fee. Here is what you get for your money and when a QS is worth it.',
     content: `
 ## What does a quantity surveyor cost in the UK?
 
@@ -196,13 +176,9 @@ Quantity surveyor fees for domestic projects in the UK typically fall into two m
 
 **Fixed fee**: £800–£6,000+ for domestic residential projects, depending on complexity, scope, and what services are included.
 
-For larger or more complex projects (new builds, multi-unit developments, commercial), QS fees are typically 1–2% of contract value, with complex schemes negotiated separately.
-
 ---
 
-## What a QS actually does for domestic projects
-
-A quantity surveyor on a domestic project can provide some or all of:
+## What a QS does for domestic projects
 
 ### Pre-contract services
 - **Cost planning**: establishing a realistic budget before committing to design
@@ -219,8 +195,6 @@ A quantity surveyor on a domestic project can provide some or all of:
 
 ## Fixed-fee QS services for domestic projects
 
-Many homeowners on extension or refurbishment projects don’t need a full QS appointment. Instead, they use fixed-fee services:
-
 | Service | Typical cost |
 |---|---|
 | Ballpark estimate (phone/online) | £150–£400 |
@@ -233,27 +207,13 @@ Many homeowners on extension or refurbishment projects don’t need a full QS ap
 
 ## When is a QS worth it for a domestic project?
 
-A QS provides clearest value when:
-
-- The project is above £80,000–£100,000
-- You are using a traditional (not design-and-build) procurement route and need to evaluate competitive tenders properly
-- You need objective, professionally prepared figures before approaching contractors
-- The project involves significant complexity, unknowns, or structural elements
-- You are managing the project yourself without a main contractor
-
-For smaller projects (under £50,000), a detailed cost plan from a design-and-build contractor with transparent pricing may deliver similar value without the separate professional fee.
+A QS provides clearest value when: the project is above £80,000–£100,000; you are using a traditional procurement route and need to evaluate competitive tenders properly; you need objective, professionally prepared figures before approaching contractors; the project involves significant complexity, unknowns, or structural elements; you are managing the project yourself without a main contractor.
 
 ---
 
 ## The difference between an estimate and a QS
 
-A contractor’s estimate is prepared by someone with a financial interest in winning the work. A QS estimate is prepared by an independent professional with no stake in who is appointed. This independence matters most when evaluating multiple tenders, when the project is large enough that errors are costly, and when client-contractor disputes are more likely.
-
----
-
-## Dwellinger’s free estimating tool
-
-Dwellinger provides a free ballpark estimate for domestic projects based on project type, location, size, and specification. This is not a QS service — but it’s a useful starting point before you decide whether to appoint a QS.
+A contractor estimate is prepared by someone with a financial interest in winning the work. A QS estimate is prepared by an independent professional with no stake in who is appointed. This independence matters most when evaluating multiple tenders, when the project is large enough that errors are costly, and when client-contractor disputes are more likely.
 
 [Get a free estimate](/estimate)
 `,
@@ -269,9 +229,9 @@ Dwellinger provides a free ballpark estimate for domestic projects based on proj
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&auto=format&q=80',
     description: 'Building a new home in the UK costs £1,750–£3,500/m² depending on spec, location and build method. A full 2026 cost breakdown with real figures by region, specification level, and project type.',
     content: `
-## What does it actually cost to build a house in the UK in 2026?
+## What does it cost to build a house in the UK in 2026?
 
-The honest answer: more than most people expect. Building a new home in the UK in 2026 costs between **£1,750 and £3,500 per m²** of gross internal area (GIA) — and that figure excludes land, professional fees, planning, utilities, and VAT.
+Building a new home in the UK in 2026 costs between **£1,750 and £3,500 per m²** of gross internal area (GIA) — and that figure excludes land, professional fees, planning, utilities, and VAT.
 
 For a typical 4-bedroom detached house of 180m², total build costs (construction only) run:
 
@@ -279,7 +239,7 @@ For a typical 4-bedroom detached house of 180m², total build costs (constructio
 - **Mid specification**: £360,000–£540,000
 - **High specification**: £540,000–£630,000+
 
-Add professional fees (10–15%), planning and Building Control (£5,000–£15,000), infrastructure and utilities connection (£15,000–£40,000), and VAT where applicable — and the all-in cost of building a new 4-bedroom home outside London typically falls between **£400,000 and £750,000**.
+Add professional fees (10–15%), planning and Building Control (£5,000–£15,000), infrastructure and utilities connection (£15,000–£40,000), and VAT where applicable.
 
 ---
 
@@ -287,15 +247,15 @@ Add professional fees (10–15%), planning and Building Control (£5,000–£15,
 
 ### Basic specification (£1,750–£2,100/m²)
 
-Standard block-and-beam or timber frame construction. Off-the-shelf kitchen and bathroom fittings. Conventional windows. No complex structural elements. Suitable for volume housing or tightly controlled budget builds.
+Standard block-and-beam or timber frame construction. Off-the-shelf kitchen and bathroom fittings. Conventional windows. No complex structural elements.
 
 ### Mid specification (£2,100–£2,800/m²)
 
-Better-quality fittings throughout. Underfloor heating on ground floor. More architectural interest: bi-fold doors, higher ceiling heights, quality glazing. Typically what homeowners commissioning a one-off build will aim for.
+Better-quality fittings throughout. Underfloor heating on ground floor. More architectural interest: bi-fold doors, higher ceiling heights, quality glazing.
 
 ### High specification (£2,800–£3,500/m²+)
 
-Premium kitchen and bathrooms. Smart home systems. Bespoke joinery. Air source heat pump, solar PV, MVHR. Complex rooflines, large structural glazing, premium external materials.
+Premium kitchen and bathrooms. Smart home systems. Bespoke joinery. Air source heat pump, solar PV, MVHR.
 
 ---
 
@@ -308,14 +268,6 @@ Premium kitchen and bathrooms. Smart home systems. Bespoke joinery. Air source h
 | Midlands | £1,750–£2,400/m² |
 | North of England | £1,650–£2,200/m² |
 | Scotland and Wales | £1,700–£2,300/m² |
-
----
-
-## What build cost includes — and what it doesn’t
-
-A build contract typically covers: groundworks and foundations; superstructure (walls, floors, roof); roof covering and rainwater goods; external doors, windows, and glazing; first-fix plumbing, heating, and electrical; insulation; plasterboard, skim, and decoration; second-fix plumbing and electrical; kitchen and bathroom fittings (if specified).
-
-What a build contract typically **does not** include: land cost; architect fees (typically 8–12% of build cost); structural engineer fees; planning application fees; Building Control fees (£2,000–£6,000); infrastructure connections (£15,000–£50,000 depending on location); VAT.
 
 ---
 
@@ -333,18 +285,16 @@ What a build contract typically **does not** include: land cost; architect fees 
   'building-costs-per-sqm-london-2026': {
     slug: 'building-costs-per-sqm-london-2026',
     category: 'Cost Guides',
-    title: 'Building Costs Per m² in London: 2026 Guide for Homeowners and Developers',
+    title: 'Building Costs Per m² in London: 2026 Guide',
     date: '9 Oct 2026',
     readTime: '7 min read',
     author: 'James Hargrove',
     image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1400&auto=format&q=80',
-    description: 'London building costs range from £1,800 to £4,500+ per m² in 2026. This guide breaks down costs by project type, specification level, and London borough.',
+    description: 'London building costs range from £1,800 to £4,500+ per m² in 2026. Costs by project type, specification level, and London borough.',
     content: `
 ## Why London building costs are different
 
-Building in London costs more — significantly more — than anywhere else in the UK. The premium has widened since 2020 and, despite softening in some trades, remains substantial in 2026.
-
-The premium reflects: **labour costs** (London trades earn 20–40% more than outside the M25); **logistics** (ULEZ, Congestion Charge, loading restrictions, parking permits); **lead times** (longer, less competitive tendering on mid-sized projects); and **planning complexity** (conservation areas, listed buildings, borough-specific restrictions).
+Building in London costs more than anywhere else in the UK. The premium reflects: **labour costs** (London trades earn 20–40% more than outside the M25); **logistics** (ULEZ, Congestion Charge, loading restrictions, parking permits); **lead times** (longer, less competitive tendering on mid-sized projects); and **planning complexity** (conservation areas, listed buildings, borough-specific restrictions).
 
 ---
 
@@ -366,8 +316,6 @@ The premium reflects: **labour costs** (London trades earn 20–40% more than ou
 | Mid specification | £2,400–£3,000/m² |
 | High spec (bifold doors / lanterns) | £3,000–£4,200/m² |
 
-A typical 4m × 5m (20m²) single-storey rear extension in London: **£48,000–£84,000** depending on specification.
-
 ### Loft conversion
 
 | Type | Typical London cost |
@@ -384,22 +332,11 @@ A typical 4m × 5m (20m²) single-storey rear extension in London: **£48,000–
 
 ---
 
-## Cost variation by London borough
-
-- **Inner London (Westminster, Kensington, Islington, Camden)**: Add 15–25% to mid-range figures
-- **Outer East London (Hackney, Walthamstow, Leyton)**: Within 5–10% of mid-range figures
-- **Outer West London (Ealing, Hounslow, Richmond)**: Mid-range; Richmond has significant conservation area coverage
-- **South London (Lambeth, Lewisham, Southwark)**: Generally mid-range
-
----
-
 ## What drives cost per m² higher
 
 **Specification** is the biggest single lever. Bifold doors (£8,000–£20,000), a premium kitchen (£20,000–£60,000 supply-only), or underfloor heating (add £80–£150/m²) can significantly increase overall cost per m².
 
 **Ground conditions** — London clay requires appropriate foundation design. Mini-piles or raft foundations on some sites add £20,000–£60,000 to groundworks costs.
-
-**Programme length** — extended programmes mean higher overhead and supervision costs.
 
 [Get a free London cost estimate](/estimate)
 `,
@@ -413,7 +350,7 @@ A typical 4m × 5m (20m²) single-storey rear extension in London: **£48,000–
     readTime: '6 min read',
     author: 'James Hargrove',
     image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1400&auto=format&q=80',
-    description: 'A garage conversion costs £7,500–£22,000 in the UK in 2026. This guide covers what affects price, planning permission rules, Building Regulations, and how to verify your contractor.',
+    description: 'A garage conversion costs £7,500–£22,000 in the UK in 2026. Covers planning permission rules, Building Regulations, and how to verify your contractor.',
     content: `
 ## What does a garage conversion cost in the UK in 2026?
 
@@ -432,9 +369,7 @@ Add 20–30% in London for the labour premium.
 
 ## Do you need planning permission?
 
-Most garage conversions are **permitted development** — no planning application required — provided you’re converting the internal space without extending the external footprint.
-
-Exceptions: the property is in a Conservation Area and the works affect the external appearance; PD rights have been removed; the garage is on the front elevation in a restricted area; the property is listed.
+Most garage conversions are **permitted development** — no planning application required — provided you are converting the internal space without extending the external footprint. Exceptions: the property is in a Conservation Area and the works affect the external appearance; PD rights have been removed; the garage is on the front elevation in a restricted area; the property is listed.
 
 ---
 
@@ -454,19 +389,17 @@ A well-executed conversion typically adds **70–85% of the conversion cost** to
 
   'why-builder-score-beats-star-ratings': {
     slug: 'why-builder-score-beats-star-ratings',
-    category: 'Builder Score™',
-    title: 'Why Star Ratings Are Not Enough: Introducing Builder Score™',
+    category: 'Builder Score',
+    title: 'Why Star Ratings Are Not Enough: Introducing Builder Score',
     date: '5 Oct 2026',
     readTime: '7 min read',
     author: 'James Hargrove',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&auto=format&q=80',
-    description: 'Star ratings can be bought, faked or manipulated. Builder Score™ is a 0–1000 trust rating calculated from verified compliance data.',
+    description: 'Star ratings can be bought, faked or manipulated. Builder Score is a 0-1000 trust rating calculated from verified compliance data.',
     content: `
 ## The problem with stars
 
-Walk into any contractor’s office in London and you’ll find the same thing on the wall: some five-star reviews, a certificate. The display is the same whether the contractor is exceptional or barely functional.
-
-The review economy has been gamed. Not universally, not by most contractors — but enough that the signal has degraded. The home improvement market handles over **£28 billion in spending per year** in the UK. Most homeowners spend their largest discretionary budget on a contractor they know almost nothing substantive about.
+The review economy has been gamed. The home improvement market handles over **£28 billion in spending per year** in the UK. Most homeowners spend their largest discretionary budget on a contractor they know almost nothing substantive about.
 
 ---
 
@@ -483,13 +416,13 @@ A contractor can show you a certificate of public liability insurance dated 18 m
 
 ---
 
-## How Builder Score™ works
+## How Builder Score works
 
-Builder Score™ is Dwellinger’s proprietary 0–1000 trust rating, calculated across five weighted dimensions: verified reviews (0–200), CDM and health & safety compliance (0–200), payment behaviour (0–200), dispute history and outcomes (0–200), and insurance and accreditation (0–200).
+Builder Score is a 0–1000 trust rating, calculated across five weighted dimensions: verified reviews (0–200), CDM and health & safety compliance (0–200), payment behaviour (0–200), dispute history and outcomes (0–200), and insurance and accreditation (0–200).
 
-A Builder Score™ above **800** indicates a contractor with a strong, multi-dimensional trust profile. Above **900** (Platinum tier) indicates outstanding performance across all dimensions.
+A Builder Score above **800** indicates a contractor with a strong, multi-dimensional trust profile. Above **900** (Platinum tier) indicates outstanding performance across all dimensions.
 
-[Find Builder Score™-verified contractors](/search)
+[Find Builder Score-verified contractors](/search)
 `,
   },
 
@@ -513,9 +446,9 @@ Check the company exists on Companies House. A legitimate building contractor sh
 
 Any contractor working on your property should carry public liability insurance of at least £2 million. Ask for a copy of the certificate and check the expiry date.
 
-## 3. Check their Builder Score™
+## 3. Check their Builder Score on Dwellinger
 
-Dwellinger’s Builder Score™ checks CDM compliance records, payment behaviour to suppliers, and dispute outcomes — data that no review platform provides.
+Builder Score checks CDM compliance records, payment behaviour to suppliers, and dispute outcomes — data that no review platform provides.
 
 ## 4. Read verified project reviews
 
@@ -529,9 +462,9 @@ Never compare quotes that are not based on identical scopes of work. A quote tha
 
 Do not start work without a written contract covering: full scope of works, payment schedule, start date and estimated completion, and what happens if there are variations.
 
-## 7. Check their Builder Score™ on Dwellinger
+## 7. Check their Builder Score on Dwellinger
 
-Builder Score™ is a 0–1000 trust rating calculated from six independently verified components. A Gold or Platinum contractor has demonstrated verified compliance, payment integrity and a strong review track record.
+Builder Score is a 0–1000 trust rating calculated from six independently verified components. A Gold or Platinum contractor has demonstrated verified compliance, payment integrity and a strong review track record.
 
 ## Red flags to avoid
 
@@ -542,7 +475,7 @@ Cash-only payment; pressure to start immediately; no fixed business address; unw
   'loft-conversion-planning-permission-guide': {
     slug: 'loft-conversion-planning-permission-guide',
     category: 'Planning & Compliance',
-    title: 'Loft Conversion Planning Permission: A UK Homeowner\'s Complete Guide',
+    title: 'Loft Conversion Planning Permission: A UK Homeowner Complete Guide',
     date: '3 Oct 2026',
     readTime: '6 min read',
     author: 'James Hargrove',
@@ -574,7 +507,7 @@ Planning permission is required when: you exceed the volume limits; you want to 
 
 ---
 
-## Building Regulations — always required
+## Building Regulations always required
 
 Regardless of planning permission, Building Regulations approval is always required for a loft conversion. This covers: structural adequacy; fire safety (protected escape route); thermal insulation; sound insulation between floors; safe stair access.
 
@@ -620,7 +553,7 @@ At the end of the project, your principal contractor should hand you a Health an
     readTime: '7 min read',
     author: 'James Hargrove',
     image: 'https://images.unsplash.com/photo-1564078516393-cf04bd966db3?w=1400&auto=format&q=80',
-    description: 'UK rear extension costs range from £1,800–£3,500/m². This guide covers typical costs, what affects price, planning requirements and how to verify your contractor.',
+    description: 'UK rear extension costs range from £1,800–£3,500/m². Typical costs, what affects price, planning requirements and how to verify your contractor.',
     content: `
 ## Typical costs in 2026
 
@@ -662,16 +595,13 @@ Get at least 3 written quotes based on the same detailed scope of works. A quote
     content: `
 ## The honest answer: it depends — but here are real numbers
 
-A 4m × 4m single-storey rear extension in London will typically cost between **£60,000 and £95,000** in 2025, including VAT. The range is wide because extensions are bespoke construction projects.
+A 4m x 4m single-storey rear extension in London will typically cost between **£60,000 and £95,000** in 2025, including VAT. The range is wide because extensions are bespoke construction projects.
 
 ## The main cost drivers
 
 ### 1. Size and footprint
 
-Rule of thumb for London in 2025:
-- **£2,500–£3,500/m²** for a standard single-storey extension
-- **£3,000–£4,000/m²** for a double-storey
-- **£4,000–£6,000/m²+** for high-specification finishes and bespoke glazing
+Rule of thumb for London in 2025: **£2,500–£3,500/m²** for a standard single-storey extension; **£3,000–£4,000/m²** for a double-storey; **£4,000–£6,000/m²+** for high-specification finishes and bespoke glazing.
 
 ### 2. Specification and finishes
 
@@ -683,7 +613,7 @@ If you have clay soils (common in London), deep strip or mini-pile foundations c
 
 ### 4. Party wall matters
 
-If your extension is within 3m of a neighbour’s foundation, the Party Wall Act applies. Budget **£1,000–£3,000** per adjoining neighbour for Party Wall Awards.
+If your extension is within 3m of a neighbour's foundation, the Party Wall Act applies. Budget **£1,000–£3,000** per adjoining neighbour for Party Wall Awards.
 
 ## London vs rest of UK
 
@@ -695,8 +625,8 @@ London and the South East command a price premium of **20–40%** over equivalen
 
   'builder-score-explained-why-star-ratings-arent-enough': {
     slug: 'builder-score-explained-why-star-ratings-arent-enough',
-    category: 'Builder Score™',
-    title: 'Why star ratings aren\'t enough — the case for Builder Score™',
+    category: 'Builder Score',
+    title: 'Why star ratings are not enough — the case for Builder Score',
     date: '5 Sept 2026',
     readTime: '6 min read',
     author: 'James Hargrove',
@@ -704,8 +634,6 @@ London and the South East command a price premium of **20–40%** over equivalen
     description: 'Anyone can buy reviews on Checkatrade. Anyone can create a Companies House record. Neither tells you whether a contractor pays their subcontractors or holds valid insurance.',
     content: `
 ## The problem with stars
-
-Walk into any contractor’s office in London and you’ll find the same thing on the wall: some five-star reviews, a certificate. The display is the same whether the contractor is exceptional or barely functional.
 
 The review economy has been gamed. The home improvement market handles over **£28 billion in spending per year** in the UK. Most homeowners spend their largest discretionary budget on a contractor they know almost nothing substantive about.
 
@@ -716,9 +644,9 @@ The review economy has been gamed. The home improvement market handles over **£
 - Do they have a CDM compliance record?
 - What is their dispute history?
 
-Builder Score™ answers all of these. It’s a 0–1000 trust rating calculated across five independently verified dimensions.
+Builder Score answers all of these. It is a 0–1000 trust rating calculated across five independently verified dimensions.
 
-[Find Builder Score™-verified contractors](/search)
+[Find Builder Score-verified contractors](/search)
 `,
   },
 
@@ -730,15 +658,15 @@ Builder Score™ answers all of these. It’s a 0–1000 trust rating calculated
     readTime: '7 min read',
     author: 'James Hargrove',
     image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&auto=format&q=80',
-    description: 'The single most important number in property investment is the maximum you should pay for a site. Here’s how to calculate it.',
+    description: 'The single most important number in property investment is the maximum you should pay for a site. Here is how to calculate it.',
     content: `
 ## What is residual land value?
 
 Residual land value (RLV) is the maximum price you should pay for a development site, given the costs involved and the profit you need to make the scheme viable.
 
-**RLV = Gross Development Value − Total Development Costs − Developer’s Profit**
+**RLV = Gross Development Value minus Total Development Costs minus Developer Profit**
 
-If the answer is positive, the site has value. If it’s negative — or lower than the asking price — the scheme does not work at that price.
+If the answer is positive, the site has value. If it is negative — or lower than the asking price — the scheme does not work at that price.
 
 ## The calculation
 
@@ -747,13 +675,13 @@ For a residential scheme of 6 flats in East London (GDV £2,200,000):
 | Item | Amount |
 |------|--------|
 | GDV | £2,200,000 |
-| Less build cost (400m² at £2,500/m²) | −£1,000,000 |
-| Less professional fees (12%) | −£120,000 |
-| Less planning/CIL/S106 | −£80,000 |
-| Less finance costs | −£75,000 |
-| Less sales & marketing | −£60,000 |
-| Less contingency (6%) | −£60,000 |
-| Less developer profit (18% GDV) | −£396,000 |
+| Less build cost (400m² at £2,500/m²) | minus £1,000,000 |
+| Less professional fees (12%) | minus £120,000 |
+| Less planning/CIL/S106 | minus £80,000 |
+| Less finance costs | minus £75,000 |
+| Less sales & marketing | minus £60,000 |
+| Less contingency (6%) | minus £60,000 |
+| Less developer profit (18% GDV) | minus £396,000 |
 | **Residual Land Value** | **£409,000** |
 
 [Use the Development Appraisal Tool](/tools/development-appraisal)
@@ -801,7 +729,7 @@ At the end of the project, your principal contractor should hand you a **Health 
   'dwell-agents-ai-for-construction-businesses': {
     slug: 'dwell-agents-ai-for-construction-businesses',
     category: 'Platform',
-    title: 'Dwell Agents — how AI is changing the day-to-day for construction businesses',
+    title: 'Dwell Agents — AI built for construction businesses',
     date: '8 Aug 2026',
     readTime: '5 min read',
     author: 'James Hargrove',
@@ -850,8 +778,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 function renderContent(markdown: string) {
+  const elements: React.ReactElement[] = []
   const lines = markdown.trim().split('\n')
-  const elements: JSX.Element[] = []
   let i = 0
 
   while (i < lines.length) {
@@ -878,7 +806,7 @@ function renderContent(markdown: string) {
         i++
       }
       elements.push(
-        <ul key={i} style={{ paddingLeft: 20, marginBottom: 16 }}>
+        <ul key={`ul-${i}`} style={{ paddingLeft: 20, marginBottom: 16 }}>
           {listItems.map((item, j) => (
             <li key={j} style={{ color: '#4A5568', lineHeight: 1.8, marginBottom: 6 }} dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
           ))}
@@ -894,7 +822,7 @@ function renderContent(markdown: string) {
       const headers = tableLines[0].split('|').filter(c => c.trim()).map(c => c.trim())
       const rows = tableLines.slice(2).map(row => row.split('|').filter(c => c.trim()).map(c => c.trim()))
       elements.push(
-        <div key={i} style={{ overflowX: 'auto', marginBottom: 24 }}>
+        <div key={`table-${i}`} style={{ overflowX: 'auto', marginBottom: 24 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
             <thead>
               <tr style={{ backgroundColor: '#1A2340' }}>
@@ -998,7 +926,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             Ready to start your project?
           </h2>
           <p style={{ color: '#4A5568', marginBottom: 28 }}>
-            Get a free ballpark estimate in minutes, then connect with Builder Score™-verified contractors.
+            Get a free ballpark estimate in minutes, then connect with Builder Score-verified contractors.
           </p>
           <Link
             href="/estimate"
