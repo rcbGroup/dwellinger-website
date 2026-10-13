@@ -16,20 +16,38 @@ export default function EstimateOrderPage() {
 
   const set = (k: string, v: string) => setForm(f => ({ ...f, [k]: v }))
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const body = [
-      `Name: ${form.name}`,
-      `Email: ${form.email}`,
-      `Phone: ${form.phone}`,
-      `Project type: ${form.projectType}`,
-      `Address: ${form.address}`,
-      `Tier requested: ${form.tier}`,
-      `Drawings available: ${form.drawings}`,
-      `Description: ${form.description}`,
-    ].join('%0D%0A')
-    window.location.href = `mailto:info@dwellinger.co.uk?subject=Estimate Order — ${form.projectType}&body=${body}`
-    setSubmitted(true)
+    setSubmitting(true)
+    setSubmitError('')
+    try {
+      const res = await fetch('/api/get-quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          project_type: form.projectType,
+          postcode: form.address.split(' ').pop() ?? '',
+          description: `[${form.tier}] Drawings: ${form.drawings}. ${form.description}`,
+          budget_range: form.tier,
+        }),
+      })
+      const data = await res.json()
+      if (!res.ok || data.error) {
+        setSubmitError(data.error ?? 'Something went wrong. Please try again.')
+        setSubmitting(false)
+        return
+      }
+      setSubmitted(true)
+    } catch {
+      setSubmitError('Network error. Please try again.')
+      setSubmitting(false)
+    }
   }
 
   const inp: React.CSSProperties = {
@@ -127,8 +145,9 @@ export default function EstimateOrderPage() {
             After submitting, we\'ll review your details and send a payment link within 2 hours. Your estimate report will be delivered as a PDF within the stated timeframe.
           </div>
 
-          <button type='submit' style={{ background: '#C4773B', color: '#fff', border: 'none', borderRadius: 8, padding: '15px 32px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
-            Submit Order <ArrowRight size={16}/>
+          {submitError && <p style={{ color: '#f87171', fontSize: '0.82rem', textAlign: 'center' }}>{submitError}</p>}
+          <button type='submit' disabled={submitting} style={{ background: submitting ? '#9CA3AF' : '#C4773B', color: '#fff', border: 'none', borderRadius: 8, padding: '15px 32px', fontWeight: 700, fontSize: '1rem', cursor: submitting ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
+            {submitting ? 'Submitting…' : 'Submit Order'} <ArrowRight size={16}/>
           </button>
         </form>
       </div>

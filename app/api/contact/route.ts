@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createServerSupabaseClient } from '@/lib/supabase/server'
 
 export async function POST(req: NextRequest) {
   try {
@@ -10,24 +9,24 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Name, email and message are required.' }, { status: 400 })
     }
 
-    const supabase = createServerSupabaseClient()
-
-    const { error } = await supabase.from('contact_submissions').insert({
-      name: String(name).trim(),
-      email: String(email).toLowerCase().trim(),
-      phone: phone ? String(phone).trim() : null,
-      subject: subject ? String(subject).trim() : 'General enquiry',
-      message: String(message).trim(),
-      source: 'contact_form',
-      created_at: new Date().toISOString(),
-    })
-
-    if (error) {
-      console.error('Contact insert error:', error)
-      // Still return success to user — don't expose DB errors
+    // Try to persist to Supabase — non-blocking, never returns error to user
+    try {
+      const { createServerSupabaseClient } = await import('@/lib/supabase/server')
+      const supabase = createServerSupabaseClient()
+      await supabase.from('contact_submissions').insert({
+        name: String(name).trim(),
+        email: String(email).toLowerCase().trim(),
+        phone: phone ? String(phone).trim() : null,
+        subject: subject ? String(subject).trim() : 'General enquiry',
+        message: String(message).trim(),
+        source: 'contact_form',
+        created_at: new Date().toISOString(),
+      })
+    } catch (dbErr) {
+      console.error('Contact DB save (non-critical):', dbErr)
     }
 
-    return NextResponse.json({ success: true, message: 'Message received. We\'ll be in touch shortly.' })
+    return NextResponse.json({ success: true, message: "Message received. We'll be in touch shortly." })
   } catch (err) {
     console.error('Contact route error:', err)
     return NextResponse.json({ error: 'Server error. Please try again or call us.' }, { status: 500 })

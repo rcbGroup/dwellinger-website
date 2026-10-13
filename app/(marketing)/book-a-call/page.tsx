@@ -54,17 +54,38 @@ export default function BookACallPage() {
   const [email, setEmail] = useState('')
   const [project, setProject] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
 
   const selectedCall = callTypes.find((c) => c.id === selectedType)
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault()
-    const subject = encodeURIComponent(`Book a Call — ${selectedCall?.name} at ${selectedSlot}`)
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nCall type: ${selectedCall?.name}\nPreferred time: ${selectedSlot}\n\nProject:\n${project}`
-    )
-    window.location.href = `mailto:info@dwellinger.co.uk?subject=${subject}&body=${body}`
-    setSubmitted(true)
+    setLoading(true)
+    setErrorMsg('')
+    try {
+      const res = await fetch('/api/book-a-call', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          preferred_time: `${selectedCall?.name} at ${selectedSlot}`,
+          project_type: selectedType,
+          notes: project,
+        }),
+      })
+      const data = await res.json()
+      if (!res.ok || data.error) {
+        setErrorMsg(data.error ?? 'Something went wrong. Please try again.')
+        setLoading(false)
+        return
+      }
+      setSubmitted(true)
+    } catch {
+      setErrorMsg('Network error. Please call us on +44 7359 872594.')
+      setLoading(false)
+    }
   }
 
   return (
@@ -206,21 +227,25 @@ export default function BookACallPage() {
               <div style={{ background: '#F5F0E8', borderRadius: '8px', padding: '12px 14px', fontSize: '12px', color: '#4A5568' }}>
                 Booking: <strong style={{ color: '#1A2340' }}>{selectedCall?.name}</strong> at <strong style={{ color: '#C4773B' }}>{selectedSlot}</strong>
               </div>
+              {errorMsg && (
+                <p style={{ color: '#dc2626', fontSize: '12px', textAlign: 'center' }}>{errorMsg}</p>
+              )}
               <button
                 type="submit"
+                disabled={loading}
                 style={{
                   width: '100%',
-                  background: '#C4773B',
+                  background: loading ? '#9CA3AF' : '#C4773B',
                   color: '#fff',
                   border: 'none',
                   borderRadius: '8px',
                   padding: '14px',
                   fontSize: '14px',
                   fontWeight: 700,
-                  cursor: 'pointer',
+                  cursor: loading ? 'not-allowed' : 'pointer',
                 }}
               >
-                Confirm Booking
+                {loading ? 'Sending…' : 'Confirm Booking'}
               </button>
               <p style={{ fontSize: '11px', color: '#6B7280', textAlign: 'center' }}>
                 Or call us directly: <a href="tel:+447359872594" style={{ color: '#C4773B', fontWeight: 700 }}>+44 7359 872594</a>

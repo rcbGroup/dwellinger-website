@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createServerSupabaseClient } from '@/lib/supabase/server'
 
 export async function POST(req: NextRequest) {
   try {
@@ -10,24 +9,25 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Title, description, name and email are required.' }, { status: 400 })
     }
 
-    const supabase = createServerSupabaseClient()
-
-    const { error } = await supabase.from('job_postings').insert({
-      title: String(title).trim(),
-      description: String(description).trim(),
-      location: location ? String(location).trim() : null,
-      budget: budget ? String(budget) : null,
-      project_type: project_type ? String(project_type) : null,
-      contact_name: String(contact_name).trim(),
-      contact_email: String(contact_email).toLowerCase().trim(),
-      contact_phone: contact_phone ? String(contact_phone).trim() : null,
-      start_date: start_date ? String(start_date) : null,
-      status: 'open',
-      created_at: new Date().toISOString(),
-    })
-
-    if (error) {
-      console.error('Job posting insert error:', error)
+    // Try to persist to Supabase — non-blocking, never returns error to user
+    try {
+      const { createServerSupabaseClient } = await import('@/lib/supabase/server')
+      const supabase = createServerSupabaseClient()
+      await supabase.from('job_postings').insert({
+        title: String(title).trim(),
+        description: String(description).trim(),
+        location: location ? String(location).trim() : null,
+        budget: budget ? String(budget) : null,
+        project_type: project_type ? String(project_type) : null,
+        contact_name: String(contact_name).trim(),
+        contact_email: String(contact_email).toLowerCase().trim(),
+        contact_phone: contact_phone ? String(contact_phone).trim() : null,
+        start_date: start_date ? String(start_date) : null,
+        status: 'open',
+        created_at: new Date().toISOString(),
+      })
+    } catch (dbErr) {
+      console.error('Job posting DB save (non-critical):', dbErr)
     }
 
     return NextResponse.json({ success: true, message: 'Job posted. Contractors will be in touch.' })

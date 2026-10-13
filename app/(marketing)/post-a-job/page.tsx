@@ -24,22 +24,41 @@ export default function PostAJobPage() {
     timeline: '', budget: '', name: '', email: '', phone: '', drawings: 'no',
   })
 
+  const [posting, setPosting] = useState(false)
+  const [postError, setPostError] = useState('')
+
   const set = (k: string, v: string) => setForm(f => ({ ...f, [k]: v }))
 
-  const handleSubmit = () => {
-    const body = [
-      `Project type: ${form.projectType}`,
-      `Description: ${form.description}`,
-      `Address: ${form.address} ${form.postcode}`,
-      `Timeline: ${form.timeline}`,
-      `Budget: ${form.budget}`,
-      `Name: ${form.name}`,
-      `Email: ${form.email}`,
-      `Phone: ${form.phone}`,
-      `Drawings: ${form.drawings}`,
-    ].join('%0D%0A')
-    window.location.href = `mailto:jobs@dwellinger.co.uk?subject=New Job — ${encodeURIComponent(form.projectType)}&body=${body}`
-    setSubmitted(true)
+  const handleSubmit = async () => {
+    setPosting(true)
+    setPostError('')
+    try {
+      const res = await fetch('/api/post-a-job', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: `${form.projectType} — ${form.address}`,
+          description: form.description,
+          location: `${form.address} ${form.postcode}`.trim(),
+          budget: form.budget,
+          project_type: form.projectType,
+          contact_name: form.name,
+          contact_email: form.email,
+          contact_phone: form.phone,
+          start_date: form.timeline,
+        }),
+      })
+      const data = await res.json()
+      if (!res.ok || data.error) {
+        setPostError(data.error ?? 'Something went wrong. Please try again.')
+        setPosting(false)
+        return
+      }
+      setSubmitted(true)
+    } catch {
+      setPostError('Network error. Please try again.')
+      setPosting(false)
+    }
   }
 
   const inp: React.CSSProperties = {
@@ -191,9 +210,10 @@ export default function PostAJobPage() {
                 </div>
               </div>
             </div>
-            <button onClick={handleSubmit} disabled={!form.name || !form.email}
-              style={{ background: !form.name || !form.email ? 'rgba(255,255,255,0.08)' : '#C4773B', color: !form.name || !form.email ? 'rgba(255,255,255,0.25)' : '#fff', border: 'none', borderRadius: 8, padding: '14px 32px', fontWeight: 700, fontSize: '1rem', cursor: !form.name || !form.email ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', gap: 8 }}>
-              Post Your Job <ArrowRight size={16}/>
+            {postError && <p style={{ color: '#f87171', fontSize: '0.82rem', marginBottom: 8 }}>{postError}</p>}
+            <button onClick={handleSubmit} disabled={!form.name || !form.email || posting}
+              style={{ background: !form.name || !form.email || posting ? 'rgba(255,255,255,0.08)' : '#C4773B', color: !form.name || !form.email || posting ? 'rgba(255,255,255,0.25)' : '#fff', border: 'none', borderRadius: 8, padding: '14px 32px', fontWeight: 700, fontSize: '1rem', cursor: !form.name || !form.email || posting ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', gap: 8 }}>
+              {posting ? 'Posting…' : 'Post Your Job'} <ArrowRight size={16}/>
             </button>
           </>
         )}
