@@ -30,6 +30,12 @@ export async function POST(req: NextRequest) {
       console.error('Job posting DB save (non-critical):', dbErr)
     }
 
+    // Fire-and-forget push confirmation
+    try {
+      const { sendPushNotification, pushNotifications } = await import('@/lib/push')
+      await sendPushNotification(pushNotifications.jobPosted(String(project_type || title).trim()))
+    } catch {}
+
     return NextResponse.json({ success: true, message: 'Job posted. Contractors will be in touch.' })
   } catch (err) {
     console.error('Post-a-job route error:', err)

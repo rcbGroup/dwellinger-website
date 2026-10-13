@@ -26,6 +26,12 @@ export async function POST(req: NextRequest) {
       console.error('Contact DB save (non-critical):', dbErr)
     }
 
+    // Fire-and-forget push notification to the submitter (if subscribed)
+    try {
+      const { sendPushNotification, pushNotifications } = await import('@/lib/push')
+      await sendPushNotification(pushNotifications.contactReceived(String(name).trim()))
+    } catch {}
+
     return NextResponse.json({ success: true, message: "Message received. We'll be in touch shortly." })
   } catch (err) {
     console.error('Contact route error:', err)

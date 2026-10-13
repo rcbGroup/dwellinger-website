@@ -30,6 +30,12 @@ export async function POST(req: NextRequest) {
       console.error('Quote DB save (non-critical):', dbErr)
     }
 
+    // Fire-and-forget push confirmation to the requester
+    try {
+      const { sendPushNotification, pushNotifications } = await import('@/lib/push')
+      await sendPushNotification(pushNotifications.quoteReceived(String(name).trim()))
+    } catch {}
+
     return NextResponse.json({ success: true, message: "Quote request received. We'll be in touch within 24 hours." })
   } catch (err) {
     console.error('Quote route error:', err)

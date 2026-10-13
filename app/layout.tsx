@@ -1,11 +1,17 @@
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
+import dynamic from 'next/dynamic'
 import './globals.css'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { LanguageProvider } from '@/components/providers/LanguageProvider'
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
 import { ScrollRevealProvider } from '@/components/ui/ScrollRevealProvider'
 import { AskDwellinger } from '@/components/ui/AskDwellinger'
+
+const PushNotificationPrompt = dynamic(
+  () => import('@/components/PushNotificationPrompt'),
+  { ssr: false }
+)
 
 export const metadata: Metadata = {
   title: {
@@ -185,6 +191,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               {children}
             </ScrollRevealProvider>
             <AskDwellinger />
+            <PushNotificationPrompt />
           </LanguageProvider>
         </ThemeProvider>
         <script
