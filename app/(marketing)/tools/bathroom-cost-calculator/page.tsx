@@ -1,1 +1,210 @@
-J3VzZSBjbGllbnQnCgppbXBvcnQgeyB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JwppbXBvcnQgTGluayBmcm9tICduZXh0L2xpbmsnCgpjb25zdCBCUkFORCA9IHsgYW1iZXI6ICcjQzQ3NzNCJyB9Cgpjb25zdCBTSVpFUyA9IFsKICB7IGlkOiAnZW4tc3VpdGUnLCBsYWJlbDogJ0VuLVN1aXRlJywgc3FtOiA0LCBkZXNjOiAnVXAgdG8gNG3CsicgfSwKICB7IGlkOiAnc3RhbmRhcmQnLCBsYWJlbDogJ1N0YW5kYXJkIEJhdGhyb29tJywgc3FtOiA2LCBkZXNjOiAnNOKAkzhtwrInIH0sCiAgeyBpZDogJ2ZhbWlseScsIGxhYmVsOiAnRmFtaWx5IEJhdGhyb29tJywgc3FtOiA5LCBkZXNjOiAnOOKAkzEybcKyJyB9LAogIHsgaWQ6ICdtYXN0ZXInLCBsYWJlbDogJ01hc3RlciBCYXRocm9vbScsIHNxbTogMTQsIGRlc2M6ICcxMm3CsisnIH0sCl0KCmNvbnN0IFNQRUNfTEVWRUxTID0gWwogIHsgaWQ6ICdidWRnZXQnLCBsYWJlbDogJ0J1ZGdldCcsIG11bHRpcGxpZXI6IDEuMCwgZGVzYzogJ0Jhc2ljIGZpeHR1cmVzLCBzdGFuZGFyZCB0aWxlcycgfSwKICB7IGlkOiAnbWlkJywgbGFiZWw6ICdNaWQtUmFuZ2UnLCBtdWx0aXBsaWVyOiAxLjYsIGRlc2M6ICdRdWFsaXR5IGZpdHRpbmdzLCBwb3JjZWxhaW4gdGlsZXMnIH0sCiAgeyBpZDogJ3ByZW1pdW0nLCBsYWJlbDogJ1ByZW1pdW0nLCBtdWx0aXBsaWVyOiAyLjUsIGRlc2M6ICdEZXNpZ25lciBmaXh0dXJlcywgbmF0dXJhbCBzdG9uZScgfSwKICB7IGlkOiAnYmVzcG9rZScsIGxhYmVsOiAnQmVzcG9rZSAvIEx1eHVyeScsIG11bHRpcGxpZXI6IDMuOCwgZGVzYzogJ0Jlc3Bva2UgZGVzaWduLCB0b3AgbWF0ZXJpYWxzJyB9LApdCgpjb25zdCBFWFRSQVMgPSBbCiAgeyBpZDogJ3VuZGVyZmxvb3InLCBsYWJlbDogJ1VuZGVyZmxvb3IgSGVhdGluZycsIGNvc3Q6IDEyMDAgfSwKICB7IGlkOiAnd2V0cm9vbScsIGxhYmVsOiAnV2V0IFJvb20gQ29udmVyc2lvbicsIGNvc3Q6IDE4MDAgfSwKICB7IGlkOiAnZnJlZXN0YW5kaW5nJywgbGFiZWw6ICdGcmVlc3RhbmRpbmcgQmF0aCcsIGNvc3Q6IDkwMCB9LAogIHsgaWQ6ICdyYWluc2hvd2VyJywgbGFiZWw6ICdSYWluZmFsbCBTaG93ZXIgU3lzdGVtJywgY29zdDogNjAwIH0sCiAgeyBpZDogJ3N0b3JhZ2UnLCBsYWJlbDogJ0J1aWx0LWluIFN0b3JhZ2UnLCBjb3N0OiAxNDAwIH0sCiAgeyBpZDogJ2RlbWlzdCcsIGxhYmVsOiAnSGVhdGVkIE1pcnJvciAvIERlbWlzdCBQYWQnLCBjb3N0OiAzNTAgfSwKXQoKY29uc3QgQkFTRV9DT1NUX1BFUl9TUU0gPSA2NTAKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEJhdGhyb29tQ29zdENhbGN1bGF0b3IoKSB7CiAgY29uc3QgW3NpemUsIHNldFNpemVdID0gdXNlU3RhdGUoU0laRVNbMV0pCiAgY29uc3QgW3NwZWMsIHNldFNwZWNdID0gdXNlU3RhdGUoU1BFQ19MRVZFTFNbMV0pCiAgY29uc3QgW2V4dHJhcywgc2V0RXh0cmFzXSA9IHVzZVN0YXRlPHN0cmluZ1tdPihbXSkKICBjb25zdCBbbG9uZG9uLCBzZXRMb25kb25dID0gdXNlU3RhdGUodHJ1ZSkKCiAgY29uc3QgdG9nZ2xlRXh0cmEgPSAoaWQ6IHN0cmluZykgPT4KICAgIHNldEV4dHJhcygocHJldikgPT4gKHByZXYuaW5jbHVkZXMoaWQpID8gcHJldi5maWx0ZXIoKGUpID0+IGUgIT09IGlkKSA6IFsuLi5wcmV2LCBpZF0pKQoKICBjb25zdCBiYXNlID0gc2l6ZS5zcW0gKiBCQVNFX0NPU1RfUEVSX1NRTSAqIHNwZWMubXVsdGlwbGllcgogIGNvbnN0IGV4dHJhc1RvdGFsID0gZXh0cmFzLnJlZHVjZSgoc3VtLCBpZCkgPT4gc3VtICsgKEVYVFJBUy5maW5kKChlKSA9PiBlLmlkID09PSBpZCk/LmNvc3QgPz8gMCksIDApCiAgY29uc3QgbG9uZG9uTXVsdGlwbGllciA9IGxvbmRvbiA/IDEuMiA6IDEuMAogIGNvbnN0IGxvdyA9IE1hdGgucm91bmQoKGJhc2UgKyBleHRyYXNUb3RhbCkgKiBsb25kb25NdWx0aXBsaWVyICogMC44NSAvIDEwMCkgKiAxMDAKICBjb25zdCBoaWdoID0gTWF0aC5yb3VuZCgoYmFzZSArIGV4dHJhc1RvdGFsKSAqIGxvbmRvbk11bHRpcGxpZXIgKiAxLjI1IC8gMTAwKSAqIDEwMAoKICBjb25zdCBmbXQgPSAobjogbnVtYmVyKSA9PiBgwqMke24udG9Mb2NhbGVTdHJpbmcoJ2VuLUdCJyl9YAoKICByZXR1cm4gKAogICAgPG1haW4gc3R5bGU9e3sgZm9udEZhbWlseTogJ3N5c3RlbS11aSwgc2Fucy1zZXJpZicsIGJhY2tncm91bmQ6ICd2YXIoLS1jb2xvci1iZyknLCBtaW5IZWlnaHQ6ICcxMDB2aCcsIGNvbG9yOiAndmFyKC0tY29sb3ItdGV4dCknIH19PgogICAgICB7LyogSGVybyAqL30KICAgICAgPHNlY3Rpb24gc3R5bGU9e3sgYmFja2dyb3VuZDogJ2xpbmVhci1ncmFkaWVudCgxMzVkZWcsIzFhMWEyZSAwJSwjMGQxMTE3IDEwMCUpJywgcGFkZGluZzogJzYwcHggMjRweCA0OHB4JywgdGV4dEFsaWduOiAnY2VudGVyJyB9fT4KICAgICAgICA8ZGl2IHN0eWxlPXt7IG1heFdpZHRoOiA3MDAsIG1hcmdpbjogJzAgYXV0bycgfX0+CiAgICAgICAgICA8cCBzdHlsZT17eyBjb2xvcjogQlJBTkQuYW1iZXIsIGZvbnRXZWlnaHQ6IDcwMCwgbGV0dGVyU3BhY2luZzogJzAuMWVtJywgZm9udFNpemU6ICcwLjc1cmVtJywgbWFyZ2luQm90dG9tOiAxMiB9fT5GUkVFIFRPT0wgwrcgSU5TVEFOVCBFU1RJTUFURTwvcD4KICAgICAgICAgIDxoMSBzdHlsZT17eyBmb250U2l6ZTogJ2NsYW1wKDEuOHJlbSw0dncsMi44cmVtKScsIGZvbnRXZWlnaHQ6IDgwMCwgY29sb3I6ICcjZmZmJywgbWFyZ2luQm90dG9tOiAxNiB9fT4KICAgICAgICAgICAgQmF0aHJvb20gUmVub3ZhdGlvbiBDb3N0IENhbGN1bGF0b3IKICAgICAgICAgIDwvaDE+CiAgICAgICAgICA8cCBzdHlsZT17eyBjb2xvcjogJyNhYWEnLCBmb250U2l6ZTogJzEuMDVyZW0nLCBsaW5lSGVpZ2h0OiAxLjcsIG1heFdpZHRoOiA1NjAsIG1hcmdpbjogJzAgYXV0bycgfX0+CiAgICAgICAgICAgIEdldCBhbiBpbnN0YW50IGJhbGxwYXJrIGZvciB5b3VyIGJhdGhyb29tIHJlZnVyYmlzaG1lbnQg4oCUIGZyb20gYSBiYXNpYyBmcmVzaGVuLXVwIHRvIGEgZnVsbCBsdXh1cnkgcmVtb2RlbC4gVXBkYXRlZCBmb3IgVUsgbWFya2V0IGNvbmRpdGlvbnMgMjAyNi4KICAgICAgICAgIDwvcD4KICAgICAgICA8L2Rpdj4KICAgICAgPC9zZWN0aW9uPgoKICAgICAgey8qIENhbGN1bGF0b3IgKi99CiAgICAgIDxzZWN0aW9uIHN0eWxlPXt7IG1heFdpZHRoOiA5MDAsIG1hcmdpbjogJzAgYXV0bycsIHBhZGRpbmc6ICc0MHB4IDI0cHggODBweCcgfX0+CiAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZ3JpZCcsIGdyaWRUZW1wbGF0ZUNvbHVtbnM6ICdtaW5tYXgoMCwxZnIpIG1pbm1heCgyODBweCwzNDBweCknLCBnYXA6IDMyLCBhbGlnbkl0ZW1zOiAnc3RhcnQnIH19PgogICAgICAgICAgey8qIExlZnQ6IGlucHV0cyAqL30KICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBmbGV4RGlyZWN0aW9uOiAnY29sdW1uJywgZ2FwOiAzMiB9fT4KCiAgICAgICAgICAgIHsvKiBTaXplICovfQogICAgICAgICAgICA8ZGl2PgogICAgICAgICAgICAgIDxoMiBzdHlsZT17eyBmb250U2l6ZTogJzFyZW0nLCBmb250V2VpZ2h0OiA3MDAsIG1hcmdpbkJvdHRvbTogMTIsIGNvbG9yOiAndmFyKC0tY29sb3ItdGV4dCknIH19PjEuIEJhdGhyb29tIFNpemU8L2gyPgogICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2dyaWQnLCBncmlkVGVtcGxhdGVDb2x1bW5zOiAnMWZyIDFmcicsIGdhcDogMTAgfX0+CiAgICAgICAgICAgICAgICB7U0laRVMubWFwKChzKSA9PiAoCiAgICAgICAgICAgICAgICAgIDxidXR0b24ga2V5PXtzLmlkfSBvbkNsaWNrPXsoKSA9PiBzZXRTaXplKHMpfSBzdHlsZT17ewogICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6ICcxNHB4IDE2cHgnLCBib3JkZXJSYWRpdXM6IDEwLCBjdXJzb3I6ICdwb2ludGVyJywgdGV4dEFsaWduOiAnbGVmdCcsCiAgICAgICAgICAgICAgICAgICAgYm9yZGVyOiBgMnB4IHNvbGlkICR7c2l6ZS5pZCA9PT0gcy5pZCA/IEJSQU5ELmFtYmVyIDogJ3ZhcigtLWNvbG9yLWJvcmRlciknfWAsCiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZDogc2l6ZS5pZCA9PT0gcy5pZCA/ICdyZ2JhKDE5NiwxMTksNTksMC4wOCknIDogJ3ZhcigtLWNvbG9yLWJnLXJhaXNlZCknLAogICAgICAgICAgICAgICAgICAgIGNvbG9yOiAndmFyKC0tY29sb3ItdGV4dCknLAogICAgICAgICAgICAgICAgICB9fT4KICAgICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRXZWlnaHQ6IDcwMCwgZm9udFNpemU6ICcwLjlyZW0nIH19PntzLmxhYmVsfTwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZm9udFNpemU6ICcwLjc1cmVtJywgY29sb3I6ICd2YXIoLS1jb2xvci10ZXh0LW11dGVkKScgfX0+e3MuZGVzY308L2Rpdj4KICAgICAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgICAgICApKX0KICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICB7LyogU3BlYyAqL30KICAgICAgICAgICAgPGRpdj4KICAgICAgICAgICAgICA8aDIgc3R5bGU9e3sgZm9udFNpemU6ICcxcmVtJywgZm9udFdlaWdodDogNzAwLCBtYXJnaW5Cb3R0b206IDEyIH19PjIuIFNwZWNpZmljYXRpb24gTGV2ZWw8L2gyPgogICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBmbGV4RGlyZWN0aW9uOiAnY29sdW1uJywgZ2FwOiA4IH19PgogICAgICAgICAgICAgICAge1NQRUNfTEVWRUxTLm1hcCgoc3ApID0+ICgKICAgICAgICAgICAgICAgICAgPGJ1dHRvbiBrZXk9e3NwLmlkfSBvbkNsaWNrPXsoKSA9PiBzZXRTcGVjKHNwKX0gc3R5bGU9e3sKICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAnMTRweCAxNnB4JywgYm9yZGVyUmFkaXVzOiAxMCwgY3Vyc29yOiAncG9pbnRlcicsIHRleHRBbGlnbjogJ2xlZnQnLAogICAgICAgICAgICAgICAgICAgIGJvcmRlcjogYDJweCBzb2xpZCAke3NwZWMuaWQgPT09IHNwLmlkID8gQlJBTkQuYW1iZXIgOiAndmFyKC0tY29sb3ItYm9yZGVyKSd9YCwKICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiBzcGVjLmlkID09PSBzcC5pZCA/ICdyZ2JhKDE5NiwxMTksNTksMC4wOCknIDogJ3ZhcigtLWNvbG9yLWJnLXJhaXNlZCknLAogICAgICAgICAgICAgICAgICAgIGNvbG9yOiAndmFyKC0tY29sb3ItdGV4dCknLCBkaXNwbGF5OiAnZmxleCcsIGp1c3RpZnlDb250ZW50OiAnc3BhY2UtYmV0d2VlbicsIGFsaWduSXRlbXM6ICdjZW50ZXInLAogICAgICAgICAgICAgICAgICB9fT4KICAgICAgICAgICAgICAgICAgICA8ZGl2PgogICAgICAgICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBmb250V2VpZ2h0OiA3MDAsIGZvbnRTaXplOiAnMC45cmVtJyB9fT57c3AubGFiZWx9PC9kaXY+CiAgICAgICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRTaXplOiAnMC43NXJlbScsIGNvbG9yOiAndmFyKC0tY29sb3ItdGV4dC1tdXRlZCknIH19PntzcC5kZXNjfTwvZGl2PgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgICAgICkpfQogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgIHsvKiBFeHRyYXMgKi99CiAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgPGgyIHN0eWxlPXt7IGZvbnRTaXplOiAnMXJlbScsIGZvbnRXZWlnaHQ6IDcwMCwgbWFyZ2luQm90dG9tOiAxMiB9fT4zLiBBZGQtT25zIChvcHRpb25hbCk8L2gyPgogICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2dyaWQnLCBncmlkVGVtcGxhdGVDb2x1bW5zOiAnMWZyIDFmcicsIGdhcDogOCB9fT4KICAgICAgICAgICAgICAgIHtFWFRSQVMubWFwKChleCkgPT4gKAogICAgICAgICAgICAgICAgICA8YnV0dG9uIGtleT17ZXguaWR9IG9uQ2xpY2s9eygpID0+IHRvZ2dsZUV4dHJhKGV4LmlkKX0gc3R5bGU9e3sKICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAnMTBweCAxNHB4JywgYm9yZGVyUmFkaXVzOiA4LCBjdXJzb3I6ICdwb2ludGVyJywgdGV4dEFsaWduOiAnbGVmdCcsCiAgICAgICAgICAgICAgICAgICAgYm9yZGVyOiBgMnB4IHNvbGlkICR7ZXh0cmFzLmluY2x1ZGVzKGV4LmlkKSA/IEJSQU5ELmFtYmVyIDogJ3ZhcigtLWNvbG9yLWJvcmRlciknfWAsCiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZDogZXh0cmFzLmluY2x1ZGVzKGV4LmlkKSA/ICdyZ2JhKDE5NiwxMTksNTksMC4wOCknIDogJ3ZhcigtLWNvbG9yLWJnLXJhaXNlZCknLAogICAgICAgICAgICAgICAgICAgIGNvbG9yOiAndmFyKC0tY29sb3ItdGV4dCknLAogICAgICAgICAgICAgICAgICB9fT4KICAgICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRXZWlnaHQ6IDYwMCwgZm9udFNpemU6ICcwLjhyZW0nIH19PntleC5sYWJlbH08L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRTaXplOiAnMC43cmVtJywgY29sb3I6IEJSQU5ELmFtYmVyIH19Pit7Zm10KGV4LmNvc3QpfTwvZGl2PgogICAgICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgICAgICkpfQogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgIHsvKiBMb2NhdGlvbiAqL30KICAgICAgICAgICAgPGRpdj4KICAgICAgICAgICAgICA8aDIgc3R5bGU9e3sgZm9udFNpemU6ICcxcmVtJywgZm9udFdlaWdodDogNzAwLCBtYXJnaW5Cb3R0b206IDEyIH19PjQuIExvY2F0aW9uPC9oMj4KICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4JywgZ2FwOiAxMCB9fT4KICAgICAgICAgICAgICAgIHtbdHJ1ZSwgZmFsc2VdLm1hcCgoaXNMb25kb24pID0+ICgKICAgICAgICAgICAgICAgICAgPGJ1dHRvbiBrZXk9e1N0cmluZyhpc0xvbmRvbil9IG9uQ2xpY2s9eygpID0+IHNldExvbmRvbihpc0xvbmRvbil9IHN0eWxlPXt7CiAgICAgICAgICAgICAgICAgICAgZmxleDogMSwgcGFkZGluZzogJzEycHgnLCBib3JkZXJSYWRpdXM6IDEwLCBjdXJzb3I6ICdwb2ludGVyJywKICAgICAgICAgICAgICAgICAgICBib3JkZXI6IGAycHggc29saWQgJHtsb25kb24gPT09IGlzTG9uZG9uID8gQlJBTkQuYW1iZXIgOiAndmFyKC0tY29sb3ItYm9yZGVyKSd9YCwKICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiBsb25kb24gPT09IGlzTG9uZG9uID8gJ3JnYmEoMTk2LDExOSw1OSwwLjA4KScgOiAndmFyKC0tY29sb3ItYmctcmFpc2VkKScsCiAgICAgICAgICAgICAgICAgICAgY29sb3I6ICd2YXIoLS1jb2xvci10ZXh0KScsIGZvbnRXZWlnaHQ6IDYwMCwgZm9udFNpemU6ICcwLjlyZW0nLAogICAgICAgICAgICAgICAgICB9fT4KICAgICAgICAgICAgICAgICAgICB7aXNMb25kb24gPyAn8J+TjSBMb25kb24gLyBTb3V0aCBFYXN0JyA6ICfwn4es8J+HpyBSZXN0IG9mIFVLJ30KICAgICAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgICAgICApKX0KICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICB7LyogUmlnaHQ6IHJlc3VsdCBjYXJkICovfQogICAgICAgICAgPGRpdiBzdHlsZT17eyBwb3NpdGlvbjogJ3N0aWNreScsIHRvcDogMjQgfX0+CiAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sKICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiAnbGluZWFyLWdyYWRpZW50KDEzNWRlZywjMWExYTJlIDAlLCMwZDExMTcgMTAwJSknLAogICAgICAgICAgICAgIGJvcmRlcjogYDFweCBzb2xpZCAke0JSQU5ELmFtYmVyfWAsCiAgICAgICAgICAgICAgYm9yZGVyUmFkaXVzOiAxNiwgcGFkZGluZzogJzMycHggMjhweCcsIGNvbG9yOiAnI2ZmZicsCiAgICAgICAgICAgIH19PgogICAgICAgICAgICAgIDxwIHN0eWxlPXt7IGNvbG9yOiBCUkFORC5hbWJlciwgZm9udFdlaWdodDogNzAwLCBmb250U2l6ZTogJzAuN3JlbScsIGxldHRlclNwYWNpbmc6ICcwLjEyZW0nLCBtYXJnaW5Cb3R0b206IDggfX0+RVNUSU1BVEVEIENPU1QgUkFOR0U8L3A+CiAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBmb250U2l6ZTogJ2NsYW1wKDEuNnJlbSwzLjV2dywyLjRyZW0pJywgZm9udFdlaWdodDogODAwLCBsaW5lSGVpZ2h0OiAxLjEsIG1hcmdpbkJvdHRvbTogNCB9fT4KICAgICAgICAgICAgICAgIHtmbXQobG93KX0g4oCTIHtmbXQoaGlnaCl9CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgPHAgc3R5bGU9e3sgY29sb3I6ICcjYWFhJywgZm9udFNpemU6ICcwLjhyZW0nLCBtYXJnaW5Cb3R0b206IDI0IH19PkluYy4gbGFib3VyLCBmaXh0dXJlcyAmIHRpbGluZy4gRXhjbC4gc3RydWN0dXJhbCBjaGFuZ2VzLjwvcD4KCiAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBib3JkZXJUb3A6ICcxcHggc29saWQgcmdiYSgyNTUsMjU1LDI1NSwwLjEpJywgcGFkZGluZ1RvcDogMjAsIG1hcmdpbkJvdHRvbTogMjAsIGZvbnRTaXplOiAnMC44NXJlbScgfX0+CiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4JywganVzdGlmeUNvbnRlbnQ6ICdzcGFjZS1iZXR3ZWVuJywgbWFyZ2luQm90dG9tOiA4IH19PgogICAgICAgICAgICAgICAgICA8c3BhbiBzdHlsZT17eyBjb2xvcjogJyNhYWEnIH19PlNpemU8L3NwYW4+PHNwYW4+e3NpemUubGFiZWx9ICh+e3NpemUuc3FtfW3Csik8L3NwYW4+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBqdXN0aWZ5Q29udGVudDogJ3NwYWNlLWJldHdlZW4nLCBtYXJnaW5Cb3R0b206IDggfX0+CiAgICAgICAgICAgICAgICAgIDxzcGFuIHN0eWxlPXt7IGNvbG9yOiAnI2FhYScgfX0+U3BlYzwvc3Bhbj48c3Bhbj57c3BlYy5sYWJlbH08L3NwYW4+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIHtleHRyYXMubGVuZ3RoID4gMCAmJiAoCiAgICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBqdXN0aWZ5Q29udGVudDogJ3NwYWNlLWJldHdlZW4nLCBtYXJnaW5Cb3R0b206IDggfX0+CiAgICAgICAgICAgICAgICAgICAgPHNwYW4gc3R5bGU9e3sgY29sb3I6ICcjYWFhJyB9fT5BZGQtb25zPC9zcGFuPjxzcGFuPit7Zm10KGV4dHJhc1RvdGFsKX08L3NwYW4+CiAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgKX0KICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBqdXN0aWZ5Q29udGVudDogJ3NwYWNlLWJldHdlZW4nIH19PgogICAgICAgICAgICAgICAgICA8c3BhbiBzdHlsZT17eyBjb2xvcjogJyNhYWEnIH19PkxvY2F0aW9uPC9zcGFuPjxzcGFuPntsb25kb24gPyAnTG9uZG9uICsyMCUnIDogJ1Jlc3Qgb2YgVUsnfTwvc3Bhbj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgICA8TGluayBocmVmPSIvZ2V0LWEtcXVvdGUiIHN0eWxlPXt7CiAgICAgICAgICAgICAgICBkaXNwbGF5OiAnYmxvY2snLCB0ZXh0QWxpZ246ICdjZW50ZXInLCBwYWRkaW5nOiAnMTRweCcsIGJvcmRlclJhZGl1czogMTAsCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiBCUkFORC5hbWJlciwgY29sb3I6ICcjZmZmJywgZm9udFdlaWdodDogNzAwLCB0ZXh0RGVjb3JhdGlvbjogJ25vbmUnLCBmb250U2l6ZTogJzAuOTVyZW0nLAogICAgICAgICAgICAgIH19PgogICAgICAgICAgICAgICAgR2V0IGEgRGV0YWlsZWQgUXVvdGUg4oaSCiAgICAgICAgICAgICAgPC9MaW5rPgogICAgICAgICAgICAgIDxwIHN0eWxlPXt7IGNvbG9yOiAnIzU1NScsIGZvbnRTaXplOiAnMC43cmVtJywgdGV4dEFsaWduOiAnY2VudGVyJywgbWFyZ2luVG9wOiAxMiB9fT4KICAgICAgICAgICAgICAgIOKaoO+4jyBCYWxscGFyayBlc3RpbWF0ZSBvbmx5LiBFeGFjdCBjb3N0cyB2YXJ5IGJ5IHByb3BlcnR5LgogICAgICAgICAgICAgIDwvcD4KICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IG1hcmdpblRvcDogMTYsIHBhZGRpbmc6ICcxNnB4JywgYm9yZGVyUmFkaXVzOiAxMiwgYm9yZGVyOiAnMXB4IHNvbGlkIHZhcigtLWNvbG9yLWJvcmRlciknLCBiYWNrZ3JvdW5kOiAndmFyKC0tY29sb3ItYmctcmFpc2VkKScsIGZvbnRTaXplOiAnMC44cmVtJywgY29sb3I6ICd2YXIoLS1jb2xvci10ZXh0LW11dGVkKScgfX0+CiAgICAgICAgICAgICAgPHN0cm9uZyBzdHlsZT17eyBjb2xvcjogJ3ZhcigtLWNvbG9yLXRleHQpJyB9fT7wn5KhIFdoYXQncyBpbmNsdWRlZDo8L3N0cm9uZz4gc3RyaXAtb3V0LCB3YXRlcnByb29maW5nLCB0aWxpbmcsIGJhdGgvc2hvd2VyL1dDL2Jhc2luIGluc3RhbGxhdGlvbiwgcGx1bWJpbmcgZmlyc3QgJiBzZWNvbmQgZml4LCBlbGVjdHJpY2FsIChsaWdodGluZywgZXh0cmFjdG9yKSwgZGVjb3JhdGlvbi4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9zZWN0aW9uPgoKICAgICAgey8qIEZBUSAqL30KICAgICAgPHNlY3Rpb24gc3R5bGU9e3sgbWF4V2lkdGg6IDgwMCwgbWFyZ2luOiAnMCBhdXRvJywgcGFkZGluZzogJzAgMjRweCA4MHB4JyB9fT4KICAgICAgICA8aDIgc3R5bGU9e3sgZm9udFNpemU6ICcxLjRyZW0nLCBmb250V2VpZ2h0OiA4MDAsIG1hcmdpbkJvdHRvbTogMjQgfX0+QmF0aHJvb20gUmVub3ZhdGlvbiBGQVFzPC9oMj4KICAgICAgICB7WwogICAgICAgICAgeyBxOiAnSG93IGxvbmcgZG9lcyBhIGJhdGhyb29tIHJlbm92YXRpb24gdGFrZT8nLCBhOiAnQSBzdGFuZGFyZCBiYXRocm9vbSByZWZ1cmJpc2htZW50IHR5cGljYWxseSB0YWtlcyA14oCTMTAgd29ya2luZyBkYXlzLiBMYXJnZXIgYmF0aHJvb21zIG9yIHdldCByb29tIGNvbnZlcnNpb25zIG1heSB0YWtlIDLigJMzIHdlZWtzLicgfSwKICAgICAgICAgIHsgcTogJ0RvIEkgbmVlZCBwbGFubmluZyBwZXJtaXNzaW9uIGZvciBhIGJhdGhyb29tPycsIGE6ICdNb3N0IGJhdGhyb29tIHJlbm92YXRpb25zIGRvblwndCByZXF1aXJlIHBsYW5uaW5nIHBlcm1pc3Npb24uIEhvd2V2ZXIsIGlmIHlvdVwncmUgY29udmVydGluZyBhIGJlZHJvb20gaW50byBhIGJhdGhyb29tIG9yIG1ha2luZyBzdHJ1Y3R1cmFsIGNoYW5nZXMsIHlvdSBtYXkgbmVlZCBCdWlsZGluZyBSZWd1bGF0aW9ucyBhcHByb3ZhbC4nIH0sCiAgICAgICAgICB7IHE6ICdTaG91bGQgSSB1c2UgYSBtYWluIGNvbnRyYWN0b3Igb3IgaW5kaXZpZHVhbCB0cmFkZXM/JywgYTogJ0EgcHJpbmNpcGFsIGNvbnRyYWN0b3IgY29vcmRpbmF0ZXMgYWxsIHRyYWRlcyAocGx1bWJlciwgdGlsZXIsIGVsZWN0cmljaWFuKSBhbmQgdGFrZXMgZnVsbCByZXNwb25zaWJpbGl0eSBmb3IgdGhlIHByb2plY3QuIFRoaXMgdHlwaWNhbGx5IGNvc3RzIDEw4oCTMTUlIG1vcmUgYnV0IHNhdmVzIHNpZ25pZmljYW50IHRpbWUgYW5kIHJlZHVjZXMgcmlzay4nIH0sCiAgICAgICAgICB7IHE6ICdXaGF0XCdzIHRoZSBiaWdnZXN0IGNvc3QgZmFjdG9yIGluIGJhdGhyb29tIHJlbm92YXRpb24/JywgYTogJ0xhYm91ciBhY2NvdW50cyBmb3IgNTDigJM2MCUgb2YgdGhlIHRvdGFsIGNvc3QuIFRpbGUgY2hvaWNlIGFuZCBzYW5pdGFyeSB3YXJlIHNwZWNpZmljYXRpb24gYXJlIHRoZSBiaWdnZXN0IG1hdGVyaWFsIGNvc3QgdmFyaWFibGVzLiBQcmVtaXVtIHRpbGVzIGNhbiBjb3N0IDPigJM1eCBtb3JlIHRoYW4gYnVkZ2V0IG9wdGlvbnMuJyB9LAogICAgICAgIF0ubWFwKCh7IHEsIGEgfSkgPT4gKAogICAgICAgICAgPGRpdiBrZXk9e3F9IHN0eWxlPXt7IG1hcmdpbkJvdHRvbTogMjAsIHBhZGRpbmdCb3R0b206IDIwLCBib3JkZXJCb3R0b206ICcxcHggc29saWQgdmFyKC0tY29sb3ItYm9yZGVyKScgfX0+CiAgICAgICAgICAgIDxoMyBzdHlsZT17eyBmb250U2l6ZTogJzFyZW0nLCBmb250V2VpZ2h0OiA3MDAsIG1hcmdpbkJvdHRvbTogOCB9fT57cX08L2gzPgogICAgICAgICAgICA8cCBzdHlsZT17eyBjb2xvcjogJ3ZhcigtLWNvbG9yLXRleHQtbXV0ZWQpJywgbGluZUhlaWdodDogMS43LCBtYXJnaW46IDAgfX0+e2F9PC9wPgogICAgICAgICAgPC9kaXY+CiAgICAgICAgKSl9CiAgICAgIDwvc2VjdGlvbj4KICAgIDwvbWFpbj4KICApCn0K
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
+
+const BRAND = { amber: '#C4773B' }
+
+const SIZES = [
+  { id: 'en-suite', label: 'En-Suite', sqm: 4, desc: 'Up to 4m²' },
+  { id: 'standard', label: 'Standard Bathroom', sqm: 6, desc: '4–8m²' },
+  { id: 'family', label: 'Family Bathroom', sqm: 9, desc: '8–12m²' },
+  { id: 'master', label: 'Master Bathroom', sqm: 14, desc: '12m²+' },
+]
+
+const SPEC_LEVELS = [
+  { id: 'budget', label: 'Budget', multiplier: 1.0, desc: 'Basic fixtures, standard tiles' },
+  { id: 'mid', label: 'Mid-Range', multiplier: 1.6, desc: 'Quality fittings, porcelain tiles' },
+  { id: 'premium', label: 'Premium', multiplier: 2.5, desc: 'Designer fixtures, natural stone' },
+  { id: 'bespoke', label: 'Bespoke / Luxury', multiplier: 3.8, desc: 'Bespoke design, top materials' },
+]
+
+const EXTRAS = [
+  { id: 'underfloor', label: 'Underfloor Heating', cost: 1200 },
+  { id: 'wetroom', label: 'Wet Room Conversion', cost: 1800 },
+  { id: 'freestanding', label: 'Freestanding Bath', cost: 900 },
+  { id: 'rainshower', label: 'Rainfall Shower System', cost: 600 },
+  { id: 'storage', label: 'Built-in Storage', cost: 1400 },
+  { id: 'demist', label: 'Heated Mirror / Demist Pad', cost: 350 },
+]
+
+const BASE_COST_PER_SQM = 650
+
+export default function BathroomCostCalculator() {
+  const [size, setSize] = useState(SIZES[1])
+  const [spec, setSpec] = useState(SPEC_LEVELS[1])
+  const [extras, setExtras] = useState<string[]>([])
+  const [london, setLondon] = useState(true)
+
+  const toggleExtra = (id: string) =>
+    setExtras((prev) => (prev.includes(id) ? prev.filter((e) => e !== id) : [...prev, id]))
+
+  const base = size.sqm * BASE_COST_PER_SQM * spec.multiplier
+  const extrasTotal = extras.reduce((sum, id) => sum + (EXTRAS.find((e) => e.id === id)?.cost ?? 0), 0)
+  const londonMultiplier = london ? 1.2 : 1.0
+  const low = Math.round((base + extrasTotal) * londonMultiplier * 0.85 / 100) * 100
+  const high = Math.round((base + extrasTotal) * londonMultiplier * 1.25 / 100) * 100
+
+  const fmt = (n: number) => `£${n.toLocaleString('en-GB')}`
+
+  return (
+    <main style={{ fontFamily: 'system-ui, sans-serif', background: 'var(--color-bg)', minHeight: '100vh', color: 'var(--color-text)' }}>
+      {/* Hero */}
+      <section style={{ background: 'linear-gradient(135deg,#1a1a2e 0%,#0d1117 100%)', padding: '60px 24px 48px', textAlign: 'center' }}>
+        <div style={{ maxWidth: 700, margin: '0 auto' }}>
+          <p style={{ color: BRAND.amber, fontWeight: 700, letterSpacing: '0.1em', fontSize: '0.75rem', marginBottom: 12 }}>FREE TOOL · INSTANT ESTIMATE</p>
+          <h1 style={{ fontSize: 'clamp(1.8rem,4vw,2.8rem)', fontWeight: 800, color: '#fff', marginBottom: 16 }}>
+            Bathroom Renovation Cost Calculator
+          </h1>
+          <p style={{ color: '#aaa', fontSize: '1.05rem', lineHeight: 1.7, maxWidth: 560, margin: '0 auto' }}>
+            Get an instant ballpark for your bathroom refurbishment — from a basic freshen-up to a full luxury remodel. Updated for UK market conditions 2026.
+          </p>
+        </div>
+      </section>
+
+      {/* Calculator */}
+      <section style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px 80px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(280px,340px)', gap: 32, alignItems: 'start' }}>
+          {/* Left: inputs */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+
+            {/* Size */}
+            <div>
+              <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 12, color: 'var(--color-text)' }}>1. Bathroom Size</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+                {SIZES.map((s) => (
+                  <button key={s.id} onClick={() => setSize(s)} style={{
+                    padding: '14px 16px', borderRadius: 10, cursor: 'pointer', textAlign: 'left',
+                    border: `2px solid ${size.id === s.id ? BRAND.amber : 'var(--color-border)'}`,
+                    background: size.id === s.id ? 'rgba(196,119,59,0.08)' : 'var(--color-bg-raised)',
+                    color: 'var(--color-text)',
+                  }}>
+                    <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>{s.label}</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>{s.desc}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Spec */}
+            <div>
+              <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 12 }}>2. Specification Level</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {SPEC_LEVELS.map((sp) => (
+                  <button key={sp.id} onClick={() => setSpec(sp)} style={{
+                    padding: '14px 16px', borderRadius: 10, cursor: 'pointer', textAlign: 'left',
+                    border: `2px solid ${spec.id === sp.id ? BRAND.amber : 'var(--color-border)'}`,
+                    background: spec.id === sp.id ? 'rgba(196,119,59,0.08)' : 'var(--color-bg-raised)',
+                    color: 'var(--color-text)', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                  }}>
+                    <div>
+                      <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>{sp.label}</div>
+                      <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>{sp.desc}</div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Extras */}
+            <div>
+              <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 12 }}>3. Add-Ons (optional)</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                {EXTRAS.map((ex) => (
+                  <button key={ex.id} onClick={() => toggleExtra(ex.id)} style={{
+                    padding: '10px 14px', borderRadius: 8, cursor: 'pointer', textAlign: 'left',
+                    border: `2px solid ${extras.includes(ex.id) ? BRAND.amber : 'var(--color-border)'}`,
+                    background: extras.includes(ex.id) ? 'rgba(196,119,59,0.08)' : 'var(--color-bg-raised)',
+                    color: 'var(--color-text)',
+                  }}>
+                    <div style={{ fontWeight: 600, fontSize: '0.8rem' }}>{ex.label}</div>
+                    <div style={{ fontSize: '0.7rem', color: BRAND.amber }}>+{fmt(ex.cost)}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Location */}
+            <div>
+              <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 12 }}>4. Location</h2>
+              <div style={{ display: 'flex', gap: 10 }}>
+                {[true, false].map((isLondon) => (
+                  <button key={String(isLondon)} onClick={() => setLondon(isLondon)} style={{
+                    flex: 1, padding: '12px', borderRadius: 10, cursor: 'pointer',
+                    border: `2px solid ${london === isLondon ? BRAND.amber : 'var(--color-border)'}`,
+                    background: london === isLondon ? 'rgba(196,119,59,0.08)' : 'var(--color-bg-raised)',
+                    color: 'var(--color-text)', fontWeight: 600, fontSize: '0.9rem',
+                  }}>
+                    {isLondon ? '📍 London / South East' : '🇬🇧 Rest of UK'}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right: result card */}
+          <div style={{ position: 'sticky', top: 24 }}>
+            <div style={{
+              background: 'linear-gradient(135deg,#1a1a2e 0%,#0d1117 100%)',
+              border: `1px solid ${BRAND.amber}`,
+              borderRadius: 16, padding: '32px 28px', color: '#fff',
+            }}>
+              <p style={{ color: BRAND.amber, fontWeight: 700, fontSize: '0.7rem', letterSpacing: '0.12em', marginBottom: 8 }}>ESTIMATED COST RANGE</p>
+              <div style={{ fontSize: 'clamp(1.6rem,3.5vw,2.4rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: 4 }}>
+                {fmt(low)} – {fmt(high)}
+              </div>
+              <p style={{ color: '#aaa', fontSize: '0.8rem', marginBottom: 24 }}>Inc. labour, fixtures & tiling. Excl. structural changes.</p>
+
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 20, marginBottom: 20, fontSize: '0.85rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+                  <span style={{ color: '#aaa' }}>Size</span><span>{size.label} (~{size.sqm}m²)</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+                  <span style={{ color: '#aaa' }}>Spec</span><span>{spec.label}</span>
+                </div>
+                {extras.length > 0 && (
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+                    <span style={{ color: '#aaa' }}>Add-ons</span><span>+{fmt(extrasTotal)}</span>
+                  </div>
+                )}
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#aaa' }}>Location</span><span>{london ? 'London +20%' : 'Rest of UK'}</span>
+                </div>
+              </div>
+
+              <Link href="/get-a-quote" style={{
+                display: 'block', textAlign: 'center', padding: '14px', borderRadius: 10,
+                background: BRAND.amber, color: '#fff', fontWeight: 700, textDecoration: 'none', fontSize: '0.95rem',
+              }}>
+                Get a Detailed Quote →
+              </Link>
+              <p style={{ color: '#555', fontSize: '0.7rem', textAlign: 'center', marginTop: 12 }}>
+                ⚠️ Ballpark estimate only. Exact costs vary by property.
+              </p>
+            </div>
+
+            <div style={{ marginTop: 16, padding: '16px', borderRadius: 12, border: '1px solid var(--color-border)', background: 'var(--color-bg-raised)', fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>
+              <strong style={{ color: 'var(--color-text)' }}>💡 What's included:</strong> strip-out, waterproofing, tiling, bath/shower/WC/basin installation, plumbing first & second fix, electrical (lighting, extractor), decoration.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section style={{ maxWidth: 800, margin: '0 auto', padding: '0 24px 80px' }}>
+        <h2 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: 24 }}>Bathroom Renovation FAQs</h2>
+        {[
+          { q: 'How long does a bathroom renovation take?', a: 'A standard bathroom refurbishment typically takes 5–10 working days. Larger bathrooms or wet room conversions may take 2–3 weeks.' },
+          { q: 'Do I need planning permission for a bathroom?', a: 'Most bathroom renovations don\'t require planning permission. However, if you\'re converting a bedroom into a bathroom or making structural changes, you may need Building Regulations approval.' },
+          { q: 'Should I use a main contractor or individual trades?', a: 'A principal contractor coordinates all trades (plumber, tiler, electrician) and takes full responsibility for the project. This typically costs 10–15% more but saves significant time and reduces risk.' },
+          { q: 'What\'s the biggest cost factor in bathroom renovation?', a: 'Labour accounts for 50–60% of the total cost. Tile choice and sanitary ware specification are the biggest material cost variables. Premium tiles can cost 3–5x more than budget options.' },
+        ].map(({ q, a }) => (
+          <div key={q} style={{ marginBottom: 20, paddingBottom: 20, borderBottom: '1px solid var(--color-border)' }}>
+            <h3 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 8 }}>{q}</h3>
+            <p style={{ color: 'var(--color-text-muted)', lineHeight: 1.7, margin: 0 }}>{a}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  )
+}

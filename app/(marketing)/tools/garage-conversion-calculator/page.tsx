@@ -1,1 +1,223 @@
-J3VzZSBjbGllbnQnCgppbXBvcnQgeyB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JwppbXBvcnQgTGluayBmcm9tICduZXh0L2xpbmsnCgpjb25zdCBCUkFORCA9IHsgYW1iZXI6ICcjQzQ3NzNCJyB9Cgpjb25zdCBHQVJBR0VfVFlQRVMgPSBbCiAgeyBpZDogJ3NpbmdsZS1pbnRlZ3JhbCcsIGxhYmVsOiAnU2luZ2xlIEludGVncmFsJywgc3FtOiAxNSwgZGVzYzogJ0J1aWx0IGludG8gdGhlIGhvdXNlJyB9LAogIHsgaWQ6ICdzaW5nbGUtZGV0YWNoZWQnLCBsYWJlbDogJ1NpbmdsZSBEZXRhY2hlZCcsIHNxbTogMTUsIGRlc2M6ICdTZXBhcmF0ZSBmcm9tIGhvdXNlJyB9LAogIHsgaWQ6ICdkb3VibGUtaW50ZWdyYWwnLCBsYWJlbDogJ0RvdWJsZSBJbnRlZ3JhbCcsIHNxbTogMjgsIGRlc2M6ICdMYXJnZSBpbnRlZ3JhbCBnYXJhZ2UnIH0sCiAgeyBpZDogJ2RvdWJsZS1kZXRhY2hlZCcsIGxhYmVsOiAnRG91YmxlIERldGFjaGVkJywgc3FtOiAyOCwgZGVzYzogJ0xhcmdlIHNlcGFyYXRlIHN0cnVjdHVyZScgfSwKXQoKY29uc3QgQ09OVkVSU0lPTl9UWVBFUyA9IFsKICB7IGlkOiAnaGFiaXRhYmxlJywgbGFiZWw6ICdIYWJpdGFibGUgUm9vbScsIG11bHRpcGxpZXI6IDEuMCwgZGVzYzogJ0JlZHJvb20sIG9mZmljZSwgcGxheXJvb20nIH0sCiAgeyBpZDogJ2xpdmluZycsIGxhYmVsOiAnTGl2aW5nIFNwYWNlIC8gTG91bmdlJywgbXVsdGlwbGllcjogMS4xLCBkZXNjOiAnT3BlbiB0byBtYWluIGhvdXNlJyB9LAogIHsgaWQ6ICdraXRjaGVuLWRpbmVyJywgbGFiZWw6ICdLaXRjaGVuLURpbmVyJywgbXVsdGlwbGllcjogMS41LCBkZXNjOiAnSW5jbHVkZXMga2l0Y2hlbiBmaXQtb3V0JyB9LAogIHsgaWQ6ICdhbm5leCcsIGxhYmVsOiAnU2VsZi1Db250YWluZWQgQW5uZXgnLCBtdWx0aXBsaWVyOiAxLjgsIGRlc2M6ICdGdWxsIGtpdGNoZW4sIGJhdGhyb29tLCBsaXZpbmcnIH0sCl0KCmNvbnN0IFNQRUNfTEVWRUxTID0gWwogIHsgaWQ6ICdidWRnZXQnLCBsYWJlbDogJ0J1ZGdldCcsIG11bHRpcGxpZXI6IDEuMCwgZGVzYzogJ0Jhc2ljIGluc3VsYXRpb24gJiBmaW5pc2hlcycgfSwKICB7IGlkOiAnbWlkJywgbGFiZWw6ICdNaWQtUmFuZ2UnLCBtdWx0aXBsaWVyOiAxLjUsIGRlc2M6ICdRdWFsaXR5IGZpbmlzaGVzLCBnb29kIGluc3VsYXRpb24nIH0sCiAgeyBpZDogJ3ByZW1pdW0nLCBsYWJlbDogJ1ByZW1pdW0nLCBtdWx0aXBsaWVyOiAyLjIsIGRlc2M6ICdIaWdoIHNwZWMsIGFyY2hpdGVjdC1kZXNpZ25lZCcgfSwKXQoKY29uc3QgRVhUUkFTID0gWwogIHsgaWQ6ICdiYXRocm9vbScsIGxhYmVsOiAnRW4tU3VpdGUgLyBXQyBBZGRpdGlvbicsIGNvc3Q6IDU1MDAgfSwKICB7IGlkOiAnYmktZm9sZCcsIGxhYmVsOiAnQmktZm9sZCAvIFNsaWRpbmcgRG9vcnMnLCBjb3N0OiA0MDAwIH0sCiAgeyBpZDogJ3VuZGVyZmxvb3InLCBsYWJlbDogJ1VuZGVyZmxvb3IgSGVhdGluZycsIGNvc3Q6IDIyMDAgfSwKICB7IGlkOiAnc3RydWN0dXJhbC1iZWFtJywgbGFiZWw6ICdTdHJ1Y3R1cmFsIFN0ZWVsIC8gQmVhbScsIGNvc3Q6IDM1MDAgfSwKICB7IGlkOiAncGxhbm5pbmcnLCBsYWJlbDogJ1BsYW5uaW5nIEFwcGxpY2F0aW9uIFN1cHBvcnQnLCBjb3N0OiAxNTAwIH0sCiAgeyBpZDogJ2FubmV4LWtpdGNoZW4nLCBsYWJlbDogJ0tpdGNoZW5ldHRlIChBbm5leCknLCBjb3N0OiA0NTAwIH0sCl0KCmNvbnN0IEJBU0VfQ09TVF9QRVJfU1FNID0gMTIwMAoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gR2FyYWdlQ29udmVyc2lvbkNhbGN1bGF0b3IoKSB7CiAgY29uc3QgW2dhcmFnZVR5cGUsIHNldEdhcmFnZVR5cGVdID0gdXNlU3RhdGUoR0FSQUdFX1RZUEVTWzBdKQogIGNvbnN0IFtjb252ZXJzaW9uVHlwZSwgc2V0Q29udmVyc2lvblR5cGVdID0gdXNlU3RhdGUoQ09OVkVSU0lPTl9UWVBFU1swXSkKICBjb25zdCBbc3BlYywgc2V0U3BlY10gPSB1c2VTdGF0ZShTUEVDX0xFVkVMU1sxXSkKICBjb25zdCBbZXh0cmFzLCBzZXRFeHRyYXNdID0gdXNlU3RhdGU8c3RyaW5nW10+KFtdKQogIGNvbnN0IFtsb25kb24sIHNldExvbmRvbl0gPSB1c2VTdGF0ZSh0cnVlKQoKICBjb25zdCB0b2dnbGVFeHRyYSA9IChpZDogc3RyaW5nKSA9PgogICAgc2V0RXh0cmFzKChwcmV2KSA9PiAocHJldi5pbmNsdWRlcyhpZCkgPyBwcmV2LmZpbHRlcigoZSkgPT4gZSAhPT0gaWQpIDogWy4uLnByZXYsIGlkXSkpCgogIGNvbnN0IGJhc2UgPSBnYXJhZ2VUeXBlLnNxbSAqIEJBU0VfQ09TVF9QRVJfU1FNICogY29udmVyc2lvblR5cGUubXVsdGlwbGllciAqIHNwZWMubXVsdGlwbGllcgogIGNvbnN0IGV4dHJhc1RvdGFsID0gZXh0cmFzLnJlZHVjZSgoc3VtLCBpZCkgPT4gc3VtICsgKEVYVFJBUy5maW5kKChlKSA9PiBlLmlkID09PSBpZCk/LmNvc3QgPz8gMCksIDApCiAgY29uc3QgbG9uZG9uTXVsdGlwbGllciA9IGxvbmRvbiA/IDEuMiA6IDEuMAogIGNvbnN0IGxvdyA9IE1hdGgucm91bmQoKGJhc2UgKyBleHRyYXNUb3RhbCkgKiBsb25kb25NdWx0aXBsaWVyICogMC44NSAvIDEwMCkgKiAxMDAKICBjb25zdCBoaWdoID0gTWF0aC5yb3VuZCgoYmFzZSArIGV4dHJhc1RvdGFsKSAqIGxvbmRvbk11bHRpcGxpZXIgKiAxLjI1IC8gMTAwKSAqIDEwMAoKICBjb25zdCBmbXQgPSAobjogbnVtYmVyKSA9PiBgwqMke24udG9Mb2NhbGVTdHJpbmcoJ2VuLUdCJyl9YAoKICByZXR1cm4gKAogICAgPG1haW4gc3R5bGU9e3sgZm9udEZhbWlseTogJ3N5c3RlbS11aSwgc2Fucy1zZXJpZicsIGJhY2tncm91bmQ6ICd2YXIoLS1jb2xvci1iZyknLCBtaW5IZWlnaHQ6ICcxMDB2aCcsIGNvbG9yOiAndmFyKC0tY29sb3ItdGV4dCknIH19PgogICAgICA8c2VjdGlvbiBzdHlsZT17eyBiYWNrZ3JvdW5kOiAnbGluZWFyLWdyYWRpZW50KDEzNWRlZywjMWExYTJlIDAlLCMwZDExMTcgMTAwJSknLCBwYWRkaW5nOiAnNjBweCAyNHB4IDQ4cHgnLCB0ZXh0QWxpZ246ICdjZW50ZXInIH19PgogICAgICAgIDxkaXYgc3R5bGU9e3sgbWF4V2lkdGg6IDcwMCwgbWFyZ2luOiAnMCBhdXRvJyB9fT4KICAgICAgICAgIDxwIHN0eWxlPXt7IGNvbG9yOiBCUkFORC5hbWJlciwgZm9udFdlaWdodDogNzAwLCBsZXR0ZXJTcGFjaW5nOiAnMC4xZW0nLCBmb250U2l6ZTogJzAuNzVyZW0nLCBtYXJnaW5Cb3R0b206IDEyIH19PkZSRUUgVE9PTCDCtyBJTlNUQU5UIEVTVElNQVRFPC9wPgogICAgICAgICAgPGgxIHN0eWxlPXt7IGZvbnRTaXplOiAnY2xhbXAoMS44cmVtLDR2dywyLjhyZW0pJywgZm9udFdlaWdodDogODAwLCBjb2xvcjogJyNmZmYnLCBtYXJnaW5Cb3R0b206IDE2IH19PgogICAgICAgICAgICBHYXJhZ2UgQ29udmVyc2lvbiBDb3N0IENhbGN1bGF0b3IKICAgICAgICAgIDwvaDE+CiAgICAgICAgICA8cCBzdHlsZT17eyBjb2xvcjogJyNhYWEnLCBmb250U2l6ZTogJzEuMDVyZW0nLCBsaW5lSGVpZ2h0OiAxLjcsIG1heFdpZHRoOiA1NjAsIG1hcmdpbjogJzAgYXV0bycgfX0+CiAgICAgICAgICAgIENvbnZlcnRpbmcgeW91ciBnYXJhZ2UgY291bGQgYWRkIMKjMjUsMDAw4oCTwqM0NSwwMDAgdG8geW91ciBwcm9wZXJ0eSB2YWx1ZS4gQ2FsY3VsYXRlIHlvdXIgY29udmVyc2lvbiBjb3N0cyBmb3IgMjAyNiBVSyBtYXJrZXQgcmF0ZXMuCiAgICAgICAgICA8L3A+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvc2VjdGlvbj4KCiAgICAgIDxzZWN0aW9uIHN0eWxlPXt7IG1heFdpZHRoOiA5MDAsIG1hcmdpbjogJzAgYXV0bycsIHBhZGRpbmc6ICc0MHB4IDI0cHggODBweCcgfX0+CiAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZ3JpZCcsIGdyaWRUZW1wbGF0ZUNvbHVtbnM6ICdtaW5tYXgoMCwxZnIpIG1pbm1heCgyODBweCwzNDBweCknLCBnYXA6IDMyLCBhbGlnbkl0ZW1zOiAnc3RhcnQnIH19PgogICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZmxleCcsIGZsZXhEaXJlY3Rpb246ICdjb2x1bW4nLCBnYXA6IDMyIH19PgoKICAgICAgICAgICAgPGRpdj4KICAgICAgICAgICAgICA8aDIgc3R5bGU9e3sgZm9udFNpemU6ICcxcmVtJywgZm9udFdlaWdodDogNzAwLCBtYXJnaW5Cb3R0b206IDEyIH19PjEuIEdhcmFnZSBUeXBlPC9oMj4KICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdncmlkJywgZ3JpZFRlbXBsYXRlQ29sdW1uczogJzFmciAxZnInLCBnYXA6IDEwIH19PgogICAgICAgICAgICAgICAge0dBUkFHRV9UWVBFUy5tYXAoKGcpID0+ICgKICAgICAgICAgICAgICAgICAgPGJ1dHRvbiBrZXk9e2cuaWR9IG9uQ2xpY2s9eygpID0+IHNldEdhcmFnZVR5cGUoZyl9IHN0eWxlPXt7CiAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogJzE0cHggMTZweCcsIGJvcmRlclJhZGl1czogMTAsIGN1cnNvcjogJ3BvaW50ZXInLCB0ZXh0QWxpZ246ICdsZWZ0JywKICAgICAgICAgICAgICAgICAgICBib3JkZXI6IGAycHggc29saWQgJHtnYXJhZ2VUeXBlLmlkID09PSBnLmlkID8gQlJBTkQuYW1iZXIgOiAndmFyKC0tY29sb3ItYm9yZGVyKSd9YCwKICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiBnYXJhZ2VUeXBlLmlkID09PSBnLmlkID8gJ3JnYmEoMTk2LDExOSw1OSwwLjA4KScgOiAndmFyKC0tY29sb3ItYmctcmFpc2VkKScsCiAgICAgICAgICAgICAgICAgICAgY29sb3I6ICd2YXIoLS1jb2xvci10ZXh0KScsCiAgICAgICAgICAgICAgICAgIH19PgogICAgICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZm9udFdlaWdodDogNzAwLCBmb250U2l6ZTogJzAuOXJlbScgfX0+e2cubGFiZWx9PC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBmb250U2l6ZTogJzAuNzVyZW0nLCBjb2xvcjogJ3ZhcigtLWNvbG9yLXRleHQtbXV0ZWQpJyB9fT57Zy5kZXNjfTwvZGl2PgogICAgICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgICAgICkpfQogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgPGgyIHN0eWxlPXt7IGZvbnRTaXplOiAnMXJlbScsIGZvbnRXZWlnaHQ6IDcwMCwgbWFyZ2luQm90dG9tOiAxMiB9fT4yLiBJbnRlbmRlZCBVc2U8L2gyPgogICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBmbGV4RGlyZWN0aW9uOiAnY29sdW1uJywgZ2FwOiA4IH19PgogICAgICAgICAgICAgICAge0NPTlZFUlNJT05fVFlQRVMubWFwKChjdCkgPT4gKAogICAgICAgICAgICAgICAgICA8YnV0dG9uIGtleT17Y3QuaWR9IG9uQ2xpY2s9eygpID0+IHNldENvbnZlcnNpb25UeXBlKGN0KX0gc3R5bGU9e3sKICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAnMTRweCAxNnB4JywgYm9yZGVyUmFkaXVzOiAxMCwgY3Vyc29yOiAncG9pbnRlcicsIHRleHRBbGlnbjogJ2xlZnQnLAogICAgICAgICAgICAgICAgICAgIGJvcmRlcjogYDJweCBzb2xpZCAke2NvbnZlcnNpb25UeXBlLmlkID09PSBjdC5pZCA/IEJSQU5ELmFtYmVyIDogJ3ZhcigtLWNvbG9yLWJvcmRlciknfWAsCiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZDogY29udmVyc2lvblR5cGUuaWQgPT09IGN0LmlkID8gJ3JnYmEoMTk2LDExOSw1OSwwLjA4KScgOiAndmFyKC0tY29sb3ItYmctcmFpc2VkKScsCiAgICAgICAgICAgICAgICAgICAgY29sb3I6ICd2YXIoLS1jb2xvci10ZXh0KScsCiAgICAgICAgICAgICAgICAgIH19PgogICAgICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZm9udFdlaWdodDogNzAwLCBmb250U2l6ZTogJzAuOXJlbScgfX0+e2N0LmxhYmVsfTwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZm9udFNpemU6ICcwLjc1cmVtJywgY29sb3I6ICd2YXIoLS1jb2xvci10ZXh0LW11dGVkKScgfX0+e2N0LmRlc2N9PC9kaXY+CiAgICAgICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICAgICAgKSl9CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgPGRpdj4KICAgICAgICAgICAgICA8aDIgc3R5bGU9e3sgZm9udFNpemU6ICcxcmVtJywgZm9udFdlaWdodDogNzAwLCBtYXJnaW5Cb3R0b206IDEyIH19PjMuIFNwZWNpZmljYXRpb248L2gyPgogICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBmbGV4RGlyZWN0aW9uOiAnY29sdW1uJywgZ2FwOiA4IH19PgogICAgICAgICAgICAgICAge1NQRUNfTEVWRUxTLm1hcCgoc3ApID0+ICgKICAgICAgICAgICAgICAgICAgPGJ1dHRvbiBrZXk9e3NwLmlkfSBvbkNsaWNrPXsoKSA9PiBzZXRTcGVjKHNwKX0gc3R5bGU9e3sKICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAnMTRweCAxNnB4JywgYm9yZGVyUmFkaXVzOiAxMCwgY3Vyc29yOiAncG9pbnRlcicsIHRleHRBbGlnbjogJ2xlZnQnLAogICAgICAgICAgICAgICAgICAgIGJvcmRlcjogYDJweCBzb2xpZCAke3NwZWMuaWQgPT09IHNwLmlkID8gQlJBTkQuYW1iZXIgOiAndmFyKC0tY29sb3ItYm9yZGVyKSd9YCwKICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiBzcGVjLmlkID09PSBzcC5pZCA/ICdyZ2JhKDE5NiwxMTksNTksMC4wOCknIDogJ3ZhcigtLWNvbG9yLWJnLXJhaXNlZCknLAogICAgICAgICAgICAgICAgICAgIGNvbG9yOiAndmFyKC0tY29sb3ItdGV4dCknLAogICAgICAgICAgICAgICAgICB9fT4KICAgICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRXZWlnaHQ6IDcwMCwgZm9udFNpemU6ICcwLjlyZW0nIH19PntzcC5sYWJlbH08L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRTaXplOiAnMC43NXJlbScsIGNvbG9yOiAndmFyKC0tY29sb3ItdGV4dC1tdXRlZCknIH19PntzcC5kZXNjfTwvZGl2PgogICAgICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgICAgICkpfQogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgPGgyIHN0eWxlPXt7IGZvbnRTaXplOiAnMXJlbScsIGZvbnRXZWlnaHQ6IDcwMCwgbWFyZ2luQm90dG9tOiAxMiB9fT40LiBBZGQtT25zIChvcHRpb25hbCk8L2gyPgogICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2dyaWQnLCBncmlkVGVtcGxhdGVDb2x1bW5zOiAnMWZyIDFmcicsIGdhcDogOCB9fT4KICAgICAgICAgICAgICAgIHtFWFRSQVMubWFwKChleCkgPT4gKAogICAgICAgICAgICAgICAgICA8YnV0dG9uIGtleT17ZXguaWR9IG9uQ2xpY2s9eygpID0+IHRvZ2dsZUV4dHJhKGV4LmlkKX0gc3R5bGU9e3sKICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAnMTBweCAxNHB4JywgYm9yZGVyUmFkaXVzOiA4LCBjdXJzb3I6ICdwb2ludGVyJywgdGV4dEFsaWduOiAnbGVmdCcsCiAgICAgICAgICAgICAgICAgICAgYm9yZGVyOiBgMnB4IHNvbGlkICR7ZXh0cmFzLmluY2x1ZGVzKGV4LmlkKSA/IEJSQU5ELmFtYmVyIDogJ3ZhcigtLWNvbG9yLWJvcmRlciknfWAsCiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZDogZXh0cmFzLmluY2x1ZGVzKGV4LmlkKSA/ICdyZ2JhKDE5NiwxMTksNTksMC4wOCknIDogJ3ZhcigtLWNvbG9yLWJnLXJhaXNlZCknLAogICAgICAgICAgICAgICAgICAgIGNvbG9yOiAndmFyKC0tY29sb3ItdGV4dCknLAogICAgICAgICAgICAgICAgICB9fT4KICAgICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRXZWlnaHQ6IDYwMCwgZm9udFNpemU6ICcwLjhyZW0nIH19PntleC5sYWJlbH08L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRTaXplOiAnMC43cmVtJywgY29sb3I6IEJSQU5ELmFtYmVyIH19Pit7Zm10KGV4LmNvc3QpfTwvZGl2PgogICAgICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgICAgICkpfQogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgPGgyIHN0eWxlPXt7IGZvbnRTaXplOiAnMXJlbScsIGZvbnRXZWlnaHQ6IDcwMCwgbWFyZ2luQm90dG9tOiAxMiB9fT41LiBMb2NhdGlvbjwvaDI+CiAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZmxleCcsIGdhcDogMTAgfX0+CiAgICAgICAgICAgICAgICB7W3RydWUsIGZhbHNlXS5tYXAoKGlzTG9uZG9uKSA9PiAoCiAgICAgICAgICAgICAgICAgIDxidXR0b24ga2V5PXtTdHJpbmcoaXNMb25kb24pfSBvbkNsaWNrPXsoKSA9PiBzZXRMb25kb24oaXNMb25kb24pfSBzdHlsZT17ewogICAgICAgICAgICAgICAgICAgIGZsZXg6IDEsIHBhZGRpbmc6ICcxMnB4JywgYm9yZGVyUmFkaXVzOiAxMCwgY3Vyc29yOiAncG9pbnRlcicsCiAgICAgICAgICAgICAgICAgICAgYm9yZGVyOiBgMnB4IHNvbGlkICR7bG9uZG9uID09PSBpc0xvbmRvbiA/IEJSQU5ELmFtYmVyIDogJ3ZhcigtLWNvbG9yLWJvcmRlciknfWAsCiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZDogbG9uZG9uID09PSBpc0xvbmRvbiA/ICdyZ2JhKDE5NiwxMTksNTksMC4wOCknIDogJ3ZhcigtLWNvbG9yLWJnLXJhaXNlZCknLAogICAgICAgICAgICAgICAgICAgIGNvbG9yOiAndmFyKC0tY29sb3ItdGV4dCknLCBmb250V2VpZ2h0OiA2MDAsIGZvbnRTaXplOiAnMC45cmVtJywKICAgICAgICAgICAgICAgICAgfX0+CiAgICAgICAgICAgICAgICAgICAge2lzTG9uZG9uID8gJ/Cfk40gTG9uZG9uIC8gU291dGggRWFzdCcgOiAn8J+HrPCfh6cgUmVzdCBvZiBVSyd9CiAgICAgICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICAgICAgKSl9CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPC9kaXY+CgogICAgICAgICAgPGRpdiBzdHlsZT17eyBwb3NpdGlvbjogJ3N0aWNreScsIHRvcDogMjQgfX0+CiAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sKICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiAnbGluZWFyLWdyYWRpZW50KDEzNWRlZywjMWExYTJlIDAlLCMwZDExMTcgMTAwJSknLAogICAgICAgICAgICAgIGJvcmRlcjogYDFweCBzb2xpZCAke0JSQU5ELmFtYmVyfWAsIGJvcmRlclJhZGl1czogMTYsIHBhZGRpbmc6ICczMnB4IDI4cHgnLCBjb2xvcjogJyNmZmYnLAogICAgICAgICAgICB9fT4KICAgICAgICAgICAgICA8cCBzdHlsZT17eyBjb2xvcjogQlJBTkQuYW1iZXIsIGZvbnRXZWlnaHQ6IDcwMCwgZm9udFNpemU6ICcwLjdyZW0nLCBsZXR0ZXJTcGFjaW5nOiAnMC4xMmVtJywgbWFyZ2luQm90dG9tOiA4IH19PkVTVElNQVRFRCBDT1NUIFJBTkdFPC9wPgogICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZm9udFNpemU6ICdjbGFtcCgxLjZyZW0sMy41dncsMi40cmVtKScsIGZvbnRXZWlnaHQ6IDgwMCwgbGluZUhlaWdodDogMS4xLCBtYXJnaW5Cb3R0b206IDQgfX0+CiAgICAgICAgICAgICAgICB7Zm10KGxvdyl9IOKAkyB7Zm10KGhpZ2gpfQogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgIDxwIHN0eWxlPXt7IGNvbG9yOiAnI2FhYScsIGZvbnRTaXplOiAnMC44cmVtJywgbWFyZ2luQm90dG9tOiAyNCB9fT5GdWxsIGNvbnZlcnNpb24gaW5jLiBpbnN1bGF0aW9uLCBlbGVjdHJpY3MgJiBmaW5pc2hlcy48L3A+CiAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBib3JkZXJUb3A6ICcxcHggc29saWQgcmdiYSgyNTUsMjU1LDI1NSwwLjEpJywgcGFkZGluZ1RvcDogMjAsIG1hcmdpbkJvdHRvbTogMjAsIGZvbnRTaXplOiAnMC44NXJlbScgfX0+CiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4JywganVzdGlmeUNvbnRlbnQ6ICdzcGFjZS1iZXR3ZWVuJywgbWFyZ2luQm90dG9tOiA4IH19PgogICAgICAgICAgICAgICAgICA8c3BhbiBzdHlsZT17eyBjb2xvcjogJyNhYWEnIH19PkdhcmFnZTwvc3Bhbj48c3Bhbj57Z2FyYWdlVHlwZS5sYWJlbH0gKH57Z2FyYWdlVHlwZS5zcW19bcKyKTwvc3Bhbj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZmxleCcsIGp1c3RpZnlDb250ZW50OiAnc3BhY2UtYmV0d2VlbicsIG1hcmdpbkJvdHRvbTogOCB9fT4KICAgICAgICAgICAgICAgICAgPHNwYW4gc3R5bGU9e3sgY29sb3I6ICcjYWFhJyB9fT5Vc2U8L3NwYW4+PHNwYW4+e2NvbnZlcnNpb25UeXBlLmxhYmVsfTwvc3Bhbj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZmxleCcsIGp1c3RpZnlDb250ZW50OiAnc3BhY2UtYmV0d2VlbicsIG1hcmdpbkJvdHRvbTogOCB9fT4KICAgICAgICAgICAgICAgICAgPHNwYW4gc3R5bGU9e3sgY29sb3I6ICcjYWFhJyB9fT5TcGVjPC9zcGFuPjxzcGFuPntzcGVjLmxhYmVsfTwvc3Bhbj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAge2V4dHJhcy5sZW5ndGggPiAwICYmICgKICAgICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZmxleCcsIGp1c3RpZnlDb250ZW50OiAnc3BhY2UtYmV0d2VlbicsIG1hcmdpbkJvdHRvbTogOCB9fT4KICAgICAgICAgICAgICAgICAgICA8c3BhbiBzdHlsZT17eyBjb2xvcjogJyNhYWEnIH19PkFkZC1vbnM8L3NwYW4+PHNwYW4+K3tmbXQoZXh0cmFzVG90YWwpfTwvc3Bhbj4KICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICApfQogICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZmxleCcsIGp1c3RpZnlDb250ZW50OiAnc3BhY2UtYmV0d2VlbicgfX0+CiAgICAgICAgICAgICAgICAgIDxzcGFuIHN0eWxlPXt7IGNvbG9yOiAnI2FhYScgfX0+TG9jYXRpb248L3NwYW4+PHNwYW4+e2xvbmRvbiA/ICdMb25kb24gKzIwJScgOiAnUmVzdCBvZiBVSyd9PC9zcGFuPgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgPExpbmsgaHJlZj0iL2dldC1hLXF1b3RlIiBzdHlsZT17ewogICAgICAgICAgICAgICAgZGlzcGxheTogJ2Jsb2NrJywgdGV4dEFsaWduOiAnY2VudGVyJywgcGFkZGluZzogJzE0cHgnLCBib3JkZXJSYWRpdXM6IDEwLAogICAgICAgICAgICAgICAgYmFja2dyb3VuZDogQlJBTkQuYW1iZXIsIGNvbG9yOiAnI2ZmZicsIGZvbnRXZWlnaHQ6IDcwMCwgdGV4dERlY29yYXRpb246ICdub25lJywgZm9udFNpemU6ICcwLjk1cmVtJywKICAgICAgICAgICAgICB9fT4KICAgICAgICAgICAgICAgIEdldCBhIERldGFpbGVkIFF1b3RlIOKGkgogICAgICAgICAgICAgIDwvTGluaz4KICAgICAgICAgICAgICA8cCBzdHlsZT17eyBjb2xvcjogJyM1NTUnLCBmb250U2l6ZTogJzAuN3JlbScsIHRleHRBbGlnbjogJ2NlbnRlcicsIG1hcmdpblRvcDogMTIgfX0+CiAgICAgICAgICAgICAgICDimqDvuI8gQmFsbHBhcmsgZXN0aW1hdGUgb25seS4gQ29zdHMgdmFyeSBieSBwcm9wZXJ0eSBjb25kaXRpb24uCiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgbWFyZ2luVG9wOiAxNiwgcGFkZGluZzogJzE2cHgnLCBib3JkZXJSYWRpdXM6IDEyLCBib3JkZXI6ICcxcHggc29saWQgdmFyKC0tY29sb3ItYm9yZGVyKScsIGJhY2tncm91bmQ6ICd2YXIoLS1jb2xvci1iZy1yYWlzZWQpJywgZm9udFNpemU6ICcwLjhyZW0nLCBjb2xvcjogJ3ZhcigtLWNvbG9yLXRleHQtbXV0ZWQpJyB9fT4KICAgICAgICAgICAgICA8c3Ryb25nIHN0eWxlPXt7IGNvbG9yOiAndmFyKC0tY29sb3ItdGV4dCknIH19PvCfj6AgUGVybWl0dGVkIERldmVsb3BtZW50Ojwvc3Ryb25nPiBNb3N0IHNpbmdsZSBnYXJhZ2UgY29udmVyc2lvbnMgZG9uJ3QgbmVlZCBwbGFubmluZyBwZXJtaXNzaW9uIOKAlCB0aGV5IGZhbGwgdW5kZXIgUGVybWl0dGVkIERldmVsb3BtZW50IFJpZ2h0cy4gSG93ZXZlciwgaWYgeW91IGxpdmUgaW4gYSBDb25zZXJ2YXRpb24gQXJlYSBvciB0aGUgZ2FyYWdlIGZyb250cyBhIGhpZ2h3YXksIHlvdSdsbCBuZWVkIGZ1bGwgcGxhbm5pbmcgcGVybWlzc2lvbi4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9zZWN0aW9uPgoKICAgICAgPHNlY3Rpb24gc3R5bGU9e3sgbWF4V2lkdGg6IDgwMCwgbWFyZ2luOiAnMCBhdXRvJywgcGFkZGluZzogJzAgMjRweCA4MHB4JyB9fT4KICAgICAgICA8aDIgc3R5bGU9e3sgZm9udFNpemU6ICcxLjRyZW0nLCBmb250V2VpZ2h0OiA4MDAsIG1hcmdpbkJvdHRvbTogMjQgfX0+R2FyYWdlIENvbnZlcnNpb24gRkFRczwvaDI+CiAgICAgICAge1sKICAgICAgICAgIHsgcTogJ0RvIEkgbmVlZCBwbGFubmluZyBwZXJtaXNzaW9uIGZvciBhIGdhcmFnZSBjb252ZXJzaW9uPycsIGE6ICdNb3N0IGdhcmFnZSBjb252ZXJzaW9ucyBmYWxsIHVuZGVyIFBlcm1pdHRlZCBEZXZlbG9wbWVudCBSaWdodHMg4oCUIHlvdSB3b25cJ3QgbmVlZCBwbGFubmluZyBwZXJtaXNzaW9uIHVubGVzcyB5b3VcJ3JlIGluIGEgQ29uc2VydmF0aW9uIEFyZWEsIEFPTkIsIG9yIHlvdXIgZ2FyYWdlIGZyb250cyBhIGhpZ2h3YXkuIEJ1aWxkaW5nIFJlZ3VsYXRpb25zIGFwcHJvdmFsIGlzIGFsd2F5cyByZXF1aXJlZC4nIH0sCiAgICAgICAgICB7IHE6ICdIb3cgbXVjaCB2YWx1ZSBkb2VzIGEgZ2FyYWdlIGNvbnZlcnNpb24gYWRkPycsIGE6ICdBIHdlbGwtZXhlY3V0ZWQgZ2FyYWdlIGNvbnZlcnNpb24gdHlwaWNhbGx5IGFkZHMgwqMyNSwwMDDigJPCozQ1LDAwMCBpbiBwcm9wZXJ0eSB2YWx1ZSBpbiBMb25kb24sIGFuZCDCozE1LDAwMOKAk8KjMzAsMDAwIGluIHRoZSByZXN0IG9mIHRoZSBVSy4gQ29udmVydGluZyB0byBhIGhhYml0YWJsZSBiZWRyb29tIHdpdGggZW4tc3VpdGUgZGVsaXZlcnMgdGhlIHN0cm9uZ2VzdCBST0kuJyB9LAogICAgICAgICAgeyBxOiAnQ2FuIEkgY29udmVydCBhIGRldGFjaGVkIGdhcmFnZSBpbnRvIGFuIGFubmV4ZT8nLCBhOiAnWWVzIOKAlCBhIHNlbGYtY29udGFpbmVkIGFubmV4ZSBjYW4gaW5jbHVkZSBiZWRyb29tLCBiYXRocm9vbSwga2l0Y2hlbiBhbmQgbGl2aW5nIGFyZWEuIFRoaXMgbWF5IHJlcXVpcmUgcGxhbm5pbmcgcGVybWlzc2lvbiBkZXBlbmRpbmcgb24geW91ciBjb3VuY2lsIGFuZCB3aGV0aGVyIHlvdSBpbnRlbmQgdG8gbGV0IGl0IG91dCBzZXBhcmF0ZWx5LiBCdWlsZGluZyBSZWd1bGF0aW9ucyBjb21wbGlhbmNlIGlzIG1hbmRhdG9yeS4nIH0sCiAgICAgICAgICB7IHE6ICdIb3cgbG9uZyBkb2VzIGEgZ2FyYWdlIGNvbnZlcnNpb24gdGFrZT8nLCBhOiAnQSBzaW1wbGUgaW50ZWdyYWwgZ2FyYWdlIGNvbnZlcnNpb24gdGFrZXMgM+KAkzYgd2Vla3MuIEEgZnVsbCBzZWxmLWNvbnRhaW5lZCBhbm5leGUgb3IgZG91YmxlIGdhcmFnZSBjb252ZXJzaW9uIGNhbiB0YWtlIDjigJMxNCB3ZWVrcywgZXNwZWNpYWxseSBpZiBzdHJ1Y3R1cmFsIG9yIHV0aWxpdHkgd29yayBpcyBpbnZvbHZlZC4nIH0sCiAgICAgICAgXS5tYXAoKHsgcSwgYSB9KSA9PiAoCiAgICAgICAgICA8ZGl2IGtleT17cX0gc3R5bGU9e3sgbWFyZ2luQm90dG9tOiAyMCwgcGFkZGluZ0JvdHRvbTogMjAsIGJvcmRlckJvdHRvbTogJzFweCBzb2xpZCB2YXIoLS1jb2xvci1ib3JkZXIpJyB9fT4KICAgICAgICAgICAgPGgzIHN0eWxlPXt7IGZvbnRTaXplOiAnMXJlbScsIGZvbnRXZWlnaHQ6IDcwMCwgbWFyZ2luQm90dG9tOiA4IH19PntxfTwvaDM+CiAgICAgICAgICAgIDxwIHN0eWxlPXt7IGNvbG9yOiAndmFyKC0tY29sb3ItdGV4dC1tdXRlZCknLCBsaW5lSGVpZ2h0OiAxLjcsIG1hcmdpbjogMCB9fT57YX08L3A+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICApKX0KICAgICAgPC9zZWN0aW9uPgogICAgPC9tYWluPgogICkKfQo=
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
+
+const BRAND = { amber: '#C4773B' }
+
+const GARAGE_TYPES = [
+  { id: 'single-integral', label: 'Single Integral', sqm: 15, desc: 'Built into the house' },
+  { id: 'single-detached', label: 'Single Detached', sqm: 15, desc: 'Separate from house' },
+  { id: 'double-integral', label: 'Double Integral', sqm: 28, desc: 'Large integral garage' },
+  { id: 'double-detached', label: 'Double Detached', sqm: 28, desc: 'Large separate structure' },
+]
+
+const CONVERSION_TYPES = [
+  { id: 'habitable', label: 'Habitable Room', multiplier: 1.0, desc: 'Bedroom, office, playroom' },
+  { id: 'living', label: 'Living Space / Lounge', multiplier: 1.1, desc: 'Open to main house' },
+  { id: 'kitchen-diner', label: 'Kitchen-Diner', multiplier: 1.5, desc: 'Includes kitchen fit-out' },
+  { id: 'annex', label: 'Self-Contained Annex', multiplier: 1.8, desc: 'Full kitchen, bathroom, living' },
+]
+
+const SPEC_LEVELS = [
+  { id: 'budget', label: 'Budget', multiplier: 1.0, desc: 'Basic insulation & finishes' },
+  { id: 'mid', label: 'Mid-Range', multiplier: 1.5, desc: 'Quality finishes, good insulation' },
+  { id: 'premium', label: 'Premium', multiplier: 2.2, desc: 'High spec, architect-designed' },
+]
+
+const EXTRAS = [
+  { id: 'bathroom', label: 'En-Suite / WC Addition', cost: 5500 },
+  { id: 'bi-fold', label: 'Bi-fold / Sliding Doors', cost: 4000 },
+  { id: 'underfloor', label: 'Underfloor Heating', cost: 2200 },
+  { id: 'structural-beam', label: 'Structural Steel / Beam', cost: 3500 },
+  { id: 'planning', label: 'Planning Application Support', cost: 1500 },
+  { id: 'annex-kitchen', label: 'Kitchenette (Annex)', cost: 4500 },
+]
+
+const BASE_COST_PER_SQM = 1200
+
+export default function GarageConversionCalculator() {
+  const [garageType, setGarageType] = useState(GARAGE_TYPES[0])
+  const [conversionType, setConversionType] = useState(CONVERSION_TYPES[0])
+  const [spec, setSpec] = useState(SPEC_LEVELS[1])
+  const [extras, setExtras] = useState<string[]>([])
+  const [london, setLondon] = useState(true)
+
+  const toggleExtra = (id: string) =>
+    setExtras((prev) => (prev.includes(id) ? prev.filter((e) => e !== id) : [...prev, id]))
+
+  const base = garageType.sqm * BASE_COST_PER_SQM * conversionType.multiplier * spec.multiplier
+  const extrasTotal = extras.reduce((sum, id) => sum + (EXTRAS.find((e) => e.id === id)?.cost ?? 0), 0)
+  const londonMultiplier = london ? 1.2 : 1.0
+  const low = Math.round((base + extrasTotal) * londonMultiplier * 0.85 / 100) * 100
+  const high = Math.round((base + extrasTotal) * londonMultiplier * 1.25 / 100) * 100
+
+  const fmt = (n: number) => `£${n.toLocaleString('en-GB')}`
+
+  return (
+    <main style={{ fontFamily: 'system-ui, sans-serif', background: 'var(--color-bg)', minHeight: '100vh', color: 'var(--color-text)' }}>
+      <section style={{ background: 'linear-gradient(135deg,#1a1a2e 0%,#0d1117 100%)', padding: '60px 24px 48px', textAlign: 'center' }}>
+        <div style={{ maxWidth: 700, margin: '0 auto' }}>
+          <p style={{ color: BRAND.amber, fontWeight: 700, letterSpacing: '0.1em', fontSize: '0.75rem', marginBottom: 12 }}>FREE TOOL · INSTANT ESTIMATE</p>
+          <h1 style={{ fontSize: 'clamp(1.8rem,4vw,2.8rem)', fontWeight: 800, color: '#fff', marginBottom: 16 }}>
+            Garage Conversion Cost Calculator
+          </h1>
+          <p style={{ color: '#aaa', fontSize: '1.05rem', lineHeight: 1.7, maxWidth: 560, margin: '0 auto' }}>
+            Converting your garage could add £25,000–£45,000 to your property value. Calculate your conversion costs for 2026 UK market rates.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px 80px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(280px,340px)', gap: 32, alignItems: 'start' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+
+            <div>
+              <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 12 }}>1. Garage Type</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+                {GARAGE_TYPES.map((g) => (
+                  <button key={g.id} onClick={() => setGarageType(g)} style={{
+                    padding: '14px 16px', borderRadius: 10, cursor: 'pointer', textAlign: 'left',
+                    border: `2px solid ${garageType.id === g.id ? BRAND.amber : 'var(--color-border)'}`,
+                    background: garageType.id === g.id ? 'rgba(196,119,59,0.08)' : 'var(--color-bg-raised)',
+                    color: 'var(--color-text)',
+                  }}>
+                    <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>{g.label}</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>{g.desc}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 12 }}>2. Intended Use</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {CONVERSION_TYPES.map((ct) => (
+                  <button key={ct.id} onClick={() => setConversionType(ct)} style={{
+                    padding: '14px 16px', borderRadius: 10, cursor: 'pointer', textAlign: 'left',
+                    border: `2px solid ${conversionType.id === ct.id ? BRAND.amber : 'var(--color-border)'}`,
+                    background: conversionType.id === ct.id ? 'rgba(196,119,59,0.08)' : 'var(--color-bg-raised)',
+                    color: 'var(--color-text)',
+                  }}>
+                    <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>{ct.label}</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>{ct.desc}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 12 }}>3. Specification</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {SPEC_LEVELS.map((sp) => (
+                  <button key={sp.id} onClick={() => setSpec(sp)} style={{
+                    padding: '14px 16px', borderRadius: 10, cursor: 'pointer', textAlign: 'left',
+                    border: `2px solid ${spec.id === sp.id ? BRAND.amber : 'var(--color-border)'}`,
+                    background: spec.id === sp.id ? 'rgba(196,119,59,0.08)' : 'var(--color-bg-raised)',
+                    color: 'var(--color-text)',
+                  }}>
+                    <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>{sp.label}</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>{sp.desc}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 12 }}>4. Add-Ons (optional)</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                {EXTRAS.map((ex) => (
+                  <button key={ex.id} onClick={() => toggleExtra(ex.id)} style={{
+                    padding: '10px 14px', borderRadius: 8, cursor: 'pointer', textAlign: 'left',
+                    border: `2px solid ${extras.includes(ex.id) ? BRAND.amber : 'var(--color-border)'}`,
+                    background: extras.includes(ex.id) ? 'rgba(196,119,59,0.08)' : 'var(--color-bg-raised)',
+                    color: 'var(--color-text)',
+                  }}>
+                    <div style={{ fontWeight: 600, fontSize: '0.8rem' }}>{ex.label}</div>
+                    <div style={{ fontSize: '0.7rem', color: BRAND.amber }}>+{fmt(ex.cost)}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 12 }}>5. Location</h2>
+              <div style={{ display: 'flex', gap: 10 }}>
+                {[true, false].map((isLondon) => (
+                  <button key={String(isLondon)} onClick={() => setLondon(isLondon)} style={{
+                    flex: 1, padding: '12px', borderRadius: 10, cursor: 'pointer',
+                    border: `2px solid ${london === isLondon ? BRAND.amber : 'var(--color-border)'}`,
+                    background: london === isLondon ? 'rgba(196,119,59,0.08)' : 'var(--color-bg-raised)',
+                    color: 'var(--color-text)', fontWeight: 600, fontSize: '0.9rem',
+                  }}>
+                    {isLondon ? '📍 London / South East' : '🇬🇧 Rest of UK'}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div style={{ position: 'sticky', top: 24 }}>
+            <div style={{
+              background: 'linear-gradient(135deg,#1a1a2e 0%,#0d1117 100%)',
+              border: `1px solid ${BRAND.amber}`, borderRadius: 16, padding: '32px 28px', color: '#fff',
+            }}>
+              <p style={{ color: BRAND.amber, fontWeight: 700, fontSize: '0.7rem', letterSpacing: '0.12em', marginBottom: 8 }}>ESTIMATED COST RANGE</p>
+              <div style={{ fontSize: 'clamp(1.6rem,3.5vw,2.4rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: 4 }}>
+                {fmt(low)} – {fmt(high)}
+              </div>
+              <p style={{ color: '#aaa', fontSize: '0.8rem', marginBottom: 24 }}>Full conversion inc. insulation, electrics & finishes.</p>
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 20, marginBottom: 20, fontSize: '0.85rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+                  <span style={{ color: '#aaa' }}>Garage</span><span>{garageType.label} (~{garageType.sqm}m²)</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+                  <span style={{ color: '#aaa' }}>Use</span><span>{conversionType.label}</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+                  <span style={{ color: '#aaa' }}>Spec</span><span>{spec.label}</span>
+                </div>
+                {extras.length > 0 && (
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+                    <span style={{ color: '#aaa' }}>Add-ons</span><span>+{fmt(extrasTotal)}</span>
+                  </div>
+                )}
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span style={{ color: '#aaa' }}>Location</span><span>{london ? 'London +20%' : 'Rest of UK'}</span>
+                </div>
+              </div>
+              <Link href="/get-a-quote" style={{
+                display: 'block', textAlign: 'center', padding: '14px', borderRadius: 10,
+                background: BRAND.amber, color: '#fff', fontWeight: 700, textDecoration: 'none', fontSize: '0.95rem',
+              }}>
+                Get a Detailed Quote →
+              </Link>
+              <p style={{ color: '#555', fontSize: '0.7rem', textAlign: 'center', marginTop: 12 }}>
+                ⚠️ Ballpark estimate only. Costs vary by property condition.
+              </p>
+            </div>
+
+            <div style={{ marginTop: 16, padding: '16px', borderRadius: 12, border: '1px solid var(--color-border)', background: 'var(--color-bg-raised)', fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>
+              <strong style={{ color: 'var(--color-text)' }}>🏠 Permitted Development:</strong> Most single garage conversions don't need planning permission — they fall under Permitted Development Rights. However, if you live in a Conservation Area or the garage fronts a highway, you'll need full planning permission.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ maxWidth: 800, margin: '0 auto', padding: '0 24px 80px' }}>
+        <h2 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: 24 }}>Garage Conversion FAQs</h2>
+        {[
+          { q: 'Do I need planning permission for a garage conversion?', a: 'Most garage conversions fall under Permitted Development Rights — you won\'t need planning permission unless you\'re in a Conservation Area, AONB, or your garage fronts a highway. Building Regulations approval is always required.' },
+          { q: 'How much value does a garage conversion add?', a: 'A well-executed garage conversion typically adds £25,000–£45,000 in property value in London, and £15,000–£30,000 in the rest of the UK. Converting to a habitable bedroom with en-suite delivers the strongest ROI.' },
+          { q: 'Can I convert a detached garage into an annexe?', a: 'Yes — a self-contained annexe can include bedroom, bathroom, kitchen and living area. This may require planning permission depending on your council and whether you intend to let it out separately. Building Regulations compliance is mandatory.' },
+          { q: 'How long does a garage conversion take?', a: 'A simple integral garage conversion takes 3–6 weeks. A full self-contained annexe or double garage conversion can take 8–14 weeks, especially if structural or utility work is involved.' },
+        ].map(({ q, a }) => (
+          <div key={q} style={{ marginBottom: 20, paddingBottom: 20, borderBottom: '1px solid var(--color-border)' }}>
+            <h3 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 8 }}>{q}</h3>
+            <p style={{ color: 'var(--color-text-muted)', lineHeight: 1.7, margin: 0 }}>{a}</p>
+          </div>
+        ))}
+      </section>
+    </main>
+  )
+}
