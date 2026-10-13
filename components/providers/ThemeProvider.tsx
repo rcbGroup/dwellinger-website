@@ -15,20 +15,19 @@ const ThemeContext = createContext<ThemeContextValue>({
 })
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('dark')
+  const [theme, setThemeState] = useState<Theme>('light')
   useEffect(() => {
     const saved = (typeof window !== 'undefined'
       ? localStorage.getItem('dwell-theme')
       : null) as Theme | null
-    // 'light' is no longer a valid theme — treat it as dark (fallback)
-    const validThemes: Theme[] = ['dark', 'mid']
+    const validThemes: Theme[] = ['dark', 'mid', 'light']
     if (saved && validThemes.includes(saved as Theme)) {
-      setThemeState(saved)
+      setThemeState(saved as Theme)
       document.documentElement.setAttribute('data-theme', saved)
     } else {
-      // Reset invalid/old 'light' value to dark
-      if (typeof window !== 'undefined') localStorage.setItem('dwell-theme', 'dark')
-      document.documentElement.setAttribute('data-theme', 'dark')
+      // Default: light theme for new visitors
+      if (typeof window !== 'undefined') localStorage.setItem('dwell-theme', 'light')
+      document.documentElement.setAttribute('data-theme', 'light')
     }
   }, [])
 

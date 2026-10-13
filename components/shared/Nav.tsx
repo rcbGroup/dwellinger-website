@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
-import { Menu, X, ChevronDown, Moon, SunMedium } from 'lucide-react'
+import { Menu, X, ChevronDown, Moon, SunMedium, Sun } from 'lucide-react'
 import { useTheme, type Theme } from '@/components/providers/ThemeProvider'
 import { useLang, LANGUAGES, type Lang } from '@/components/providers/LanguageProvider'
 import { Logo } from '@/components/shared/Logo'
@@ -66,10 +66,10 @@ const navItems: NavItem[] = [
   { label: 'Blog', href: '/blog' },
 ]
 
-// Only dark + twilight — light mode removed from Dwellinger (dark-first brand)
 const THEMES = [
-  { value: 'dark' as Theme,  label: 'Dark',     Icon: Moon      },
+  { value: 'light' as Theme, label: 'Light',    Icon: Sun       },
   { value: 'mid' as Theme,   label: 'Twilight', Icon: SunMedium },
+  { value: 'dark' as Theme,  label: 'Dark',     Icon: Moon      },
 ]
 
 // ── Helpers ─────────────────────────────────────────────────────────────────────────────────

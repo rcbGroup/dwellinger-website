@@ -58,22 +58,22 @@
 
 /* ─── LIGHT THEME ──────────────────────────────────────── */
 [data-theme="light"] {
-  --color-bg: #F9F6F1;
+  --color-bg: #F8F5F0;
   --color-bg-surface: #FFFFFF;
-  --color-bg-raised: $F0EBE2;
-  --color-bg-overlay: #E8E0D5;
-  --color-text: #1A2340;
-  --color-text-secondary: #4A5568;
-  --color-text-muted: #718096;
+  --color-bg-raised: #F0EBE2;
+  --color-bg-overlay: #E6DDD2;
+  --color-text: #111827;
+  --color-text-secondary: #374151;
+  --color-text-muted: #6B7280;
   --color-text-inverse: #FFFFFF;
-  --color-border: #DDD6CC;
-  --color-border-subtle: #EAE3DA;
-  --color-border-strong: #C8BFB2;
-  --card-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-  --card-shadow-hover: 0 4px 24px rgba(0,0,0,0.12);
-  --hero-gradient: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(196,119,59,0.08), transparent);
-  --amber-subtle: rgba(255,244,232,1);
-  --amber-border: rgba(220,166,110,0.3);
+  --color-border: #E2D9CE;
+  --color-border-subtle: #EDE6DB;
+  --color-border-strong: #C8BDB0;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+  --card-shadow-hover: 0 8px 30px rgba(0,0,0,0.10);
+  --hero-gradient: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(196,119,59,0.10), transparent);
+  --amber-subtle: rgba(255,242,225,1);
+  --amber-border: rgba(196,119,59,0.25);
 }
 
 /* ─── BASE STYLES ─────────────────────────────────────── */
