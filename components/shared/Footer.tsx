@@ -24,9 +24,7 @@ const footerColumns: { heading: string; links: NavItem[] }[] = [
       { label: 'Cost Calculator', href: '/tools/cost-calculator' },
       { label: 'Extension Calculator', href: '/tools/extension-cost-calculator' },
       { label: 'Loft Calculator', href: '/tools/loft-conversion-calculator' },
-      { label: 'Bathroom Calculator', href: '/tools/bathroom-cost-calculator' },
-      { label: 'Kitchen Calculator', href: '/tools/kitchen-cost-calculator' },
-      { label: 'Garage Conversion', href: '/tools/garage-conversion-calculator' },
+      { label: 'Materials Price Guide', href: '/tools/materials-price-guide' },
       { label: 'Project Readiness', href: '/tools/project-readiness' },
       { label: 'Development Appraisal', href: '/tools/development-appraisal' },
     ],
@@ -73,7 +71,6 @@ const footerColumns: { heading: string; links: NavItem[] }[] = [
   },
 ]
 
-// Social media SVG icons (inline for no-dependency rendering)
 function LinkedInIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
