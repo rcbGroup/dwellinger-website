@@ -13,12 +13,12 @@ const benefits = [
   {
     icon: Shield,
     title: 'Verified contractor procurement',
-    body: 'Find, shortlist, and recommend contractors with documented Builder Score™ ratings. Give your clients confidence that every contractor on your shortlist has been independently verified — not just self-declared.',
+    body: 'Find, shortlist, and recommend contractors with documented Builder Score™ ratings. Give your clients confidence that every contractor on your shortlist has been evidence-based — not just self-declared.',
   },
   {
     icon: BarChart3,
     title: 'Cost benchmarking for client advice',
-    body: 'Access QS-reviewed cost data by project type and location. Use verified cost ranges to advise clients on budgets, feasibility, and value engineering options — backed by real project data, not opinion.',
+    body: 'Access professionally estimated cost data by project type and location. Use verified cost ranges to advise clients on budgets, feasibility, and value engineering options — backed by real project data, not opinion.',
   },
   {
     icon: FileText,
@@ -43,7 +43,7 @@ export default function ForProfessionalsPage() {
             <span className="text-amber">cost intelligence</span>
           </h1>
           <p className="text-text-secondary text-lg max-w-xl leading-relaxed mb-8">
-            Verified contractor sourcing, QS-reviewed cost data, and planning intelligence — tools built for architects, project managers, and construction consultants.
+            Verified contractor sourcing, professionally estimated cost data, and planning intelligence — tools built for architects, project managers, and construction consultants.
           </p>
           <div className="flex gap-4 flex-wrap">
             <Link href="/search" className="btn-primary inline-flex items-center gap-2">

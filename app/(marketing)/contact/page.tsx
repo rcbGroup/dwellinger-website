@@ -5,7 +5,7 @@ import ContactForm from './ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Get in touch with the Dwellinger team. Call +44 7359 872594, email info@dwellinger.co.uk, or book a discovery call.',
+  description: 'Get in touch with the Dwellinger team. Call info@dwellinger.co.uk, email info@dwellinger.co.uk, or book a discovery call.',
 }
 
 export default function ContactPage() {
@@ -71,7 +71,7 @@ export default function ContactPage() {
             {/* Contact methods */}
             <div className="space-y-5">
               <a
-                href="tel:+447359872594"
+                href="mailto:info@dwellinger.co.uk"
                 className="card p-6 flex items-center gap-4 hover:border-amber transition-colors group"
               >
                 <div className="w-12 h-12 rounded-full bg-amber-subtle border border-amber-border flex items-center justify-center flex-shrink-0 group-hover:bg-amber transition-colors">
@@ -79,7 +79,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="text-white font-bold text-sm mb-0.5">Call us</div>
-                  <div className="text-amber text-base font-bold">+44 7359 872594</div>
+                  <div className="text-amber text-base font-bold">info@dwellinger.co.uk</div>
                   <div className="text-text-muted text-xs mt-0.5">Mon–Fri 8am–6pm · Sat 9am–1pm</div>
                 </div>
               </a>

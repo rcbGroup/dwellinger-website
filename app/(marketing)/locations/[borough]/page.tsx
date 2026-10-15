@@ -46,8 +46,8 @@ const cities: Record<string, {
     planningAuthority: '32 London Boroughs + City of London Corporation',
     planningNotes: 'Planning rules vary by borough. Inner London boroughs (Westminster, Kensington & Chelsea, Camden, Islington) have the most restrictive conservation area policies. Check borough-specific guidance before assuming permitted development applies.',
     buildingControlNote: 'Building Control applications can be made to your borough council or an Approved Inspector. Most London loft conversions require fire safety upgrades to the escape route.',
-    seoTitle: 'Building Costs London 2026 | Verified Contractors | Dwellinger',
-    seoDescription: 'London building costs range from £1,900 to £4,500+/m² in 2026. Find Builder Score-verified contractors across all London boroughs.',
+    seoTitle: 'Building Costs London 2026 | Dwellinger',
+    seoDescription: 'London building costs range from £1,900 to £4,500+/m² in 2026. Building cost guide across all London boroughs.',
     recentActivity: 'High demand for loft conversions (particularly dormers and mansards) across inner London. Strong extension activity in south-east and east London boroughs.',
     nearbyAreas: [
       { name: 'Surrey', note: '15–25% lower than inner London' },
@@ -81,8 +81,8 @@ const cities: Record<string, {
     planningAuthority: 'Manchester City Council (and 9 other GM boroughs)',
     planningNotes: 'Manchester City Council is generally supportive of residential extension work. Conservation areas in Didsbury, Chorlton, and the city centre require pre-application advice for larger proposals.',
     buildingControlNote: 'Building Control applications to Manchester City Council or an Approved Inspector. New Part L requirements apply to all extensions and renovations.',
-    seoTitle: 'Building Costs Manchester 2026 | Verified Contractors | Dwellinger',
-    seoDescription: 'Manchester building costs from £1,500/m² in 2026. Find Builder Score-verified contractors across Greater Manchester.',
+    seoTitle: 'Building Costs Manchester 2026 | Dwellinger',
+    seoDescription: 'Manchester building costs from £1,500/m² in 2026. Building cost guide across Greater Manchester.',
     recentActivity: 'Strong demand for full house refurbishments and kitchen extensions in Chorlton, Didsbury, and Whalley Range.',
     nearbyAreas: [
       { name: 'Salford', note: 'Separate LA, similar cost base' },
@@ -115,8 +115,8 @@ const cities: Record<string, {
     planningAuthority: 'Birmingham City Council',
     planningNotes: 'Birmingham City Council processes one of the highest volumes of planning applications in England. Permitted development generally applies outside designated areas.',
     buildingControlNote: 'Birmingham Building Control or an Approved Inspector. Birmingham has a large LABC team with reasonable processing times.',
-    seoTitle: 'Building Costs Birmingham 2026 | Verified Contractors | Dwellinger',
-    seoDescription: 'Birmingham building costs from £1,450/m² in 2026. Find Builder Score-verified contractors across the West Midlands.',
+    seoTitle: 'Building Costs Birmingham 2026 | Dwellinger',
+    seoDescription: 'Birmingham building costs from £1,450/m² in 2026. Building cost guide across the West Midlands.',
     recentActivity: 'Active residential extension market in Moseley, Harborne, and Kings Heath.',
     nearbyAreas: [
       { name: 'Solihull', note: '5–10% higher than Birmingham city' },
@@ -150,8 +150,8 @@ const cities: Record<string, {
     planningAuthority: 'Bristol City Council',
     planningNotes: 'Bristol City Council has a strong conservation area policy. Clifton, Redland, and parts of Cotham have significant restrictions on external alterations. Pre-application advice is recommended for complex proposals.',
     buildingControlNote: 'Bristol Building Control or an Approved Inspector. Party wall requirements commonly apply in terrace-heavy inner Bristol.',
-    seoTitle: 'Building Costs Bristol 2026 | Verified Contractors | Dwellinger',
-    seoDescription: 'Bristol building costs from £1,600/m² in 2026. Find Builder Score-verified contractors across Bristol and the South West.',
+    seoTitle: 'Building Costs Bristol 2026 | Dwellinger',
+    seoDescription: 'Bristol building costs from £1,600/m² in 2026. Building cost guide across Bristol and the South West.',
     recentActivity: 'Strong demand for loft conversions and rear extensions in Bedminster, Redland, and Clifton.',
     nearbyAreas: [
       { name: 'Bath', note: '10–20% higher due to heritage premium' },
@@ -184,8 +184,8 @@ const cities: Record<string, {
     planningAuthority: 'Leeds City Council',
     planningNotes: 'Leeds City Council processes planning applications efficiently. Headingley and Chapel Allerton conservation areas have specific policies for external alterations.',
     buildingControlNote: 'Leeds Building Control or an Approved Inspector. Good processing times relative to London equivalents.',
-    seoTitle: 'Building Costs Leeds 2026 | Verified Contractors | Dwellinger',
-    seoDescription: 'Leeds building costs from £1,400/m² in 2026. Find Builder Score-verified contractors across West Yorkshire.',
+    seoTitle: 'Building Costs Leeds 2026 | Dwellinger',
+    seoDescription: 'Leeds building costs from £1,400/m² in 2026. Building cost guide across West Yorkshire.',
     recentActivity: 'Active market for house extensions and refurbishments in Headingley, Chapel Allerton, and Horsforth.',
     nearbyAreas: [
       { name: 'Bradford', note: '10–15% lower than Leeds' },
@@ -220,7 +220,7 @@ const cities: Record<string, {
     planningAuthority: 'City of Edinburgh Council',
     planningNotes: 'Edinburgh operates under the Scottish planning system. Permitted development rules in Scotland differ from England. The World Heritage Site and extensive conservation areas require careful pre-application assessment.',
     buildingControlNote: 'Scottish Building Standards (not English Building Regulations) apply. Building Warrants are required for most construction work.',
-    seoTitle: 'Building Costs Edinburgh 2026 | Verified Contractors | Dwellinger',
+    seoTitle: 'Building Costs Edinburgh 2026 | Dwellinger',
     seoDescription: 'Edinburgh building costs from £1,700/m² in 2026. Find verified contractors across Edinburgh and the Lothians.',
     recentActivity: 'Active market for flat refurbishments and traditional house extensions in Morningside, Bruntsfield, and Stockbridge.',
     nearbyAreas: [
@@ -255,7 +255,7 @@ const cities: Record<string, {
     planningAuthority: 'Glasgow City Council',
     planningNotes: 'Glasgow City Council operates under the Scottish planning system. The West End conservation areas (Hillhead, Park) have specific guidance for external alterations to tenements.',
     buildingControlNote: 'Building Warrants under Scottish Building Standards are required for most construction works.',
-    seoTitle: 'Building Costs Glasgow 2026 | Verified Contractors | Dwellinger',
+    seoTitle: 'Building Costs Glasgow 2026 | Dwellinger',
     seoDescription: 'Glasgow building costs from £1,350/m² in 2026. Find verified contractors across Glasgow and the Clyde Valley.',
     recentActivity: 'Active market for tenement flat refurbishments and West End house extensions.',
     nearbyAreas: [
@@ -289,7 +289,7 @@ const cities: Record<string, {
     planningAuthority: 'Liverpool City Council',
     planningNotes: 'Liverpool City Council operates a standard planning system. The UNESCO World Heritage Site maritime area has specific restrictions. Conservation areas in Sefton Park and Woolton have policies on external alterations.',
     buildingControlNote: 'Liverpool Building Control or an Approved Inspector. Good processing times.',
-    seoTitle: 'Building Costs Liverpool 2026 | Verified Contractors | Dwellinger',
+    seoTitle: 'Building Costs Liverpool 2026 | Dwellinger',
     seoDescription: 'Liverpool building costs from £1,400/m² in 2026. Find verified contractors across Merseyside.',
     recentActivity: 'Active market for house extensions and full refurbishments in Aigburth, Allerton, and Crosby.',
     nearbyAreas: [
@@ -308,9 +308,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { borough: string } }): Promise<Metadata> {
   const city = cities[params.borough]
   if (!city) return {}
+  const isLondon = params.borough === 'london'
   return {
     title: city.seoTitle,
     description: city.seoDescription,
+    alternates: { canonical: `/locations/${params.borough}` },
+    ...(!isLondon && { robots: { index: false, follow: false } }),
     openGraph: { title: city.seoTitle, description: city.seoDescription, images: [{ url: city.image }] },
   }
 }

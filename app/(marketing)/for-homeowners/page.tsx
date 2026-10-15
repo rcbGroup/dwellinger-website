@@ -13,12 +13,12 @@ const benefits = [
   {
     icon: FileText,
     title: 'Real cost estimates, not guesses',
-    body: 'Get a free AI-powered ballpark in under 2 minutes, then commission a QS-reviewed cost plan from £95 when you’re ready to go further. Costs are based on real UK project data — not industry averages from a price book published three years ago.',
+    body: 'Get a free AI-powered ballpark in under 2 minutes, then commission a professionally estimated cost plan from £95 when you’re ready to go further. Costs are based on real UK project data — not industry averages from a price book published three years ago.',
   },
   {
     icon: Shield,
     title: 'Builders you can actually verify',
-    body: 'Every contractor on Dwellinger carries a Builder Score™ — a 0–1000 trust rating built from five verified dimensions: compliance, insurance, payment behaviour, track record, and reviews. You can see exactly what went into their score before you make contact.',
+    body: 'Contractors joining Dwellinger carries a Builder Score™ — a 0–1000 trust rating built from five verified dimensions: compliance, insurance, payment behaviour, track record, and reviews. You can see exactly what went into their score before you make contact.',
   },
   {
     icon: Search,
@@ -33,9 +33,9 @@ const benefits = [
 ]
 
 const faqs = [
-  { q: 'How much does it cost to use Dwellinger?', a: 'The search, ballpark estimator, and Builder Score™ lookup are free. QS-reviewed cost plans start from £95. There is no subscription fee for homeowners.' },
+  { q: 'How much does it cost to use Dwellinger?', a: 'The search, ballpark estimator, and Builder Score™ lookup are free. professionally estimated cost plans start from £95. There is no subscription fee for homeowners.' },
   { q: 'How do I know the builders are genuine?', a: 'Contractors provide documentation for five verification dimensions when they join. Builder Score™ is recalculated as new information arrives. Every review on the platform is linked to a verified project — not self-submitted ratings.' },
-  { q: 'What is a QS-reviewed cost plan?', a: 'A cost plan produced by our in-house QS team based on your drawings, specifications, and project location. It includes a basis-of-estimate statement, assumptions, exclusions, and a structured cost breakdown. It is not a contractor quote — it is independent cost verification.' },
+  { q: 'What is a professionally estimated cost plan?', a: 'A cost plan produced by our in-house QS team based on your drawings, specifications, and project location. It includes a basis-of-estimate statement, assumptions, exclusions, and a structured cost breakdown. It is not a contractor quote — it is independent cost verification.' },
   { q: 'Do I need plans or drawings before I start?', a: 'No. The ballpark estimator works from a project description and property type. For a QS cost plan you will need at least planning drawings — the more information you provide, the more accurate the output.' },
 ]
 

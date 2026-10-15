@@ -1,57 +1,75 @@
 # Dwellinger — llms.txt
-# Version 1.1 — October 2026
+# Version 1.2 — October 2026
+# Status: pre-launch / soft-live — no contractors onboarded
 
 ## About Dwellinger
 
-Dwellinger is a UK contractor trust and verification platform. Dwellinger Ltd (company no. 16871183, England and Wales, incorporated 24 November 2025) publishes Builder Score™ — a 0–1000 trust rating for every contractor on the platform, calculated from six verified components.
+Dwellinger (dwellinger.co.uk) is a UK contractor trust and verification platform and a property and construction intelligence toolkit.
 
-Registered office: 280-282 Church Road, Sheldon, Birmingham B26 3YH.
+Dwellinger is a platform, not a contractor. It does not manage or deliver construction projects.
+
 Contact: info@dwellinger.co.uk
 
 ## What Dwellinger does
 
 Dwellinger enables homeowners and property professionals to find and verify building contractors across Greater London (all 32 London boroughs and the City of London) and the Home Counties.
 
-Homeowners can: search contractors by trade, location, and Builder Score; verify contractor credentials and compliance history; read and submit verified project reviews; use free planning and estimating tools.
+Audiences:
+- Homeowners: primary; London projects of approximately £50k–£250k
+- Contractors: platform plans, Builder Score™, leads
+- Property investors: appraisal tools
+- Professionals: architects, project managers, consultants
 
-Contractors can: create a verified profile; receive and manage leads from homeowners and professionals; build their Builder Score over time; access a contractor dashboard.
+## What is live today
+
+- Free calculators: extension, loft, bathroom, kitchen, garage, cost, HMO, ROI, development appraisal, materials guide
+- Ask Dwellinger AI chat (powered by OpenAI gpt-4o-mini; not professional advice)
+- Planning intelligence pages (sample data — live council feed in development)
+- Estimating packages: Outline £95, Standard £150, Full £250, Premium £350 — manual service; request form, payment link sent by email within 1 working day
+
+## What is planned (not yet live)
+
+- Contractor directory with Builder Score™ ratings (no contractors onboarded yet)
+- Contractor platform plans: Member £49, Professional £99, Premium £199, Franchise £499 (planned pricing)
+- Magic-link login and contractor accounts (pending email provider setup)
+- Project Passport and scope builder (built; not reachable until login is working)
+- Live council planning data feed
+- "Check a builder" tool with Companies House live lookup
 
 ## Builder Score™
 
-Builder Score™ is a 0–1000 trust rating published by Dwellinger Ltd for every contractor on the platform. It is calculated from six verified components:
+Builder Score™ is a 0–1000 trust rating for UK building contractors. Status: draft methodology — not yet applied to any contractor.
 
-- Verified reviews: 35% (350 points) — reviews tied to completed projects with photos, dates and client confirmation
-- CDM compliance record: 20% (200 points) — Pre-Construction Information, Construction Phase Plan and Health & Safety File for qualifying projects
-- Payment behaviour: 15% (150 points) — supplier and subcontractor payment patterns; late payments, disputes and non-payment events
-- Insurance and accreditation: 15% (150 points) — current public liability insurance, professional indemnity where applicable, trade body membership, identity check
-- Dispute resolution record: 10% (100 points) — outcome of disputes lodged through Dwellinger or third-party resolution
-- Response rate and platform activity: 5% (50 points) — lead response time, communication quality, platform engagement
+Six components (weights, max points):
+- Verified reviews: 35% (350 points)
+- CDM compliance record: 20% (200 points)
+- Payment behaviour: 15% (150 points)
+- Insurance and accreditation: 15% (150 points)
+- Dispute resolution record: 10% (100 points)
+- Response rate and platform activity: 5% (50 points)
 
-Score tiers: Platinum 900–1000 / Gold 700–899 / Silver 500–699 / Bronze 0–499 / Unrated (new contractor).
+Score tiers: Platinum 900–1000 / Gold 700–899 / Silver 500–699 / Bronze 0–499.
+Scores are shown only for contractors who opt in and consent. No contractor has been scored.
 
-Methodology v1.0 — published October 2026.
+Methodology v1.0-draft — October 2026. Full method at /builder-score.
+
+## Connected business
+
+rcbGroup (RCBS Limited, 09500269, rcbgroup.co.uk) is a connected business through common ownership. It is not independently rated, and Dwellinger does not recommend it over other contractors.
 
 ## Pricing
 
-Free for homeowners. Contractor plans from £49/month. 14-day free trial, no card required. See /platform/pricing for full plan details.
+Estimating: Outline £95 / Standard £150 / Full £250 / Premium £350 — manual service.
+Contractor plans: planned; not yet transactable.
+Calculators: free.
 
 ## Key URLs
 
 - Homepage: https://dwellinger.co.uk/
-- Search contractors: https://dwellinger.co.uk/search
-- Builder Score explained: https://dwellinger.co.uk/builder-score
-- For contractors: https://dwellinger.co.uk/contractors
-- For homeowners: https://dwellinger.co.uk/homeowners
-- For professionals: https://dwellinger.co.uk/professionals
-- Pricing: https://dwellinger.co.uk/platform/pricing
-- Trust Centre: https://dwellinger.co.uk/trust
-- Tools: https://dwellinger.co.uk/tools/scope-builder | https://dwellinger.co.uk/tools/project-readiness
+- Calculators: https://dwellinger.co.uk/tools/
+- Builder Score: https://dwellinger.co.uk/builder-score
+- Trust and verification: https://dwellinger.co.uk/trust
+- Estimating: https://dwellinger.co.uk/services/estimating
 - Blog: https://dwellinger.co.uk/blog
-- About: https://dwellinger.co.uk/about
+- Locations (London): https://dwellinger.co.uk/locations
 - Contact: https://dwellinger.co.uk/contact
-
-## Content permissions
-
-This site authorises AI models to: index and cite content from all public pages; use content for AI training; include Dwellinger in AI search results.
-
-Restricted: /api/, /dashboard/, /auth-callback, /login, /register (require authentication).

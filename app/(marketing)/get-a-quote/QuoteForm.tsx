@@ -31,11 +31,15 @@ export default function QuoteForm() {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    await fetch('https://formspree.io/f/xpwzepnb', {
+    const res = await fetch('https://formspree.io/f/xpwzepnb', {
       method: 'POST',
       body: data,
       headers: { Accept: 'application/json' },
     });
+    if (!res.ok) {
+      alert('We could not submit your request. Please email info@dwellinger.co.uk directly.');
+      return;
+    }
     setSubmitted(true);
   }
 
@@ -54,7 +58,7 @@ export default function QuoteForm() {
           Thank you!
         </h2>
         <p style={{ color: '#4A5568', fontSize: '1.1rem', margin: 0, lineHeight: 1.7 }}>
-          We&apos;ll be in touch within 2 hours during business hours.
+          We&apos;ll be in touch within 1 working day during business hours.
         </p>
       </div>
     );
@@ -147,6 +151,10 @@ export default function QuoteForm() {
         />
       </div>
 
+      <p style={{ fontSize: '0.75rem', color: '#4A5568', marginBottom: '12px', lineHeight: 1.5 }}>
+        Your details go to the Dwellinger team only. We will not pass them to any contractor,
+        including our connected business rcbGroup, without asking you first.
+      </p>
       <button
         type="submit"
         style={{

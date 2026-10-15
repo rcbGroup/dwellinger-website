@@ -25,7 +25,7 @@ const steps = [
     icon: Search,
     title: 'Search verified contractors',
     subtitle: 'Ranked by Builder Score™, not by who paid most',
-    description: 'Every contractor on Dwellinger carries a Builder Score™ — a 0–1000 rating built from five verified dimensions: compliance records, insurance status, payment behaviour, project track record, and review quality.',
+    description: 'Contractors joining Dwellinger carries a Builder Score™ — a 0–1000 rating built from five verified dimensions: compliance records, insurance status, payment behaviour, project track record, and review quality.',
     detail: 'Results are ranked by Builder Score™ by default. You can filter by trade, location, project type, and score tier. Unlike directory listings, nobody can pay to move up the rankings.',
     cta: { label: 'Search contractors', href: '/search' },
     color: '#1A2340',
@@ -34,9 +34,9 @@ const steps = [
     number: '03',
     icon: Shield,
     title: 'Commission a cost plan',
-    subtitle: 'QS-reviewed estimates from £95',
+    subtitle: 'estimate prepared by our estimating teams from £95',
     description: 'Once you have shortlisted contractors, commission a proper cost plan. Our QS team reviews drawings, specifications, and site photos to produce a structured cost breakdown — not a back-of-envelope figure.',
-    detail: 'Five tiers from Outline (£95, 5 working days) to Premium (£350, full specification-level pricing). Every cost plan includes assumptions, exclusions, and a basis-of-estimate statement.',
+    detail: 'Four packages from Outline (£95, 5 working days) to Premium (£350, full specification-level pricing). Every cost plan includes assumptions, exclusions, and a basis-of-estimate statement.',
     cta: { label: 'See estimating tiers', href: '/services/estimating' },
     color: '#C4773B',
   },
@@ -111,7 +111,7 @@ const audienceCards = [
 const faq = [
   {
     q: 'Is Dwellinger free to use as a homeowner?',
-    a: 'The search, ballpark estimator, and Builder Score™ lookup are all free. QS-reviewed cost plans start from £95. Contractor appointments and project management are included when you appoint through the platform.',
+    a: 'The search, ballpark estimator, and Builder Score™ lookup are all free. professionally estimated cost plans start from £95. Contractor appointments and project management are included when you appoint through the platform.',
   },
   {
     q: 'How are contractors verified?',
@@ -147,7 +147,7 @@ export default function HowItWorksPage() {
             <span className="text-amber">project complete</span>
           </h1>
           <p className="text-text-secondary text-lg max-w-xl leading-relaxed mb-8">
-            Dwellinger connects verified contractors, QS-reviewed cost plans, and project management in one platform — so every decision is backed by real data.
+            Dwellinger connects verified contractors, professionally estimated cost plans, and project management in one platform — so every decision is backed by real data.
           </p>
           <div className="flex gap-4 flex-wrap">
             <Link href="/estimate" className="btn-primary inline-flex items-center gap-2">
