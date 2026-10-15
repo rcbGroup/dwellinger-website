@@ -14,8 +14,9 @@ const NAV_ITEMS = [
   { icon: '⚙️', label: 'Settings', active: false },
 ]
 
+// DEMO UI DATA — illustrative only, not real contractor metrics
 const SCORES = [
-  { label: 'Reviews', value: 96 },
+  { label: 'Platform Score', value: 96 },
   { label: 'On-Time', value: 91 },
   { label: 'Compliance', value: 98 },
   { label: 'Response', value: 88 },
@@ -164,7 +165,7 @@ export default function PortalPage() {
           </div>
           <div>
             <div style={{ color: '#FFFFFF', fontSize: '13px', fontWeight: 600 }}>
-              RCB Design & Build
+              rcbGroup
             </div>
             <div
               style={{

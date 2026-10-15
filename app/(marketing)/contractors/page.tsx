@@ -21,13 +21,15 @@ type ContractorRow = {
   active: boolean
 }
 
+// PLACEHOLDER DATA — shown only when Supabase returns no live contractors.
+// These are illustrative examples, not real companies or real Builder Scores.
 const SAMPLE_CONTRACTORS = [
-  { id: 'demo-contractor', name: 'Meridian Build & Renovate', tagline: 'Extensions, lofts & full refurbishments across South London', location: 'Brixton, South London', score: 82, tier: 'BUSINESS VERIFIED', services: ['Extensions', 'Loft Conversions', 'Refurbishments'], available: true },
-  { id: 'highfield-construction', name: 'Highfield Construction Ltd', tagline: 'New builds and structural alterations, Surrey & SW London', location: 'Croydon, Surrey', score: 74, tier: 'IDENTITY VERIFIED', services: ['New Build', 'Structural Work', 'Extensions'], available: false },
-  { id: 'parkside-interiors', name: 'Parkside Interiors', tagline: 'Kitchen, bathroom & full interior transformations', location: 'Hammersmith, West London', score: 68, tier: 'IDENTITY VERIFIED', services: ['Kitchen', 'Bathroom', 'Refurbishments'], available: true },
-  { id: 'greenfield-build', name: 'Greenfield Build Group', tagline: 'Developer-grade residential construction, North London', location: 'Finchley, North London', score: 91, tier: 'PROJECT VERIFIED', services: ['New Build', 'HMO Conversion', 'Extensions'], available: true },
-  { id: 'apex-developments', name: 'Apex Developments Ltd', tagline: 'Loft conversions and rear extensions, East London specialists', location: 'Stratford, East London', score: 59, tier: 'IDENTITY VERIFIED', services: ['Loft Conversions', 'Extensions', 'Planning'], available: false },
-  { id: 'blueprint-build', name: 'Blueprint Build Ltd', tagline: 'Full project management from planning to handover', location: 'Islington, North London', score: 77, tier: 'BUSINESS VERIFIED', services: ['Project Management', 'Extensions', 'Refurbishments'], available: true },
+  { id: 'demo-contractor', name: 'Example Build & Renovate', tagline: 'Extensions, lofts & full refurbishments across South London', location: 'South London', score: 82, tier: 'CONNECTED BUSINESS', services: ['Extensions', 'Loft Conversions', 'Refurbishments'], available: true },
+  { id: 'example-construction', name: 'Example Construction Ltd', tagline: 'New builds and structural alterations, Surrey & SW London', location: 'Croydon, Surrey', score: 74, tier: 'IDENTITY VERIFIED', services: ['New Build', 'Structural Work', 'Extensions'], available: false },
+  { id: 'example-interiors', name: 'Example Interiors', tagline: 'Kitchen, bathroom & full interior transformations', location: 'West London', score: 68, tier: 'IDENTITY VERIFIED', services: ['Kitchen', 'Bathroom', 'Refurbishments'], available: true },
+  { id: 'example-build-group', name: 'Example Build Group', tagline: 'Developer-grade residential construction, North London', location: 'North London', score: 91, tier: 'PROJECT VERIFIED', services: ['New Build', 'HMO Conversion', 'Extensions'], available: true },
+  { id: 'example-developments', name: 'Example Developments Ltd', tagline: 'Loft conversions and rear extensions, East London specialists', location: 'East London', score: 59, tier: 'IDENTITY VERIFIED', services: ['Loft Conversions', 'Extensions', 'Planning'], available: false },
+  { id: 'example-build-ltd', name: 'Example Build Ltd', tagline: 'Full project management from planning to handover', location: 'North London', score: 77, tier: 'CONNECTED BUSINESS', services: ['Project Management', 'Extensions', 'Refurbishments'], available: true },
 ]
 
 type ContractorCard = typeof SAMPLE_CONTRACTORS[0]
@@ -39,13 +41,13 @@ function mapDBtoCard(c: ContractorRow): ContractorCard {
     tagline: c.tagline || '',
     location: c.location,
     score: c.score,
-    tier: c.verified ? 'BUSINESS VERIFIED' : 'IDENTITY VERIFIED',
+    tier: c.verified ? 'CONNECTED BUSINESS' : 'IDENTITY VERIFIED',
     services: (c.specialisms || []).slice(0, 3),
     available: true,
   }
 }
 
-const TIERS = ['All tiers', 'PROJECT VERIFIED', 'BUSINESS VERIFIED', 'IDENTITY VERIFIED']
+const TIERS = ['All tiers', 'PROJECT VERIFIED', 'CONNECTED BUSINESS', 'IDENTITY VERIFIED']
 const PROJECT_TYPES = ['All types', 'Extensions', 'Loft Conversions', 'Refurbishments', 'New Build', 'Kitchen', 'Bathroom', 'HMO Conversion']
 
 function ScoreRing({ score }: { score: number }) {
@@ -96,7 +98,7 @@ export default async function ContractorDirectoryPage() {
             Find verified contractors with <span style={{ color: 'var(--amber)' }}>Builder Score™</span>
           </h1>
           <p style={{ color: 'var(--color-text-secondary)' }} className="text-lg max-w-xl mb-8 leading-relaxed">
-            Every contractor on Dwellinger has a verified Builder Score™ — a composite rating from identity checks, insurance verification, past projects, and client reviews.
+            Contractors joining Dwellinger has a verified Builder Score™ — a composite rating from identity checks, insurance verification, past projects, and client reviews.
           </p>
           <div style={{ display: 'flex', gap: 8, maxWidth: 560, flexWrap: 'wrap' }}>
             <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 8, background: 'var(--color-bg-surface)', border: '1px solid var(--color-border)', borderRadius: 8, padding: '10px 14px', minWidth: 200 }}>

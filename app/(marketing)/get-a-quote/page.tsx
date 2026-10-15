@@ -4,7 +4,7 @@ import { pageMetadata } from '@/lib/seo'
 export const metadata = pageMetadata({
   path: '/get-a-quote',
   title: 'Get a Free Project Quote | Dwellinger',
-  description: 'Request a quote for your extension, loft conversion or refurbishment. Honest advice, response within 2 hours, no obligation.',
+  description: 'Request a quote for your extension, loft conversion or refurbishment. Honest advice, response within 1 working day, no obligation.',
 });
 
 export default function GetAQuotePage() {
@@ -37,7 +37,7 @@ export default function GetAQuotePage() {
             border: '1px solid #EDE8DC',
           }}>
             <p style={{ margin: 0, color: '#C4773B', fontWeight: 600, fontSize: '0.95rem', letterSpacing: '0.02em' }}>
-              Checkatrade Verified &nbsp;·&nbsp; Response within 2 hours &nbsp;·&nbsp; No obligation
+              Response within 1 working day &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; No hard sell
             </p>
           </div>
         </div>
