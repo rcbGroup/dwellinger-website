@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
       return {
         title: `${data.name} — Contractor Profile | Dwellinger`,
         description: data.tagline || `View Builder Score™, services, portfolio and reviews for ${data.name} on Dwellinger.`,
+        alternates: { canonical: `/contractors/${params.id}` },
       }
     }
   } catch {}
@@ -39,6 +40,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   return {
     title: `${name} — Contractor Profile | Dwellinger`,
     description: `View Builder Score™, services, portfolio and reviews for ${name} on Dwellinger.`,
+    alternates: { canonical: `/contractors/${params.id}` },
     robots: { index: false },
   }
 }
@@ -50,7 +52,7 @@ const DEMO = {
   location: 'Brixton, South London',
   coverage: ['Lambeth', 'Southwark', 'Wandsworth', 'Lewisham', 'Croydon'],
   score: 82,
-  tier: 'BUSINESS VERIFIED',
+  tier: 'CONNECTED BUSINESS',
   tierOrdinal: 3,
   available: true,
   companiesHouse: 'DEMO — not yet verified',
@@ -78,20 +80,25 @@ const DEMO = {
 
 const RCB_COVERAGE = ['Hackney', 'Tower Hamlets', 'Newham', 'Waltham Forest', 'Redbridge', 'Barking & Dagenham', 'Havering', 'Southwark', 'Lewisham', 'Greenwich', 'Hounslow', 'Ealing', 'All of Greater London']
 
-async function getContractor(slug: string) {
+async function getContractor(slug: string): Promise<{ ok: true; data: ContractorRow } | { ok: false; notFound: boolean }> {
+  let supabase
   try {
-    const supabase = createServerSupabaseClient()
-    const { data, error } = await supabase
-      .from('contractors')
-      .select('*')
-      .eq('slug', slug)
-      .eq('active', true)
-      .maybeSingle()
-    if (error || !data) return null
-    return data as ContractorRow
+    supabase = createServerSupabaseClient()
   } catch {
-    return null
+    return { ok: false, notFound: false } // Supabase not configured
   }
+  const { data, error } = await supabase
+    .from('contractors')
+    .select('*')
+    .eq('slug', slug)
+    .eq('active', true)
+    .maybeSingle()
+  if (error) {
+    console.error(`[contractors/[id]] DB error: code=${error.code}`)
+    return { ok: false, notFound: false } // DB error → 503
+  }
+  if (!data) return { ok: false, notFound: true } // unknown slug → 404
+  return { ok: true, data: data as ContractorRow }
 }
 
 function buildProfileFromDB(c: ContractorRow) {
@@ -102,12 +109,12 @@ function buildProfileFromDB(c: ContractorRow) {
     location: c.location,
     coverage: c.slug === 'rcb-design-build' ? RCB_COVERAGE : [c.location.split(',')[0].trim()],
     score: c.score,
-    tier: c.verified ? 'BUSINESS VERIFIED' : 'IDENTITY VERIFIED',
-    tierOrdinal: c.verified ? 3 : 2,
+    tier: 'Not yet scored',
+    tierOrdinal: 0,
     available: true,
-    companiesHouse: c.verified ? 'Verified via Companies House' : 'Pending verification',
-    insurance: c.verified ? 'Public liability insurance confirmed' : 'Pending verification',
-    lastVerified: c.verified ? 'October 2026' : 'Pending',
+    companiesHouse: 'Not yet verified',
+    insurance: 'Not yet verified',
+    lastVerified: 'Pending',
     services: c.specialisms || [],
     evidence: [
       { label: 'Identity', done: c.verified },
@@ -153,8 +160,21 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export default async function ContractorProfilePage({ params }: { params: { id: string } }) {
-  const dbContractor = await getContractor(params.id)
-  const c = dbContractor ? buildProfileFromDB(dbContractor) : DEMO
+  const result = await getContractor(params.id)
+  if (!result.ok) {
+    if (result.notFound) notFound()
+    // DB error → show 503-like error page (not 404, to preserve real profiles during outages)
+    return (
+      <div className="pt-20 pb-24 container mx-auto max-w-xl text-center">
+        <h1 className="font-display text-2xl text-white mb-4">Temporarily unavailable</h1>
+        <p className="text-text-secondary mb-6">
+          This contractor profile could not be loaded. Please try again shortly.
+        </p>
+        <a href="/get-a-quote" className="btn-primary">Request an estimate instead</a>
+      </div>
+    )
+  }
+  const c = buildProfileFromDB(result.data)
 
   return (
     <div style={{ backgroundColor: 'var(--color-bg)', minHeight: '100vh' }}>

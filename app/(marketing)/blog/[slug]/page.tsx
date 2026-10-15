@@ -21,7 +21,7 @@ const posts: Record<string, {
     title: 'Loft Conversion Cost in London: 2026 Guide',
     date: '13 Oct 2026',
     readTime: '7 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1600607687644-c7171b46aba2?w=1400&auto=format&q=80',
     description: 'A loft conversion in London costs £60,000–£130,000 depending on type and specification. This 2026 guide breaks down costs by conversion type, borough premiums, what’s included, and how to get accurate quotes.',
     content: `
@@ -98,7 +98,7 @@ Get at least 3 written quotes on the same specification. Check each contractor B
     title: 'House Extension Planning Permission UK: Complete 2026 Guide',
     date: '12 Oct 2026',
     readTime: '8 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1564078516393-cf04bd966db3?w=1400&auto=format&q=80',
     description: 'Many house extensions in England do not need planning permission. But the rules are specific and the exceptions matter. This 2026 guide covers exactly when you do and do not need to apply.',
     content: `
@@ -164,7 +164,7 @@ Even if your extension does not need planning permission, **Building Regulations
     title: 'How Much Does a Quantity Surveyor Cost in the UK? (2026 Guide)',
     date: '11 Oct 2026',
     readTime: '6 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&auto=format&q=80',
     description: 'Quantity surveyor fees in the UK range from 1% to 3% of project value for residential work, or £800–£6,000+ as a fixed fee. Here is what you get for your money and when a QS is worth it.',
     content: `
@@ -225,7 +225,7 @@ A contractor estimate is prepared by someone with a financial interest in winnin
     title: 'Average Cost to Build a House in the UK (2026 Guide)',
     date: '10 Oct 2026',
     readTime: '9 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&auto=format&q=80',
     description: 'Building a new home in the UK costs £1,750–£3,500/m² depending on spec, location and build method. A full 2026 cost breakdown with real figures by region, specification level, and project type.',
     content: `
@@ -288,7 +288,7 @@ Premium kitchen and bathrooms. Smart home systems. Bespoke joinery. Air source h
     title: 'Building Costs Per m² in London: 2026 Guide',
     date: '9 Oct 2026',
     readTime: '7 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1400&auto=format&q=80',
     description: 'London building costs range from £1,800 to £4,500+ per m² in 2026. Costs by project type, specification level, and London borough.',
     content: `
@@ -348,7 +348,7 @@ Building in London costs more than anywhere else in the UK. The premium reflects
     title: 'Garage Conversion Cost UK: 2026 Price Guide',
     date: '8 Oct 2026',
     readTime: '6 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1400&auto=format&q=80',
     description: 'A garage conversion costs £7,500–£22,000 in the UK in 2026. Covers planning permission rules, Building Regulations, and how to verify your contractor.',
     content: `
@@ -393,7 +393,7 @@ A well-executed conversion typically adds **70–85% of the conversion cost** to
     title: 'Why Star Ratings Are Not Enough: Introducing Builder Score',
     date: '5 Oct 2026',
     readTime: '7 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&auto=format&q=80',
     description: 'Star ratings can be bought, faked or manipulated. Builder Score is a 0-1000 trust rating calculated from verified compliance data.',
     content: `
@@ -432,7 +432,7 @@ A Builder Score above **800** indicates a contractor with a strong, multi-dimens
     title: 'How to Choose a Building Contractor in the UK: 7 Things to Check',
     date: '4 Oct 2026',
     readTime: '6 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1400&auto=format&q=80',
     description: 'Choosing the right contractor is the most important decision in any building project. Here are 7 things to verify before you sign anything.',
     content: `
@@ -464,7 +464,7 @@ Do not start work without a written contract covering: full scope of works, paym
 
 ## 7. Check their Builder Score on Dwellinger
 
-Builder Score is a 0–1000 trust rating calculated from six independently verified components. A Gold or Platinum contractor has demonstrated verified compliance, payment integrity and a strong review track record.
+Builder Score is a 0–1000 trust rating calculated from six components. A Gold or Platinum contractor has demonstrated verified compliance, payment integrity and a strong review track record.
 
 ## Red flags to avoid
 
@@ -478,7 +478,7 @@ Cash-only payment; pressure to start immediately; no fixed business address; unw
     title: 'Loft Conversion Planning Permission: A UK Homeowner Complete Guide',
     date: '3 Oct 2026',
     readTime: '6 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1600607687644-c7171b46aba2?w=1400&auto=format&q=80',
     description: 'Most loft conversions do not need planning permission — but the rules depend on your property type, location and what changes you make to the roof.',
     content: `
@@ -521,7 +521,7 @@ Regardless of planning permission, Building Regulations approval is always requi
     title: 'CDM 2015 Regulations: What UK Homeowners Need to Know',
     date: '2 Oct 2026',
     readTime: '6 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&auto=format&q=80',
     description: 'The Construction (Design and Management) Regulations 2015 apply to most domestic building projects. Here is what homeowners need to know about their legal duties.',
     content: `
@@ -551,7 +551,7 @@ At the end of the project, your principal contractor should hand you a Health an
     title: 'How Much Does a Rear Extension Cost in the UK? (2026 Guide)',
     date: '1 Oct 2026',
     readTime: '7 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1564078516393-cf04bd966db3?w=1400&auto=format&q=80',
     description: 'UK rear extension costs range from £1,800–£3,500/m². Typical costs, what affects price, planning requirements and how to verify your contractor.',
     content: `
@@ -589,7 +589,7 @@ Get at least 3 written quotes based on the same detailed scope of works. A quote
     title: 'How much does a rear extension cost in the UK? (2025 guide)',
     date: '12 Sept 2026',
     readTime: '8 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&auto=format&q=80',
     description: 'A realistic breakdown of rear extension costs across London and the South East — including groundworks, structure, M&E, finishes, and professional fees.',
     content: `
@@ -629,9 +629,9 @@ London and the South East command a price premium of **20–40%** over equivalen
     title: 'Why star ratings are not enough — the case for Builder Score',
     date: '5 Sept 2026',
     readTime: '6 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&auto=format&q=80',
-    description: 'Anyone can buy reviews on Checkatrade. Anyone can create a Companies House record. Neither tells you whether a contractor pays their subcontractors or holds valid insurance.',
+    description: 'Builder Score™ combines evidence-based components to give homeowners a clearer picture when choosing a contractor.',,
     content: `
 ## The problem with stars
 
@@ -644,7 +644,7 @@ The review economy has been gamed. The home improvement market handles over **£
 - Do they have a CDM compliance record?
 - What is their dispute history?
 
-Builder Score answers all of these. It is a 0–1000 trust rating calculated across five independently verified dimensions.
+Builder Score answers all of these. It is a 0–1000 trust rating calculated across five components.
 
 [Find Builder Score-verified contractors](/search)
 `,
@@ -656,7 +656,7 @@ Builder Score answers all of these. It is a 0–1000 trust rating calculated acr
     title: 'Residual land value explained — and how to calculate it in 5 minutes',
     date: '20 Aug 2026',
     readTime: '7 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&auto=format&q=80',
     description: 'The single most important number in property investment is the maximum you should pay for a site. Here is how to calculate it.',
     content: `
@@ -694,7 +694,7 @@ For a residential scheme of 6 flats in East London (GDV £2,200,000):
     title: 'CDM 2015 for homeowners — what you actually need to know',
     date: '14 Aug 2026',
     readTime: '6 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&auto=format&q=80',
     description: 'The Construction (Design and Management) Regulations 2015 apply to domestic projects too.',
     content: `
@@ -729,18 +729,18 @@ At the end of the project, your principal contractor should hand you a **Health 
   'dwell-agents-ai-for-construction-businesses': {
     slug: 'dwell-agents-ai-for-construction-businesses',
     category: 'Platform',
-    title: 'Dwell Agents — AI built for construction businesses',
+    title: 'Planned tools — AI built for construction businesses',
     date: '8 Aug 2026',
     readTime: '5 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&auto=format&q=80',
     description: 'Four AI agents designed specifically for construction: Dwell Coord, Dwell Create, Dwell Clarity, and Dwell Coach.',
     content: `
 ## The paperwork problem in construction
 
-The average small construction business spends between 20% and 35% of its working hours on administration. Dwell Agents are built specifically on UK construction — the terminology, the document types, the compliance requirements, and the commercial realities of running a building business.
+The average small construction business spends between 20% and 35% of its working hours on administration. Planned tools are built specifically on UK construction — the terminology, the document types, the compliance requirements, and the commercial realities of running a building business.
 
-## The four Dwell Agents
+## The four Planned tools
 
 ### Dwell Coord — Project Coordination Agent
 Handles project administration: managing schedules, tracking milestones, sending client updates.
@@ -764,7 +764,7 @@ Helps construction businesses grow: drafts personalised outreach from lead infor
     title: 'How to Use an Extension Cost Calculator (2026 Guide)',
     date: '14 Oct 2026',
     readTime: '6 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1400&auto=format&q=80',
     description: 'Online extension cost calculators give you a starting point — but they can be dangerously misleading if you treat the output as a quote. This guide explains what calculators get right, what they miss, and how to use one sensibly in 2026.',
     content: `
@@ -866,7 +866,7 @@ Dwellinger connects homeowners with Builder Score-verified contractors who can p
     title: 'How to Find a Trusted Builder in London: 7 Steps',
     date: '15 Oct 2026',
     readTime: '7 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&auto=format&q=80',
     description: 'Finding a reliable builder in London is harder than it looks. There are over 90,000 construction businesses in the capital, and no central register that verifies who is actually trustworthy. Here are 7 steps that will cut the risk.',
     content: `
@@ -995,7 +995,7 @@ Finding a trustworthy builder in London requires more due diligence than most ho
     title: 'Do I Need Planning Permission for a Rear Extension?',
     date: '16 Oct 2026',
     readTime: '7 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1564078516393-cf04bd966db3?w=1400&auto=format&q=80',
     description: 'Most single-storey rear extensions in England can be built under Permitted Development — but only if they meet specific size, height, and material conditions. This 2026 guide covers exactly when you need planning and when you do not.',
     content: `
@@ -1126,7 +1126,7 @@ When in doubt, apply for a Lawful Development Certificate or consult your LPA's 
     title: 'House Refurbishment Costs UK 2026: Full Guide',
     date: '17 Oct 2026',
     readTime: '9 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&auto=format&q=80',
     description: 'A full house refurbishment in the UK costs £30,000–£150,000+ depending on size, scope and specification. This 2026 guide breaks down costs room by room, trade by trade, and explains what drives prices up or down.',
     content: `
@@ -1249,7 +1249,7 @@ Dwellinger connects homeowners and investors with Builder Score-verified contrac
     title: 'What is a Principal Contractor and Why Do You Need One?',
     date: '18 Oct 2026',
     readTime: '7 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1400&auto=format&q=80',
     description: 'A Principal Contractor is the party legally responsible for managing health and safety during the construction phase of a project under CDM 2015. If your build involves more than one contractor, you almost certainly need one.',
     content: `
@@ -1361,7 +1361,7 @@ A Principal Contractor is not optional when your project involves more than one 
     title: 'HMO Conversion Guide: Planning, Costs and Licensing in 2026',
     date: '19 Oct 2026',
     readTime: '10 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&auto=format&q=80',
     description: 'Converting a house into an HMO can significantly increase rental yield — but the planning, licensing, building regulations, and fire safety requirements are substantial. Here is what to expect in 2026.',
     content: `
@@ -1510,7 +1510,7 @@ HMO conversion is a viable strategy for significantly increasing rental yield �
     title: 'Property Development Profit Margins: What to Expect in 2026',
     date: '20 Oct 2026',
     readTime: '9 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&auto=format&q=80',
     description: 'UK property developers typically target 15–25% profit on GDV — but in practice margins are squeezed from every direction. This guide covers realistic return expectations, what eats into margins, and how to model a project correctly.',
     content: `
@@ -1646,7 +1646,7 @@ Dwellinger provides build cost benchmarks, residual land value tools, and access
     title: 'Builder Contracts Explained: JCT, Fixed-Price and What to Look Out For',
     date: '21 Oct 2026',
     readTime: '8 min read',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1400&auto=format&q=80',
     description: 'Signing a building contract without understanding it is one of the most expensive mistakes UK homeowners make. This guide explains JCT contracts, fixed-price agreements, payment terms, and the clauses that protect you.',
     content: `

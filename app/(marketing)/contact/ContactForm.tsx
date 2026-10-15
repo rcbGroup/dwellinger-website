@@ -37,7 +37,7 @@ export default function ContactForm() {
       }
       setStatus('sent')
     } catch {
-      setErrorMsg('Network error. Please call us on +44 7359 872594.')
+      setErrorMsg('Network error. Please call us on info@dwellinger.co.uk.')
       setStatus('error')
     }
   }
@@ -52,7 +52,7 @@ export default function ContactForm() {
         <p className="text-text-muted text-sm leading-relaxed">
           Thank you for getting in touch. We&apos;ll reply within 1 working day.<br />
           Or call us now on{' '}
-          <a href="tel:+447359872594" className="text-amber hover:underline">+44 7359 872594</a>.
+          <a href="mailto:info@dwellinger.co.uk" className="text-amber hover:underline">info@dwellinger.co.uk</a>.
         </p>
       </div>
     )
@@ -117,8 +117,8 @@ export default function ContactForm() {
         </button>
         <p className="text-text-muted text-xs text-center">
           Or call us directly on{' '}
-          <a href="tel:+447359872594" className="text-amber hover:underline">
-            +44 7359 872594
+          <a href="mailto:info@dwellinger.co.uk" className="text-amber hover:underline">
+            info@dwellinger.co.uk
           </a>
         </p>
       </form>

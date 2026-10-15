@@ -19,7 +19,7 @@ const faqSchema = {
       name: 'How is Builder Score different from Checkatrade or Trustpilot?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Unlike star rating platforms, Builder Score is calculated from verified compliance data — CDM records, payment behaviour, insurance status and dispute outcomes — not just self-reported reviews. Every component is independently verified by Dwellinger.',
+        text: 'Unlike star rating platforms, Builder Score is calculated from verified compliance data — CDM records, payment behaviour, insurance status and dispute outcomes — not just self-reported reviews. Every component is evidence-based by Dwellinger.',
       },
     },
     {
@@ -78,7 +78,7 @@ const components = [
   {
     label: 'Response rate & platform activity',
     weight: '5%',
-    desc: 'Lead response time, communication quality, and platform engagement. Contractors who respond within 2 hours score higher.',
+    desc: 'Lead response time, communication quality, and platform engagement. Contractors who respond within 1 working day score higher.',
     max: 50,
     example: 32,
   },
@@ -108,14 +108,14 @@ export default function BuilderScorePage() {
         <div className="container mx-auto relative z-10">
           <div className="flex items-center gap-3 mb-6">
             <Shield className="w-8 h-8 text-amber" />
-            <p className="section-tag">Builder Score™ — Trademarked</p>
+            <p className="section-tag">Builder Score™</p>
           </div>
           <h1 className="font-display text-h1 text-text max-w-3xl mb-6">
             The UK contractor trust rating{' '}
             <span className="text-amber">built for construction</span>
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mb-8 leading-relaxed">
-            Builder Score™ is a 0–1000 trust rating published by Dwellinger Ltd for every
+            Builder Score™ is a 0–1000 trust rating for every
             contractor on the platform. It is calculated from six verified components: verified
             reviews (35%), CDM compliance record (20%), payment behaviour (15%), insurance and
             accreditation (15%), dispute resolution record (10%) and response rate and platform
@@ -211,7 +211,7 @@ export default function BuilderScorePage() {
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <p className="section-tag mb-3">Score tiers</p>
-            <h2 className="section-title">Five tiers, clear standards</h2>
+            <h2 className="section-title">Four packages — clear pricing</h2>
           </div>
           <div className="grid md:grid-cols-5 gap-4">
             {tiers.map((t) => (
@@ -236,11 +236,11 @@ export default function BuilderScorePage() {
             Checkatrade shows reviews. Companies House shows registration. But neither tells you
             whether a contractor pays their subcontractors on time, has their CDM documents in
             order, or how they performed when a dispute arose. Builder Score™ combines all of
-            this into one number — verified, audited, and continuously updated.
+            this into one number — updated as evidence is submitted.
           </p>
           <div className="grid grid-cols-3 gap-6 mb-10">
             {[
-              { v: 'Trademarked™', l: 'Legally protected' },
+              { v: '™', l: 'A trust rating for UK building contractors' },
               { v: 'Transparent', l: 'Published weightings' },
               { v: 'Continuous', l: 'Updated in real time' },
             ].map((s) => (

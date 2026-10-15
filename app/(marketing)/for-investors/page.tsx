@@ -13,7 +13,7 @@ const tools = [
   {
     icon: Calculator,
     title: 'Pre-purchase build cost estimates',
-    body: 'Get a QS-reviewed cost estimate before you bid on a site or property. Know your build cost before you agree your purchase price — not after you’ve exchanged.',
+    body: 'Get a professionally estimated cost estimate before you bid on a site or property. Know your build cost before you agree your purchase price — not after you’ve exchanged.',
     cta: { label: 'Get an estimate', href: '/services/estimating' },
   },
   {

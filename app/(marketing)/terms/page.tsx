@@ -3,7 +3,8 @@ import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description: 'Terms and conditions for using the Dwellinger platform — the UK\'s property and construction intelligence platform.',
+  description: 'Terms and conditions for using the Dwellinger platform — the UK\',
+  alternates: { canonical: '/terms' },s property and construction intelligence platform.',
 }
 
 export default function TermsPage() {

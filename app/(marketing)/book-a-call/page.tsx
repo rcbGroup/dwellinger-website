@@ -83,7 +83,7 @@ export default function BookACallPage() {
       }
       setSubmitted(true)
     } catch {
-      setErrorMsg('Network error. Please call us on +44 7359 872594.')
+      setErrorMsg('Network error. Please call us on info@dwellinger.co.uk.')
       setLoading(false)
     }
   }
@@ -179,7 +179,7 @@ export default function BookACallPage() {
               <div style={{ fontSize: '32px', marginBottom: '12px' }}>✅</div>
               <p style={{ color: '#fff', fontWeight: 700, fontSize: '16px', marginBottom: '6px' }}>Your email is ready to send</p>
               <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '13px', lineHeight: 1.5 }}>
-                Your email client should have opened with your booking request pre-filled. We&apos;ll confirm your slot within 2 hours.
+                Your email client should have opened with your booking request pre-filled. We&apos;ll confirm your slot within 1 working day.
               </p>
               <Link href="/" style={{ display: 'inline-block', marginTop: '20px', color: '#C4773B', fontWeight: 700, fontSize: '13px', textDecoration: 'none' }}>
                 ← Back to home
@@ -248,7 +248,7 @@ export default function BookACallPage() {
                 {loading ? 'Sending…' : 'Confirm Booking'}
               </button>
               <p style={{ fontSize: '11px', color: '#6B7280', textAlign: 'center' }}>
-                Or call us directly: <a href="tel:+447359872594" style={{ color: '#C4773B', fontWeight: 700 }}>+44 7359 872594</a>
+                Or call us directly: <a href="mailto:info@dwellinger.co.uk" style={{ color: '#C4773B', fontWeight: 700 }}>info@dwellinger.co.uk</a>
               </p>
             </form>
           )}

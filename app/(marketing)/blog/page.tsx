@@ -16,7 +16,7 @@ const posts = [
     excerpt: 'Signing a building contract without understanding it is one of the most expensive mistakes UK homeowners make. This guide explains JCT contracts, fixed-price agreements, payment terms, and the clauses that protect you.',
     readTime: '8 min read',
     date: '21 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&q=75',
   },
   {
@@ -26,7 +26,7 @@ const posts = [
     excerpt: 'UK property developers typically target 15–25% profit on GDV — but in practice margins are squeezed from every direction. This guide covers realistic return expectations, what eats into margins, and how to model a project correctly.',
     readTime: '9 min read',
     date: '20 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&auto=format&q=75',
   },
   {
@@ -36,7 +36,7 @@ const posts = [
     excerpt: 'Converting a house into an HMO can significantly increase rental yield — but the planning, licensing, building regulations, and fire safety requirements are substantial. Here is what to expect in 2026.',
     readTime: '10 min read',
     date: '19 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&q=75',
   },
   {
@@ -46,7 +46,7 @@ const posts = [
     excerpt: 'A Principal Contractor is the legally responsible party for managing health and safety during the construction phase of a project. If your build involves more than one contractor, you almost certainly need one — and you need to appoint them in writing.',
     readTime: '7 min read',
     date: '18 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&q=75',
   },
   {
@@ -56,7 +56,7 @@ const posts = [
     excerpt: 'A full house refurbishment in the UK costs £30,000–£150,000+ depending on size, scope and specification. This 2026 guide breaks down costs room by room, trade by trade, and explains what drives prices up or down.',
     readTime: '9 min read',
     date: '17 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&q=75',
   },
   {
@@ -66,7 +66,7 @@ const posts = [
     excerpt: 'Most single-storey rear extensions in England can be built under Permitted Development — but only if they meet specific size, height, and material conditions. Here is the complete 2026 guide to what requires planning and what does not.',
     readTime: '7 min read',
     date: '16 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1564078516393-cf04bd966db3?w=800&auto=format&q=75',
   },
   {
@@ -76,7 +76,7 @@ const posts = [
     excerpt: 'Finding a reliable builder in London is harder than it looks. There are over 90,000 construction businesses in the capital, and no central register that verifies who is actually trustworthy. Here are 7 steps that will cut the risk.',
     readTime: '7 min read',
     date: '15 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&auto=format&q=75',
   },
   {
@@ -86,7 +86,7 @@ const posts = [
     excerpt: 'Online extension cost calculators give you a starting point — but they can be dangerously misleading if you treat the output as a quote. This guide explains what calculators get right, what they miss, and how to use one sensibly.',
     readTime: '6 min read',
     date: '14 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&auto=format&q=75',
   },
   {
@@ -96,7 +96,7 @@ const posts = [
     excerpt: 'A loft conversion in London costs £60,000–£130,000 depending on type and specification. This 2026 guide covers costs by conversion type, London borough premiums, what\'s included, and how to get accurate quotes.',
     readTime: '7 min read',
     date: '13 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1600607687644-c7171b46aba2?w=800&auto=format&q=75',
   },
   {
@@ -106,7 +106,7 @@ const posts = [
     excerpt: 'Many house extensions in England do not need planning permission. But the rules are specific and the exceptions matter. Here\'s exactly when you do and don\'t need to apply.',
     readTime: '8 min read',
     date: '12 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1564078516393-cf04bd966db3?w=800&auto=format&q=75',
   },
   {
@@ -116,7 +116,7 @@ const posts = [
     excerpt: 'Quantity surveyor fees in the UK range from 1% to 3% of project value, or £800–£6,000+ fixed fee for domestic projects. Here\'s what you get for your money and when a QS is worth it.',
     readTime: '6 min read',
     date: '11 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&q=75',
   },
   {
@@ -126,7 +126,7 @@ const posts = [
     excerpt: 'Building a new home in the UK costs £1,750–£3,500/m² depending on spec, location and build method. A full 2026 cost breakdown with real figures by region, specification level, and project type.',
     readTime: '9 min read',
     date: '10 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&auto=format&q=75',
   },
   {
@@ -136,7 +136,7 @@ const posts = [
     excerpt: 'London building costs range from £1,800 to £4,500+ per m² in 2026. This guide breaks down costs by project type — extensions, loft conversions, new builds, and refurbishments — with borough-level context.',
     readTime: '7 min read',
     date: '9 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&auto=format&q=75',
   },
   {
@@ -146,7 +146,7 @@ const posts = [
     excerpt: 'A garage conversion costs £7,500–£22,000 in the UK in 2026. This guide covers what affects price, planning permission rules, Building Regulations requirements, and how to verify your contractor.',
     readTime: '6 min read',
     date: '8 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&auto=format&q=75',
   },
   {
@@ -156,7 +156,7 @@ const posts = [
     excerpt: 'Star ratings can be bought, faked or manipulated. Builder Score™ is a 0–1000 trust rating calculated from verified compliance data — here is how it works and why it matters.',
     readTime: '7 min read',
     date: '5 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&q=75',
   },
   {
@@ -166,7 +166,7 @@ const posts = [
     excerpt: 'Choosing the right contractor is the most important decision in any building project. Here are 7 things to verify before you sign anything.',
     readTime: '6 min read',
     date: '4 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&q=75',
   },
   {
@@ -176,7 +176,7 @@ const posts = [
     excerpt: 'Most loft conversions do not need planning permission — but the rules depend on your property type, location and what changes you make to the roof.',
     readTime: '6 min read',
     date: '3 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1600607687644-c7171b46aba2?w=800&auto=format&q=75',
   },
   {
@@ -186,7 +186,7 @@ const posts = [
     excerpt: 'The Construction (Design and Management) Regulations 2015 apply to most domestic building projects. Here is what homeowners need to know about their legal duties.',
     readTime: '6 min read',
     date: '2 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&auto=format&q=75',
   },
   {
@@ -196,7 +196,7 @@ const posts = [
     excerpt: 'UK rear extension costs range from £1,800–£3,500/m². This guide covers typical costs, what affects price, planning requirements and how to verify your contractor.',
     readTime: '7 min read',
     date: '1 Oct 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1564078516393-cf04bd966db3?w=800&auto=format&q=75',
   },
   {
@@ -206,17 +206,17 @@ const posts = [
     excerpt: 'A realistic breakdown of rear extension costs across London and the South East — including groundworks, structure, M&E, finishes, and professional fees.',
     readTime: '8 min read',
     date: '12 Sept 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&q=75',
   },
   {
     slug: 'builder-score-explained-why-star-ratings-arent-enough',
     category: 'Builder Score™',
     title: 'Why star ratings aren\'t enough — the case for Builder Score™',
-    excerpt: 'Anyone can buy reviews on Checkatrade. Anyone can create a Companies House record. But neither tells you whether a contractor pays their subcontractors, holds valid insurance, or knows what a CDM Construction Phase Plan is.',
+    excerpt: 'Builder Score™ is designed to give homeowners a clearer picture when choosing a contractor. Here is how it works.',,
     readTime: '6 min read',
     date: '5 Sept 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&q=75',
   },
   {
@@ -226,7 +226,7 @@ const posts = [
     excerpt: 'The single most important number in property investment is the maximum you should pay for a site. Here\'s how to calculate it — and why the build cost assumption is the number most developers get wrong.',
     readTime: '7 min read',
     date: '20 Aug 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&auto=format&q=75',
   },
   {
@@ -236,17 +236,17 @@ const posts = [
     excerpt: 'If your project involves more than one trade working at the same time, CDM 2015 applies. Most homeowners have never heard of it. Most contractors ignore it.',
     readTime: '6 min read',
     date: '11 Aug 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&auto=format&q=75',
   },
   {
     slug: 'dwell-agents-ai-for-construction-businesses',
     category: 'Platform & Tools',
-    title: 'Meet the Dwell Agents — AI built for construction businesses',
+    title: 'Meet the Planned tools — AI built for construction businesses',
     excerpt: 'Four AI agents designed for the specific, unglamorous reality of running a construction business: responding to leads, generating scope of works, writing CDM documents, and coaching your commercial decision-making.',
     readTime: '9 min read',
     date: '3 Aug 2026',
-    author: 'James Hargrove',
+    author: 'Dwellinger editorial team',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&q=75',
   },
 ]
@@ -378,7 +378,7 @@ export default function BlogPage() {
           {/* Coming soon */}
           <div className="mt-12 card p-6 text-center">
             <p className="text-text-muted text-sm">
-              1,972 knowledge articles are being published progressively.{' '}
+              thousands of planned knowledge articles are being published progressively.{' '}
               <Link href="/register" className="text-amber hover:underline">
                 Register for updates
               </Link>{' '}

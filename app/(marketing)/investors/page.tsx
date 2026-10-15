@@ -11,7 +11,7 @@ const tools = [
   {
     icon: <Calculator className="w-6 h-6 text-amber" />,
     title: 'Pre-purchase cost estimate',
-    desc: 'Get a QS-reviewed build cost estimate before you commit to a deal. Know your true all-in numbers before you exchange — not after.',
+    desc: 'Get an build cost estimate before you commit to a deal. Know your true all-in numbers before you exchange — not after.',
   },
   {
     icon: <Map className="w-6 h-6 text-amber" />,
@@ -73,7 +73,7 @@ export default function InvestorsPage() {
         <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
             { v: '£0', l: 'Free to start' },
-            { v: '1,972', l: 'Knowledge articles' },
+            { v: 'planned', l: 'Knowledge articles' },
             { v: '5 mins', l: 'Average deal appraisal' },
             { v: 'Live', l: 'UK planning data' },
           ].map((s) => (
