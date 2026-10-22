@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase/client'
-import { LogOut, LayoutDashboard, Home, FileText, Bookmark, MessageSquare, Users, Settings, Menu, X } from 'lucide-react'
+import { LogOut, LayoutDashboard, Home, FileText, Bookmark, MessageSquare, Users, Settings, Menu, X, Radar } from 'lucide-react'
 import type { User } from '@supabase/supabase-js'
 
 const NAV_LINKS = [
@@ -14,6 +14,7 @@ const NAV_LINKS = [
   { label: 'My Scopes', href: '/scopes', icon: Bookmark },
   { label: 'Messages', href: '/messages', icon: MessageSquare },
   { label: 'Contractors', href: '/contractors', icon: Users },
+  { label: 'Gov Tenders', href: '/tenders', icon: Radar },
 ]
 
 export default function AppNav() {
