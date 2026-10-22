@@ -23,7 +23,7 @@ const benefits = [
   {
     icon: Zap,
     title: 'AI handles your admin',
-    body: 'The Dwell Agents assist with quote generation, CDM documents, client messages, scope of works, and commercial summaries. Less time on paperwork means more time on site — and more consistent documentation across every project.',
+    body: 'The Planned tools assist with quote generation, CDM documents, client messages, scope of works, and commercial summaries. Less time on paperwork means more time on site — and more consistent documentation across every project.',
   },
   {
     icon: BarChart3,
@@ -35,7 +35,7 @@ const benefits = [
 const plans = [
   { name: 'Member', price: '£49/mo', features: ['Builder Score™ profile listing', 'Up to 10 leads/month', 'Basic Builder Score badge', 'AI Estimator (3/mo)', 'Email support'] },
   { name: 'Professional', price: '£99/mo', popular: true, features: ['Everything in Member', 'Up to 30 leads/month', 'Full Builder Score™ (all 5 dimensions)', 'Unlimited AI Estimator', 'Planning alerts', 'Priority support'] },
-  { name: 'Premium', price: '£199/mo', features: ['Everything in Professional', 'Unlimited leads', '3 team users', 'WhatsApp automation', 'Full CRM pipeline', 'All 4 Dwell Agents'] },
+  { name: 'Premium', price: '£199/mo', features: ['Everything in Professional', 'Unlimited leads', '3 team users', 'WhatsApp automation', 'Full CRM pipeline', 'All 4 Planned tools'] },
 ]
 
 export default function ForContractorsPage() {
@@ -95,7 +95,7 @@ export default function ForContractorsPage() {
                   ))}
                 </ul>
                 <Link href="/register?type=contractor" className={plan.popular ? 'btn-primary w-full text-center block' : 'btn-secondary w-full text-center block'}>
-                  Start free trial
+                  Join the waitlist
                 </Link>
               </div>
             ))}

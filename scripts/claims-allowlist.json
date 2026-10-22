@@ -1,0 +1,42 @@
+[
+  {
+    "file": "lib/company.ts",
+    "pattern": "16871183",
+    "reason": "Entity constant file \u2014 the only allow-listed location for the company number"
+  },
+  {
+    "file": "lib/company.ts",
+    "pattern": "W1W 5PF",
+    "reason": "Registered office address \u2014 behind PUBLISH_ENTITY flag"
+  },
+  {
+    "file": "app/terms/page.tsx",
+    "pattern": "Dwellinger Ltd",
+    "reason": "Terms contracting-party clause \u2014 awaiting solicitor review (\u00a78 #27)"
+  },
+  {
+    "file": "supabase/migrations/005_rcb_connected_business.sql",
+    "pattern": "rcbgroup",
+    "reason": "Connected business migration slug"
+  },
+  {
+    "file": "content/builder-score-method.ts",
+    "pattern": "resolving",
+    "reason": "Checked: does not contain 'resolving flagged issues' (Bronze description)"
+  },
+  {
+    "file": "supabase/migrations/002_contractors.sql",
+    "pattern": "RCB Design",
+    "reason": "Existing seed migration \u2014 002 must not be edited (new seed in 005_rcb_connected_business.sql)"
+  },
+  {
+    "file": "supabase/migrations/002_contractors.sql",
+    "pattern": "A2Z",
+    "reason": "Existing seed migration \u2014 002 must not be edited; new seed in 005 uses correct slug/name"
+  },
+  {
+    "file": "app/(marketing)/terms/page.tsx",
+    "pattern": "Dwellinger Ltd",
+    "reason": "Contracting-party clause \u2014 awaiting solicitor review (\u00a78 #27); must not be changed without legal advice"
+  }
+]
